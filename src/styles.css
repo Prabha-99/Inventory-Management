@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+:root{
+    --offcanvas-width: 270px;
+    --TopNavbarHeight: 72px;
+}
+
+.sidebar-nav{
+    width: var(--offcanvas-width);
+    
+}
+
+@media(min-width: 150px){
+    .sidebar-nav{
+        transform: none;
+        position: fixed;
+        visibility: visible !important;
+        top: var(--TopNavbarHeight);
+        height: calc(100% - var(--TopNavbarHeight));
+    }
+}
