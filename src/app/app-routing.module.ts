@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
-
+import { SingupComponent } from './singup/singup.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:"full"},
@@ -13,7 +13,8 @@ const routes: Routes = [
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
   {path:"admindash",component:AdmindashComponent},
-  {path:"login",component:LoginComponent}
+  {path:"login",component:LoginComponent},
+  {path:"singup",component:SingupComponent}
   
   
 
