@@ -16,9 +16,9 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     HomeComponent,
     SidebarComponent,
-    AdmindashComponent,
     SingupComponent,
-    LoginComponent
+    LoginComponent,
+    AdmindashComponent
   ],
   imports: [
     BrowserModule,
