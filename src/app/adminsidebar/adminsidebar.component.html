@@ -1,0 +1,73 @@
+<!-- Admin Dashboard -->
+<!--Admin Sidebar-->
+<div class="offcanvas offcanvas-start sidebar-nav bg-dark"  tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+      <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+    </div>
+    <div class="offcanvas-body p-0">
+  
+      <div class="navbar-dark bg-dark">
+        <ul class="navbar-nav">
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3">
+              
+            </div>
+          </li>
+          <li>
+            <a routerLink="/adminprofile" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
+              <span class="me-5">
+              </span>
+              <span><h4> Profile</h4></span>  
+            </a>
+          </li>
+  
+          
+          
+          
+            <a class="nav-link px-3 active " data-bs-target="#components-nav1" data-bs-toggle="collapse" href="#">
+              <span class="me-5">
+              </span>
+              <span><h4> Manage Users <i class="bi bi-chevron-down ms-auto"></i></h4></span> 
+              <ul id="components-nav1" class="nav-content collapse hidden" data-bs-parent="#sidebar-nav">
+                <li>
+                  <a href="#" class="nav-link px-3 active">
+                    <span>Add New User</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-3 active">
+                    <span>Updates User</span>
+                  </a>
+                </li> 
+                </ul>
+            </a>
+          
+            <a class="nav-link px-3 active " data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
+              <span class="me-5">
+              </span>
+              <span><h4> Reports <i class="bi bi-chevron-down ms-auto"></i></h4></span> 
+              <ul id="components-nav2" class="nav-content collapse hidden" data-bs-parent="#sidebar-nav">
+                <li>
+                  <a href="#" class="nav-link px-3 active">
+                    <span>Stock Reports</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-3 active">
+                    <span>Sales Reports</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-3 active">
+                    <span>Purchase Reports</span>
+                  </a>
+                </li> 
+                </ul>
+            </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Off canvas Ends -->
+  

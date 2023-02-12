@@ -2,6 +2,9 @@
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
+body{
+    padding-top: 92px;
+}
 :root{
     --offcanvas-width: 270px;
     --TopNavbarHeight: 72px;

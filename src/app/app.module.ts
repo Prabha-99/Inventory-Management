@@ -10,6 +10,8 @@ import { AdmindashComponent } from './admindash/admindash.component';
 import { SingupComponent } from './singup/singup.component';
 import { LoginComponent } from './login/login.component';
 import { AdminprofileComponent } from './adminprofile/adminprofile.component';
+import { AdminnavComponent } from './adminnav/adminnav.component';
+import { AdminsidebarComponent } from './adminsidebar/adminsidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AdminprofileComponent } from './adminprofile/adminprofile.component';
     SingupComponent,
     LoginComponent,
     AdmindashComponent,
-    AdminprofileComponent
+    AdminprofileComponent,
+    AdminnavComponent,
+    AdminsidebarComponent
   ],
   imports: [
     BrowserModule,
