@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminprofileComponent } from './adminprofile/adminprofile.component';
 import { AdminnavComponent } from './adminnav/adminnav.component';
 import { AdminsidebarComponent } from './adminsidebar/adminsidebar.component';
+import { AdminAddNewUserComponent } from './admin-add-new-user/admin-add-new-user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminsidebarComponent } from './adminsidebar/adminsidebar.component';
     AdmindashComponent,
     AdminprofileComponent,
     AdminnavComponent,
-    AdminsidebarComponent
+    AdminsidebarComponent,
+    AdminAddNewUserComponent
   ],
   imports: [
     BrowserModule,
