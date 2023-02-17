@@ -14,6 +14,8 @@ import { AdminnavComponent } from './adminnav/adminnav.component';
 import { AdminsidebarComponent } from './adminsidebar/adminsidebar.component';
 import { AdminAddNewUserComponent } from './admin-add-new-user/admin-add-new-user.component';
 import { AdminUpdateUserComponent } from './admin-update-user/admin-update-user.component';
+import { AdminUpdatePasswordComponent } from './admin-update-password/admin-update-password.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { AdminUpdateUserComponent } from './admin-update-user/admin-update-user.
     AdminnavComponent,
     AdminsidebarComponent,
     AdminAddNewUserComponent,
-    AdminUpdateUserComponent
+    AdminUpdateUserComponent,
+    AdminUpdatePasswordComponent,
+    ForgetpasswordComponent
   ],
   imports: [
     BrowserModule,
