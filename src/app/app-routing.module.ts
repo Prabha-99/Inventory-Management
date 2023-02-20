@@ -11,7 +11,6 @@ const routes: Routes = [
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
   {path:"billing",component:BillingComponent}
-  
 ];
 
 @NgModule({
