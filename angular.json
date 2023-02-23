@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css",
               "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
@@ -89,6 +90,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css",
               "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
