@@ -11,8 +11,11 @@ import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
+
+
 @NgModule({
   declarations: [
+    
     AppComponent,
     NavbarComponent,
     HomeComponent,
