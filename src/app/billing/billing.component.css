@@ -1,11 +1,9 @@
-@mixin make-container($padding-x: $container-padding-x) {
-    width: 100%;
-    padding-right: $padding-x;
-    padding-left: $padding-x;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
-  .custom-container {
-    @include make-container();
-  }
+
+  body {
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.btn-group {
+  margin-right: 0.5rem;
+}
