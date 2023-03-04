@@ -13,6 +13,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 
+
+
 @NgModule({
   declarations: [
     
@@ -21,6 +23,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     HomeComponent,
     SidebarComponent,
     BillingComponent,
+
+
   ],
   imports: [
     BrowserModule,
