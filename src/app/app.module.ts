@@ -10,7 +10,7 @@ import { BillingComponent } from './billing/billing.component';
 import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-
+import { NgxPrintModule } from 'ngx-print';
 
 
 
@@ -29,6 +29,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxPrintModule,
     ScheduleModule, RecurrenceEditorModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
