@@ -10,11 +10,11 @@
 
         <!--Description table-->
 
-        <div class="container">
+        <div class="container" id="print-section">
             <div class="row">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="assets\logo2.jpg" class="card-img-top" alt="Monara">
+                        <img src="assets\logo2.jpg" class="card-img-top" alt="Monara"width="30%"height="25%">
                         <div class="card-body">
                           <h5 class="card-title"style="text-align:center">Project Description</h5>
 
@@ -113,23 +113,23 @@
                       <th scope="col">Amount</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>
-                        <form>
+                  <tbody id="tobody">
+                    <tr id="trID">
+                      <td scope="row" id="no">1</td>
+                      <td id="n1">
+                        
                        <select id="Select the product">
                         <option id="Melamaine">Melamaine</option>
                         <option id="H.Band">H-Band</option>
                         <option id="M1">material 1</option>
                         <option id="M2">material 2</option>
                        </select>
-                    </form>
+                    
                     </td>
-                      <td><input type="text"maxlength="4"size="4"id="qty"></td>
-                      <td>$200</td>
-                      <td><input type="text"maxlength="4"size="4"id="qty"></td>
-                      <td>$800</td>
+                      <td id="n2"><input type="text"maxlength="4"size="4"id="qty"></td>
+                      <td id="n3">$200</td>
+                      <td id="n4"><input type="text"maxlength="4"size="4"id="qty"></td>
+                      <td id="n5">$800</td>
                     </tr>
                   
                   </tbody>
@@ -186,15 +186,14 @@
                     </div>
                 </div>
               </div>  
-              <div class="btn-group"><button type="button" class="btn btn-outline-success margin-left">Print</button></div> 
-              <div class="btn-group"><button type="button" class="btn btn-outline-dark margin-left">Clear</button></div>
-                   <br>
-                   <br>
+      
         </div>
-
-        
-
+        <div class="Container">
+            <div class ="cols">
+            <button class="btn btn-outline-success margin-left"  printSectionId="print-section" [useExistingCss]="true"  ngxPrint>Export</button></div>
+        </div>     
+        <br>
+        <br>
     </body>
-
 
 </html>
