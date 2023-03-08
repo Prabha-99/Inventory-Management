@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as jsPDF from 'jspdf';
 
 @Component({
   
@@ -11,48 +10,70 @@ import * as jsPDF from 'jspdf';
 
 export class BillingComponent {
 
-  calno():void{
-    const table = document.getElementById("tobody") as HTMLTableElement; 
-    for (var i = 1; i < table.rows.length; i++) { // iterate over rows
-      const rown = table.rows[i];
-      rown.cells[0].textContent = (i+1).toString(); 
-    }
-      }
-
-
+ 
+  rmRow(id: string): void {
+    document.getElementById(id)?.remove();
+  }
+  
   addRow(): void {
-    const row = document.createElement('tr'); 
+    const table = document.getElementById("tobody") as HTMLTableElement;
+    // GET TOTAL NUMBER OF ROWS 
+    const x = table.rows.length;
+    const id = "tbl" + x;
+    const row = table.insertRow(x);
+    row.id = id;
 
-    const col = document.createElement('td'); 
-    const col2 = document.createElement('td'); 
-    const col3 = document.createElement('td'); 
-    const col4 = document.createElement('td'); 
-    const col5 = document.createElement('td'); 
-    const col6 = document.createElement('td');
-     
-    row.appendChild(col);
-    row.appendChild(col2);
-    row.appendChild(col3);
-    row.appendChild(col4);
-    row.appendChild(col5); 
-    row.appendChild(col6); 
-   
-     
-    col.innerHTML=''+this.calno();
-    col2.innerHTML = '<select id="Select the product"><option id="Melamaine">Melamaine</option><option id="H.Band">H-Band</option><option id="M1">material 1</option><option id="M2">material 2</option></select>' ; 
-    col3.innerHTML = '<input type="text"maxlength="4"size="4"id="qty">'; 
-    col4.innerHTML="$$";
-    col5.innerHTML = '<input type="text"maxlength="4"size="4"id="qty">'; 
-    col6.innerHTML = "$$"; 
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
+    const cell6 = row.insertCell(5);
+    const cell7 = row.insertCell(6);
 
-   const table = document.getElementById("tobody");
-    table!.appendChild(row); 
+    cell1.outerHTML = `<th> ${x+1}</th>`;
+    cell2.innerHTML = `<select id="select_product" name="product" class="form-control"><option id="Melamaine">Melamaine</option><option id="H.Band">H-Band</option><option id="M1">material 1</option><option id="M2">material 2</option></select>`;
+    cell3.innerHTML = ` <input type="text" name="quantity" maxlength="5" size="5" id="qty" class="form-control" required />`;
+    cell4.innerHTML = `<p name="unit_price" class="form-control" >.00</p>`;
+    cell5.innerHTML = ` <input type="text" name="discont" maxlength="5" size="5" id="discount"  class="form-control" />`;
+    cell6.innerHTML = `<p name="amount" class="form-control" >.00</p>`
+    
+    
 
-
-
+    const deleteButton = document.createElement("input");
+    deleteButton.type = "button";
+    deleteButton.value = "Del";
+    deleteButton.className = "btn btn-block btn-default";
+    deleteButton.addEventListener("click", () => {
+      this.rmRow(id);});
+    cell7.appendChild(deleteButton);
   }
 
 
+
+   r4mRow(): void{
+    const table = document.getElementById("tobody") as HTMLTableElement; // get reference to table element
+    const rowCount = table.rows.length; // get number of rows in table
+    table.deleteRow(rowCount - 1);
+
+   }
+ 
+ 
+
+
+  OnlyNumbersAllowed(event: { which: any; keyCode: any; }):boolean{
+    const charCode = (event.which)?event.which: event.keyCode;
+
+    if(charCode > 31 && (charCode < 48 || charCode > 57 )){
+      console.log('charCode restricted is' + charCode )
+      return false;
+    }
+
+
+    return true;
+  }
+  
 }
+
 
 
