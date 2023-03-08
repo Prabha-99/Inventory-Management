@@ -13,12 +13,12 @@
         <div class="container" id="print-section">
             <div class="row">
                 <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="assets\logo2.jpg" class="card-img-top" alt="Monara"width="30%"height="25%">
+                    <div class="card" style="width: 15rem;">
+                        <img src="assets\logo2.jpg" class="card-img-top" alt="Monara">
                         <div class="card-body">
                           <h5 class="card-title"style="text-align:center">Project Description</h5>
 
-                          <p class="card-text"> ...................</p>
+                          <p class="card-text"id='des'> ...................</p>
                         </div>
                    
                       </div>
@@ -30,13 +30,15 @@
 
                         <h2 align="center"> <b>Quotation</b></h2>
                         <table class="table" >
-                           
+                          
                                 <tr>
                                     <th>
                                         Quatation date :
                                     </th>
                                     <td align="right">
-                                        <input type="date" class="form-control"name="current-date">
+                                        
+                                        <input type="date" class="form-control"name="current-date" >
+                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -55,46 +57,48 @@
                                          <input type="text" class="form-control" name="qno" >
                                     </td>
                                 </tr>
-                            
+                           
                         </table>
                        <!-- showing Customer details-->
                        
                             <table class="table">
+                                
                                     <tr>
                                         <th>
                                             <div class="mb-2 bg-dark text-white" align="center">Customer Details</div>
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th name="name">
-                                            <div class="spinner-border spinner-border-sm" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                              </div>
-                                        </th>
-
-                                    </tr>
-                                    <tr>
-                                        <td name="Address">
-                                            <div class="spinner-border spinner-border-sm" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                              </div>
+                                        <td>
+                                        <div class="input-group input-group-sm ">
+                                            
+                                            <input type="text" class="form-control" placeholder="Customer Name"required >
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                          </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td name="m_number">
-                                            <div class="spinner-border spinner-border-sm" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                              </div>
-                                        </td>
+                                        <td>
+                                            <div class="input-group input-group-sm ">
+                                          <input type="text" class="form-control" placeholder="Address" required>
+                                        </div>
+                                    </td>
                                     </tr>
                                     <tr>
-                                        <td name="vat">
-                                            <div class="spinner-border spinner-border-sm" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                              </div>
-                                        </td>
+                                        <td>
+                                            <div class="input-group input-group-sm">
+                                          <input type="text" class="form-control" placeholder="Telephone no." required>
+                                        </div>
+                                    </td>
                                     </tr>
-                                       
+                                    <tr>
+                                        <td>
+                                            <div class="input-group input-group-sm ">
+                                          <input type="text" class="form-control" placeholder="Other" >
+                                        </div>
+                                    </td>
+                                    </tr>
+                                 
                             </table>
                   </div>
 
@@ -111,14 +115,16 @@
                       <th scope="col">Unit Price</th>
                       <th scope="col">Discount</th>
                       <th scope="col">Amount</th>
+                      <th scope="col"align="center">Row</th>
                     </tr>
                   </thead>
                   <tbody id="tobody">
                     <tr id="trID">
-                      <td scope="row" id="no">1</td>
+                      <th scope="row" id="no">1</th>
+                      
                       <td id="n1">
                         
-                       <select id="Select the product">
+                       <select id="select_product"class="form-control">
                         <option id="Melamaine">Melamaine</option>
                         <option id="H.Band">H-Band</option>
                         <option id="M1">material 1</option>
@@ -126,16 +132,20 @@
                        </select>
                     
                     </td>
-                      <td id="n2"><input type="text"maxlength="4"size="4"id="qty"></td>
-                      <td id="n3">$200</td>
-                      <td id="n4"><input type="text"maxlength="4"size="4"id="qty"></td>
-                      <td id="n5">$800</td>
+                      <td id="n2"><input type="text" (keypress)="OnlyNumbersAllowed($event)" maxlength="5"size="5"id="qty"name="qty"class="form-control"/></td>
+                      <td id="n3"><p name="up" class="form-control">.00</p></td>
+                      <td id="n4"><input type="text" (keypress)="OnlyNumbersAllowed($event)" maxlength="5"size="5"id="qty"name="discount" class="form-control"></td>
+                      <td id="n5"><p name="amount" class="form-control">.00</p></td>
+                      <td>
+                        <input type="button" class="btn btn-block " id="addRow" (click)="addRow()" value="Add" />
+                      </td>
                     </tr>
+                
                   
                   </tbody>
                 </table>
                 <br>
-                        <button (click)="addRow()" id="submit">Add</button>
+                     
               </div>
                 <hr>
               <!--Table 3-->
@@ -189,8 +199,9 @@
       
         </div>
         <div class="Container">
-            <div class ="cols">
-            <button class="btn btn-outline-success margin-left"  printSectionId="print-section" [useExistingCss]="true"  ngxPrint>Export</button></div>
+            <div class ="cols btn-group" >
+            <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint>Export</button>
+            <button class="btn btn-secondary margin-left"id="send" >Send</button></div>
         </div>     
         <br>
         <br>
