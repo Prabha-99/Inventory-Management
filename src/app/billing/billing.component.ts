@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { eventClick } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
   
   selector: 'app-billing',
   templateUrl: './billing.component.html',
-  styleUrls: ['./billing.component.css']
+  styleUrls: ['./billing.component.css'],
+  template: `<input type="text" (keypress)="OnlyNumbersAllowed($event)" name="discont" maxlength="5" size="5" id="discount"  class="form-control" required />`
 
 })
 
@@ -33,16 +35,32 @@ export class BillingComponent {
 
     cell1.outerHTML = `<th> ${x+1}</th>`;
     cell2.innerHTML = `<select id="select_product" name="product" class="form-control"><option id="Melamaine">Melamaine</option><option id="H.Band">H-Band</option><option id="M1">material 1</option><option id="M2">material 2</option></select>`;
-    cell3.innerHTML = ` <input type="text" name="quantity" maxlength="5" size="5" id="qty" class="form-control" required />`;
+    cell3.innerHTML = ` <input type="text" name="quantity" maxlength="5" size="5" id="qty" class="form-control" required >`;
     cell4.innerHTML = `<p name="unit_price" class="form-control" >.00</p>`;
-    cell5.innerHTML = ` <input type="text" name="discont" maxlength="5" size="5" id="discount"  class="form-control" />`;
+    cell5.innerHTML = ` <input type="text"  name="discont1" maxlength="5" size="5" id="discount"  class="form-control" required >`;
     cell6.innerHTML = `<p name="amount" class="form-control" >.00</p>`
     
     
+  
+      cell3.addEventListener('keypress', (event) => {
+        this.OnlyNumbersAllowed(event);
+        });
+        
+        cell5.addEventListener('keypress', (event) => {
+          this.OnlyNumbersAllowed(event);
+          });
+
+          /*
+          cell5.addEventListener('keypress', (event) => {
+            this.calculate(event);
+          });*/
+
+
+
 
     const deleteButton = document.createElement("input");
     deleteButton.type = "button";
-    deleteButton.value = "Del";
+    deleteButton.value = "-";
     deleteButton.className = "btn btn-block btn-default";
     deleteButton.addEventListener("click", () => {
       this.rmRow(id);});
@@ -65,13 +83,33 @@ export class BillingComponent {
     const charCode = (event.which)?event.which: event.keyCode;
 
     if(charCode > 31 && (charCode < 48 || charCode > 57 )){
-      console.log('charCode restricted is' + charCode )
+      alert('you should enter only numbers ' )
       return false;
     }
 
-
     return true;
   }
+
+
+/*
+   input1 = document.getElementById("qty") as HTMLInputElement;
+   input2 = document.getElementById("up") as HTMLInputElement;
+  outputElement = document.getElementById("amount");
+  
+ 
+   calculate(event:Event):void {
+    // Get the input values as numbers
+    const value1 = parseFloat(this.input1.value);
+    const value2 = parseFloat(this.input2.value);
+  
+    // Calculate the result
+    const result = value1 + value2;
+  
+    // Update the output element with the result as HTML content
+    if (this.outputElement) {
+      this.outputElement.innerHTML = `Result: <strong>${result}</strong>`;
+    }
+  }*/
   
 }
 
