@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { eventClick } from '@syncfusion/ej2-angular-schedule';
+import { Router } from '@angular/router';
 
 @Component({
   
@@ -10,9 +11,18 @@ import { eventClick } from '@syncfusion/ej2-angular-schedule';
 
 })
 
+
 export class BillingComponent {
 
+  //link to the send page
+  constructor(private router: Router) { }
+
+  Billingsend() {
+    this.router.navigate(['/billing-send']);
+  }
+
  
+  //add and remove rows
   rmRow(id: string): void {
     document.getElementById(id)?.remove();
   }
@@ -66,19 +76,9 @@ export class BillingComponent {
       this.rmRow(id);});
     cell7.appendChild(deleteButton);
   }
-
-
-
-   r4mRow(): void{
-    const table = document.getElementById("tobody") as HTMLTableElement; // get reference to table element
-    const rowCount = table.rows.length; // get number of rows in table
-    table.deleteRow(rowCount - 1);
-
-   }
- 
  
 
-
+//validations
   OnlyNumbersAllowed(event: { which: any; keyCode: any; }):boolean{
     const charCode = (event.which)?event.which: event.keyCode;
 
