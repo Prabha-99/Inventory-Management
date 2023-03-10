@@ -11,6 +11,7 @@ import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgxPrintModule } from 'ngx-print';
+import { BillingSendComponent } from './billing-send/billing-send.component';
 
 
 
@@ -23,6 +24,7 @@ import { NgxPrintModule } from 'ngx-print';
     HomeComponent,
     SidebarComponent,
     BillingComponent,
+    BillingSendComponent,
 
 
   ],
