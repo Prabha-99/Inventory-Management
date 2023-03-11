@@ -1,1 +1,28 @@
-<p>billing-send works!</p>
+<html>
+    <body>
+        <h2>Send Email</h2>
+
+        <h1>Enter the following details</h1>
+        <table>
+          <tr>
+            <td><span>Name</span></td>
+            <td><input type="text" [(ngModel)]="dataset.name" name="name"></td>
+          </tr>
+          <tr>
+            <td><span>Age(Integer)</span></td>
+            <td><input type="number" [(ngModel)]="dataset.age" name="age"></td></tr>
+          <tr>
+            <td><span>Country</span></td>
+            <td><input type="text" [(ngModel)]="dataset.country" name="country"></td>
+          </tr>
+          <tr>
+            <td><span>Send Email to</span></td>
+            <td><input type="text" [(ngModel)]="dataset.email" name="email"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><button (click)="onSubmit()">Submit</button></td>
+          </tr>
+        </table>
+</body>
+  </html>
