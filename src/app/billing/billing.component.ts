@@ -18,7 +18,7 @@ export class BillingComponent {
   constructor(private router: Router) { }
 
   Billingsend() {
-    this.router.navigate(['/billing-send']);
+    window.open('/billing-send', '_blank','width=800,height=500');
   }
 
  
