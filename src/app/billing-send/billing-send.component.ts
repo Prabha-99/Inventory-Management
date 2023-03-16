@@ -15,7 +15,7 @@ export class BillingSendComponent {
 
   title = 'EmailTemplate';
 
-  dataset: Details = {
+  dataset: Detailer = {
     name:'',
     age:0,
     country:'',
@@ -26,7 +26,7 @@ export class BillingSendComponent {
 
   onSubmit()
   {
-    this.https.post<Details>('http://localhost:8080/testapp/getdetails', this.dataset).subscribe(
+    this.https.post<Detailer>('http://localhost:8080/testapp/getdetails', this.dataset).subscribe(
       res => {
         this.dataset = res;
         console.log(this.dataset);
@@ -40,7 +40,7 @@ export class BillingSendComponent {
   }
 }
 
-interface Details
+interface Detailer
 {
   name:string;
   age:number;
