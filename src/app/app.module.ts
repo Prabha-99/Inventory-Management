@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { StockManagerNavComponent } from './stock-manager-nav/stock-manager-nav.component';
+import { StockManagerSideComponent } from './stock-manager-side/stock-manager-side.component';
+import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
 
 
 @NgModule({
@@ -14,6 +17,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     NavbarComponent,
     HomeComponent,
     SidebarComponent,
+    StockManagerNavComponent,
+    StockManagerSideComponent,
+    StockManagerDashComponent,
   ],
   imports: [
     BrowserModule,
