@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { InventoryAdNavComponent } from './inventory-ad-nav/inventory-ad-nav.component';
+import { InventoryAdSideBarComponent } from './inventory-ad-side-bar/inventory-ad-side-bar.component';
+import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
+import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
+
 
 
 @NgModule({
@@ -14,6 +19,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     NavbarComponent,
     HomeComponent,
     SidebarComponent,
+    InventoryAdNavComponent,
+    InventoryAdSideBarComponent,
+    InventoryAdDashComponent,
+    InventoryAdAddproductComponent,
   ],
   imports: [
     BrowserModule,
