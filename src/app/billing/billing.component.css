@@ -1,0 +1,9 @@
+
+  body {
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.btn-group {
+  margin-right: 0.5rem;
+}
