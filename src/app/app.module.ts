@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-
-
-import { ReportsComponent } from './reports/reports.component';
-import { OrderReportsComponent } from './order-reports/order-reports.component';
+import { BillingComponent } from './billing/billing.component';
+import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgxPrintModule } from 'ngx-print';
+import { BillingSendComponent } from './billing-send/billing-send.component';
+import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,10 +24,9 @@ import { OrderReportsComponent } from './order-reports/order-reports.component';
     NavbarComponent,
     HomeComponent,
     SidebarComponent,
+    BillingComponent,
+    BillingSendComponent,
 
-
-    ReportsComponent,
-    OrderReportsComponent,
 
   ],
   imports: [
