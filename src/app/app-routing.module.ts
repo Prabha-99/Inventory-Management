@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 
+
 const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:"full"},
   {path:"home",component:HomeComponent},
