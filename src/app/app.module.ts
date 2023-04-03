@@ -14,7 +14,8 @@ import { NgxPrintModule } from 'ngx-print';
 import { BillingSendComponent } from './billing-send/billing-send.component';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ReportsComponent } from './reports/reports.component';
+import { OrderReportsComponent } from './order-reports/order-reports.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     SidebarComponent,
     BillingComponent,
     BillingSendComponent,
-
+    ReportsComponent,
+    OrderReportsComponent,
 
   ],
   imports: [

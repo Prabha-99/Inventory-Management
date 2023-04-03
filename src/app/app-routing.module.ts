@@ -12,12 +12,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 
+
 const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:"full"},
   {path:"home",component:HomeComponent},
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
-
+  
+  {path:"billing",component:BillingComponent},
+  {path:"billingsend",component:BillingSendComponent},
 
   {path:"reports",component:ReportsComponent},
   {path:"orderreports",component:OrderReportsComponent}

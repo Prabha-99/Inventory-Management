@@ -18,7 +18,7 @@ export class BillingComponent {
   constructor(private router: Router) { }
 
   Billingsend() {
-    window.open('/billing-send', '_blank','width=800,height=500');
+    window.open('/billingsend', '_blank','width=800,height=500');
   }
 
  
