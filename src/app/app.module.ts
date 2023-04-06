@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { StockManagerNavComponent } from './stock-manager-nav/stock-manager-nav.component';
 import { StockManagerSideComponent } from './stock-manager-side/stock-manager-side.component';
 import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
+import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-da
     StockManagerNavComponent,
     StockManagerSideComponent,
     StockManagerDashComponent,
+    StockManagerProfileComponent,
   ],
   imports: [
     BrowserModule,
