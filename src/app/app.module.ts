@@ -10,6 +10,7 @@ import { StockManagerNavComponent } from './stock-manager-nav/stock-manager-nav.
 import { StockManagerSideComponent } from './stock-manager-side/stock-manager-side.component';
 import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
 import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
+import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { StockManagerProfileComponent } from './stock-manager-profile/stock-mana
     StockManagerSideComponent,
     StockManagerDashComponent,
     StockManagerProfileComponent,
+    StockManagerProductComponent,
   ],
   imports: [
     BrowserModule,

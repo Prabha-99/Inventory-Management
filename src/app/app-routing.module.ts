@@ -5,6 +5,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
 import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
+import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:"full"},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
   {path:"stock-manager-dash",component:StockManagerDashComponent},
-  {path:"stock-manager-profile",component:StockManagerProfileComponent}
+  {path:"stock-manager-profile",component:StockManagerProfileComponent},
+  {path:"stock-manager-product",component:StockManagerProductComponent}
 ];
 
 @NgModule({
