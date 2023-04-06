@@ -10,6 +10,7 @@ import { InventoryAdNavComponent } from './inventory-ad-nav/inventory-ad-nav.com
 import { InventoryAdSideBarComponent } from './inventory-ad-side-bar/inventory-ad-side-bar.component';
 import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
 import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
+import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad-profile.component';
 
 
 
@@ -23,6 +24,7 @@ import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/invent
     InventoryAdSideBarComponent,
     InventoryAdDashComponent,
     InventoryAdAddproductComponent,
+    InventoryAdProfileComponent,
   ],
   imports: [
     BrowserModule,
