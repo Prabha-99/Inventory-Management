@@ -10,8 +10,11 @@
 
         <!--Description table-->
 
+
+        
         <div class="container" id="print-section">
             <div class="row">
+             
                 <div class="col">
                     <div class="card" style="width: 15rem;">
                         <img src="assets\logo2.jpg" class="card-img-top" alt="Monara">
@@ -22,6 +25,7 @@
                         </div>
                    
                       </div>
+
                 
                 </div>
                 <div class="col">
@@ -100,54 +104,46 @@
                                     </tr>
                                  
                             </table>
+
                   </div>
 
             </div>
-           
+         
 
               <div class="row my-2 mx-1 justify-content-center">
-                <table class="table table-striped table-borderless" id="itemTable">
-                  <thead style="background-color:#222222 ;" class="text-white">
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Description</th>
-                      <th scope="col">Qty</th>
-                      <th scope="col">Unit Price</th>
-                      <th scope="col">Discount</th>
-                      <th scope="col">Amount</th>
-                      <th scope="col"align="center"></th>
-                    </tr>
+
+
+
+                <table class="table table-striped table-borderless">
+                  <thead  style="background-color:#222222 ;" class="text-white">
+                  <tr>
+                    <th scope="col">#</th>
+                      <th scope="col"style="text-align:center;">Material</th>
+                      <th scope="col"style="text-align:center;">Quantity</th>
+                      <th scope="col"style="text-align:center;">Unit Price</th>
+                      <th scope="col"style="text-align:center;">Discount</th>
+                      <th scope="col"style="text-align:center;">Amount</th>
+                      <th scope="col"></th>
+                  </tr>
                   </thead>
-                  <tbody id="tobody">
-                    <tr >
-                      <th scope="row" id="no">1</th>
-                      
-                      <td >
-                        
-                       <select id="select_product"class="form-control">
-                        <option id="Melamaine">Melamaine</option>
-                        <option id="H.Band">H-Band</option>
-                        <option id="M1">material 1</option>
-                        <option id="M2">material 2</option>
-                       </select>
-                    
-                    </td>
-                      <td ><input type="text" (keypress)="OnlyNumbersAllowed($event)" maxlength="5"size="5"id="qty" name="qty"class="form-control"/></td>
-                      <td ><p name="up" class="form-control">.00</p></td>
-                      <td ><input type="text" (keypress)="OnlyNumbersAllowed($event)" maxlength="5"size="5"id="discount" name="discount" class="form-control"></td>
-                      <td ><p name="amount" class="form-control">.00</p></td>
-                      <td>
-                        <input type="button" class="btn btn-block " id="addRow" (click)="addRow()" value="+" />
-                      </td>
-                    </tr>
-                
-                  
-                  </tbody>
+                  <tbody>
+                  <tr *ngFor="let row of rows; let i = index">
+                    <td>{{row.id}}</td>
+                    <td ><input type="text" [(ngModel)]="row.name" name="name{{i}}" style="width:143px; height:32px;text-align:center;"></td>
+                    <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:143px; height:32px;text-align:center;"></td>
+                    <td ><input type="text" [(ngModel)]="row.up" name="unitprice{{i}}" readOnly style="width:143px; height:32px;text-align:center;"></td>
+                    <td ><input type="number" [(ngModel)]="row.discount" name="discount{{i}}" (input)="calAmount(row, i)" style="width:143px; height:32px;text-align:center;"></td>
+                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:143px; height:32px;text-align:center;"></td>
+                    <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-danger btn-sm" >-</button></td>
+                  </tr>
+                </tbody>
                 </table>
-                <br>
-                     
-              </div>
+                <button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm ">Add Row</button>
+                
+
+            </div>
                 <hr>
+
               <!--Table 3-->
             <div class="container">
               <div class="row">
@@ -190,7 +186,7 @@
                                 <th>Total</th>
                                 <div class="mags"style="border:1px solid black">
                                 <td >Rs.</td>
-                                <td>000.00</td></div>
+                                <td>00</td></div>
                             </tr>
                         </table>
                     </div>
@@ -201,10 +197,23 @@
         <div class="Container">
             <div class ="cols btn-group" >
             <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint>Export</button>
-            <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button></div>
-        </div>     
+           <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button>
+
+          
+            </div> 
+            <br>
+            <br>
+         
+         
+            
+         
+           
+        </div>  
+         
         <br>
         <br>
+     
+       
     </body>
 
 </html>
