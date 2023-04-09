@@ -44,7 +44,14 @@ export class BillingComponent {
     this.rows[index].amount = amount;
   }
 
-
+  calculateTotalAmount() {
+    let total = 0;
+    this.rows.forEach((row, index) => {
+      this.calAmount(row, index);
+      total += row.amount;
+    });
+    return total;
+ 
 
 /*
   rows: Rows[] = [];
@@ -67,7 +74,7 @@ export class BillingComponent {
 
 
 
-
+  }
   
 }
 
