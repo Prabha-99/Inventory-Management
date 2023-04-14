@@ -1,5 +1,8 @@
-import { Component,  } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input,  } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 
@@ -15,6 +18,7 @@ import { Router } from '@angular/router';
 
 
 export class BillingComponent {
+  
 
 
   Billingsend() {
@@ -23,11 +27,11 @@ export class BillingComponent {
 
 
   rowCount=1;
-  rows = [{id:1, name: '', qty: null, up:null, discount: null, amount: 0}];
+  rows = [{id:1, product_name: '', qty: null, product_price:null, discount: null, amount: 0}];
 
   addRow() {
     this.rowCount++;
-    this.rows.push({id:this.rowCount , name: '', qty: null ,up:null, discount:null, amount: 0 });
+    this.rows.push({id:this.rowCount , product_name: '', qty: null ,product_price:null, discount:null, amount: 0 });
   }
 
   deleteRow(index: number) {
@@ -35,23 +39,29 @@ export class BillingComponent {
   }
 
 
+ 
   //cal amounts
 
   calAmount(row: any, index: number) {
+    const product_price =parseInt(row.product_price);
     const qty = parseInt(row.qty);
     const discount = parseInt(row.discount);
-    const amount = qty -( qty * (discount/100));
+    const amount = (qty*product_price) - ( qty * product_price)*(discount/100);
     this.rows[index].amount = amount;
+   
+   
   }
 
   calculateTotalAmount() {
-    let total = 0;
+    let total!: number;
     this.rows.forEach((row, index) => {
       this.calAmount(row, index);
-      total += row.amount;
+       total += row.amount;
+      
     });
-    return total;
- 
+   return total;
+  }
+
 
 /*
   rows: Rows[] = [];
@@ -70,13 +80,21 @@ export class BillingComponent {
     
   }
   */
- 
 
+    private baseUrl = 'http://localhost:8080/api/material';
 
+    constructor(private http: HttpClient) { }
+  
+    getProductPrice(product_name: string): Observable<number> {
+      const url = `${this.baseUrl}/price?name=${product_name}`;
+      return this.http.get<number>(url);
+    }
 
   }
+
+
   
-}
+
 
 
 

@@ -124,6 +124,8 @@
                       <th scope="col"style="text-align:center;">Discount</th>
                       <th scope="col"style="text-align:center;">Amount</th>
                       <th scope="col"></th>
+                     
+                      
                   </tr>
                   </thead>
                   <tbody>
@@ -131,22 +133,22 @@
 
                     <td>{{row.id}}</td>
 
-                    <td ><select id="select_product"class="form-control"[(ngModel)]="row.name" name="name{{i}}"style="width:143px; height:32px;text-align:center;">
+                    <td ><select id="select_product"class="form-control"[(ngModel)]="row.product_name" name="name{{i}}"style="width:140px; height:32px;text-align:center;">
                       <option id="Melamaine">Melamaine</option>
                       <option id="H.Band">H-Band</option>
                       <option id="M1">material 1</option>
                       <option id="M2">material 2</option>
                      </select></td>
 
-                    <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:143px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.up" name="unitprice{{i}}" readOnly style="width:143px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="number" [(ngModel)]="row.discount" name="discount{{i}}" (input)="calAmount(row, i)" style="width:143px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:143px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-danger btn-sm" >-</button></td>
+                    <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="text" [(ngModel)]="row.product_price" name="unitprice{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="number" [(ngModel)]="row.discount" name="discount{{i}}" (input)="calAmount(row, i)" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:130px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-secondary btn-sm" >-</button></td>
                   </tr>
                 </tbody>
                 </table>
-                <button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm ">Add Row</button>
+                
                 
 
             </div>
@@ -193,7 +195,7 @@
                             <tr>
                                 <th>Total</th>
                                 <div class="mags"style="border:1px ">
-                                <td >Rs.  {{calculateTotalAmount()}}  .00</td>
+                                <td >Rs. {{calculateTotalAmount()}}  .00</td>
                                 </div>
                             </tr>
                         </table>
@@ -203,6 +205,9 @@
       
         </div>
         <div class="Container">
+            <hr>
+           <div style="text-align:center;"><button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm">Add Row</button></div> <br><br>
+            
             <div class ="cols btn-group" >
             <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint>Export</button>
            <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button>
