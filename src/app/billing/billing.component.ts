@@ -1,10 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input,  } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-
-
+import { ProductService } from './billing.component.service';
 
 
 @Component({
@@ -17,9 +14,9 @@ import { Observable } from 'rxjs';
 })
 
 
-export class BillingComponent {
+export class BillingComponent implements OnInit{
+[x: string]: any;
   
-
 
   Billingsend() {
     window.open('/billingsend', '_blank','width=800,height=500');
@@ -37,6 +34,7 @@ export class BillingComponent {
   deleteRow(index: number) {
     this.rows.splice(index, 1);
   }
+
 
 
  
@@ -63,37 +61,41 @@ export class BillingComponent {
   }
 
 
-/*
-  rows: Rows[] = [];
-  rowCount =0;
-  addRow() {
-    this.rowCount++;
-    const id = this.rowCount;
-    
-    this.rows.push({ id,name:'', qty:null , up:null ,discount:null ,amount:null});
+
+  constructor(private productService: ProductService) { }
+
+
+ 
+  productNames: string[] = [];
+  ngOnInit() {
+    this.productService.getProductNames().subscribe(names => {
+      this.productNames = names;
+    });
   }
 
-  removeRow(row: Rows) {
-    this.rows = this.rows.filter(r => r !== row);
-  }
+///////////////////////////////////////////////////////
 
-    
-  }
-  */
+  @ViewChild('content')
+  content!: ElementRef;
 
-    private baseUrl = 'http://localhost:8080/api/material';
+saveToDatabase() {
+  const data = this.content.nativeElement;
+  this.productService.generatePdf(data);
+}
 
-    constructor(private http: HttpClient) { }
-  
-    getProductPrice(product_name: string): Observable<number> {
-      const url = `${this.baseUrl}/price?name=${product_name}`;
-      return this.http.get<number>(url);
-    }
+}
+ 
 
-  }
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  brand:string;
 
 
-  
+
+}
+
 
 
 
