@@ -17,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReportsComponent } from './reports/reports.component';
 import { OrderReportsComponent } from './order-reports/order-reports.component';
 
-
 @NgModule({
   declarations: [
     
