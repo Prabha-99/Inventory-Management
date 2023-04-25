@@ -12,7 +12,9 @@
 
 
         
-        <div class="container" id="print-section">
+        <div class="container" id="print-section" >
+            <div id="content" #content>
+        
             <div class="row">
              
                 <div class="col">
@@ -113,7 +115,6 @@
               <div class="row my-2 mx-1 justify-content-center">
 
 
-
                 <table class="table table-striped table-borderless">
                   <thead  style="background-color:#222222 ;" class="text-white">
                   <tr>
@@ -133,11 +134,8 @@
 
                     <td>{{row.id}}</td>
 
-                    <td ><select id="select_product"class="form-control"[(ngModel)]="row.product_name" name="name{{i}}"style="width:140px; height:32px;text-align:center;">
-                      <option id="Melamaine">Melamaine</option>
-                      <option id="H.Band">H-Band</option>
-                      <option id="M1">material 1</option>
-                      <option id="M2">material 2</option>
+                    <td ><select id="select_product"class="form-control" name="name{{i}}"style="width:140px; height:32px;text-align:center;">
+                        <option *ngFor="let name of productNames">{{ name }}</option>
                      </select></td>
 
                     <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
@@ -148,9 +146,7 @@
                   </tr>
                 </tbody>
                 </table>
-                
-                
-
+                  
             </div>
                 <hr>
 
@@ -175,7 +171,7 @@
                             <tr>
                                 <th>Subtotal</th>
                                 <td>Rs.</td>
-                                <td>{{calculateTotalAmount()}}</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Discount</th>
@@ -201,27 +197,28 @@
                         </table>
                     </div>
                 </div>
-              </div>  
-      
+              </div>
+            </div>  
+           
         </div>
+    
         <div class="Container">
+        </div>
+   
             <hr>
            <div style="text-align:center;"><button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm">Add Row</button></div> <br><br>
             
             <div class ="cols btn-group" >
             <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint>Export</button>
            <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button>
-
+           
+           <button (click)="saveToDatabase()" >Save PDF to Server</button>
+           
           
             </div> 
             <br>
             <br>
-         
-         
-            
-         
-           
-        </div>  
+   
          
         <br>
         <br>
