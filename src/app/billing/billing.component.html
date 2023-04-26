@@ -43,7 +43,7 @@
                                     </th>
                                     <td align="right">
                                         
-                                        <input type="date" class="form-control"name="current-date" >
+                                        <input type="date" class="form-control"name="current-date"[(ngModel)]="formData.st_date" >
                                         
                                     </td>
                                 </tr>
@@ -52,7 +52,7 @@
                                         Validity :
                                     </th>
                                     <td align="right">
-                                        <input type="date" class="form-control"name="validity-date">
+                                        <input type="date" class="form-control"name="validity-date"[(ngModel)]="formData.end_date">
                                     </td>
                                 </tr>
                                 <tr>
@@ -60,7 +60,7 @@
                                       Quotation No.:
                                     </th>
                                     <td>
-                                         <input type="text" class="form-control" name="qno" >
+                                         <input type="text" class="form-control" [(ngModel)]="formData.qu_no" >
                                     </td>
                                 </tr>
                            
@@ -78,7 +78,7 @@
                                         <td>
                                         <div class="input-group input-group-sm ">
                                             
-                                            <input type="text" class="form-control" placeholder="Customer Name"required >
+                                            <input type="text" class="form-control" placeholder="Customer Name" [(ngModel)]="formData.cu_name"required >
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                           </div>
                                         </td>
@@ -86,21 +86,21 @@
                                     <tr>
                                         <td>
                                             <div class="input-group input-group-sm ">
-                                          <input type="text" class="form-control" placeholder="Address" required>
+                                          <input type="text" class="form-control" placeholder="Address" [(ngModel)]="formData.cu_address" required>
                                         </div>
                                     </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="input-group input-group-sm">
-                                          <input type="text" class="form-control" placeholder="Telephone no." required>
+                                          <input type="text" class="form-control" placeholder="Telephone no."[(ngModel)]="formData.cu_tele" required>
                                         </div>
                                     </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="input-group input-group-sm ">
-                                          <input type="text" class="form-control" placeholder="Other" >
+                                          <input type="text" class="form-control" placeholder="Other"[(ngModel)]="formData.other" >
                                         </div>
                                     </td>
                                     </tr>
@@ -134,14 +134,14 @@
 
                     <td>{{row.id}}</td>
 
-                    <td ><select id="select_product"class="form-control" name="name{{i}}"style="width:140px; height:32px;text-align:center;">
+                    <td ><select id="select_product"class="form-control" name="name{{i}}"style="width:140px; height:32px;text-align:center;"[(ngModel)]="formData.material">
                         <option *ngFor="let name of productNames">{{ name }}</option>
                      </select></td>
 
-                    <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.product_price" name="unitprice{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="number" [(ngModel)]="row.discount" name="discount{{i}}" (input)="calAmount(row, i)" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:130px; height:32px;text-align:center;"class="form-control"></td>
+                    <td><input type="number" [(ngModel)]="row.qty" [(ngModel)]="formData.quantity" name="qty{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="text" [(ngModel)]="row.product_price"[(ngModel)]="formData.unit_price" name="unitprice{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="number" [(ngModel)]="row.discount" [(ngModel)]="formData.discount" name="discount{{i}}" (input)="calAmount(row, i)" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}"[(ngModel)]="formData.subamount" readOnly style="width:130px; height:32px;text-align:center;"class="form-control"></td>
                     <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-secondary btn-sm" >-</button></td>
                   </tr>
                 </tbody>
@@ -159,7 +159,9 @@
                                     <th>Special Notes</th>
                                 </tr>
                                 <tr>
-                                    <td>.............</td>
+                                    <td><textarea id="w3review" name="w3review" rows="2" cols="25"[(ngModel)]="formData.note" class="form-control">
+                                        
+                                        </textarea></td>
                                 </tr>
                             </table>
                     </div>
@@ -184,14 +186,15 @@
                                 <td>00.00</td>
                             </tr>
                             <tr>
-                                <th>VAT</th>
-                                <td>%</td>
-                                <td>00.0</td>
+                                <th>VAT   % </th>
+                                
+                                <td><input type="text"[(ngModel)]="formData.vat" style="width:100px; height:32px;text-align:center;"class="form-control"></td>
+                            
                             </tr>
                             <tr>
                                 <th>Total</th>
                                 <div class="mags"style="border:1px ">
-                                <td >Rs. {{calculateTotalAmount()}}  .00</td>
+                                <td ><input type="text"[(ngModel)]="formData.subamount" style="width:100px; height:32px;text-align:center;"class="form-control"></td>
                                 </div>
                             </tr>
                         </table>
@@ -212,7 +215,7 @@
             <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint>Export</button>
            <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button>
            
-           <button (click)="saveToDatabase()" >Save PDF to Server</button>
+           <button (click)="onSubmit()" >Save PDF to Server</button>
            
           
             </div> 
