@@ -64,7 +64,6 @@ export class BillingComponent implements OnInit{
 
   constructor(private productService: ProductService) { }
 
-
  
   productNames: string[] = [];
   ngOnInit() {
@@ -74,15 +73,36 @@ export class BillingComponent implements OnInit{
   }
 
 ///////////////////////////////////////////////////////
+formData = {
+  qu_no: '',
+  st_date: '',
+  end_date: '',
+  cu_name: '',
+  cu_address: '',
+  cu_tele: '',
+  other: '',
+  material: '',
+  quantity:null,
+  unit_price:null,
+  discount:null,
+  subamount:null,
+  total_amount:null,
+  note: '',
+  vat:null,
+};
 
-  @ViewChild('content')
-  content!: ElementRef;
-
-saveToDatabase() {
-  const data = this.content.nativeElement;
-  this.productService.generatePdf(data);
+onSubmit() {
+  this.productService.saveBill(this.formData).subscribe({
+    next: (data: any) => {
+      console.log(data);
+      alert('Data saved successfully!');
+    },
+    error: (error: string) => {
+      console.error(error);
+      alert('Error occurred: ' + error);
+    }
+  });
 }
-
 }
  
 
@@ -91,8 +111,6 @@ export interface Product {
   name: string;
   price: number;
   brand:string;
-
-
 
 }
 
