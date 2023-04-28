@@ -51,14 +51,14 @@ export class BillingComponent implements OnInit{
   }
 
   calculateTotalAmount() {
-    let total!: number;
-    this.rows.forEach((row, index) => {
-      this.calAmount(row, index);
-       total += row.amount;
-      
-    });
-   return total;
+    let total = 0;
+  for (let i = 0; i < this.rows.length; i++) {
+    total += this.rows[i].amount;
   }
+  return total;
+  }
+
+  
 
 
 

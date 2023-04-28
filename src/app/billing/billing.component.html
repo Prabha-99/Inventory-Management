@@ -138,14 +138,18 @@
                         <option *ngFor="let name of productNames">{{ name }}</option>
                      </select></td>
 
-                    <td><input type="number" [(ngModel)]="row.qty" [(ngModel)]="formData.quantity" name="qty{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.product_price"[(ngModel)]="formData.unit_price" name="unitprice{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="number" [(ngModel)]="row.discount" [(ngModel)]="formData.discount" name="discount{{i}}" (input)="calAmount(row, i)" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}"[(ngModel)]="formData.subamount" readOnly style="width:130px; height:32px;text-align:center;"class="form-control"></td>
+                    <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="text" [(ngModel)]="row.product_price" name="unitprice{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="number" [(ngModel)]="row.discount"  name="discount{{i}}" (input)="calAmount(row, i)" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:130px; height:32px;text-align:center;"class="form-control"></td>
                     <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-secondary btn-sm" >-</button></td>
                   </tr>
                 </tbody>
                 </table>
+
+
+                
+                <!-- [(ngModel)]="formData.quantity"   [(ngModel)]="formData.unit_price" [(ngModel)]="formData.discount" [(ngModel)]="formData.subamount" -->
                   
             </div>
                 <hr>
@@ -172,7 +176,7 @@
                         <table class="table">
                             <tr>
                                 <th>Subtotal</th>
-                                <td>Rs.</td>
+                                <td>Rs. </td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -194,7 +198,7 @@
                             <tr>
                                 <th>Total</th>
                                 <div class="mags"style="border:1px ">
-                                <td ><input type="text"[(ngModel)]="formData.subamount" style="width:100px; height:32px;text-align:center;"class="form-control"></td>
+                                <td >{{calculateTotalAmount()}}</td>
                                 </div>
                             </tr>
                         </table>
