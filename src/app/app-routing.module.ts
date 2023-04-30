@@ -7,9 +7,8 @@ import { ReportsComponent } from './reports/reports.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BillingComponent } from './billing/billing.component';
 import { BillingSendComponent } from './billing-send/billing-send.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
+import { BillingViewComponent } from './billing-view/billing-view.component';
+
 
 
 
@@ -21,6 +20,7 @@ const routes: Routes = [
   
   {path:"billing",component:BillingComponent},
   {path:"billingsend",component:BillingSendComponent},
+  {path:"billingview",component:BillingViewComponent},
 
   {path:"reports",component:ReportsComponent},
   {path:"orderreports",component:OrderReportsComponent}

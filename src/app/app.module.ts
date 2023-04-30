@@ -16,6 +16,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportsComponent } from './reports/reports.component';
 import { OrderReportsComponent } from './order-reports/order-reports.component';
+import { BillingViewComponent } from './billing-view/billing-view.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { OrderReportsComponent } from './order-reports/order-reports.component';
     BillingSendComponent,
     ReportsComponent,
     OrderReportsComponent,
+    BillingViewComponent,
 
   ],
   imports: [
