@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from './billing.component.service';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 
 @Component({
@@ -22,6 +22,9 @@ export class BillingComponent implements OnInit{
     window.open('/billingsend', '_blank','width=800,height=500');
   }
 
+  Billingview() {
+    window.open('/billingview', '_blank','width=900,height=800');
+  }
 
   rowCount=1;
   rows = [{id:1, product_name: '', qty: null, product_price:null, discount: null, amount: 0}];
@@ -71,6 +74,26 @@ export class BillingComponent implements OnInit{
       this.productNames = names;
     });
   }
+
+
+  
+ // @ViewChild('pdfContent') pdfContentRef!: ElementRef;
+
+  exportToPDF() {
+    const printSection = document.getElementById('print-section')!;
+    const formData = new FormData();
+    formData.append('print-section', new Blob([printSection.outerHTML], { type: 'text/html' }), 'print-section.html');
+  
+    this.productService.uploadFile(formData).subscribe(response => {
+      console.log(response);
+      alert("Successfully Saved!!");
+    });
+  }
+
+
+
+
+
 
 ///////////////////////////////////////////////////////
 formData = {

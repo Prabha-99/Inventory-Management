@@ -13,7 +13,7 @@
 
         
         <div class="container" id="print-section" >
-            <div id="content" #content>
+            <div id="pdf-content" #pdfContent>
         
             <div class="row">
              
@@ -134,7 +134,7 @@
 
                     <td>{{row.id}}</td>
 
-                    <td ><select id="select_product"class="form-control" name="name{{i}}"style="width:140px; height:32px;text-align:center;"[(ngModel)]="formData.material">
+                    <td ><select id="select_product"class="form-control" name="name{{i}}"style="width:140px; height:32px;text-align:center;">
                         <option *ngFor="let name of productNames">{{ name }}</option>
                      </select></td>
 
@@ -149,7 +149,7 @@
 
 
                 
-                <!-- [(ngModel)]="formData.quantity"   [(ngModel)]="formData.unit_price" [(ngModel)]="formData.discount" [(ngModel)]="formData.subamount" -->
+                <!-- [(ngModel)]="formData.quantity"   [(ngModel)]="formData.unit_price" [(ngModel)]="formData.discount" [(ngModel)]="formData.subamount" [(ngModel)]="formData.material" -->
                   
             </div>
                 <hr>
@@ -174,14 +174,14 @@
                     </div>
                     <div class="col">
                         <table class="table">
-                            <tr>
+                            <tr >
                                 <th>Subtotal</th>
                                 <td>Rs. </td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <th>Discount</th>
-                                <td>%</td>
+                                <td></td>
                                 <td>00.00</td>
                             </tr>
                             <tr>
@@ -216,10 +216,11 @@
            <div style="text-align:center;"><button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm">Add Row</button></div> <br><br>
             
             <div class ="cols btn-group" >
-            <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint>Export</button>
+            <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint >Export</button>
            <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button>
-           
-           <button (click)="onSubmit()" >Save PDF to Server</button>
+           <button class="btn btn-primary margin-left"id="view" (click)="Billingview()">View</button>
+           <button (click)="onSubmit()" >Save Details</button>
+           <button (click)="exportToPDF()">Save PDF</button> 
            
           
             </div> 

@@ -12,7 +12,7 @@ export class ProductService {
  
 
   getProductNames() {
-    return this.http.get<string[]>('http://localhost:8080/api/bill/getnames');
+    return this.http.get<string[]>('http://localhost:8080/api/bill/getnames'); //get material name
   }
 
   constructor(private http: HttpClient) { }
@@ -20,10 +20,16 @@ export class ProductService {
 
 
   saveBill(formData: any): Observable<any> {
-    const url = 'https://localhost:8080/api/bill/save';
+    const url = 'https://localhost:8080/api/bill/save'; //bill details save
     return this.http.post(url, formData);
   }
 
+
+  
+  uploadFile(formData: FormData) {
+    return this.http.post('http://localhost:8080/api/bill/pdf', formData);
+  }
+}
   
 
-}
+
