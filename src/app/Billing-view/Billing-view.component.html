@@ -5,10 +5,24 @@
     <body>
          
         <h2>Bills</h2>
-        <!-- <div *ngFor="let url of pdfUrls">
-            <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(url)" width="100%" height="600px"></iframe>
-          </div> -->
-
+      
+        <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>View</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><!-- <tr *ngFor="let pdf of pdfs"> -->
+                <!-- <td>{{ pdf.id }}</td>
+                <td>{{ pdf.name }}</td>
+                <td><a href (click)="viewPdf(pdf.id)">View</a></td> -->
+              </tr>
+            </tbody>
+          </table>
+          <!-- <iframe *ngIf="pdfSrc" [src]="pdfSrc" width="100%" height="500"></iframe>  -->
 
           
 
