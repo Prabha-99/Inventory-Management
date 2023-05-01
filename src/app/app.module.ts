@@ -16,6 +16,11 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportsComponent } from './reports/reports.component';
 import { OrderReportsComponent } from './order-reports/order-reports.component';
+import { InventoryAdNavComponent } from './inventory-ad-nav/inventory-ad-nav.component';
+import { InventoryAdSideBarComponent } from './inventory-ad-side-bar/inventory-ad-side-bar.component';
+import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
+import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
+import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad-profile.component';
 
 
 @NgModule({
@@ -29,7 +34,12 @@ import { OrderReportsComponent } from './order-reports/order-reports.component';
     BillingSendComponent,
     ReportsComponent,
     OrderReportsComponent,
-
+    InventoryAdNavComponent,
+    InventoryAdSideBarComponent,
+    InventoryAdDashComponent,
+    InventoryAdAddproductComponent,
+    InventoryAdProfileComponent,
+    
   ],
   imports: [
     BrowserModule,

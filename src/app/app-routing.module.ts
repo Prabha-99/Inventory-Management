@@ -10,6 +10,9 @@ import { BillingSendComponent } from './billing-send/billing-send.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
+import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
+import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad-profile.component';
 
 
 
@@ -23,7 +26,11 @@ const routes: Routes = [
   {path:"billingsend",component:BillingSendComponent},
 
   {path:"reports",component:ReportsComponent},
-  {path:"orderreports",component:OrderReportsComponent}
+  {path:"orderreports",component:OrderReportsComponent},
+
+  {path:"inventory-ad-dash",component: InventoryAdDashComponent},
+  {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent},
+  {path:"inventory-ad-profile",component:InventoryAdProfileComponent}
 
 ];
 
