@@ -10,6 +10,9 @@ import { BillingSendComponent } from './billing-send/billing-send.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
+import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
+import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 
 
 
@@ -23,7 +26,11 @@ const routes: Routes = [
   {path:"billingsend",component:BillingSendComponent},
 
   {path:"reports",component:ReportsComponent},
-  {path:"orderreports",component:OrderReportsComponent}
+  {path:"orderreports",component:OrderReportsComponent},
+
+  {path:"stock-manager-dash",component:StockManagerDashComponent},
+  {path:"stock-manager-profile",component:StockManagerProfileComponent},
+  {path:"stock-manager-product",component:StockManagerProductComponent}
 
 ];
 

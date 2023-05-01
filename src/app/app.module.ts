@@ -16,6 +16,11 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportsComponent } from './reports/reports.component';
 import { OrderReportsComponent } from './order-reports/order-reports.component';
+import { StockManagerNavComponent } from './stock-manager-nav/stock-manager-nav.component';
+import { StockManagerSideComponent } from './stock-manager-side/stock-manager-side.component';
+import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
+import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
+import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 
 
 @NgModule({
@@ -29,6 +34,11 @@ import { OrderReportsComponent } from './order-reports/order-reports.component';
     BillingSendComponent,
     ReportsComponent,
     OrderReportsComponent,
+    StockManagerNavComponent,
+    StockManagerSideComponent,
+    StockManagerDashComponent,
+    StockManagerProfileComponent,
+    StockManagerProductComponent
 
   ],
   imports: [
