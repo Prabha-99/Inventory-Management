@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from './billing.component.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-
+import * as html2pdf from 'html2pdf.js';
 
 @Component({
   
@@ -81,13 +81,43 @@ export class BillingComponent implements OnInit{
 
   exportToPDF() {
     const printSection = document.getElementById('print-section')!;
-    const formData = new FormData();
-    formData.append('print-section', new Blob([printSection.outerHTML], { type: 'text/html' }), 'print-section.html');
-  
-    this.productService.uploadFile(formData).subscribe(response => {
-      console.log(response);
-      alert("Successfully Saved!!");
+
+  // Create a new jsPDF instance
+  const doc = new jsPDF();
+
+  html2canvas(printSection).then((canvas) => {
+    // Add the canvas to the jsPDF document
+
+    const imgData = canvas.toDataURL('image/jpeg', 10); // Decrease the quality of the image
+    doc.addImage(imgData, 'JPEG', 10, 10, 180, 240);
+
+    // Save the jsPDF document
+    const jsPDFFile = doc.output('blob');
+
+    // Convert the HTML element to a PDF using html2pdf library
+    const options = {
+      margin: 1,
+      filename: 'html2pdf-document.pdf',
+      image: { type: 'jpeg', quality: 10 }, // Decrease the quality of the image
+      html2canvas: { scale:10 },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(printSection).output('blob').then((html2pdfFile) => {
+
+      // Create a new FormData instance and append the PDF files
+      const formData = new FormData();
+      formData.append('jsPDF-file', jsPDFFile, 'jsPDF-document.pdf');
+      formData.append('html2pdf-file', html2pdfFile, 'html2pdf-document.pdf');
+
+      // Send the files to the productService
+      this.productService.uploadFile(formData).subscribe(response => {
+        console.log(response);
+        alert("Successfully Saved!!");
+      });
     });
+  });
+    
   }
 
 
@@ -95,7 +125,8 @@ export class BillingComponent implements OnInit{
 
 
 
-///////////////////////////////////////////////////////
+//////////////////////save bill details
+
 formData = {
   qu_no: '',
   st_date: '',
