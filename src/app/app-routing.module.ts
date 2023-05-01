@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
 import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
 import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad-profile.component';
+import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
+import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
+import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 
 
 
@@ -30,7 +33,11 @@ const routes: Routes = [
 
   {path:"inventory-ad-dash",component: InventoryAdDashComponent},
   {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent},
-  {path:"inventory-ad-profile",component:InventoryAdProfileComponent}
+  {path:"inventory-ad-profile",component:InventoryAdProfileComponent},
+
+  {path:"stock-manager-dash",component:StockManagerDashComponent},
+  {path:"stock-manager-profile",component:StockManagerProfileComponent},
+  {path:"stock-manager-product",component:StockManagerProductComponent}
 
 ];
 
