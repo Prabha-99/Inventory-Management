@@ -13,24 +13,23 @@ import { AppComponent } from './app.component';
 import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
 import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
 import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad-profile.component';
+import { LoginComponent } from './login/login.component';
 
 
 
 const routes: Routes = [
-  {path:"",redirectTo:"/home",pathMatch:"full"},
+  {path:"",redirectTo:"/login",pathMatch:"full"},
   {path:"home",component:HomeComponent},
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
-  
   {path:"billing",component:BillingComponent},
   {path:"billingsend",component:BillingSendComponent},
-
   {path:"reports",component:ReportsComponent},
   {path:"orderreports",component:OrderReportsComponent},
-
   {path:"inventory-ad-dash",component: InventoryAdDashComponent},
   {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent},
-  {path:"inventory-ad-profile",component:InventoryAdProfileComponent}
+  {path:"inventory-ad-profile",component:InventoryAdProfileComponent},
+  {path:"login",component:LoginComponent}
 
 ];
 
