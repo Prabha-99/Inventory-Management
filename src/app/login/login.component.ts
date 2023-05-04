@@ -18,11 +18,11 @@ export class LoginComponent {
     this.authService.login(this.username, this.password)
       .subscribe(
         response => {
-          this.router.navigate(['/welcome']);
+          this.router.navigate(['/home']);
         },
         error => {
           console.log(error);
-          // console.log("fuck you");
+          console.log("fuck you");
         }
       );
   }

@@ -1,5 +1,3 @@
-<p>login works!</p>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +7,27 @@
   <title>Document</title>
 </head>
 <body>
-  <form>
-    <label>
-      Username:
-      <!-- <input type="text" [(ngModel)]="username" name="username"> -->
-    </label>
-    <label>
-      Password:
-      <!-- <input type="password" [(ngModel)]="password" name="password"> -->
-    </label>
-    <!-- <button type="submit" (click)="login()">Login</button> -->
-</form>
+
+    <div class="login-form-container">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control short-input" [(ngModel)]="username" name="username" >
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control short-input" [(ngModel)]="password" name="password">
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+        </form>
+    </div>
+      
+      
 </body>
 </html>
+
+
+
+
 
   

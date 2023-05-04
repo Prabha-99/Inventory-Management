@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, { username, password })
+    return this.http.post<any>(`${this.apiUrl}`, { username, password })
       .pipe(
         map(response => {
           // login successful if there's a jwt token in the response
