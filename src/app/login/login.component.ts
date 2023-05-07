@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { Token } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -8,24 +9,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  email = '';
+  password='';
+  error='';
 
-  username: String = "";
-  password: String = "";
+  constructor(private authService: AuthService, private router: Router) { }
 
-  constructor(private authService: AuthService, private router: Router) {}
-
-  login() {
-    this.authService.login(this.username, this.password)
+  onSubmit() {
+    this.authService.login(this.email, this.password)
       .subscribe(
-        response => {
+        (response) => {
+          console.log('Token:', response.token);
+          localStorage.setItem('token', response['token']);
           this.router.navigate(['/home']);
         },
-        error => {
-          console.log(error);
-          console.log('username:', this.username);
-          console.log('password:', this.password);
+        (error) => {
+          this.error = error.error.message;
         }
       );
   }
 
+  onLogout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }
