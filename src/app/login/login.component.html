@@ -9,16 +9,16 @@
 <body>
 
     <div class="login-form-container">
-        <form>
+        <form (ngSubmit)="onSubmit()">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control short-input" [(ngModel)]="username" name="username" >
+            <input type="email" class="form-control short-input" [(ngModel)]="email" required name="username" >
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control short-input" [(ngModel)]="password" name="password">
+            <input type="password" class="form-control short-input" [(ngModel)]="password" required name="password">
           </div>
-          <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+          <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
       
