@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  username: string = "";
-  password: string = "";
+  username: String = "";
+  password: String = "";
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -22,7 +22,8 @@ export class LoginComponent {
         },
         error => {
           console.log(error);
-          console.log("fuck you");
+          console.log('username:', this.username);
+          console.log('password:', this.password);
         }
       );
   }
