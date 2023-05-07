@@ -49,6 +49,7 @@ import { StockManagerProductComponent } from './stock-manager-product/stock-mana
     StockManagerDashComponent,
     StockManagerProfileComponent,
     StockManagerProductComponent
+
     
   ],
   imports: [

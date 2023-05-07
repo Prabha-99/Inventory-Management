@@ -19,8 +19,8 @@ import { StockManagerProductComponent } from './stock-manager-product/stock-mana
 
 
 
+
 const routes: Routes = [
-  
   {path:"home",component:HomeComponent},
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
@@ -34,6 +34,7 @@ const routes: Routes = [
   {path:"stock-manager-dash",component:StockManagerDashComponent},
   {path:"stock-manager-profile",component:StockManagerProfileComponent},
   {path:"stock-manager-product",component:StockManagerProductComponent}
+
 
 ];
 
