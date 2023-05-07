@@ -16,11 +16,13 @@ import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad
 import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
 import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
 import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
+import { LoginComponent } from './login/login.component';
 
 
 
 
 const routes: Routes = [
+  {path:"",component:LoginComponent},
   {path:"home",component:HomeComponent},
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
