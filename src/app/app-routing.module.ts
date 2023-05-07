@@ -13,12 +13,11 @@ import { AppComponent } from './app.component';
 import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
 import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
 import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad-profile.component';
-import { LoginComponent } from './login/login.component';
+
 
 
 
 const routes: Routes = [
-  {path:"",component:LoginComponent},
   {path:"home",component:HomeComponent},
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
@@ -29,7 +28,7 @@ const routes: Routes = [
   {path:"inventory-ad-dash",component: InventoryAdDashComponent},
   {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent},
   {path:"inventory-ad-profile",component:InventoryAdProfileComponent},
-  {path:"login",component:LoginComponent}
+  
 
 ];
 

@@ -21,7 +21,6 @@ import { InventoryAdSideBarComponent } from './inventory-ad-side-bar/inventory-a
 import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
 import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
 import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad-profile.component';
-import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -40,7 +39,7 @@ import { LoginComponent } from './login/login.component';
     InventoryAdDashComponent,
     InventoryAdAddproductComponent,
     InventoryAdProfileComponent,
-    LoginComponent,
+   
     
   ],
   imports: [
