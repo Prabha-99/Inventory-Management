@@ -1,0 +1,61 @@
+<!--Stock manager Sidebar-->
+<div class="offcanvas offcanvas-start sidebar-nav bg-dark"  tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+      <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+    </div>
+    <div class="offcanvas-body p-0">
+  
+      <div class="navbar-dark bg-dark">
+        <ul class="navbar-nav">
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3">
+              
+            </div>
+          </li>
+
+          <li>
+            <a routerLink="/stock-manager-dash" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
+              <span class="me-5">
+              </span>
+              <span><h4>Dashboard</h4></span>  
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/stock-manager-profile" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
+              <span class="me-5">
+              </span>
+              <span><h4> Profile</h4></span>  
+            </a>
+          </li>
+   
+          <li>
+            <a routerLink="/stock-manager-product" class="nav-link px-3 active " data-bs-target="#components-nav1" data-bs-toggle="collapse" href="#">
+              <span class="me-5">
+              </span>
+              <span><h4> Manage Products</h4></span> 
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link px-3 active " data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
+              <span class="me-5">
+              </span>
+              <span><h4> Order</h4></span> 
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/sotck-manager-bill" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
+              <span class="me-5">
+              </span>
+              <span><h4> Bill</h4></span>  
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Off canvas Ends -->
+  
