@@ -20,21 +20,17 @@ import { StockManagerProductComponent } from './stock-manager-product/stock-mana
 
 
 const routes: Routes = [
-  // {path:"",redirectTo:"/home",pathMatch:"full"},
+  
   {path:"home",component:HomeComponent},
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
-  
   {path:"billing",component:BillingComponent},
   {path:"billingsend",component:BillingSendComponent},
-
   {path:"reports",component:ReportsComponent},
   {path:"orderreports",component:OrderReportsComponent},
-
   {path:"inventory-ad-dash",component: InventoryAdDashComponent},
   {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent},
   {path:"inventory-ad-profile",component:InventoryAdProfileComponent},
-
   {path:"stock-manager-dash",component:StockManagerDashComponent},
   {path:"stock-manager-profile",component:StockManagerProfileComponent},
   {path:"stock-manager-product",component:StockManagerProductComponent}
