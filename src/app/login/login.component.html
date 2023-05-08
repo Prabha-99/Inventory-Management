@@ -5,27 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  
+    
+  
 </head>
 <body>
 
-    <div class="login-form-container">
+  <div class="login-form-container">
+    <div>
       <h1>Login</h1>
-        <form (ngSubmit)="onSubmit()">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control short-input" [(ngModel)]="email" required name="username" >
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control short-input" [(ngModel)]="password" required name="password">
-          </div>
-          <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" class="form-control short-input" [(ngModel)]="email" required name="username" >
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control short-input" [(ngModel)]="password" required name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
     </div>
-      
-      
+    <div>
+      <img src="assets/logo1.png" alt="Company Image" class="company-image">
+    </div>
+  </div>
+  
 </body>
-</html>
+</html>l>
+
 
 
 
