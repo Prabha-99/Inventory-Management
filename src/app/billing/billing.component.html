@@ -11,10 +11,8 @@
         <!--Description table-->
 
 
-        
         <div class="container" id="print-section" >
             <div id="pdf-content" #pdfContent>
-              
         
             <div class="row">
              
@@ -32,7 +30,7 @@
                 
                 </div>
                 <div class="col">
-
+                        
                             <!--table 1-->
 
                         <h2 align="center"> <b>Quotation</b></h2>
@@ -150,7 +148,7 @@
 
 
                 
-                <!-- [(ngModel)]="formData.quantity"   [(ngModel)]="formData.unit_price" [(ngModel)]="formData.discount" [(ngModel)]="formData.subamount" [(ngModel)]="formData.material" -->
+                
                   
             </div>
                 <hr>
@@ -164,21 +162,22 @@
                                     <th>Special Notes</th>
                                 </tr>
                                 <tr>
-                                    <td><textarea id="w3review" name="w3review" rows="2" cols="25"[(ngModel)]="formData.note" class="form-control">
+                                    <td><textarea id="are" name="are" rows="2" cols="60" [(ngModel)]="formData.note" class="form-control">
                                         
                                         </textarea></td>
                                 </tr>
                             </table>
                     </div>
                     <div class="col">
-
+                            
                     </div>
                     <div class="col">
+                       
                         <table class="table">
                             <tr >
                                 <th>Subtotal</th>
-                                <td>Rs. </td>
-                                <td></td>
+                                <td> Rs.</td>
+                                <td><input type="text"[(ngModel)]="formData.subamount" id="subamount"  style="width:130px; height:32px;text-align:center;border: none;"value="{{calculateTotalAmount()}}"></td>
                             </tr>
                             <tr>
                                 <th>Discount</th>
@@ -193,16 +192,21 @@
                             <tr>
                                 <th>VAT   % </th>
                                 
-                                <td><input type="text"[(ngModel)]="formData.vat" style="width:100px; height:32px;text-align:center;"class="form-control"></td>
+                                <td><div class="mags"style="border:1px ">
+                                    <td ><input type="text" style="width:130px; height:32px;text-align:center; border: none;"></td>
+                                    </div></td>
                             
                             </tr>
                             <tr>
                                 <th>Total</th>
                                 <div class="mags"style="border:1px ">
-                                <td >{{calculateTotalAmount()}}</td>
+                                    <td>Rs.</td>
+                                <td ><input type="text" [(ngModel)]="formData.amount" id="amount" readonly style="width:130px; height:32px;text-align:center;"></td>
                                 </div>
                             </tr>
-                        </table>
+                        
+                    </table>
+               
                     </div>
                 </div>
               </div>

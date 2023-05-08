@@ -7,8 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class ProductService {
-  [x: string]: any;
- 
+
  
 
   getProductNames() {
@@ -17,17 +16,17 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-
+  private apiUrl = 'http://localhost:8080/api/billdata';
 
   saveBill(formData: any): Observable<any> {
-    const url = 'https://localhost:8080/api/bill/save'; //bill details save
+    const url = `${this.apiUrl}/save`;
     return this.http.post(url, formData);
   }
 
 
   
-  uploadFile(formData: FormData) {
-    return this.http.post('http://localhost:8080/api/bill/pdf', formData);
+  uploadFile(fData: FormData) {
+    return this.http.post('http://localhost:8080/api/bill/pdf', fData);
   }
 }
   

@@ -3,6 +3,7 @@ import { ProductService } from './billing.component.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import * as html2pdf from 'html2pdf.js';
+import {  HttpHeaders } from '@angular/common/http';
 
 @Component({
   
@@ -15,7 +16,7 @@ import * as html2pdf from 'html2pdf.js';
 
 
 export class BillingComponent implements OnInit{
-[x: string]: any;
+
   
 
   Billingsend() {
@@ -61,9 +62,6 @@ export class BillingComponent implements OnInit{
   return total;
   }
 
-  
-
-
 
   constructor(private productService: ProductService) { }
 
@@ -76,8 +74,6 @@ export class BillingComponent implements OnInit{
   }
 
 
-  
- // @ViewChild('pdfContent') pdfContentRef!: ElementRef;
 
   exportToPDF() {
     const printSection = document.getElementById('print-section')!;
@@ -106,23 +102,18 @@ export class BillingComponent implements OnInit{
     html2pdf().set(options).from(printSection).output('blob').then((html2pdfFile) => {
 
       // Create a new FormData instance and append the PDF files
-      const formData = new FormData();
-      formData.append('jsPDF-file', jsPDFFile, 'jsPDF-document.pdf');
-      formData.append('html2pdf-file', html2pdfFile, 'html2pdf-document.pdf');
+      const fData = new FormData();
+      fData.append('jsPDF-file', jsPDFFile, 'jsPDF-document.pdf');
+      fData.append('html2pdf-file', html2pdfFile, 'html2pdf-document.pdf');
 
       // Send the files to the productService
-      this.productService.uploadFile(formData).subscribe(response => {
+      this.productService.uploadFile(fData).subscribe(response => {
         console.log(response);
         alert("Successfully Saved!!");
       });
     });
-  });
-    
+  }); 
   }
-
-
-
-
 
 
 //////////////////////save bill details
@@ -135,30 +126,43 @@ formData = {
   cu_address: '',
   cu_tele: '',
   other: '',
-  material: '',
-  quantity:null,
-  unit_price:null,
-  discount:null,
   subamount:null,
-  total_amount:null,
-  note: '',
-  vat:null,
+  amount:null,
+  note:'',
+
 };
 
 onSubmit() {
+  if (!this.isValidFormData()) {
+    alert('Please fill  required fields.');
+    return;
+  }
+  
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
       console.log(data);
       alert('Data saved successfully!');
     },
-    error: (error: string) => {
+    error: (error: any) => {
       console.error(error);
-      alert('Error occurred: ' + error);
+      
+      let errorMessage = 'An error occurred while saving the data.';
+      if (error.status === 400) {
+        errorMessage = error.error.message;
+      } else if (error.status === 500) {
+        errorMessage = 'An internal server error occurred.';
+      }
+      
+      alert(errorMessage);
     }
   });
 }
+
+isValidFormData(): boolean {
+  return !!this.formData.qu_no && !!this.formData.st_date && !!this.formData.end_date && !!this.formData.cu_name;
 }
- 
+}
+
 
 export interface Product {
   id: number;
