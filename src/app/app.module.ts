@@ -16,7 +16,18 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportsComponent } from './reports/reports.component';
 import { OrderReportsComponent } from './order-reports/order-reports.component';
-import { BillingViewComponent } from './billing-view/billing-view.component';
+import { InventoryAdNavComponent } from './inventory-ad-nav/inventory-ad-nav.component';
+import { InventoryAdSideBarComponent } from './inventory-ad-side-bar/inventory-ad-side-bar.component';
+import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
+import { InventoryAdAddproductComponent } from './inventory-ad-addproduct/inventory-ad-addproduct.component';
+import { InventoryAdProfileComponent } from './inventory-ad-profile/inventory-ad-profile.component';
+import { StockManagerNavComponent } from './stock-manager-nav/stock-manager-nav.component';
+import { StockManagerSideComponent } from './stock-manager-side/stock-manager-side.component';
+import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-dash.component';
+import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
+import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +40,19 @@ import { BillingViewComponent } from './billing-view/billing-view.component';
     BillingSendComponent,
     ReportsComponent,
     OrderReportsComponent,
-    BillingViewComponent,
+    InventoryAdNavComponent,
+    InventoryAdSideBarComponent,
+    InventoryAdDashComponent,
+    InventoryAdAddproductComponent,
+    InventoryAdProfileComponent,
+    StockManagerNavComponent,
+    StockManagerSideComponent,
+    StockManagerDashComponent,
+    StockManagerProfileComponent,
+    StockManagerProductComponent,
+    LoginComponent
 
+    
   ],
   imports: [
     BrowserModule,

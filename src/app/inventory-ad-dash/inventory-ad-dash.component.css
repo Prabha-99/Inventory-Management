@@ -1,0 +1,10 @@
+td {
+    padding: 0 25px;
+  }
+
+  .btn-primary {
+    padding: 5px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    width:80%;
+}
