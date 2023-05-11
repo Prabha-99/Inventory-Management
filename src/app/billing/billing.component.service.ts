@@ -18,7 +18,7 @@ export class ProductService {
 
   private apiUrl = 'http://localhost:8080/api/billdata';
 
-  saveBill(formData: any): Observable<any> {
+  saveBill(formData: any) {
     const url = `${this.apiUrl}/save`;
     return this.http.post(url, formData);
   }

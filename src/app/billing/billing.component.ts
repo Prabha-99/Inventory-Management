@@ -3,7 +3,6 @@ import { ProductService } from './billing.component.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import * as html2pdf from 'html2pdf.js';
-import {  HttpHeaders } from '@angular/common/http';
 
 @Component({
   
@@ -17,14 +16,13 @@ import {  HttpHeaders } from '@angular/common/http';
 
 export class BillingComponent implements OnInit{
 
-  
 
   Billingsend() {
     window.open('/billingsend', '_blank','width=800,height=500');
   }
 
   Billingview() {
-    window.open('billingview', '_blank','width=800,height=500');
+    window.open('/billingview', '_blank','width=800,height=500');
   }
 
   rowCount=1;
@@ -126,11 +124,11 @@ formData = {
   cu_address: '',
   cu_tele: '',
   other: '',
-  subamount:null,
-  amount:null,
+  total_amount:null,
   note:'',
 
 };
+
 
 onSubmit() {
   if (!this.isValidFormData()) {

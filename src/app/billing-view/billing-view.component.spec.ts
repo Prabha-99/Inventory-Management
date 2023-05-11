@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { BillingViewComponent } from './billing-view.component';
+import { BillingViewComponent } from './Billing-view.component';
 
 describe('BillingViewComponent', () => {
   let component: BillingViewComponent;

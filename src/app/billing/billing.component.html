@@ -176,8 +176,7 @@
                         <table class="table">
                             <tr >
                                 <th>Subtotal</th>
-                                <td> Rs.</td>
-                                <td><input type="text"[(ngModel)]="formData.subamount" id="subamount"  style="width:130px; height:32px;text-align:center;border: none;"value="{{calculateTotalAmount()}}"></td>
+                                <td><input type="text" readonly style="width:130px; height:30px;text-align:center;border: none;"value="Rs.{{calculateTotalAmount()}}"></td>
                             </tr>
                             <tr>
                                 <th>Discount</th>
@@ -190,7 +189,7 @@
                                 <td>00.00</td>
                             </tr>
                             <tr>
-                                <th>VAT   % </th>
+                                <th>VAT % </th>
                                 
                                 <td><div class="mags"style="border:1px ">
                                     <td ><input type="text" style="width:130px; height:32px;text-align:center; border: none;"></td>
@@ -198,13 +197,13 @@
                             
                             </tr>
                             <tr>
-                                <th>Total</th>
+                                <th>Total</th>     
                                 <div class="mags"style="border:1px ">
                                     <td>Rs.</td>
-                                <td ><input type="text" [(ngModel)]="formData.amount" id="amount" readonly style="width:130px; height:32px;text-align:center;"></td>
+                                <td ><input type="number" [(ngModel)]="formData.total_amount"  id="total_amount"  style="width:100px; height:30px;text-align:center;"value="{{calculateTotalAmount()}}" required step="0.00"></td>
+                                <td>.00</td>
                                 </div>
                             </tr>
-                        
                     </table>
                
                     </div>

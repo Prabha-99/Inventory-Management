@@ -14,12 +14,24 @@ export class BillingViewComponent {
 
   constructor(private http: HttpClient) { }
 
+  data!: any[];
+  
+  items!: any[];
+
   ngOnInit() {
+    this.getAllDetails();
+
     this.http.get<any[]>('http://localhost:8080/api/bill/view').subscribe(
       data => this.pdfs = data,
       error => console.log(error)
     );
+
+    this.http.get<any[]>('/api/items').subscribe((data) => {
+      this.items = data;
+    });
   }
+
+  
 
   getPDFContent(id:any) {
     this.http.get('http://localhost:8080/api/bill/view' + id, { responseType: 'arraybuffer' }).subscribe(
@@ -31,5 +43,16 @@ export class BillingViewComponent {
       error => console.log(error)
     );
   }
+
+  getAllDetails() {
+    this.http.get<any[]>('/api/view').subscribe(data => {
+      this.data = data;
+    });
   }
+
+
+
+
+  }
+
 
