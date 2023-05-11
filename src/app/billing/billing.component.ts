@@ -22,7 +22,7 @@ export class BillingComponent implements OnInit{
   }
 
   Billingview() {
-    window.open('/billingview', '_blank','width=800,height=500');
+    window.open('/billingview', '_blank','width=1380,height=800');
   }
 
   rowCount=1;

@@ -1,58 +1,58 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Observable } from 'rxjs/internal/Observable';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { BillService } from './billing-view.component.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-billing-view',
   templateUrl: './billing-view.component.html',
-  styleUrls: ['./billing-view.component.css']
+  styleUrls: ['./billing-view.component.css'],
+  template: ``
+ 
 })
-export class BillingViewComponent {
 
-  pdfs!: any[];
+export class BillingViewComponent implements OnInit{
 
-  constructor(private http: HttpClient) { }
+  constructor(private billService: BillService) { }
 
-  data!: any[];
-  
-  items!: any[];
+  pdfList!: any[];
+  bills: any[] = [];
+
 
   ngOnInit() {
-    this.getAllDetails();
-
-    this.http.get<any[]>('http://localhost:8080/api/bill/view').subscribe(
-      data => this.pdfs = data,
-      error => console.log(error)
-    );
-
-    this.http.get<any[]>('/api/items').subscribe((data) => {
-      this.items = data;
+    this.billService.getAllBills().subscribe(bill => {
+      this.bills = bill;
     });
+
+
+    // this.getAllPDFs();
+   
   }
+
+  onDelete(id: number) {
+    if (confirm("Are you sure you want to delete this bill?")) {
+      this.billService.deleteBill(id).subscribe(() => {
+        this.bills = this.bills.filter(bill => bill.id !== id);
+       // alert("Bill deleted successfully.");
+       // location.reload(); // Refresh the page
+      }, () => {
+        alert("Bill Deleted Successfully!"); // Display error message
+        location.reload();
+      });
+    }
+  }
+ 
+  // getAllPDFs() {
+  //   this.billService.getAllPDFs().subscribe(data => {
+  //     this.pdfList = data;
+  //   });
+  // }
 
   
 
-  getPDFContent(id:any) {
-    this.http.get('http://localhost:8080/api/bill/view' + id, { responseType: 'arraybuffer' }).subscribe(
-      data => {
-        const blob = new Blob([data], { type: 'application/pdf' });
-        const url = window.URL.createObjectURL(blob);
-        window.open(url);
-      },
-      error => console.log(error)
-    );
-  }
-
-  getAllDetails() {
-    this.http.get<any[]>('/api/view').subscribe(data => {
-      this.data = data;
-    });
-  }
+}
 
 
 
-
-  }
 
 
