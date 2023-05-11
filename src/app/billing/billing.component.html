@@ -7,208 +7,218 @@
       <title>Bill Generating</title>  
     </head>
     <body>
+        <app-navbar></app-navbar>
 
         <!--Description table-->
-
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <app-sidebar></app-sidebar>
+                </div>
+                <div class="col=10">
+                    <div class="container" id="print-section">
+                        <div class="row">
+                         
+                            <div class="col">
+                                <div class="card" style="width: 15rem;">
+                                    <img src="assets\logo2.jpg" class="card-img-top" alt="Monara">
+                                    <div class="card-body">
+                                      <h5 class="card-title"style="text-align:center">Project Description</h5>
+            
+                                      <p class="card-text"id='des'> ...................</p>
+                                    </div>
+                               
+                                  </div>
+            
+                            
+                            </div>
+                            <div class="col">
+            
+                                        <!--table 1-->
+            
+                                    <h2 align="center"> <b>Quotation</b></h2>
+                                    <table class="table" >
+                                      
+                                            <tr>
+                                                <th>
+                                                    Quotation date :
+                                                </th>
+                                                <td align="right">
+                                                    
+                                                    <input type="date" class="form-control"name="current-date" >
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    Validity :
+                                                </th>
+                                                <td align="right">
+                                                    <input type="date" class="form-control"name="validity-date">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                  Quotation No.:
+                                                </th>
+                                                <td>
+                                                     <input type="text" class="form-control" name="qno" >
+                                                </td>
+                                            </tr>
+                                       
+                                    </table>
+                                   <!-- showing Customer details-->
+                                   
+                                        <table class="table">
+                                            
+                                                <tr>
+                                                    <th>
+                                                        <div class="mb-2 bg-dark text-white" align="center">Customer Details</div>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                    <div class="input-group input-group-sm ">
+                                                        
+                                                        <input type="text" class="form-control" placeholder="Customer Name"required >
+                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                      </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="input-group input-group-sm ">
+                                                      <input type="text" class="form-control" placeholder="Address" required>
+                                                    </div>
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="input-group input-group-sm">
+                                                      <input type="text" class="form-control" placeholder="Telephone no." required>
+                                                    </div>
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="input-group input-group-sm ">
+                                                      <input type="text" class="form-control" placeholder="Other" >
+                                                    </div>
+                                                </td>
+                                                </tr>
+                                             
+                                        </table>
+            
+                              </div>
+            
+                        </div>
+                     
+            
+                          <div class="row my-2 mx-1 justify-content-center">
+            
+            
+            
+                            <table class="table table-striped table-borderless">
+                              <thead  style="background-color:#222222 ;" class="text-white">
+                              <tr>
+                                <th scope="col">#</th>
+                                  <th scope="col"style="text-align:center;">Material</th>
+                                  <th scope="col"style="text-align:center;">Quantity</th>
+                                  <th scope="col"style="text-align:center;">Unit Price</th>
+                                  <th scope="col"style="text-align:center;">Discount</th>
+                                  <th scope="col"style="text-align:center;">Amount</th>
+                                  <th scope="col"></th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr *ngFor="let row of rows; let i = index">
+                                <td>{{row.id}}</td>
+                                <td ><input type="text" [(ngModel)]="row.name" name="name{{i}}" style="width:143px; height:32px;text-align:center;"></td>
+                                <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:143px; height:32px;text-align:center;"></td>
+                                <td ><input type="text" [(ngModel)]="row.up" name="unitprice{{i}}" readOnly style="width:143px; height:32px;text-align:center;"></td>
+                                <td ><input type="number" [(ngModel)]="row.discount" name="discount{{i}}" (input)="calAmount(row, i)" style="width:143px; height:32px;text-align:center;"></td>
+                                <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:143px; height:32px;text-align:center;"></td>
+                                <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-danger btn-sm" >-</button></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            <button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm ">Add Row</button>
+                            
+            
+                        </div>
+                            <hr>
+            
+                          <!--Table 3-->
+                        <div class="container">
+                          <div class="row">
+                                <div class="col">
+                                        <table class="table" border="1px">
+                                            <tr class="bg-dark text-white"align="center">
+                                                <th>Special Notes</th>
+                                            </tr>
+                                            <tr>
+                                                <td>.............</td>
+                                            </tr>
+                                        </table>
+                                </div>
+                                <div class="col">
+            
+                                </div>
+                                <div class="col">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Subtotal</th>
+                                            <td>Rs.</td>
+                                            <td>00.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Discount</th>
+                                            <td>%</td>
+                                            <td>00.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>SSCL</th>
+                                            <td></td>
+                                            <td>00.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>VAT</th>
+                                            <td>%</td>
+                                            <td>00.0</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Total</th>
+                                            <div class="mags"style="border:1px solid black">
+                                            <td >Rs.</td>
+                                            <td>00</td></div>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                          </div>  
+                  
+                    </div>
+                    <div class="Container">
+                        <div class ="cols btn-group" >
+                        <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint>Export</button>
+                       <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button>
+            
+                      
+                        </div> 
+                        <br>
+                        <br>
+                     
+                     
+                        
+                     
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
 
         
-        <div class="container" id="print-section">
-            <div class="row">
-             
-                <div class="col">
-                    <div class="card" style="width: 15rem;">
-                        <img src="assets\logo2.jpg" class="card-img-top" alt="Monara">
-                        <div class="card-body">
-                          <h5 class="card-title"style="text-align:center">Project Description</h5>
-
-                          <p class="card-text"id='des'> ...................</p>
-                        </div>
-                   
-                      </div>
-
-                
-                </div>
-                <div class="col">
-
-                            <!--table 1-->
-
-                        <h2 align="center"> <b>Quotation</b></h2>
-                        <table class="table" >
-                          
-                                <tr>
-                                    <th>
-                                        Quotation date :
-                                    </th>
-                                    <td align="right">
-                                        
-                                        <input type="date" class="form-control"name="current-date" >
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        Validity :
-                                    </th>
-                                    <td align="right">
-                                        <input type="date" class="form-control"name="validity-date">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                      Quotation No.:
-                                    </th>
-                                    <td>
-                                         <input type="text" class="form-control" name="qno" >
-                                    </td>
-                                </tr>
-                           
-                        </table>
-                       <!-- showing Customer details-->
-                       
-                            <table class="table">
-                                
-                                    <tr>
-                                        <th>
-                                            <div class="mb-2 bg-dark text-white" align="center">Customer Details</div>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                        <div class="input-group input-group-sm ">
-                                            
-                                            <input type="text" class="form-control" placeholder="Customer Name"required >
-                                            <div class="invalid-feedback">Please fill out this field.</div>
-                                          </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="input-group input-group-sm ">
-                                          <input type="text" class="form-control" placeholder="Address" required>
-                                        </div>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="input-group input-group-sm">
-                                          <input type="text" class="form-control" placeholder="Telephone no." required>
-                                        </div>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="input-group input-group-sm ">
-                                          <input type="text" class="form-control" placeholder="Other" >
-                                        </div>
-                                    </td>
-                                    </tr>
-                                 
-                            </table>
-
-                  </div>
-
-            </div>
-         
-
-              <div class="row my-2 mx-1 justify-content-center">
-
-
-
-                <table class="table table-striped table-borderless">
-                  <thead  style="background-color:#222222 ;" class="text-white">
-                  <tr>
-                    <th scope="col">#</th>
-                      <th scope="col"style="text-align:center;">Material</th>
-                      <th scope="col"style="text-align:center;">Quantity</th>
-                      <th scope="col"style="text-align:center;">Unit Price</th>
-                      <th scope="col"style="text-align:center;">Discount</th>
-                      <th scope="col"style="text-align:center;">Amount</th>
-                      <th scope="col"></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr *ngFor="let row of rows; let i = index">
-                    <td>{{row.id}}</td>
-                    <td ><input type="text" [(ngModel)]="row.name" name="name{{i}}" style="width:143px; height:32px;text-align:center;"></td>
-                    <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:143px; height:32px;text-align:center;"></td>
-                    <td ><input type="text" [(ngModel)]="row.up" name="unitprice{{i}}" readOnly style="width:143px; height:32px;text-align:center;"></td>
-                    <td ><input type="number" [(ngModel)]="row.discount" name="discount{{i}}" (input)="calAmount(row, i)" style="width:143px; height:32px;text-align:center;"></td>
-                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:143px; height:32px;text-align:center;"></td>
-                    <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-danger btn-sm" >-</button></td>
-                  </tr>
-                </tbody>
-                </table>
-                <button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm ">Add Row</button>
-                
-
-            </div>
-                <hr>
-
-              <!--Table 3-->
-            <div class="container">
-              <div class="row">
-                    <div class="col">
-                            <table class="table" border="1px">
-                                <tr class="bg-dark text-white"align="center">
-                                    <th>Special Notes</th>
-                                </tr>
-                                <tr>
-                                    <td>.............</td>
-                                </tr>
-                            </table>
-                    </div>
-                    <div class="col">
-
-                    </div>
-                    <div class="col">
-                        <table class="table">
-                            <tr>
-                                <th>Subtotal</th>
-                                <td>Rs.</td>
-                                <td>00.00</td>
-                            </tr>
-                            <tr>
-                                <th>Discount</th>
-                                <td>%</td>
-                                <td>00.00</td>
-                            </tr>
-                            <tr>
-                                <th>SSCL</th>
-                                <td></td>
-                                <td>00.00</td>
-                            </tr>
-                            <tr>
-                                <th>VAT</th>
-                                <td>%</td>
-                                <td>00.0</td>
-                            </tr>
-                            <tr>
-                                <th>Total</th>
-                                <div class="mags"style="border:1px solid black">
-                                <td >Rs.</td>
-                                <td>00</td></div>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-              </div>  
-      
-        </div>
-        <div class="Container">
-            <div class ="cols btn-group" >
-            <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint>Export</button>
-           <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button>
-
-          
-            </div> 
-            <br>
-            <br>
-         
-         
-            
-         
-           
-        </div>  
+  
          
         <br>
         <br>

@@ -1,94 +1,108 @@
-<!-- Off Canvas -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Off Canvas -->
 
 <div class="offcanvas offcanvas-start sidebar-nav bg-dark"  tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
-      <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-    </div>
-    <div class="offcanvas-body p-0">
-  
-      <div class="navbar-dark bg-dark">
-        <ul class="navbar-nav">
-          <li>
-            <div class="text-muted small fw-bold text-uppercase px-3"> 
-            </div>
-          </li>
-
-          <li>
-            <a href="" class="nav-link px-3 active">
-              <span class="me-2">
-                <i class="bi bi-speedometer"></i>
-              </span>
-              <span>HOME</span>  
-            </a>
-          </li>
-
-          <li class="my-4" style="color:antiquewhite">
-            <hr class="dropdown-divider"/>
-          </li>
-
-          <li>
-            <a routerLink="/reports" class="nav-link px-3 active">
-              <span class="me-2">
-                <i class="bi bi-people-fill"></i>
-              </span>
-              <span>REPORTS</span>  
-            </a>
-          </li>
-          <li class="my-4" style="color:antiquewhite">
-            <hr class="dropdown-divider"/>
-          </li>
-
-          <li>
-            <a routerLink="/billing" class="nav-link px-3 active">
-              <span class="me-2">
-                <i class="bi bi-people-fill"></i>
-              </span>
-              <span>BILLING</span>  
-            </a>
-          </li>
-          <li class="my-4" style="color:antiquewhite">
-            <hr class="dropdown-divider"/>
-          </li>
-
-          <!-- <li>
-            <a routerLink="/reports" class="nav-link px-3 active">
-              <span class="me-2">
-                <i class="bi bi-people-fill"></i>
-              </span>
-              <span>Link_4</span>  
-            </a>
-          </li>
-          <li class="my-4" style="color:antiquewhite">
-            <hr class="dropdown-divider"/>
-          </li>
-
-          <li>
-            <a routerLink="/reports" class="nav-link px-3 active">
-              <span class="me-2">
-                <i class="bi bi-people-fill"></i>
-              </span>
-              <span>Link_5</span>  
-            </a>
-          </li>
-          <li class="my-4" style="color:antiquewhite">
-            <hr class="dropdown-divider"/>
-          </li> -->
-          
-        </ul>
-      </div>
-  
-      <!-- <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div> -->
-  
-    </div>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+    <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
   </div>
-  <!-- Off canvas Ends -->
+  <div class="offcanvas-body p-0">
+
+    <div class="navbar-dark bg-dark">
+      <ul class="navbar-nav">
+        <li>
+          <div class="text-muted small fw-bold text-uppercase px-3"> 
+          </div>
+        </li>
+
+        <li>
+          <a routerLink="/home" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-house-door-fill"></i>
+            </span>
+            <span style="font-size: 15px">HOME</span>  
+          </a>
+        </li>
+
+        <li class="my-4" style="color:antiquewhite">
+          <hr class="dropdown-divider"/>
+        </li>
+
+        <li>
+          <a routerLink="/reports" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-file-earmark-bar-graph"></i>
+            </span>
+            <span style="font-size: 15px">REPORTS</span>  
+          </a>
+        </li>
+
+        <li class="my-4" style="color:antiquewhite">
+          <hr class="dropdown-divider"/>
+        </li>
+
+        <li>
+          <a routerLink="/billing" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-receipt-cutoff"></i>
+            </span>
+            <span style="font-size: 15px">BILLING</span>  
+          </a>
+        </li>
+
+        <li class="my-4" style="color:antiquewhite">
+          <hr class="dropdown-divider"/>
+        </li>
+
+        <li>
+          <a routerLink="/home" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-graph-down"></i>
+            </span>
+            <span style="font-size: 15px">INVENTORY</span>  
+          </a>
+        </li>
+
+        <li class="my-4" style="color:antiquewhite">
+          <hr class="dropdown-divider"/>
+        </li>
+
+        <li>
+          <a routerLink="/home" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-people-fill"></i>
+            </span>
+            <span style="font-size: 15px">USERS</span>  
+          </a>
+        </li>
+
+        <li class="my-4" style="color:antiquewhite">
+          <hr class="dropdown-divider"/>
+        </li>
+        
+      </ul>
+    </div>
+
+    <!-- <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div> -->
+
+  </div>
+</div>
+<!-- Off canvas Ends -->
+</body>
+</html>
