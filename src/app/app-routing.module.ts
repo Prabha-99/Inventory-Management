@@ -35,8 +35,7 @@ const routes: Routes = [
   {path:"inventory-ad-profile",component:InventoryAdProfileComponent},
   {path:"stock-manager-dash",component:StockManagerDashComponent},
   {path:"stock-manager-profile",component:StockManagerProfileComponent},
-  {path:"stock-manager-product",component:StockManagerProductComponent}
-
+  {path:"stock-manager-product",component:StockManagerProductComponent},
 
 ];
 
