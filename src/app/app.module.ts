@@ -27,8 +27,6 @@ import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-da
 import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
 import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 import { LoginComponent } from './login/login.component';
-import { CommonModule } from '@angular/common';
-import { BillingViewComponent } from './Billing-view/Billing-view.component';
 
 
 @NgModule({
@@ -52,8 +50,7 @@ import { BillingViewComponent } from './Billing-view/Billing-view.component';
     StockManagerDashComponent,
     StockManagerProfileComponent,
     StockManagerProductComponent,
-    LoginComponent,
-    BillingViewComponent,
+    LoginComponent
 
     
   ],
@@ -63,7 +60,6 @@ import { BillingViewComponent } from './Billing-view/Billing-view.component';
     NgxPrintModule,
     HttpClientModule,
     FormsModule,
-    CommonModule,
     ScheduleModule, RecurrenceEditorModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],

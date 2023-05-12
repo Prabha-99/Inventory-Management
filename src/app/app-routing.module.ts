@@ -14,7 +14,6 @@ import { StockManagerDashComponent } from './stock-manager-dash/stock-manager-da
 import { StockManagerProfileComponent } from './stock-manager-profile/stock-manager-profile.component';
 import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 import { LoginComponent } from './login/login.component';
-import { BillingViewComponent } from './Billing-view/Billing-view.component';
 
 
 
@@ -26,7 +25,6 @@ const routes: Routes = [
   {path:"sidebar",component:SidebarComponent},
   {path:"billing",component:BillingComponent},
   {path:"billingsend",component:BillingSendComponent},
-  {path:"billingview",component:BillingViewComponent},
   {path:"reports",component:ReportsComponent},
   {path:"orderreports",component:OrderReportsComponent},
   {path:"inventory-ad-dash",component: InventoryAdDashComponent},
@@ -34,8 +32,7 @@ const routes: Routes = [
   {path:"inventory-ad-profile",component:InventoryAdProfileComponent},
   {path:"stock-manager-dash",component:StockManagerDashComponent},
   {path:"stock-manager-profile",component:StockManagerProfileComponent},
-  {path:"stock-manager-product",component:StockManagerProductComponent}
-
+  {path:"stock-manager-product",component:StockManagerProductComponent},
 
 ];
 
