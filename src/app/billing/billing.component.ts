@@ -1,8 +1,5 @@
 import { Component,  } from '@angular/core';
-import { Router } from '@angular/router';
-
-
-import { ElementRef, OnInit, ViewChild } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { ProductService } from './billing.component.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -13,7 +10,15 @@ import * as html2pdf from 'html2pdf.js';
   selector: 'app-billing',
   templateUrl: './billing.component.html',
   styleUrls: ['./billing.component.css'],
-  template: ``
+  
+  template: `<div id="overlay">
+  <div id="alert-box">
+    <h2>Refresh</h2>
+    <p>Are you sure you want to refresh?</p>
+    <button onclick="location.reload()">OK</button>
+    <button onclick="closeAlert()">Cancel</button>
+  </div>
+</div>`
 
 })
 
@@ -85,7 +90,7 @@ export class BillingComponent implements OnInit{
   html2canvas(printSection).then((canvas) => {
     // Add the canvas to the jsPDF document
 
-    const imgData = canvas.toDataURL('image/jpeg', 10); // Decrease the quality of the image
+    const imgData = canvas.toDataURL('image/jpeg', 8); // Decrease the quality of the image
     doc.addImage(imgData, 'JPEG', 10, 10, 180, 240);
 
     // Save the jsPDF document
@@ -95,7 +100,7 @@ export class BillingComponent implements OnInit{
     const options = {
       margin: 1,
       filename: 'html2pdf-document.pdf',
-      image: { type: 'jpeg', quality: 10 }, // Decrease the quality of the image
+      image: { type: 'jpeg', quality: 8 }, // Decrease the quality of the image
       html2canvas: { scale:10 },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
@@ -116,6 +121,12 @@ export class BillingComponent implements OnInit{
   }); 
   }
 
+
+  confirmRefresh(): void {
+    if (confirm('Are you sure you want to refresh?')) {
+      location.reload();
+    }
+  }
 
 //////////////////////save bill details
 
