@@ -28,6 +28,7 @@ import { StockManagerProfileComponent } from './stock-manager-profile/stock-mana
 import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 import { LoginComponent } from './login/login.component';
 import { BillingViewComponent } from './billing-view/billing-view.component';
+import { InventoryAdProductPopupComponent } from './inventory-ad-product-popup/inventory-ad-product-popup.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { BillingViewComponent } from './billing-view/billing-view.component';
     StockManagerProfileComponent,
     StockManagerProductComponent,
     LoginComponent,
-    BillingViewComponent
+    BillingViewComponent,
+    InventoryAdProductPopupComponent
  
 
     
