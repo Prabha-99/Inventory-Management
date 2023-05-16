@@ -107,14 +107,11 @@
                                     </tr>
                                  
                             </table>
-
                   </div>
-
             </div>
          
 
               <div class="row my-2 mx-1 justify-content-center">
-
 
                 <table class="table table-striped table-borderless">
                   <thead  style="background-color:#222222 ;" class="text-white">
@@ -127,7 +124,6 @@
                       <th scope="col"style="text-align:center;">Amount</th>
                       <th scope="col"></th>
                      
-                      
                   </tr>
                   </thead>
                   <tbody>
@@ -135,12 +131,12 @@
 
                     <td>{{row.id}}</td>
 
-                    <td ><select id="select_product"class="form-control" name="name{{i}}"style="width:140px; height:32px;text-align:center;">
+                    <td ><select id="select_product"class="form-control" name="name{{i}}"style="width:139px; height:32px;text-align:center;">
                         <option *ngFor="let name of productNames">{{ name }}</option>
                      </select></td>
 
-                    <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.product_price" name="unitprice{{i}}" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:125px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="text" [(ngModel)]="row.product_price" name="unitprice{{i}}" style="width:130px; height:32px;text-align:center;"class="form-control"></td>
                     <td ><input type="number" [(ngModel)]="row.discount"  name="discount{{i}}" (input)="calAmount(row, i)" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
                     <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:130px; height:32px;text-align:center;"class="form-control"></td>
                     <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-secondary btn-sm" >-</button></td>

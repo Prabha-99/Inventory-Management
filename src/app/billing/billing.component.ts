@@ -88,20 +88,20 @@ export class BillingComponent implements OnInit{
   const doc = new jsPDF();
 
   html2canvas(printSection).then((canvas) => {
-    // Add the canvas to the jsPDF document
 
-    const imgData = canvas.toDataURL('image/jpeg', 8); // Decrease the quality of the image
+    // Add the canvas to the jsPDF document
+    const imgData = canvas.toDataURL('image/jpeg', 0.5); // Decrease the quality of the image
     doc.addImage(imgData, 'JPEG', 10, 10, 180, 240);
 
     // Save the jsPDF document
-    const jsPDFFile = doc.output('blob');
+   // const jsPDFFile = doc.output('blob');
 
     // Convert the HTML element to a PDF using html2pdf library
     const options = {
-      margin: 1,
+      margin: 0.2,
       filename: 'html2pdf-document.pdf',
-      image: { type: 'jpeg', quality: 8 }, // Decrease the quality of the image
-      html2canvas: { scale:10 },
+      image: { type: 'jpeg', quality: 0.5 }, // Decrease the quality of the image
+      html2canvas: { scale:1},
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 
@@ -109,7 +109,7 @@ export class BillingComponent implements OnInit{
 
       // Create a new FormData instance and append the PDF files
       const fData = new FormData();
-      fData.append('jsPDF-file', jsPDFFile, 'jsPDF-document.pdf');
+   //   fData.append('jsPDF-file', jsPDFFile, 'jsPDF-document.pdf');
       fData.append('html2pdf-file', html2pdfFile, 'html2pdf-document.pdf');
 
       // Send the files to the productService
@@ -121,6 +121,7 @@ export class BillingComponent implements OnInit{
   }); 
   }
 
+ 
 
   confirmRefresh(): void {
     if (confirm('Are you sure you want to refresh?')) {
