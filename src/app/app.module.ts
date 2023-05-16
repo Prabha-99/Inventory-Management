@@ -29,7 +29,7 @@ import { StockManagerProductComponent } from './stock-manager-product/stock-mana
 import { LoginComponent } from './login/login.component';
 import { BillingViewComponent } from './billing-view/billing-view.component';
 import { InventoryAdProductPopupComponent } from './inventory-ad-product-popup/inventory-ad-product-popup.component';
-
+import { MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,10 @@ import { InventoryAdProductPopupComponent } from './inventory-ad-product-popup/i
     NgxPrintModule,
     HttpClientModule,
     FormsModule,
-    ScheduleModule, RecurrenceEditorModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    ScheduleModule, RecurrenceEditorModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    MatDialogModule
+   
+
   ],
   providers: [],
   bootstrap: [AppComponent]
