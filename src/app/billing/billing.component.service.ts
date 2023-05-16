@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,10 @@ export class ProductService {
     return this.http.get<string[]>('http://localhost:8080/api/bill/getnames'); //get material name
   }
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) { 
+
+  }
 
   private apiUrl = 'http://localhost:8080/api/billdata';
 
