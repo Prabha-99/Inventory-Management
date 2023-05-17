@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BillService } from './billing-view.component.service';
 import { Observable } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class BillingViewComponent implements OnInit{
     });
 
 
-    this.getAllPDFs();
+    // this.getAllPDFs();
    
   }
 
@@ -44,16 +45,21 @@ export class BillingViewComponent implements OnInit{
  
 
 
-  getAllPDFs(): void {
-    this.billService.getAllPDFs().subscribe(
-      pdfList => {
-        this.pdfList = pdfList;
-      },
-      error => {
-        console.log('Error occurred while retrieving PDFs:', error);
-      }
-    );
-  }
+  // private extractPDFList(response: HttpResponse<Blob>): any[] {
+  //   const pdfList = [];
+
+  //   const contentDisposition = response.headers.get('content-disposition');
+  //   const filename = contentDisposition.split(';')[1].trim().split('=')[1].replace(/"/g, '');
+
+  //   const pdf = {
+  //     name: filename,
+  //     content: response.body
+  //   };
+
+  //   pdfList.push(pdf);
+
+  //   return pdfList;
+  // }
 
   
 

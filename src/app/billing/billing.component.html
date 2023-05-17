@@ -14,15 +14,15 @@
 
 
         <div class="container" id="print-section" >
-            <div id="pdf-content" #pdfContent>
+            <div id="pdf-content" #pdfContent style="padding-top: 25px;">
         
             <div class="row">
              
                 <div class="col">
-                    <div class="card" style="width: 15rem;">
+                    <div class="card" style="width: 15rem;text-align:center;">
                         <img src="assets\logo2.jpg" class="card-img-top" alt="Monara">
                         <div class="card-body">
-                          <h5 class="card-title"style="text-align:center">Project Description</h5>
+                          <h5 class="card-title"style="text-align:center;">Project Description</h5>
 
                           <p class="card-text"id='des'> ...................</p>
                         </div>
@@ -111,7 +111,7 @@
             </div>
          
 
-              <div class="row my-2 mx-1 justify-content-center">
+              <div class="row my-2 mx-1 justify-content-center"style="padding-left: 36px;">
 
                 <table class="table table-striped table-borderless">
                   <thead  style="background-color:#222222 ;" class="text-white">
@@ -129,7 +129,7 @@
                   <tbody>
                   <tr *ngFor="let row of rows; let i = index">
 
-                    <td>{{row.id}}</td>
+                    <td style="text-align:right;">{{row.id}}</td>
 
                     <td ><select id="select_product"class="form-control" name="name{{i}}"style="width:139px; height:32px;text-align:center;">
                         <option *ngFor="let name of productNames">{{ name }}</option>
