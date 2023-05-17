@@ -28,7 +28,9 @@ import { StockManagerProfileComponent } from './stock-manager-profile/stock-mana
 import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 import { LoginComponent } from './login/login.component';
 import { BillingViewComponent } from './billing-view/billing-view.component';
-
+import { InventoryAdProductPopupComponent } from './inventory-ad-product-popup/inventory-ad-product-popup.component';
+import { MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { BillingViewComponent } from './billing-view/billing-view.component';
     StockManagerProfileComponent,
     StockManagerProductComponent,
     LoginComponent,
-    BillingViewComponent
+    BillingViewComponent,
+    InventoryAdProductPopupComponent
  
 
     
@@ -63,7 +66,11 @@ import { BillingViewComponent } from './billing-view/billing-view.component';
     NgxPrintModule,
     HttpClientModule,
     FormsModule,
-    ScheduleModule, RecurrenceEditorModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    ScheduleModule, RecurrenceEditorModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    MatDialogModule,
+    MatFormFieldModule
+   
+
   ],
   providers: [],
   bootstrap: [AppComponent]
