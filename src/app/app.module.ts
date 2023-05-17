@@ -31,6 +31,7 @@ import { BillingViewComponent } from './billing-view/billing-view.component';
 import { InventoryAdProductPopupComponent } from './inventory-ad-product-popup/inventory-ad-product-popup.component';
 import { MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from  '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     ScheduleModule, RecurrenceEditorModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     MatDialogModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
    
 
   ],
