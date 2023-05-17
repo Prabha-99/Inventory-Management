@@ -1,21 +1,33 @@
 <div mat-dialog-title>
     <h1>Add Products</h1>
 </div>
-<div mat-dialog-content>
-    <mat-form-field appearance="fill">
-        <mat-label>Input</mat-label>
+<br>
+<div mat-dialog-content class="content">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+    <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input matInput>
+        </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Product Brand</mat-label>
         <input matInput>
     </mat-form-field>
-    <mat-form-field>
-        <mat-label>Input</mat-label>
+    <br>
+    <mat-form-field appearance="outline">
+        <mat-label>Product Price</mat-label>
         <input matInput>
     </mat-form-field>
-    <mat-form-field>
-        <mat-label>Input</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Input</mat-label>
+    <mat-form-field appearance="outline">
+        <mat-label>Product Quantity</mat-label>
         <input matInput>
     </mat-form-field>
 </div>
