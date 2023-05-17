@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs/internal/operators/map';
 
 
 @Injectable({
@@ -24,18 +25,25 @@ export class BillService {
   }
 
 
+  private pdfUrl = 'http://localhost:8080/api/bill';
 
 
-  // getAllPDFs(): Observable<any[]> {
-  //   const url = `${this.apiUrl}/view`;
-  //   return this.http.get<any[]>(url).pipe(
-  //     map(pdfList => {
-  //       pdfList.forEach(pdf => {
-  //         pdf.text = this.BillingViewC.convertPdfToText(pdf.path);
-  //       });
-  //       return pdfList;
-  //     })
-  //   );
-  // }
+  getAllPDFs(): Observable<any[]> {
+    const url = `${this.pdfUrl}/view`;
+    return this.http.get<any[]>(url).pipe(
+      map(pdfList => {
+        pdfList.forEach(pdf => {
+          pdf.text = this.convertPdfToText(pdf.path);
+        });
+        return pdfList;
+      })
+    );
+  }
+
+  private convertPdfToText(path: string): string {
+
+    return 'Sample PDF Text';
+  }
+
 
   }
