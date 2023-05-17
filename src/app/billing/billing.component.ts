@@ -101,7 +101,7 @@ export class BillingComponent implements OnInit{
       margin: 0.2,
       filename: 'html2pdf-document.pdf',
       image: { type: 'jpeg', quality: 0.5 }, // Decrease the quality of the image
-      html2canvas: { scale:1},
+      html2canvas: { scale:9},
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 

@@ -25,25 +25,13 @@ export class BillService {
   }
 
 
-  private pdfUrl = 'http://localhost:8080/api/bill';
+  // private pdfUrl = 'http://localhost:8080/api/pdf'; // Replace with your API URL
 
-
-  getAllPDFs(): Observable<any[]> {
-    const url = `${this.pdfUrl}/view`;
-    return this.http.get<any[]>(url).pipe(
-      map(pdfList => {
-        pdfList.forEach(pdf => {
-          pdf.text = this.convertPdfToText(pdf.path);
-        });
-        return pdfList;
-      })
-    );
-  }
-
-  private convertPdfToText(path: string): string {
-
-    return 'Sample PDF Text';
-  }
-
+  // getAllPDFs(): Observable<any[]> {
+  //   return this.http.get<any[]>(this.pdfUrl, { responseType: 'blob' })
+  //     .pipe(
+  //       map(this.extractPDFList)
+  //     );
+  // }
 
   }
