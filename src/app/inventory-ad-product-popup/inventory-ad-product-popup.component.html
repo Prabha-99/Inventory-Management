@@ -8,8 +8,7 @@
     <mat-form-field appearance="outline">
         <mat-label>Select Category</mat-label>
         <mat-select>
-            <mat-option value="one">First option</mat-option>
-            <mat-option value="two">Second option</mat-option>
+            <mat-option *ngFor="let val of category" [value] = "val">{{val}}</mat-option>
         </mat-select>
     </mat-form-field>
     <br>
@@ -33,7 +32,7 @@
     </mat-form-field>
 
     <div mat-dialog-actions>
-        <button mat-raised-button>Cancel</button>
-        <button mat-raised-button color="primary">Save</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-outline-primary">Close</button>
     </div>
 </div>
