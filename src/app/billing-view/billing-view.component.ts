@@ -25,7 +25,7 @@ export class BillingViewComponent implements OnInit{
     });
 
 
-    // this.getAllPDFs();
+    this.getAllPDFs();
    
   }
 
@@ -42,11 +42,18 @@ export class BillingViewComponent implements OnInit{
     }
   }
  
-  // getAllPDFs() {
-  //   this.billService.getAllPDFs().subscribe(data => {
-  //     this.pdfList = data;
-  //   });
-  // }
+
+
+  getAllPDFs(): void {
+    this.billService.getAllPDFs().subscribe(
+      pdfList => {
+        this.pdfList = pdfList;
+      },
+      error => {
+        console.log('Error occurred while retrieving PDFs:', error);
+      }
+    );
+  }
 
   
 

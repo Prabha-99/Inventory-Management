@@ -25,15 +25,37 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm"></div>
+          <div class="col-sm">
+
+          
+
+            <div *ngIf="pdfList && pdfList.length > 0">
+              <h2>List of PDFs:</h2>
+              <ul>
+                <li *ngFor="let pdf of pdfList">
+                  <a [href]="pdf.url" target="_blank">{{ pdf.name }}</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div *ngIf="pdfList && pdfList.length === 0">
+              <p>No PDFs found.</p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
           <div class="col-sm">
             <h2>List of PDF Files</h2>
-
-            <ul>
-              <li *ngFor="let pdf of pdfList">
-                {{ pdf.content }}
-              </li>
-            </ul>
 
           </div>
           <div class="col-sm">col-sm</div>
