@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./inventory-ad-product-popup.component.css']
 })
 export class InventoryAdProductPopupComponent {
-
+   category: String[] =[
+    'Staron',
+    'H-Band',
+   ];
 }
