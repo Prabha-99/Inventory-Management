@@ -18,16 +18,17 @@ export class BillingViewComponent implements OnInit{
 
   pdfList!: any[];
   bills: any[] = [];
-
+  imageUrls: any[] = [];
 
   ngOnInit() {
     this.billService.getAllBills().subscribe(bill => {
       this.bills = bill;
     });
 
+    this.billService.getImage().subscribe((imageUrls: any[]) => {
+      this.imageUrls = imageUrls;
+    });
 
-    // this.getAllPDFs();
-   
   }
 
   onDelete(id: number) {
@@ -42,26 +43,7 @@ export class BillingViewComponent implements OnInit{
       });
     }
   }
- 
 
-
-  // private extractPDFList(response: HttpResponse<Blob>): any[] {
-  //   const pdfList = [];
-
-  //   const contentDisposition = response.headers.get('content-disposition');
-  //   const filename = contentDisposition.split(';')[1].trim().split('=')[1].replace(/"/g, '');
-
-  //   const pdf = {
-  //     name: filename,
-  //     content: response.body
-  //   };
-
-  //   pdfList.push(pdf);
-
-  //   return pdfList;
-  // }
-
-  
 
 }
 

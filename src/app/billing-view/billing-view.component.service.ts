@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { map } from 'rxjs/internal/operators/map';
 
 
 @Injectable({
@@ -25,13 +25,21 @@ export class BillService {
   }
 
 
-  // private pdfUrl = 'http://localhost:8080/api/pdf'; // Replace with your API URL
 
-  // getAllPDFs(): Observable<any[]> {
-  //   return this.http.get<any[]>(this.pdfUrl, { responseType: 'blob' })
-  //     .pipe(
-  //       map(this.extractPDFList)
-  //     );
-  // }
+
+private apiEndpoint = 'http://localhost:8080/api/bill/view';
+
+ getImage(): Observable<any> {
+   return this.http.get(this.apiEndpoint, { responseType: 'blob' }).pipe(
+     map((blob: Blob) => {
+       const reader = new FileReader();
+       reader.readAsDataURL(blob);
+       return reader.result as any;
+     })
+   );
+ }
+
+
+
 
   }
