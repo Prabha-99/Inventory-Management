@@ -34,6 +34,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from  '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import { StockManagerProductPopupComponent } from './stock-manager-product-popup/stock-manager-product-popup.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import {MatSelectModule} from '@angular/material/select';
     StockManagerProductComponent,
     LoginComponent,
     BillingViewComponent,
-    InventoryAdProductPopupComponent
+    InventoryAdProductPopupComponent,
+    StockManagerProductPopupComponent
  
 
     

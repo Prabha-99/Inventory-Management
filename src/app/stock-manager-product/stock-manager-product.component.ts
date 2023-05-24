@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StockManagerProductPopupComponent } from '../stock-manager-product-popup/stock-manager-product-popup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-stock-manager-product',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class StockManagerProductComponent {
 
+  constructor(private _dialog: MatDialog){}
+
+  openStockEditProductForm(){
+    this._dialog.open(StockManagerProductPopupComponent);
+  }
 }
