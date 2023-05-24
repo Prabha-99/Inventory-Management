@@ -5,12 +5,14 @@
 <div mat-dialog-content class="content">
 
         
-    <mat-form-field appearance="outline">
-        <mat-label>Select Category</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let val of category" [value] = "val">{{val}}</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <select class="form-select" aria-label="category">
+        <option selected>Select Category</option>
+        <option value="1">Starron</option>
+        <option value="2">Melomine</option>
+        <option value="3">H-bands</option>
+        <option value="4">Accessories</option>
+        <option value="5">appliences</option>
+    </select>
     <br>
     <mat-form-field appearance="outline">
         <mat-label>Product Name</mat-label>
