@@ -10,24 +10,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StockManagerProductPopupComponent {
 
-  selectedCategory: string="";
-  productName: string="";
-  productBrand: string="";
-  productPrice: number= 0;
-  productQuantity: number= 0;
+  category_id: string="";
+  product_name: string="";
+  product_brand: string="";
+  product_price: number= 0;
+  product_quantity: number= 0;
 
   constructor(private http: HttpClient) { }
 
   saveProduct() {
     const product = {
-      category: this.selectedCategory,
-      productName: this.productName,
-      productBrand: this.productBrand,
-      productPrice: this.productPrice,
-      productQuantity: this.productQuantity
+      category: this.category_id,
+      productName: this.product_name,
+      productBrand: this.product_brand,
+      productPrice: this.product_price,
+      productQuantity: this.product_quantity
     };
 
-    this.http.post<any>('/api/product/saveProduct', product).subscribe(
+    this.http.post<any>('http://localhost:8080/api/product/saveProduct', product).subscribe(
       (response) => {
         console.log('Product saved successfully:', response);
         // Handle success scenario

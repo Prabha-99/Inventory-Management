@@ -11,7 +11,7 @@
             <mat-option>H-Band</mat-option>
         </mat-select>
     </mat-form-field>-->
-    <select class="form-select" aria-label="category"  [(ngModel)]="selectedCategory">
+    <select class="form-select" aria-label="category"  [(ngModel)]="category_id">
         <option selected>Select Category</option>
         <option value="c1">Melomine</option>
         <option value="c2">H-bands</option>
@@ -19,21 +19,21 @@
     <br>
     <mat-form-field appearance="outline">
         <mat-label>Product Name</mat-label>
-        <input matInput [(ngModel)]="productName">
+        <input matInput [(ngModel)]="product_name">
     </mat-form-field>
     
     <mat-form-field appearance="outline">
         <mat-label>Product Brand</mat-label>
-        <input matInput [(ngModel)]="productBrand">
+        <input matInput [(ngModel)]="product_brand">
     </mat-form-field>
     <br>
     <mat-form-field appearance="outline">
         <mat-label>Product Price</mat-label>
-        <input matInput [(ngModel)]="productPrice">
+        <input matInput [(ngModel)]="product_price">
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>Product Quantity</mat-label>
-        <input matInput [(ngModel)]="productQuantity">
+        <input matInput [(ngModel)]="product_quantity">
     </mat-form-field>
 
     <div mat-dialog-actions>
