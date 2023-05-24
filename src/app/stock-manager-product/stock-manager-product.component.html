@@ -13,7 +13,7 @@
           <br>
           <div>
           <!--Add Product button-->
-            <button type="button" class="btn btn-dark float-right"><span class="bi bi-plus"></span>Add Product</button>
+          <button mat-raised-button (click)="openStockEditProductForm()" class="btn btn-dark float-right">Add Product</button>
             <br><br>
           <!--Search bar-->
           <div class="form-outline">
@@ -40,7 +40,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><button type="button" class="btn btn-link-dark"><span class="bi bi-trash"></span></button></td>
+                   <!--<td><button type="button" class="btn btn-link-dark"><span class="bi bi-trash"></span></button></td>-->
                   </tr>
                 </tbody>
               </table>
