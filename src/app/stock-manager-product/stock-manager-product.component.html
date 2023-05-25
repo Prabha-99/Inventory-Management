@@ -34,13 +34,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td style="text-align:center;"></td>
-                    <td style="text-align:center;"></td>
-                    <td style="text-align:center;"></td>
-                    <td style="text-align:center;"></td>
-                    <td style="text-align:center;"></td>
-                    <td style="text-align:center;"></td>
+                  <tr *ngFor="let product of products">
+                    <td style="text-align:center;">{{ product.product_id }}</td>
+                    <td style="text-align:center;">{{ product.category_id }}</td>
+                    <td style="text-align:center;">{{ product.product_brand }}</td>
+                    <td style="text-align:center;">{{ product.product_name }}</td>
+                    <td style="text-align:center;">{{ product.product_price }}</td>
+                    <td style="text-align:center;">{{ product.product_quantity }}</td>
                     <td><button type="button" class="btn btn-primary" (click)="openStockEditProductForm()">Update</button></td>
                   </tr>
                 </tbody>
