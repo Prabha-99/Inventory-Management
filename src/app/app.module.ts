@@ -35,6 +35,7 @@ import {MatInputModule} from  '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { StockManagerProductPopupComponent } from './stock-manager-product-popup/stock-manager-product-popup.component';
+import { StockManagerUpdatePopupComponent } from './stock-manager-update-popup/stock-manager-update-popup.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { StockManagerProductPopupComponent } from './stock-manager-product-popup
     LoginComponent,
     BillingViewComponent,
     InventoryAdProductPopupComponent,
-    StockManagerProductPopupComponent
+    StockManagerProductPopupComponent,
+    StockManagerUpdatePopupComponent
  
 
     
