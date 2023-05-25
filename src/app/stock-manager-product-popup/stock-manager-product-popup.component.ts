@@ -20,11 +20,11 @@ export class StockManagerProductPopupComponent {
 
   saveProduct() {
     const product = {
-      category: this.category_id,
-      productName: this.product_name,
-      productBrand: this.product_brand,
-      productPrice: this.product_price,
-      productQuantity: this.product_quantity
+      category_id: this.category_id,
+      product_name: this.product_name,
+      product_brand: this.product_brand,
+      product_price: this.product_price,
+      product_quantity: this.product_quantity
     };
 
     this.http.post<any>('http://localhost:8080/api/product/saveProduct', product).subscribe(
