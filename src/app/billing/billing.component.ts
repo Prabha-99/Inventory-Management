@@ -51,8 +51,7 @@ export class BillingComponent implements OnInit{
 
 
 
-  //cal amounts
-
+  //cal Total amounts
   calAmount(row: any, index: number) {
     const product_price =parseInt(row.product_price);
     const qty = parseInt(row.qty);
@@ -60,8 +59,36 @@ export class BillingComponent implements OnInit{
     const amount = (qty*product_price) - ( qty * product_price)*(discount/100);
     this.rows[index].amount = amount;
 
-
   }
+
+   calcTotalDiscount(rows: any[]): number {
+    let totalDiscount = 0;
+    for (let i = 0; i < rows.length; i++) {
+      const product_price = parseInt(rows[i].product_price);
+      const qty = parseInt(rows[i].qty);
+      const discount = parseInt(rows[i].discount);
+      const discountAmount = (qty * product_price) * (discount / 100);
+      
+      totalDiscount += discountAmount;
+
+    }
+    return totalDiscount;
+  }
+
+  calSubTotal(rows: any[]): number {
+    let subtotal = 0;
+    for (let i = 0; i < rows.length; i++) {
+      const product_price = parseInt(rows[i].product_price);
+      const qty = parseInt(rows[i].qty);
+      const subtotalamount = (qty * product_price);
+      
+      subtotal += subtotalamount;
+
+    }
+    return subtotal;
+  }
+
+
 
   calculateTotalAmount() {
     let total = 0;
@@ -72,7 +99,10 @@ export class BillingComponent implements OnInit{
   }
 
 
+  
+
   productNames: string[] = [];
+
   ngOnInit() {
     this.productService.getProductNames().subscribe(names => {
       this.productNames = names;
@@ -124,7 +154,7 @@ export class BillingComponent implements OnInit{
  
 
   confirmRefresh(): void {
-    if (confirm('Are you sure you want to refresh?')) {
+    if (confirm('Are you sure you want to clear?')) {
       location.reload();
     }
   }
@@ -140,6 +170,8 @@ formData = {
   cu_tele: '',
   other: '',
   total_amount:null,
+  discount:null,
+  subtotal:null,
   note:'',
 
 };

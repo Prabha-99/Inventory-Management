@@ -136,9 +136,9 @@
                      </select></td>
 
                     <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:125px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.product_price" name="unitprice{{i}}" style="width:130px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="number" [(ngModel)]="row.discount"  name="discount{{i}}" (input)="calAmount(row, i)" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
-                    <td ><input type="text" [(ngModel)]="row.amount" name="amount{{i}}" readOnly style="width:130px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="number" [(ngModel)]="row.product_price" name="unitprice{{i}}" style="width:130px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="number" [(ngModel)]="row.discount"  name="discount{{i}}" (input)="calAmount(row, i)" (input)="calcTotalDiscount(rows)" (input)="calSubTotal(rows)" style="width:135px; height:32px;text-align:center;"class="form-control"></td>
+                    <td ><input type="number" [(ngModel)]="row.amount" name="amount{{i}}"  readOnly style="width:130px; height:32px;text-align:center;"class="form-control"></td>
                     <td ><button type="button" (click)="deleteRow(i)"  class="btn btn-outline-secondary btn-sm" >-</button></td>
                   </tr>
                 </tbody>
@@ -157,8 +157,7 @@
                                     <th>Special Notes</th>
                                 </tr>
                                 <tr>
-                                    <td><textarea id="are" name="are" rows="2" cols="60" [(ngModel)]="formData.note" class="form-control">
-                                        
+                                    <td><textarea id="are"  rows="3" cols="30" [(ngModel)]="formData.note" class="form-control" >
                                         </textarea></td>
                                 </tr>
                             </table>
@@ -171,14 +170,17 @@
                         <table class="table">
                             <tr >
                                 <th>Subtotal</th>
-                                <td><input type="text" readonly style="width:130px; height:30px;text-align:center;border: none;"value="Rs.{{calculateTotalAmount()}}"></td>
+                                <td><input type="text" readonly style="width:130px; height:30px;text-align:center;border: none;"value="Rs.{{calSubTotal(rows)}}" [(ngModel)]="formData.subtotal" required step="0.00"></td>
                             </tr>
                             <tr>
-                                <th>Discount</th>
-                                <td></td>
-                                <td>00.00</td>
+                                <th>Total Discount</th>
+                                <div class="mags ">
+                                    <td>Rs.</td>
+                                <td ><input type="number"  style="width:100px; height:30px;text-align:center;" value="{{ calcTotalDiscount(rows)}}" [(ngModel)]="formData.discount" required step="0.00"></td>
+                                <td>.00</td>
+                                </div>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th>SSCL</th>
                                 <td></td>
                                 <td>00.00</td>
@@ -190,7 +192,7 @@
                                     <td ><input type="text" style="width:130px; height:32px;text-align:center; border: none;"></td>
                                     </div></td>
                             
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <th>Total</th>     
                                 <div class="mags"style="border:1px ">
@@ -211,15 +213,16 @@
         </div>
    
             <hr>
-           <div style="text-align:center;"><button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm">Add Row</button></div> <br><br>
+           <div style="text-align:center;"><button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-sm" style="margin-right: 10px;">Add Row</button>        
+           <button (click)="confirmRefresh()" type="button" class="btn btn-outline-secondary btn-sm"> Clear </button></div> <br><br>
             
             <div class ="cols btn-group" >
             <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint >Export</button>
-           <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Send</button>
+            <button  class="btn btn-secondary margin-left" (click)="onSubmit()" >Save Details</button>
            <button class="btn btn-primary margin-left"id="view" (click)="Billingview()">View</button>
-           <button (click)="onSubmit()" >Save Details</button>
-           <button (click)="exportToPDF()">Save PDF</button>
-           <button (click)="confirmRefresh()" type="button" class="btn btn-secondary margin-left"> Clear </button>
+           <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Mail</button>
+           <button  class="btn btn-outline-secondary margin-left" (click)="exportToPDF()">Save PDF</button>
+
            
             </div> 
             <br>

@@ -7,3 +7,10 @@
 .btn-group {
   margin-right: 0.5rem;
 }
+textarea{
+  .tArea{ font:20px/1.2 arial; border:1px solid #CCC; padding:1em; margin:1em; height:5em; overflow:auto;
+    &::before{ content:attr(data-fixedtitle); color:red; }
+    > span{ float:left; color:red; }
+    > p{ margin:0; padding:0; }
+}
+}
