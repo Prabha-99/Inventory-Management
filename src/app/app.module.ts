@@ -64,6 +64,7 @@ import { StockManagerProductPopupComponent } from './stock-manager-product-popup
     StockManagerProductPopupComponent
  
     DashboardComponent
+ 
 
     
   ],
