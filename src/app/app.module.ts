@@ -35,6 +35,15 @@ import {MatInputModule} from  '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { StockManagerProductPopupComponent } from './stock-manager-product-popup/stock-manager-product-popup.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -63,6 +72,8 @@ import { StockManagerProductPopupComponent } from './stock-manager-product-popup
     StockManagerProductPopupComponent
  
 
+ 
+
     
   ],
   imports: [
@@ -76,7 +87,12 @@ import { StockManagerProductPopupComponent } from './stock-manager-product-popup
     MatFormFieldModule,
     MatInputModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    BrowserAnimationsModule
    
 
   ],

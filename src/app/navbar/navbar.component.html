@@ -5,7 +5,7 @@
         <h3><b></b></h3>
       </button>
       <a class="navbar-brand" routerLink="/home">
-        <img src="assets/logo1.png" height="50" style="max-width: 100%;">
+        <img src="assets/logo1.png" height="70" style="max-width: 100%;">
     </a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
@@ -30,7 +30,18 @@
 
       <div class="navbar-nav ms-auto">
         <div class="ms-auth">
-          <button type="button" class="btn btn-danger" (click)="onLogout()">Logout</button>
+
+          <div class="dropdown">
+            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Welcome, {{ username }}
+            </button>
+            <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1" >
+              
+              <!-- <button type="button" class="btn btn-danger" (click)="onLogout()">Logout</button> -->
+              <li><a class="dropdown-item" (click)="onLogout()" >Logout</a></li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
