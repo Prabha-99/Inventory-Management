@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private getHeaders(): HttpHeaders {
+  private getHeaders(): HttpHeaders {    //Class that can be use to get stored JWT from browswer's local Storage for any Authorization purpose 
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return headers;
@@ -36,6 +36,6 @@ export class AuthService {
 
   getUsername(): Observable<string> {
     const headers = this.getHeaders();
-    return this.http.get<string>(`${this.apiUrl2}`,{ headers });
+    return this.http.get<string>(`${this.apiUrl2}`,{ headers }); //Using stored token 
   }
 }
