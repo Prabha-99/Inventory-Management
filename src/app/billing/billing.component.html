@@ -170,13 +170,17 @@
                         <table class="table">
                             <tr >
                                 <th>Subtotal</th>
-                                <td><input type="text" readonly style="width:130px; height:30px;text-align:center;border: none;"value="Rs.{{calSubTotal(rows)}}" [(ngModel)]="formData.subtotal" min="0.00" step="0.00" placeholder="00"></td>
+                                <div class="mags ">
+                                    <td>Rs.</td>
+                                <td><input type="number" style="width:100px; height:30px;text-align:center;"value="{{calSubTotal(rows)}}" [(ngModel)]="formData.subtotal" min="0.00" step="0.5" placeholder="00"></td>
+                                <td>.00</td>
+                                </div>
                             </tr>
                             <tr>
                                 <th>Total Discount</th>
                                 <div class="mags ">
                                     <td>Rs.</td>
-                                <td ><input type="number"  style="width:100px; height:30px;text-align:center;" value="{{ calcTotalDiscount(rows)}}" [(ngModel)]="formData.discount" min="0.00" step="0.00" placeholder="00"></td>
+                                <td ><input type="number"  style="width:100px; height:30px;text-align:center;" value="{{ calcTotalDiscount(rows)}}" [(ngModel)]="formData.discount" min="0.00" step="0.5" placeholder="00"></td>
                                 <td>.00</td>
                                 </div>
                             </tr>
@@ -197,7 +201,7 @@
                                 <th>Total</th>     
                                 <div class="mags"style="border:1px ">
                                     <td>Rs.</td>
-                                <td ><input type="number" [(ngModel)]="formData.total_amount"  id="total_amount"  style="width:100px; height:30px;text-align:center;"value="{{calculateTotalAmount()}}" min=".00" step="0.00" placeholder="00"></td>
+                                <td ><input type="number" [(ngModel)]="formData.total_amount"  id="total_amount"  style="width:100px; height:30px;text-align:center;"value="{{calculateTotalAmount()}}" min=".00" step="0.5" placeholder="00"></td>
                                 <td>.00</td>
                                 </div>
                             </tr>
