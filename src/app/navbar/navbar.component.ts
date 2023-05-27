@@ -17,14 +17,15 @@ export class NavbarComponent implements OnInit{
   
     ngOnInit(): void {
       this.authService.getUsername().subscribe(
-        (username: string) => {
-          this.username = username;
+        (response: any) => {
+          this.username = response.firstname.toString(); //Converting the Object that returning through the Endpoint as the response
         },
         (error: any) => {
           // Handle error
         }
       );
     }
+    
   
 
   onLogout() {
