@@ -33,19 +33,14 @@
 
           <div class="dropdown">
             <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
+              Welcome, {{ username }}
             </button>
             <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1" >
               
-              <li><button type="button" class="btn btn-danger" (click)="onLogout()">Logout</button></li>
-              <!-- <li><a class="dropdown-item" (click)="onLogout()" >Logout</a></li> -->
+              <!-- <button type="button" class="btn btn-danger" (click)="onLogout()">Logout</button> -->
+              <li><a class="dropdown-item" (click)="onLogout()" >Logout</a></li>
             </ul>
           </div>
-
-
-
-          <!-- <li>Welcome,</li>
-          <button type="button" class="btn btn-danger" (click)="onLogout()">Logout</button> -->
 
         </div>
       </div>
