@@ -23,17 +23,16 @@ import * as html2pdf from 'html2pdf.js';
 })
 
 
+
 export class BillingComponent implements OnInit{
-
   constructor(private productService: ProductService) { }
-
 
   Billingsend() {
     window.open('/billingsend', '_blank','width=800,height=500');
   }
 
   Billingview() {
-    window.open('/billingview', '_blank','width=1380,height=800');
+    window.open('/billingview', '_blank');
   }
 
   rowCount=1;
@@ -50,7 +49,6 @@ export class BillingComponent implements OnInit{
 
 
 
-
   //cal Total amounts
   calAmount(row: any, index: number) {
     const product_price =parseInt(row.product_price);
@@ -60,6 +58,8 @@ export class BillingComponent implements OnInit{
     this.rows[index].amount = amount;
 
   }
+
+
 
    calcTotalDiscount(rows: any[]): number {
     let totalDiscount = 0;
@@ -75,6 +75,7 @@ export class BillingComponent implements OnInit{
     return totalDiscount;
   }
 
+
   calSubTotal(rows: any[]): number {
     let subtotal = 0;
     for (let i = 0; i < rows.length; i++) {
@@ -83,7 +84,6 @@ export class BillingComponent implements OnInit{
       const subtotalamount = (qty * product_price);
       
       subtotal += subtotalamount;
-
     }
     return subtotal;
   }
@@ -111,6 +111,7 @@ export class BillingComponent implements OnInit{
     
 
 
+
   exportToPDF() {
     const printSection = document.getElementById('print-section')!;
 
@@ -135,6 +136,7 @@ export class BillingComponent implements OnInit{
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 
+
     html2pdf().set(options).from(printSection).output('blob').then((html2pdfFile) => {
 
       // Create a new FormData instance and append the PDF files
@@ -158,6 +160,8 @@ export class BillingComponent implements OnInit{
       location.reload();
     }
   }
+
+
 
 //////////////////////save bill details
 
@@ -216,7 +220,9 @@ export interface Product {
   name: string;
   price: number;
   brand:string;
-
+  total_amount:number;
+  discount:number;
+  subtotal:number;
 }
 
 
