@@ -19,7 +19,6 @@ export class LoginComponent {
     this.authService.login(this.email, this.password)
       .subscribe(
         (response) => {
-          console.log('Token:', response.token);
           localStorage.setItem('token', response['token']);
           this.router.navigate(['/home']);
         },
