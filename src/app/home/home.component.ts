@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardService } from '../dashboard.service';
 // import Chart from 'chart.js/auto';
 
 @Component({
