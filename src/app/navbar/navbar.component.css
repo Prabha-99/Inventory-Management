@@ -1,3 +1,17 @@
-.navbar-nav li{
+.navbar-nav li {
     color: aliceblue;
+    text-decoration: none;
+    user-select: none;
+}
+
+.navbar-nav li a{
+    font-weight: bolder;
+    color: #fa1c1c;
+    text-decoration: none;
+    outline: none;
+  
+}
+
+.navbar-nav li a::after{
+    text-decoration: none;  
 }
