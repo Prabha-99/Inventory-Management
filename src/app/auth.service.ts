@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/api/auth/authenticate';
+  private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
+  private apiUrl2 = 'http://localhost:8080/api/user/CurrentUser';
 
   constructor(private http: HttpClient) { }
 
@@ -15,7 +16,7 @@ export class AuthService {
       email: email,
       password: password
     };
-    return this.http.post<{ token: string }>(`${this.apiUrl}`, body);
+    return this.http.post<{ token: string }>(`${this.apiUrl1}`, body);
   }
   
 
@@ -25,5 +26,9 @@ export class AuthService {
 
   isLoggedIn() {
     return localStorage.getItem('token') !== null;
+  }
+
+  getUsername(): Observable<string> {
+    return this.http.get<string>(`${this.apiUrl2}/username`);
   }
 }

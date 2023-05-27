@@ -9,10 +9,23 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit{
 
+  username: string | undefined;
+
+
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  
+    ngOnInit(): void {
+      this.authService.getUsername().subscribe(
+        (username: string) => {
+          this.username = username;
+        },
+        (error: any) => {
+          // Handle error
+        }
+      );
+    }
+  
 
   onLogout() {
     this.authService.logout();
