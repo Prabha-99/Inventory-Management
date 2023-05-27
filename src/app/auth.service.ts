@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,6 +10,12 @@ export class AuthService {
   private apiUrl2 = 'http://localhost:8080/api/user/CurrentUser';
 
   constructor(private http: HttpClient) { }
+
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return headers;
+  }
 
   login(email: string, password: string): Observable<{ token: string }> {
     const body = {
@@ -29,6 +35,7 @@ export class AuthService {
   }
 
   getUsername(): Observable<string> {
-    return this.http.get<string>(`${this.apiUrl2}/username`);
+    const headers = this.getHeaders();
+    return this.http.get<string>(`${this.apiUrl2}`,{ headers });
   }
 }
