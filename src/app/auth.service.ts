@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserService } from '..//app/user.service';
+
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +12,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
   private apiUrl2 = 'http://localhost:8080/api/user/CurrentUser';
+  private apiUrl3 = 'http://localhost:8080/api/auth/register';
 
   constructor(private http: HttpClient) { }
 
@@ -38,4 +43,19 @@ export class AuthService {
     const headers = this.getHeaders();
     return this.http.get<string>(`${this.apiUrl2}`,{ headers }); //Using stored token 
   }
+  register(user: UserService): Observable<any> {
+    console.log(user);
+
+    const  formData =  new FormData();
+
+    formData.append('firstname',user.firstname);
+    formData.append('secondname',user.lastname);
+    formData.append('email',user.email);
+    formData.append('password',user.password);
+    formData.append('role',user.role);
+
+    return this.http.post(this.apiUrl3, formData );
+
+  }
+
 }
