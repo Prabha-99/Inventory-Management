@@ -10,7 +10,7 @@
 
         <h1 class="bg-secondary"style="text-align:center;padding:10px 10px;color:white;"> Bill Information</h1>
 
-      <div class="row my-2 mx-1 justify-content-center"style="padding-left: 10px; padding-top:25px;">
+      <div class="row my-2 mx-1 justify-content-center"style="padding-left: 10px; padding-top:15px;">
 
       <table class="table table-striped table-borderless">
         <thead  style="background-color:#222222 ;" class="text-white">
@@ -55,7 +55,30 @@
         </tbody>
       </table>
       </div>
+<hr>
+      <div style="padding-bottom: 50px; padding-top:10px;text-align: center;">
+        <h1 class="bg-secondary"style="text-align:center;padding:10px 10px;color:white;">List of PDF Files</h1>
+
+<table class="table table-striped table-borderless">
+  <thead style="background-color:#222222 ;" class="text-white">
+    <tr>
+      <th>File id</th>
+      <th>File Name</th>
+      
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pdf of pdfList">
+      <td>{{ pdf.id }}</td>
+      <td>{{ pdf.filename }}</td>
+      
+      <td><button (click)="getPdfFile(pdf.filepath)">Open</button></td>
+    </tr>
+  </tbody>
+</table>
       </div>
+    </div>
     </body>
 
 </html>
