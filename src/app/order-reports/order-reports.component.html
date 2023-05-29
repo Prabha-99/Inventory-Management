@@ -13,7 +13,28 @@
             <app-sidebar></app-sidebar>
         </div>
         <div class="col-10">
-        
+            <br><br><br><br><br>
+            <table>
+                <thead>
+                  <tr>
+                    <th>File Name</th>
+                    <th>File Size</th>
+                    <th>Creation Date</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let file of files">
+                    <td>{{ file.name }}</td>
+                    <td>{{ file.size }}</td>
+                    <td>{{ file.creationDate }}</td>
+                    <td>
+                      <button (click)="downloadFile(file.id)">Download</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
         </div>
     </div>
 </div>

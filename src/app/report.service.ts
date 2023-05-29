@@ -16,7 +16,7 @@ export class ReportService {
   }
 
   downloadFile(fileId: number): Observable<Blob> {
-    return this.http.get(`${this.apiUrl}/files/${fileId}`, { responseType: 'blob' });
+    return this.http.get(`${this.apiUrl}`, { responseType: 'blob' });
   }
   
 }
