@@ -16,7 +16,7 @@ export class BillingViewComponent implements OnInit{
 
   constructor(private billService: BillService) { }
 
-  pdfList!: any[];
+  // pdfList!: any[];
   bills: any[] = [];
   imageUrls: any[] = [];
 
@@ -25,9 +25,11 @@ export class BillingViewComponent implements OnInit{
       this.bills = bill;
     });
 
-    this.billService.getImage().subscribe((imageUrls: any[]) => {
-      this.imageUrls = imageUrls;
-    });
+    // this.billService.getImage().subscribe((imageUrls: any[]) => {
+    //   this.imageUrls = imageUrls;
+    // });
+
+    this.loadPdfList();
 
   }
 
@@ -44,6 +46,38 @@ export class BillingViewComponent implements OnInit{
     }
   }
 
+
+  pdfList: any[]=[];
+
+
+
+  loadPdfList(): void {
+    this.billService.getAllPdf().subscribe(
+      (data: any[]) => {
+        this.pdfList = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  getPdfFile(filepath: string) {
+    if (filepath == null || filepath.trim().length == 0) {
+      alert(console.log("File path is null or empty"));
+      return;
+    }
+    this.billService.getPdfFileByPath(filepath).subscribe(
+      (data) => {
+        const file = new Blob([data], { type: 'application/pdf' });
+        const fileURL = URL.createObjectURL(file);
+        window.open(fileURL);
+      },
+      (error) => {
+        alert(console.log(error));
+      }
+    );
+  }
 
 }
 
