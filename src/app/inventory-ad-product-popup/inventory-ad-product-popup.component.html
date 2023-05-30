@@ -49,33 +49,48 @@
     <form #authorForm="ngForm">
       <mat-card-content>
         <p>
-          <!-- First Name field -->
+
+          <select class="form-select" aria-label="category">
+            <option selected>Select Category</option>
+            <option value="1">Starron</option>
+            <option value="2">Melomine</option>
+            <option value="3">H-bands</option>
+            <option value="4">Accessories</option>
+            <option value="5">appliences</option>
+          </select>
+          <br>
+          <!-- Product Name -->
           <mat-form-field appearance="outline">
-            <mat-label>Enter your fisrt name</mat-label>
-            <input matInput name="firstName" placeholder="First Name" required>
+            <mat-label>Product Name</mat-label>
+            <input matInput name="product_name" placeholder="Product Name" required>
           </mat-form-field>
   
-          <!-- Last Name field -->
+          <!-- Product Brand -->
   
           <mat-form-field appearance="outline">
-            <mat-label>Enter your last name</mat-label>
-            <input matInput name="lastName" placeholder="Last Name" required>
+            <mat-label>Product Brand</mat-label>
+            <input matInput name="product_brand" placeholder="Product Brand" required>
           </mat-form-field>
         </p>
        
         <p>
-          <!-- Address field -->
           <mat-form-field appearance="outline">
-            <mat-label>Enter your address</mat-label>
-            <input matInput name="address" placeholder="Address" required>
+            <mat-label>Product Quantity</mat-label>
+            <input matInput name="product_quantity" placeholder="Product Quantity" required>
+          </mat-form-field>
+
+          <!-- Product Price -->
+          <mat-form-field appearance="outline">
+            <mat-label>Product Price</mat-label>
+            <input matInput name="product_price" placeholder="Product Price" required>
           </mat-form-field>
         </p>
   
       </mat-card-content>
   
       <mat-card-actions>
-        <button mat-button color="primary" type="submit" [disabled]="authorForm.invalid">Submit</button>
-        <button mat-button type="reset">Reset</button>
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="reset" value="Reset">
       </mat-card-actions>
     </form>
   
