@@ -1,8 +1,8 @@
 
 <div class="container">
-   <div class="row">
-        <app-navbar></app-navbar><!--Call navbar-->
-  </div>
+    <div class="row">
+        <app-navbar></app-navbar> <!--Call navbar-->
+    </div>
     <br>
     <br>
     <br>
@@ -10,75 +10,48 @@
         <div class="col-2">
             <app-inventory-ad-side-bar></app-inventory-ad-side-bar> <!--Call sidebar-->
         </div>
-        <br><br><br>
-        <div class="container mt-4" class="align-right">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-subtitle>Product List</mat-card-subtitle>
-              <mat-card-title></mat-card-title>
-            </mat-card-header>
-        
-            <mat-card-content>
-              <mat-table>
-        
-                <ng-container matColumnDef="id">
-                  <mat-header-cell *matHeaderCellDef>Product Id</mat-header-cell>
-                  <mat-cell></mat-cell>
-                </ng-container>
-        
-                <ng-container matColumnDef="firstName">
-                  <mat-header-cell *matHeaderCellDef>Category Id</mat-header-cell>
-                  <mat-cell></mat-cell>
-                </ng-container>
-        
-                <ng-container matColumnDef="lastName">
-                  <mat-header-cell *matHeaderCellDef>Product Brand</mat-header-cell>
-                  <mat-cell></mat-cell>
-                </ng-container>
-        
-                <ng-container matColumnDef="birthDate">
-                  <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
-                  <mat-cell></mat-cell>
-                </ng-container>
-        
-                <ng-container matColumnDef="address">
-                  <mat-header-cell *matHeaderCellDef>Product Price</mat-header-cell>
-                  <mat-cell></mat-cell>
-                </ng-container>
-        
-                <ng-container matColumnDef="action">
-                  <mat-header-cell *matHeaderCellDef>Product Quantity</mat-header-cell>
-                  <mat-cell>
-                    <button mat-icon-button>
-                      <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-icon-button color="warn">
-                      <mat-icon>delete</mat-icon>
-                    </button>
-                  </mat-cell>
-                </ng-container>
-        
-                <mat-header-row
-                  *matHeaderRowDef="['id', 'firstName', 'lastName', 'birthDate', 'address', 'action']"></mat-header-row>
-                <mat-row
-                  *matRowDef="let row; columns: ['id', 'firstName', 'lastName', 'birthDate', 'address', 'action']"></mat-row>
-        
-              </mat-table>
-            </mat-card-content>
-        
-        
-           <mat-card-footer>
-              <mat-card-actions>
-                <button type="button" class="btn btn-outline-primary">Add a Product</button>
-              </mat-card-actions>
-            </mat-card-footer>
-        
-          </mat-card>
-        
+        <div class="col-10 mt-5">
+        <div class="mt-5">
+        <table>
+            <tr>
+                <td>
+                    <!--Total of categories-->
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Total Categories</h5>
+                          <hr>
+                          <p class="card-text">{{ count2 }}</p>
+                          <a href="#" class="btn btn-primary">View</a>
+                        </div>
+                      </div>
+                </td>
+                <td>
+                    <!--Total of Products-->
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Total Products</h5>
+                          <hr>
+                          <p class="card-text">{{ count }}</p>
+                          <a href="#" class="btn btn-primary">View</a>
+                        </div>
+                      </div>
+                </td>
+                <td>
+                    <!--Total of bill-->
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Total Bill</h5>
+                          <hr>
+                          <p class="card-text">6</p>
+                          <a href="#" class="btn btn-primary">View</a>
+                        </div>
+                      </div>
+                </td>
+            </tr>
+        </table>
         </div>
-        
-
-
+        </div>
     </div>
 </div>
 
+  

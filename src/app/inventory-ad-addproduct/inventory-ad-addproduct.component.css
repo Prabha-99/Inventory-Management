@@ -2,3 +2,13 @@
  
     margin-left: 945px;
 }
+
+
+.align-right {
+    margin-left: 150px;
+    margin-right: 50px;
+  }
+  
+  section {
+    display: table;
+  }
