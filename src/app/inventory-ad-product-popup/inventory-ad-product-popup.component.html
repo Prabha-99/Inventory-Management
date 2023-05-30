@@ -1,45 +1,3 @@
-<!--<div mat-dialog-title>
-    <h1>Add Products</h1>
-</div>
-<br>
-<div mat-dialog-content class="content">
-
-        
-    <select class="form-select" aria-label="category">
-        <option selected>Select Category</option>
-        <option value="1">Starron</option>
-        <option value="2">Melomine</option>
-        <option value="3">H-bands</option>
-        <option value="4">Accessories</option>
-        <option value="5">appliences</option>
-    </select>
-    <br>
-    <mat-form-field appearance="outline">
-        <mat-label>Product Name</mat-label>
-        <input matInput>
-    </mat-form-field>
-    
-    <mat-form-field appearance="outline">
-        <mat-label>Product Brand</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline">
-        <mat-label>Product Price</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Product Quantity</mat-label>
-        <input matInput>
-    </mat-form-field>
-
-    <div mat-dialog-actions>
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-outline-primary">Close</button>
-    </div>
-</div>
-
--->
 
 <mat-card>
     <mat-card-header>
@@ -50,13 +8,13 @@
       <mat-card-content>
         <p>
 
-          <select class="form-select" aria-label="category" [(ngModel)]="product.category_id" required>
+          <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="product.category_id" required>
             <option selected>Select Category</option>
-            <option value="1">Starron</option>
-            <option value="2">Melomine</option>
-            <option value="3">H-bands</option>
-            <option value="4">Accessories</option>
-            <option value="5">appliences</option>
+            <option value="c1">Starron</option>
+            <option value="c2">Melomine</option>
+            <option value="c3">H-bands</option>
+            <option value="c4">Accessories</option>
+            <option value="c5">appliences</option>
           </select>
           <br>
           <!-- Product Name -->
