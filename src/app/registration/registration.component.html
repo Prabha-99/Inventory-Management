@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>Document</title> 
 </head>
 <body>
@@ -28,11 +31,24 @@
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control short-input" [(ngModel)]="regData.password"  name="password" required>
         </div>
-        <div class="mb-3">
+        <div class="form-group">
+            <label for="sel1">Role (select one):</label>
+            <select class="form-control" id="sel1" name ="role" [(ngModel)] = "regData.role">
+              <option>ADMIN</option>
+              <option>INVENTORY_ADMIN</option>
+              <option>STOCK_MANAGER</option>
+              <option>PURCHASE_COORDINATOR</option>
+              <option>STOCK_KEEPER</option>
+              <option>DESIGNER</option>
+              <option>SHOWROOM_MANAGER</option>
+            </select>
+          </div>
+        <!-- <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Role</label>
             <input type="email" class="form-control short-input" [(ngModel)]="regData.role"  name="username" required>
-          </div>
+          </div> -->
         <button type="submit" class="btn btn-primary">Register</button>
+        <button type="button" class="btn btn-primary" (click)="clear()">Clear</button>
       </form>
     </div>
     <div>

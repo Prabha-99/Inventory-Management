@@ -27,6 +27,15 @@ export class RegistrationComponent {
         console.log(response);
       });
   }
+  clear(): void {
+    this.regData = {
+      firstname: '',
+      lastname: '',
+      email: '',
+      password: '',
+      role: ''
+    };
+  }
   
 
 }
