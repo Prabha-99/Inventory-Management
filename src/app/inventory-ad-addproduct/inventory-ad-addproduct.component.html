@@ -21,47 +21,52 @@
            <mat-card-content>
              <mat-table>
        
-               <ng-container matColumnDef="id">
+               <ng-container matColumnDef="product_id">
                  <mat-header-cell *matHeaderCellDef>Product Id</mat-header-cell>
                  <mat-cell></mat-cell>
                </ng-container>
        
-               <ng-container matColumnDef="firstName">
+               <ng-container matColumnDef="category_id">
                  <mat-header-cell *matHeaderCellDef>Category Id</mat-header-cell>
                  <mat-cell></mat-cell>
                </ng-container>
        
-               <ng-container matColumnDef="lastName">
+               <ng-container matColumnDef="product_brand">
                  <mat-header-cell *matHeaderCellDef>Product Brand</mat-header-cell>
                  <mat-cell></mat-cell>
                </ng-container>
        
-               <ng-container matColumnDef="birthDate">
+               <ng-container matColumnDef="product_name">
                  <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
                  <mat-cell></mat-cell>
                </ng-container>
        
-               <ng-container matColumnDef="address">
+               <ng-container matColumnDef="product_price">
                  <mat-header-cell *matHeaderCellDef>Product Price</mat-header-cell>
                  <mat-cell></mat-cell>
                </ng-container>
        
-               <ng-container matColumnDef="action">
+               <ng-container matColumnDef="product_quantity">
                  <mat-header-cell *matHeaderCellDef>Product Quantity</mat-header-cell>
-                 <mat-cell>
-                   <button mat-icon-button>
-                     <mat-icon>edit</mat-icon>
-                   </button>
-                   <button mat-icon-button color="warn">
-                     <mat-icon>delete</mat-icon>
-                   </button>
-                 </mat-cell>
+                 <mat-cell></mat-cell>
                </ng-container>
+
+               <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                <mat-cell *matCellDef="let author">
+                  <button mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button color="warn">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </mat-cell>
+              </ng-container>
        
                <mat-header-row
-                 *matHeaderRowDef="['id', 'firstName', 'lastName', 'birthDate', 'address', 'action']"></mat-header-row>
+                 *matHeaderRowDef="['product_id', 'category_id', 'product_brand', 'product_name', 'product_price', 'product_quantity','action']"></mat-header-row>
                <mat-row
-                 *matRowDef="let row; columns: ['id', 'firstName', 'lastName', 'birthDate', 'address', 'action']"></mat-row>
+                 *matRowDef="let row; columns: ['product_id', 'category_id', 'product_brand', 'product_name', 'product_price', 'product_quantity','action']"></mat-row>
        
              </mat-table>
            </mat-card-content>
