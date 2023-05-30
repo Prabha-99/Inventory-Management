@@ -49,7 +49,7 @@
             <td style="text-align:center;">{{ bill.total_amount }}</td>
             <td style="text-align:center;">{{ bill.note }}</td>
             <td>
-              <button (click)="onDelete(bill.bill_id)">Delete</button>
+              <button class="btn btn-outline-danger btn-sm" (click)="onDelete(bill.bill_id)">Delete</button>
             </td>
           </tr>
         </tbody>
@@ -59,21 +59,23 @@
       <div style="padding-bottom: 50px; padding-top:10px;text-align: center;">
         <h1 class="bg-secondary"style="text-align:center;padding:10px 10px;color:white;">List of PDF Files</h1>
 
+
 <table class="table table-striped table-borderless">
   <thead style="background-color:#222222 ;" class="text-white">
     <tr>
       <th>File id</th>
-      <th>File Name</th>
-      
+      <th>File Name</th> 
       <th>Action</th>
+
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let pdf of pdfList">
-      <td>{{ pdf.id }}</td>
+      <td>{{ pdf.bill_id }}</td>
       <td>{{ pdf.filename }}</td>
       
-      <td><button (click)="getPdfFile(pdf.filepath)">Open</button></td>
+      <td><button class="btn btn-outline-primary" (click)="getPdfFileById(pdf.bill_id)">Open</button>
+      <!-- <button class="btn btn-outline-danger btn-sm"  (click)="pdfDelete(pdf.bill_id)">Delete</button></td> -->
     </tr>
   </tbody>
 </table>

@@ -126,7 +126,7 @@
                       <th scope="col"style="text-align:center;">Material</th>
                       <th scope="col"style="text-align:center;">Quantity</th>
                       <th scope="col"style="text-align:center;">Unit Price</th>
-                      <th scope="col"style="text-align:center;">Discount</th>
+                      <th scope="col"style="text-align:center;">Discount(%)</th>
                       <th scope="col"style="text-align:center;">Amount</th>
                       <th scope="col"></th>
                      
@@ -227,11 +227,11 @@
            <button (click)="confirmRefresh()" type="button" class="btn btn-outline-secondary btn-sm"> Clear </button></div> <br><br>
             
             <div class ="cols btn-group" >
-            <button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint >Export</button>
-            <button  class="btn btn-secondary margin-left" (click)="onSubmit()" >Save Details</button>
+            <button class="btn btn-warning margin-left" printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint >Export</button>
+            <button  class="btn btn-secondary margin-left" (click)="onSubmit()">Save Details</button>
            <button class="btn btn-primary margin-left"id="view" (click)="Billingview()">View</button>
            <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Mail</button>
-           <button  class="btn btn-outline-secondary margin-left" (click)="exportToPDF()">Save PDF</button>
+           <!-- <button  class="btn btn-outline-secondary margin-left" (click)="exportToPDF()">Save PDF</button> -->
 
            
             </div> 

@@ -147,7 +147,7 @@ export class BillingComponent implements OnInit{
       // Send the files to the productService
       this.productService.uploadFile(fData).subscribe(response => {
         console.log(response);
-        alert("Successfully Saved!!");
+        alert("PDF File Successfully Saved!!");
       });
     });
   }); 
@@ -190,7 +190,9 @@ onSubmit() {
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
       console.log(data);
-      alert('Data saved successfully!');
+
+      this.exportToPDF();
+      alert('Bill saved successfully!');
     },
     error: (error: any) => {
       console.error(error);

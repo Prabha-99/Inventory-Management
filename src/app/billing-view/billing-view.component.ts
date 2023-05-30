@@ -62,22 +62,39 @@ export class BillingViewComponent implements OnInit{
     );
   }
 
-  getPdfFile(filepath: string) {
-    if (filepath == null || filepath.trim().length == 0) {
-      alert(console.log("File path is null or empty"));
+  getPdfFileById(bill_id: number) {
+    if (bill_id == null) {
+      alert(console.log("ID is null"));
       return;
     }
-    this.billService.getPdfFileByPath(filepath).subscribe(
+    this.billService.getPdfFileById(bill_id).subscribe(
       (data) => {
-        const file = new Blob([data], { type: 'application/pdf' });
-        const fileURL = URL.createObjectURL(file);
-        window.open(fileURL);
+        if (data instanceof Blob) {
+          const file = new Blob([data], { type: 'application/pdf' });
+          const fileURL = URL.createObjectURL(file);
+          window.open(fileURL);
+        } else {
+          alert(console.log("Invalid response data"));
+        }
       },
       (error) => {
         alert(console.log(error));
       }
     );
   }
+
+  // pdfDelete(id: number) {
+  //   if (confirm("Are you sure you want to delete this bill?")) {
+  //     this.billService.deleteBill(id).subscribe(() => {
+  //       this.pdfList = this.pdfList.filter(bill => bill.id !== id);
+  //      // alert("Bill deleted successfully.");
+  //      // location.reload(); // Refresh the page
+  //     }, () => {
+  //       alert("Bill Deleted Successfully!"); // Display error message
+  //       location.reload();
+  //     });
+  //   }
+  // }
 
 }
 

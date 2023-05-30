@@ -26,28 +26,22 @@ export class BillService {
 
 
 
-
-// private apiEndpoint = 'http://localhost:8080/api/bill/view';
-
-//  getImage(): Observable<any> {
-//    return this.http.get(this.apiEndpoint, { responseType: 'blob' }).pipe(
-//      map((blob: Blob) => {
-//        const reader = new FileReader();
-//        reader.readAsDataURL(blob);
-//        return reader.result as any;
-//      })
-//    );
-//  }
-
  private baseUrl = 'http://localhost:8080/api/bill';
 
  getAllPdf(): Observable<string[]> {
   return this.http.get<string[]>(`${this.baseUrl}/all`);
 }
 
-getPdfFileByPath(filepath: string): Observable<Blob> {
-  return this.http.get(`${this.baseUrl}/file/${filepath}`, { responseType: 'blob' });
+getPdfFileById(bill_id: number): Observable<any> {
+  return this.http.get(`files/${bill_id}`, { responseType: 'blob' });
 }
+
+// private apiDUrl = 'http://localhost:8080/api/delete/';
+// deletePdf(bill_id: number): Observable<void> {
+//   const url = `${this.apiDUrl}/${bill_id}`;
+//   return this.http.delete<void>(url);
+// }
+
 
 
   }
