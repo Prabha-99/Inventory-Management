@@ -18,6 +18,7 @@ import { StockManagerProfileComponent } from './stock-manager-profile/stock-mana
 import { StockManagerProductComponent } from './stock-manager-product/stock-manager-product.component';
 import { LoginComponent } from './login/login.component';
 import { BillingViewComponent } from './billing-view/billing-view.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path:"stock-manager-dash",component:StockManagerDashComponent},
   {path:"stock-manager-profile",component:StockManagerProfileComponent},
   {path:"stock-manager-product",component:StockManagerProductComponent},
-  {path:"billingview",component:BillingViewComponent}
+  {path:"billingview",component:BillingViewComponent},
+  {path:"registration",component:RegistrationComponent}
 
 
 ];

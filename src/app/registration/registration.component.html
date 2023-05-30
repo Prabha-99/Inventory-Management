@@ -1,1 +1,44 @@
-<p>registration works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title> 
+</head>
+<body>
+
+  <div class="login-form-container">
+    <div>
+      <h1>Registration</h1>
+      <form (submit)="register()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">First Name</label>
+            <input type="email" class="form-control short-input" [(ngModel)]="regData.firstname"  name="username" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Last Name</label>
+            <input type="email" class="form-control short-input" [(ngModel)]="regData.lastname"  name="username" required>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" class="form-control short-input" [(ngModel)]="regData.email"  name="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control short-input" [(ngModel)]="regData.password"  name="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Role</label>
+            <input type="email" class="form-control short-input" [(ngModel)]="regData.role"  name="username" required>
+          </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+    <div>
+      <img src="assets/logo1.png" alt="Company Image" class="company-image">
+    </div>
+  </div>
+  
+</body>
+</html>
