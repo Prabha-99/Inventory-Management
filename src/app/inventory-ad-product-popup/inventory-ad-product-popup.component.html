@@ -43,14 +43,14 @@
 
 <mat-card>
     <mat-card-header>
-      <mat-card-title>Add Author</mat-card-title>
+      <mat-card-title>Add Product</mat-card-title>
     </mat-card-header>
   
-    <form #authorForm="ngForm">
+    <form #productForm="ngForm" (ngSubmit)="addProduct()">
       <mat-card-content>
         <p>
 
-          <select class="form-select" aria-label="category">
+          <select class="form-select" aria-label="category" [(ngModel)]="product.category_id" required>
             <option selected>Select Category</option>
             <option value="1">Starron</option>
             <option value="2">Melomine</option>
@@ -62,35 +62,35 @@
           <!-- Product Name -->
           <mat-form-field appearance="outline">
             <mat-label>Product Name</mat-label>
-            <input matInput name="product_name" placeholder="Product Name" required>
+            <input matInput name="product_name" [(ngModel)]="product.product_name" placeholder="Product Name" required>
           </mat-form-field>
   
           <!-- Product Brand -->
   
           <mat-form-field appearance="outline">
             <mat-label>Product Brand</mat-label>
-            <input matInput name="product_brand" placeholder="Product Brand" required>
+            <input matInput name="product_brand" [(ngModel)]="product.product_brand" placeholder="Product Brand" required>
           </mat-form-field>
         </p>
        
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Product Quantity</mat-label>
-            <input matInput name="product_quantity" placeholder="Product Quantity" required>
+            <input matInput name="product_quantity" [(ngModel)]="product.product_quantity" type="number" placeholder="Product Quantity" required>
           </mat-form-field>
 
           <!-- Product Price -->
           <mat-form-field appearance="outline">
             <mat-label>Product Price</mat-label>
-            <input matInput name="product_price" placeholder="Product Price" required>
+            <input matInput name="product_price"  [(ngModel)]="product.product_price" type="number" placeholder="Product Price" required>
           </mat-form-field>
         </p>
   
       </mat-card-content>
   
       <mat-card-actions>
-        <input class="btn btn-primary" type="submit" value="Submit">
-        <input class="btn btn-primary" type="reset" value="Reset">
+        <input class="btn btn-primary" type="submit" value="Submit" [disabled]="!productForm.valid">
+        <input class="btn btn-primary" type="reset" value="Reset" (click)="resetForm()">
       </mat-card-actions>
     </form>
   
