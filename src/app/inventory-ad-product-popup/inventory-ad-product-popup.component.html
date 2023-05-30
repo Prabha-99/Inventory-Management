@@ -1,4 +1,4 @@
-<div mat-dialog-title>
+<!--<div mat-dialog-title>
     <h1>Add Products</h1>
 </div>
 <br>
@@ -38,3 +38,61 @@
         <button type="button" class="btn btn-outline-primary">Close</button>
     </div>
 </div>
+
+-->
+
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Add Author</mat-card-title>
+    </mat-card-header>
+  
+    <form #authorForm="ngForm">
+      <mat-card-content>
+        <p>
+
+          <select class="form-select" aria-label="category">
+            <option selected>Select Category</option>
+            <option value="1">Starron</option>
+            <option value="2">Melomine</option>
+            <option value="3">H-bands</option>
+            <option value="4">Accessories</option>
+            <option value="5">appliences</option>
+          </select>
+          <br>
+          <!-- Product Name -->
+          <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input matInput name="product_name" placeholder="Product Name" required>
+          </mat-form-field>
+  
+          <!-- Product Brand -->
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Product Brand</mat-label>
+            <input matInput name="product_brand" placeholder="Product Brand" required>
+          </mat-form-field>
+        </p>
+       
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Product Quantity</mat-label>
+            <input matInput name="product_quantity" placeholder="Product Quantity" required>
+          </mat-form-field>
+
+          <!-- Product Price -->
+          <mat-form-field appearance="outline">
+            <mat-label>Product Price</mat-label>
+            <input matInput name="product_price" placeholder="Product Price" required>
+          </mat-form-field>
+        </p>
+  
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="reset" value="Reset">
+      </mat-card-actions>
+    </form>
+  
+  </mat-card>
+  
