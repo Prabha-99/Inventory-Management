@@ -8,9 +8,32 @@ import { ReportService } from '../report.service';
 })
 export class OrderReportsComponent implements OnInit {
 
-  files: any[] | undefined;
+  files!: any[];
 
   constructor(private reportService: ReportService) {}
+
+  // ngOnInit(): void {
+  //   this.getDocuments();
+  // }
+
+
+  // getDocuments(): void {
+  //   this.reportService.getDocuments()
+  //     .then(response => {
+  //       this.documents = response;
+  //     })
+  //     .catch(error => {
+  //       console.error('Error retrieving documents:', error);
+  //     });
+  // }
+
+  // downloadDocument(filename: string): void {
+  //   this.reportService.downloadDocument(filename);
+  // }
+
+
+
+
   
   ngOnInit(): void {
     this.reportService.getFiles().subscribe(

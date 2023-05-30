@@ -14,26 +14,51 @@
         </div>
         <div class="col-10">
             <br><br><br><br><br>
-            <table>
+
+
+
+            <!-- <h1>Document List</h1>
+            <ul>
+            <li *ngFor="let document of documents">
+                {{ document.name }} - {{ document.createdDate }}
+                <button (click)="downloadDocument(document.path)">Download</button>
+            </li>
+            </ul> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <table class="table">
                 <thead>
                   <tr>
                     <th>File Name</th>
-                    <th>File Size</th>
-                    <th>Creation Date</th>
-                    <th>Action</th>
+                    <th>Date</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let file of files">
                     <td>{{ file.name }}</td>
-                    <td>{{ file.size }}</td>
                     <td>{{ file.creationDate }}</td>
                     <td>
-                      <button (click)="downloadFile(file.id)">Download</button>
+                      <button type="button" class="btn btn-info" (click)="downloadFile(file.id)">Download</button>
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table> 
               
         </div>
     </div>
