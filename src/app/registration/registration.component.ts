@@ -23,8 +23,8 @@ export class RegistrationComponent {
     // Call the registration service to register the user
     this.registrationService.registerUser(this.regData)
       .subscribe(response => {
-        // Handle the response from the server
-        console.log(response);
+        
+        alert(console.log(response));
       });
   }
   clear(): void {
