@@ -1,4 +1,4 @@
-<div mat-dialog-title>
+<!--<div mat-dialog-title>
     <h1>Add Products</h1>
 </div>
 <br>
@@ -38,3 +38,46 @@
         <button type="button" class="btn btn-outline-primary">Close</button>
     </div>
 </div>
+
+-->
+
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Add Author</mat-card-title>
+    </mat-card-header>
+  
+    <form #authorForm="ngForm">
+      <mat-card-content>
+        <p>
+          <!-- First Name field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your fisrt name</mat-label>
+            <input matInput name="firstName" placeholder="First Name" required>
+          </mat-form-field>
+  
+          <!-- Last Name field -->
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your last name</mat-label>
+            <input matInput name="lastName" placeholder="Last Name" required>
+          </mat-form-field>
+        </p>
+       
+        <p>
+          <!-- Address field -->
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your address</mat-label>
+            <input matInput name="address" placeholder="Address" required>
+          </mat-form-field>
+        </p>
+  
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button mat-button color="primary" type="submit" [disabled]="authorForm.invalid">Submit</button>
+        <button mat-button type="reset">Reset</button>
+      </mat-card-actions>
+    </form>
+  
+  </mat-card>
+  
