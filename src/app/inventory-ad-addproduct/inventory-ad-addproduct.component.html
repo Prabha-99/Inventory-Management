@@ -1,51 +1,84 @@
-<!--Inventory admin add products-->
 
 <div class="container">
-    <div class="row">
-        <app-inventory-ad-nav></app-inventory-ad-nav>
-    </div>
-    <div class="row">
-        <div class="col-2">
-            <app-inventory-ad-side-bar></app-inventory-ad-side-bar>
-        </div>
-        <div class="col-10 mt-5">
-        <div class="mt-5">
-          <br>
-          <div>
-          <!--Add Product button-->
-          <button mat-raised-button (click)="openAddEditProductForm()" class="btn btn-dark float-right">Add Product</button>
-           
-            <br><br>
-          <!--Search bar-->
-          <div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Filter" aria-label="Search" />
-          </div>
-          </div>
-            <table class="table align-middle mb-0 bg-white mt-5">
-                <thead class="bg-light mt-5">
-                  <tr>
-                    <th>Product ID</th>
-                    <th>Category ID</th>
-                    <th>Product Brand</th>
-                    <th>Product Name</th>
-                    <th>Product Price</th>
-                    <th>Product Quantity</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button type="button" class="btn btn-link-dark"><span class="bi bi-trash"></span></button></td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-        </div>
-    </div>
+  <div class="row">
+       <app-navbar></app-navbar><!--Call navbar-->
+ </div>
+   <br>
+   <br>
+   <br>
+   <div class="row">
+       <div class="col-2">
+           <app-inventory-ad-side-bar></app-inventory-ad-side-bar> <!--Call sidebar-->
+       </div>
+       <br><br><br>
+       <div class="container mt-4" class="align-right">
+         <mat-card class="example-card">
+           <mat-card-header>
+             <mat-card-subtitle>Product List</mat-card-subtitle>
+             <mat-card-title></mat-card-title>
+           </mat-card-header>
+       
+           <mat-card-content>
+             <mat-table>
+       
+               <ng-container matColumnDef="id">
+                 <mat-header-cell *matHeaderCellDef>Product Id</mat-header-cell>
+                 <mat-cell></mat-cell>
+               </ng-container>
+       
+               <ng-container matColumnDef="firstName">
+                 <mat-header-cell *matHeaderCellDef>Category Id</mat-header-cell>
+                 <mat-cell></mat-cell>
+               </ng-container>
+       
+               <ng-container matColumnDef="lastName">
+                 <mat-header-cell *matHeaderCellDef>Product Brand</mat-header-cell>
+                 <mat-cell></mat-cell>
+               </ng-container>
+       
+               <ng-container matColumnDef="birthDate">
+                 <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
+                 <mat-cell></mat-cell>
+               </ng-container>
+       
+               <ng-container matColumnDef="address">
+                 <mat-header-cell *matHeaderCellDef>Product Price</mat-header-cell>
+                 <mat-cell></mat-cell>
+               </ng-container>
+       
+               <ng-container matColumnDef="action">
+                 <mat-header-cell *matHeaderCellDef>Product Quantity</mat-header-cell>
+                 <mat-cell>
+                   <button mat-icon-button>
+                     <mat-icon>edit</mat-icon>
+                   </button>
+                   <button mat-icon-button color="warn">
+                     <mat-icon>delete</mat-icon>
+                   </button>
+                 </mat-cell>
+               </ng-container>
+       
+               <mat-header-row
+                 *matHeaderRowDef="['id', 'firstName', 'lastName', 'birthDate', 'address', 'action']"></mat-header-row>
+               <mat-row
+                 *matRowDef="let row; columns: ['id', 'firstName', 'lastName', 'birthDate', 'address', 'action']"></mat-row>
+       
+             </mat-table>
+           </mat-card-content>
+       
+       
+          <mat-card-footer>
+             <mat-card-actions>
+               <button type="button" class="btn btn-outline-primary">Add a Product</button>
+             </mat-card-actions>
+           </mat-card-footer>
+       
+         </mat-card>
+       
+       </div>
+       
+
+
+   </div>
 </div>
+
