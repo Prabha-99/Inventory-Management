@@ -10,47 +10,72 @@
         <div class="col-2">
             <app-inventory-ad-side-bar></app-inventory-ad-side-bar> <!--Call sidebar-->
         </div>
-        <div class="col-10 mt-5">
-        <div class="mt-5">
-        <table>
-            <tr>
-                <td>
-                    <!--Total of categories-->
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Total Categories</h5>
-                          <hr>
-                          <p class="card-text">{{ count2 }}</p>
-                          <a href="#" class="btn btn-primary">View</a>
-                        </div>
-                      </div>
-                </td>
-                <td>
-                    <!--Total of Products-->
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Total Products</h5>
-                          <hr>
-                          <p class="card-text">{{ count }}</p>
-                          <a href="#" class="btn btn-primary">View</a>
-                        </div>
-                      </div>
-                </td>
-                <td>
-                    <!--Total of bill-->
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Total Bill</h5>
-                          <hr>
-                          <p class="card-text">6</p>
-                          <a href="#" class="btn btn-primary">View</a>
-                        </div>
-                      </div>
-                </td>
-            </tr>
-        </table>
-        </div>
-        </div>
+        <div class="container mt-4">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-subtitle>Book List</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- Angular Material table component-->
+    <mat-table [dataSource]="books">
+
+      <!-- Define columns with column definitions using ng-container-->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.id }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.title }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="author">
+        <mat-header-cell *matHeaderCellDef> Author </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.author?.firstName }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.price | currency:'USD'}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.amount }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="publishDate">
+        <mat-header-cell *matHeaderCellDef> Publish Date </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.publishDate | date:'mediumDate' }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let book">
+          <button mat-icon-button color="primary" (click)="openEditModal(book)"> <mat-icon>edit</mat-icon> </button>
+          <button mat-icon-button color="warn" (click)="onDeleteBook(book.id)"> <mat-icon>delete</mat-icon> </button>
+        </mat-cell>
+      </ng-container>
+
+
+      <!-- Set row header and keep placeholders for cells by adding *matRowDef and *matHeaderRowDef-->
+      <mat-header-row
+        *matHeaderRowDef="['id', 'title', 'author', 'price', 'amount', 'publishDate', 'action']"></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: ['id', 'title', 'author', 'price', 'amount', 'publishDate', 'action']"></mat-row>
+
+    </mat-table>
+  </mat-card-content>
+
+  <mat-card-footer>
+    <mat-card-actions>
+      <button mat-button  (click)="openAddModal()">add a new book</button>
+    </mat-card-actions>
+  </mat-card-footer>
+</mat-card>
+</div>
+
     </div>
 </div>
 

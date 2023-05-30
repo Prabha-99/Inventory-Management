@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'; 
 // import { count } from 'rxjs';
 
 
@@ -12,14 +12,36 @@ import { HttpClient } from '@angular/common/http';
 })
 export class InventoryAdDashComponent implements OnInit{
 
-  count:any;
-  count2:any;
+  public books!: Book[];
 
-  constructor(private http:HttpClient){}
+  constructor(
+    private bookServices: BookService,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) { }
   
-  ngOnInit(){
-    this.http.get<any>("http://localhost:8080/api/product/productCount").subscribe(count =>this.count = count);
-    this.http.get<any>("http://localhost:8080/api/v1/category/categoryCount").subscribe(count2 =>this.count2 = count2);
+  ngOnInit(): void{
+    this.onGetBooks();
+  }
+
+  public onGetBooks(): void {
+    this.bookServices.getBooks().subscribe(
+      (response: Book[]) => {
+        this.books = response;
+        console.log(this.books);
+      },
+      (error: HttpErrorResponse) => {
+        AlertMessages(this.snackBar, error.message);
+      }
+    );
+  }
+
+  public openAddModal(): void {
+    const dialogRef = this.dialog.open(AddBookModalComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      AlertMessages(this.snackBar, 'Book has been added successfully :) ');
+      this.onGetBooks();
+    });
   }
   
 }
