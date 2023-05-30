@@ -8,13 +8,13 @@
       <mat-card-content>
         <p>
 
-          <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="product.category_id" required>
-            <option selected>Select Category</option>
-            <option value="c1">Starron</option>
-            <option value="c2">Melomine</option>
-            <option value="c3">H-bands</option>
+          <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="product.category_id" (change)="updateQuantityField()" required>
+            <option selected value="" disabled [ngValue]="null">Select Category</option>
+            <option value="c1">Staron</option>
+            <option value="c2">Melamine Board</option>
+            <option value="c3">Edge Band</option>
             <option value="c4">Accessories</option>
-            <option value="c5">appliences</option>
+            <option value="c5">appliances</option>
           </select>
           <br>
           <!-- Product Name -->
@@ -34,7 +34,7 @@
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Product Quantity</mat-label>
-            <input matInput name="product_quantity" [(ngModel)]="product.product_quantity" type="number" placeholder="Product Quantity" required>
+            <input matInput name="product_quantity" [(ngModel)]="product.product_quantity" type="number" placeholder="Product Quantity" [disabled]="disableQuantityField" required>
           </mat-form-field>
 
           <!-- Product Price -->
