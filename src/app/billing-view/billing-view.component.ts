@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BillService } from './billing-view.component.service';
 import { Observable } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -15,18 +16,21 @@ export class BillingViewComponent implements OnInit{
 
   constructor(private billService: BillService) { }
 
-  pdfList!: any[];
+  // pdfList!: any[];
   bills: any[] = [];
-
+  imageUrls: any[] = [];
 
   ngOnInit() {
     this.billService.getAllBills().subscribe(bill => {
       this.bills = bill;
     });
 
+    // this.billService.getImage().subscribe((imageUrls: any[]) => {
+    //   this.imageUrls = imageUrls;
+    // });
 
-    // this.getAllPDFs();
-   
+    this.loadPdfList();
+
   }
 
   onDelete(id: number) {
@@ -41,14 +45,39 @@ export class BillingViewComponent implements OnInit{
       });
     }
   }
- 
-  // getAllPDFs() {
-  //   this.billService.getAllPDFs().subscribe(data => {
-  //     this.pdfList = data;
-  //   });
-  // }
 
-  
+
+  pdfList: any[]=[];
+
+
+
+  loadPdfList(): void {
+    this.billService.getAllPdf().subscribe(
+      (data: any[]) => {
+        this.pdfList = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  getPdfFile(filepath: string) {
+    if (filepath == null || filepath.trim().length == 0) {
+      alert(console.log("File path is null or empty"));
+      return;
+    }
+    this.billService.getPdfFileByPath(filepath).subscribe(
+      (data) => {
+        const file = new Blob([data], { type: 'application/pdf' });
+        const fileURL = URL.createObjectURL(file);
+        window.open(fileURL);
+      },
+      (error) => {
+        alert(console.log(error));
+      }
+    );
+  }
 
 }
 

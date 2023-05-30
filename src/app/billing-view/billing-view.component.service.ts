@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 
 
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
 export class BillService {
 
-  pdfList!: any[];
+ // pdfList!: any[];
 
   constructor(private http: HttpClient) { }
 
@@ -26,16 +27,27 @@ export class BillService {
 
 
 
-  // getAllPDFs(): Observable<any[]> {
-  //   const url = `${this.apiUrl}/view`;
-  //   return this.http.get<any[]>(url).pipe(
-  //     map(pdfList => {
-  //       pdfList.forEach(pdf => {
-  //         pdf.text = this.BillingViewC.convertPdfToText(pdf.path);
-  //       });
-  //       return pdfList;
-  //     })
-  //   );
-  // }
+// private apiEndpoint = 'http://localhost:8080/api/bill/view';
+
+//  getImage(): Observable<any> {
+//    return this.http.get(this.apiEndpoint, { responseType: 'blob' }).pipe(
+//      map((blob: Blob) => {
+//        const reader = new FileReader();
+//        reader.readAsDataURL(blob);
+//        return reader.result as any;
+//      })
+//    );
+//  }
+
+ private baseUrl = 'http://localhost:8080/api/bill';
+
+ getAllPdf(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.baseUrl}/all`);
+}
+
+getPdfFileByPath(filepath: string): Observable<Blob> {
+  return this.http.get(`${this.baseUrl}/file/${filepath}`, { responseType: 'blob' });
+}
+
 
   }

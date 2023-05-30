@@ -23,17 +23,16 @@ import * as html2pdf from 'html2pdf.js';
 })
 
 
+
 export class BillingComponent implements OnInit{
-
   constructor(private productService: ProductService) { }
-
 
   Billingsend() {
     window.open('/billingsend', '_blank','width=800,height=500');
   }
 
   Billingview() {
-    window.open('/billingview', '_blank','width=1380,height=800');
+    window.open('/billingview', '_blank');
   }
 
   rowCount=1;
@@ -50,9 +49,7 @@ export class BillingComponent implements OnInit{
 
 
 
-
-  //cal amounts
-
+  //cal Total amounts
   calAmount(row: any, index: number) {
     const product_price =parseInt(row.product_price);
     const qty = parseInt(row.qty);
@@ -60,8 +57,38 @@ export class BillingComponent implements OnInit{
     const amount = (qty*product_price) - ( qty * product_price)*(discount/100);
     this.rows[index].amount = amount;
 
-
   }
+
+
+
+   calcTotalDiscount(rows: any[]): number {
+    let totalDiscount = 0;
+    for (let i = 0; i < rows.length; i++) {
+      const product_price = parseInt(rows[i].product_price);
+      const qty = parseInt(rows[i].qty);
+      const discount = parseInt(rows[i].discount);
+      const discountAmount = (qty * product_price) * (discount / 100);
+      
+      totalDiscount += discountAmount;
+
+    }
+    return totalDiscount;
+  }
+
+
+  calSubTotal(rows: any[]): number {
+    let subtotal = 0;
+    for (let i = 0; i < rows.length; i++) {
+      const product_price = parseInt(rows[i].product_price);
+      const qty = parseInt(rows[i].qty);
+      const subtotalamount = (qty * product_price);
+      
+      subtotal += subtotalamount;
+    }
+    return subtotal;
+  }
+
+
 
   calculateTotalAmount() {
     let total = 0;
@@ -72,13 +99,17 @@ export class BillingComponent implements OnInit{
   }
 
 
+  
+
   productNames: string[] = [];
+
   ngOnInit() {
     this.productService.getProductNames().subscribe(names => {
       this.productNames = names;
     });
   }
     
+
 
 
   exportToPDF() {
@@ -88,28 +119,29 @@ export class BillingComponent implements OnInit{
   const doc = new jsPDF();
 
   html2canvas(printSection).then((canvas) => {
-    // Add the canvas to the jsPDF document
 
-    const imgData = canvas.toDataURL('image/jpeg', 8); // Decrease the quality of the image
+    // Add the canvas to the jsPDF document
+    const imgData = canvas.toDataURL('image/jpeg', 0.5); // Decrease the quality of the image
     doc.addImage(imgData, 'JPEG', 10, 10, 180, 240);
 
     // Save the jsPDF document
-    const jsPDFFile = doc.output('blob');
+   // const jsPDFFile = doc.output('blob');
 
     // Convert the HTML element to a PDF using html2pdf library
     const options = {
-      margin: 1,
+      margin: 0.2,
       filename: 'html2pdf-document.pdf',
-      image: { type: 'jpeg', quality: 8 }, // Decrease the quality of the image
-      html2canvas: { scale:10 },
+      image: { type: 'jpeg', quality: 0.5 }, // Decrease the quality of the image
+      html2canvas: { scale:9},
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
+
 
     html2pdf().set(options).from(printSection).output('blob').then((html2pdfFile) => {
 
       // Create a new FormData instance and append the PDF files
       const fData = new FormData();
-      fData.append('jsPDF-file', jsPDFFile, 'jsPDF-document.pdf');
+   //   fData.append('jsPDF-file', jsPDFFile, 'jsPDF-document.pdf');
       fData.append('html2pdf-file', html2pdfFile, 'html2pdf-document.pdf');
 
       // Send the files to the productService
@@ -121,12 +153,15 @@ export class BillingComponent implements OnInit{
   }); 
   }
 
+ 
 
   confirmRefresh(): void {
-    if (confirm('Are you sure you want to refresh?')) {
+    if (confirm('Are you sure you want to clear?')) {
       location.reload();
     }
   }
+
+
 
 //////////////////////save bill details
 
@@ -139,6 +174,8 @@ formData = {
   cu_tele: '',
   other: '',
   total_amount:null,
+  discount:null,
+  subtotal:null,
   note:'',
 
 };
@@ -183,7 +220,9 @@ export interface Product {
   name: string;
   price: number;
   brand:string;
-
+  total_amount:number;
+  discount:number;
+  subtotal:number;
 }
 
 
