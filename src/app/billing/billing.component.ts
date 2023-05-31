@@ -210,7 +210,8 @@ onSubmit() {
 
 
 isValidFormData(): boolean {
-  return !!this.formData.qu_no && !!this.formData.st_date && !!this.formData.end_date && !!this.formData.cu_name;
+  return !!this.formData.qu_no && !!this.formData.st_date && !!this.formData.end_date && !!this.formData.cu_name && !!this.formData.cu_address
+  && !!this.formData.cu_tele;
 }
 
 

@@ -6,9 +6,13 @@
         <title> Billing View </title>
     </head>
     <body>
-      <div class="container" style="padding-top: 12px;">
+      <div class="container">
+        <div class="row">
+            <app-navbar></app-navbar> <!--Call navbar-->
+          </div>
+      <div class="container" style="padding-top: 110px;">
 
-        <h1 class="bg-secondary"style="text-align:center;padding:10px 10px;color:white;"> Bill Information</h1>
+        <h1 class="bg-secondary"style="text-align:center;padding-left:10px;padding-right:7px;color:white;"> Bill Information</h1>
 
       <div class="row my-2 mx-1 justify-content-center"style="padding-left: 10px; padding-top:15px;">
 
@@ -49,14 +53,14 @@
             <td style="text-align:center;">{{ bill.total_amount }}</td>
             <td style="text-align:center;">{{ bill.note }}</td>
             <td>
-              <button (click)="onDelete(bill.bill_id)">Delete</button>
+              <button (click)="onDelete(bill.bill_id)" class="btn btn-outline-danger btn-sm">Delete</button>
             </td>
           </tr>
         </tbody>
       </table>
       </div>
 <hr>
-      <div style="padding-bottom: 50px; padding-top:10px;text-align: center;">
+      <div style="padding-bottom: 50px; padding-top:10px;text-align: center;padding-left:100px;padding-right:100px;">
         <h1 class="bg-secondary"style="text-align:center;padding:10px 10px;color:white;">List of PDF Files</h1>
 
 <table class="table table-striped table-borderless">
@@ -73,12 +77,13 @@
       <td>{{ pdf.id }}</td>
       <td>{{ pdf.filename }}</td>
       
-      <td><button (click)="getPdfFile(pdf.filepath)">Open</button></td>
+      <td><button (click)="getPdfFile(pdf.filepath)" class="btn btn-outline-primary btn-sm">Open</button></td>
     </tr>
   </tbody>
 </table>
       </div>
-    </div>
-    </body>
+      </div>
+  </div>
+</body>
 
 </html>
