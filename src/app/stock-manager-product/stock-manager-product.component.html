@@ -33,13 +33,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  <tr *ngFor="let product of products">
+                    <td>{{ product.product_id }}</td>
+                    <td>{{ product.category_id }}</td>
+                    <td>{{ product.product_brand }}</td>
+                    <td>{{ product.product_name }}</td>
+                    <td>{{ product.product_price }}</td>
+                    <td>{{ product.product_quantity }}</td>
                    <!--<td><button type="button" class="btn btn-link-dark"><span class="bi bi-trash"></span></button></td>-->
                   </tr>
                 </tbody>
