@@ -11,7 +11,18 @@ export class StockManagerProductComponent {
 
   constructor(private _dialog: MatDialog){}
 
-  openStockEditProductForm(){
-    this._dialog.open(StockManagerProductPopupComponent);
+  openAddEditProductForm(author: any, operation: String) {
+    var dialogRef = null as any;
+    if (operation === 'add') {
+      dialogRef = this._dialog.open(StockManagerProductPopupComponent);
+    }
+   /* if (operation === 'edit') {
+      dialogRef = this.dialog.open(EditAuthorModalComponent, {
+        data: author // passing author data to the dialog component
+      });
+    }*/
+   /* dialogRef.afterClosed().subscribe(() => {
+      this.onGetProducts();
+    });*/
   }
 }
