@@ -23,7 +23,11 @@ export class LoginComponent {
           this.router.navigate(['/home']);
         },
         (error) => {
-          this.error = error.message;
+          if (error.status === 401) {
+            this.error = 'Invalid email or password..!!!';
+          } else {
+            this.error = 'Invalid email or password..!!!';
+          }
         }
       );
   }

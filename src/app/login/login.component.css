@@ -48,3 +48,16 @@ h1{
   font-weight: bolder;
   color: rgb(250, 223, 174);
 }
+
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+
+.custom-button {
+  background-color: #FFB64D;
+}

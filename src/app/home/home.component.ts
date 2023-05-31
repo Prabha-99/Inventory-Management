@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 // import Chart from 'chart.js/auto';
 
@@ -6,37 +7,18 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent 
-// implements OnInit
-{
+export class HomeComponent implements OnInit{
 
-//   data: any;
-//   chart: any;
+  category:any;
+  products:any;
+  sales:any;
 
-//   constructor(private dashboardService: DashboardService) { }
+  constructor(private http:HttpClient){}
   
-//   ngOnInit() {
-//     this.dashboardService.getData().subscribe((data: any) => {
-//       this.data = data;
-
-//       // Format data for chart.js
-//       const chartData = {
-//         labels: ['Red', 'Blue', 'Green'],
-//         datasets: [{
-//           data: [this.data.red, this.data.blue, this.data.green],
-//           backgroundColor: [
-//             'rgb(255, 99, 132)',
-//             'rgb(54, 162, 235)',
-//             'rgb(75, 192, 192)'
-//           ]
-//         }]
-//       };
-
-//       // Create the chart
-//       this.chart = new Chart('canvas', {
-//         type: 'pie',
-//         data: chartData
-//       });
-//     });
-//   }
+  ngOnInit() {
+    this.http.get<any>("http://localhost:8080/api/v1/category/categoryCount").subscribe(count =>this.category = count);
+    this.http.get<any>("http://localhost:8080/api/product/productCount").subscribe(count =>this.products = count);
+    this.http.get<any>("").subscribe(count =>this.sales = count);
+    
+  }
 }

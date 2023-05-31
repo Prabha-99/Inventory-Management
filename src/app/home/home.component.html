@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
 
 
     
@@ -21,81 +21,47 @@
             <div class="col-10">
                 <br><br><br><br>
 
+
+
+
                 <div class="container">
+                    
                     <div class="row">
-                        <div class="col-sm-6 col-md-6">
-                            <div id="container1"></div>
+                        <div class="col-sm-4">
+                            <div class="card bg-c-blue text-white">
+                                <div class="card-body">
+                                    <h6>Available</h6>
+                                    <h2 class="text-end"><i class="bi bi-cart-plus"></i><span> {{category}}</span></h2>
+                                    <p>Total Categories<span class="float-end"> 5</span></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-6 col-md-6"></div>
-                        <div class="col-sm-6 col-md-6"></div>
-                        <div class="col-sm-6 col-md-6"></div>
+                
+                        <div class="col-sm-4">
+                            <div class="card bg-c-green text-white">
+                                <div class="card-body">
+                                    <h6>Available</h6>
+                                    <h2 class="text-end"><i class="bi bi-rocket"></i><span> {{products}}</span></h2>
+                                    <p>Total Products<span class="float-end"> 1480</span></p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-4">
+                            <div class="card bg-c-yellow text-white">
+                                <div class="card-body">
+                                    <h6>Last Month</h6>
+                                    <h2 class="text-end"><i class="bi bi-currency-dollar"></i><span> 100K</span></h2>
+                                    <p>Total Sales<span class="float-end"> 2460K</span></p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        
                     </div>
                 </div>
-
-                <script>
-                    // Data retrieved from https://worldpopulationreview.com/country-rankings/countries-by-density
-                    Highcharts.chart('container1', {
-                        chart: {
-                            type: 'variablepie'
-                        },
-                        title: {
-                            text: 'Countries compared by population density and total area, 2022.',
-                            align: 'left'
-                        },
-                        tooltip: {
-                            headerFormat: '',
-                            pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
-                                'Area (square km): <b>{point.y}</b><br/>' +
-                                'Population density (people per square km): <b>{point.z}</b><br/>'
-                        },
-                        series: [{
-                            minPointSize: 10,
-                            innerSize: '20%',
-                            zMin: 0,
-                            name: 'countries',
-                            borderRadius: 5,
-                            data: [{
-                                name: 'Spain',
-                                y: 505992,
-                                z: 92
-                            }, {
-                                name: 'France',
-                                y: 551695,
-                                z: 119
-                            }, {
-                                name: 'Poland',
-                                y: 312679,
-                                z: 121
-                            }, {
-                                name: 'Czech Republic',
-                                y: 78865,
-                                z: 136
-                            }, {
-                                name: 'Italy',
-                                y: 301336,
-                                z: 200
-                            }, {
-                                name: 'Switzerland',
-                                y: 41284,
-                                z: 213
-                            }, {
-                                name: 'Germany',
-                                y: 357114,
-                                z: 235
-                            }],
-                            colors: [
-                                '#4caefe',
-                                '#3dc3e8',
-                                '#2dd9db',
-                                '#1feeaf',
-                                '#0ff3a0',
-                                '#00e887',
-                                '#23e274'
-                            ]
-                        }]
-                    });
-
-                </script>
+                
+                
                 
             </div>
         </div>
