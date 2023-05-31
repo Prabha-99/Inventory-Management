@@ -15,3 +15,8 @@
 .navbar-nav li a::after{
     text-decoration: none;  
 }
+
+.custom-button {
+    background-color: #FFB64D; /* Replace with your desired color */
+    /* Add other desired styles */
+  }
