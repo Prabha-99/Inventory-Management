@@ -36,7 +36,7 @@ import { MatOptionModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { StockManagerProductPopupComponent } from './stock-manager-product-popup/stock-manager-product-popup.component';
 import { ShowroomFileUploadComponent } from './showroom-file-upload/showroom-file-upload.component';
-import { ShowroomServiceComponent } from './showroom-service/showroom-service.component';
+
 
 @NgModule({
   declarations: [
@@ -64,11 +64,9 @@ import { ShowroomServiceComponent } from './showroom-service/showroom-service.co
     InventoryAdProductPopupComponent,
     StockManagerProductPopupComponent,
     ShowroomFileUploadComponent,
-    ShowroomServiceComponent
-
-
 
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
