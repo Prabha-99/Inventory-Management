@@ -24,7 +24,9 @@ export class RegistrationComponent {
     this.registrationService.registerUser(this.regData)
       .subscribe(response => {
         
-        alert(console.log(response));
+        alert('Registration successful');
+        // Clear the form
+        this.clear();
       });
   }
   clear(): void {
