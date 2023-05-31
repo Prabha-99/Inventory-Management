@@ -13,7 +13,53 @@
             <app-sidebar></app-sidebar>
         </div>
         <div class="col-10">
-        
+            <br><br><br><br><br>
+
+
+
+            <!-- <h1>Document List</h1>
+            <ul>
+            <li *ngFor="let document of documents">
+                {{ document.name }} - {{ document.createdDate }}
+                <button (click)="downloadDocument(document.path)">Download</button>
+            </li>
+            </ul> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>File Name</th>
+                    <th>Date</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let file of files">
+                    <td>{{ file.name }}</td>
+                    <td>{{ file.creationDate }}</td>
+                    <td>
+                      <button type="button" class="btn btn-info" (click)="downloadFile(file.id)">Download</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table> 
+              
         </div>
     </div>
 </div>
