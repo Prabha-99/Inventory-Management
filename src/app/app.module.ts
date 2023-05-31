@@ -35,10 +35,12 @@ import {MatInputModule} from  '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { StockManagerProductPopupComponent } from './stock-manager-product-popup/stock-manager-product-popup.component';
+import { ShowroomFileUploadComponent } from './showroom-file-upload/showroom-file-upload.component';
+import { ShowroomServiceComponent } from './showroom-service/showroom-service.component';
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     NavbarComponent,
     HomeComponent,
@@ -60,10 +62,12 @@ import { StockManagerProductPopupComponent } from './stock-manager-product-popup
     LoginComponent,
     BillingViewComponent,
     InventoryAdProductPopupComponent,
-    StockManagerProductPopupComponent
- 
+    StockManagerProductPopupComponent,
+    ShowroomFileUploadComponent,
+    ShowroomServiceComponent
 
-    
+
+
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,7 @@ import { StockManagerProductPopupComponent } from './stock-manager-product-popup
     MatInputModule,
     MatOptionModule,
     MatSelectModule
-   
+
 
   ],
   providers: [],
