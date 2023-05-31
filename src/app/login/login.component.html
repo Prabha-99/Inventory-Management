@@ -22,11 +22,16 @@
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
+
+      <div *ngIf="error" class="error-message">{{ error }}</div>
     </div>
+
     <div>
       <img src="assets/logo1.png" alt="Company Image" class="company-image">
     </div>
   </div>
+
+  
   
 </body>
 </html>
