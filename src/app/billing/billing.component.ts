@@ -190,6 +190,7 @@ onSubmit() {
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
       console.log(data);
+      this.exportToPDF();
       alert('Data saved successfully!');
     },
     error: (error: any) => {
