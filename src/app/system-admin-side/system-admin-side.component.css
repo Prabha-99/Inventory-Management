@@ -1,0 +1,18 @@
+
+.me-2{
+    color: #FFB64D;
+}
+
+span{
+    color: rgb(245, 219, 147);
+}
+
+i{
+    margin-right: 10px;
+    font-weight: bolder;
+    font-variant: inherit;
+}
+
+span:hover{
+    color: rgb(255, 193, 7);
+}
