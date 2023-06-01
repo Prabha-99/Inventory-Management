@@ -44,6 +44,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { InventoryAdDeletePopComponent } from './inventory-ad-delete-pop/inventory-ad-delete-pop.component';
 
 
 
@@ -72,7 +73,8 @@ import { MatCardModule } from '@angular/material/card';
     BillingViewComponent,
     InventoryAdProductPopupComponent,
     StockManagerProductPopupComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    InventoryAdDeletePopComponent
  
 
  
