@@ -22,6 +22,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SystemAdminNavComponent } from './system-admin-nav/system-admin-nav.component';
 import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.component';
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
+import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
 
 
 
@@ -46,7 +47,8 @@ const routes: Routes = [
   {path:"registration",component:RegistrationComponent},
   {path:"system-admin-nav",component:SystemAdminNavComponent},
   {path:"system-admin-side",component:SystemAdminSideComponent},
-  {path:"system-admin-dash",component:SystemAdminDashComponent}
+  {path:"system-admin-dash",component:SystemAdminDashComponent},
+  {path:"get-user-details",component:GetUserDetailsComponent}
 
 
 ];
