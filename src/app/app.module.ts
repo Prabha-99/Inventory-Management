@@ -47,6 +47,8 @@ import { MatCardModule } from '@angular/material/card';
 import { SystemAdminNavComponent } from './system-admin-nav/system-admin-nav.component';
 import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.component';
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
+import { InventoryAdDeletePopComponent } from './inventory-ad-delete-pop/inventory-ad-delete-pop.component';
+
 
 
 
@@ -78,7 +80,9 @@ import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.
     RegistrationComponent,
     SystemAdminNavComponent,
     SystemAdminSideComponent,
-    SystemAdminDashComponent
+    SystemAdminDashComponent,
+    InventoryAdDeletePopComponent
+
  
 
  
