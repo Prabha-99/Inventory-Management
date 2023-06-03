@@ -44,7 +44,11 @@ import { RegistrationComponent } from './registration/registration.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { SystemAdminNavComponent } from './system-admin-nav/system-admin-nav.component';
+import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.component';
+import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
 import { InventoryAdDeletePopComponent } from './inventory-ad-delete-pop/inventory-ad-delete-pop.component';
+
 
 
 
@@ -74,7 +78,11 @@ import { InventoryAdDeletePopComponent } from './inventory-ad-delete-pop/invento
     InventoryAdProductPopupComponent,
     StockManagerProductPopupComponent,
     RegistrationComponent,
+    SystemAdminNavComponent,
+    SystemAdminSideComponent,
+    SystemAdminDashComponent,
     InventoryAdDeletePopComponent
+
  
 
  
