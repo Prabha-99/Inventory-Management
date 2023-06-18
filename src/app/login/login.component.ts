@@ -24,7 +24,7 @@ export class LoginComponent {
         },
         (error) => {
           if (error.status === 401) {
-            this.error = 'Invalid email or password..!!!';
+            this.error = 'Please Enter Credentials!!!';
           } else {
             this.error = 'Invalid email or password..!!!';
           }
