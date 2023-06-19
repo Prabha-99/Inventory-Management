@@ -24,6 +24,7 @@ import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
+import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 
 
 
@@ -50,7 +51,9 @@ const routes: Routes = [
   {path:"system-admin-side",component:SystemAdminSideComponent},
   {path:"system-admin-dash",component:SystemAdminDashComponent},
   {path:"get-user-details",component:GetUserDetailsComponent},
-  {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent}
+  {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
+  {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
+  
 
 
 ];
