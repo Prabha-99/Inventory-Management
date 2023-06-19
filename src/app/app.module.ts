@@ -56,6 +56,7 @@ import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-prod
 import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator-product-popup/purchase-coordinator-product-popup.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { PurchaseCoordinatorOrderComponent } from './purchase-coordinator-order/purchase-coordinator-order.component';
+import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/purchase-coordinator-bill.component';
 
 
 
@@ -97,7 +98,8 @@ import { PurchaseCoordinatorOrderComponent } from './purchase-coordinator-order/
     PurchaseCoordinatorProductComponent,
     PurchaseCoordinatorProductPopupComponent,
     PurchaseCoordinatorProfileComponent,
-    PurchaseCoordinatorOrderComponent
+    PurchaseCoordinatorOrderComponent,
+    PurchaseCoordinatorBillComponent
 
  
 
