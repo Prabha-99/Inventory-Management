@@ -1,28 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StockManagerProductPopupComponent } from '../stock-manager-product-popup/stock-manager-product-popup.component';
 import { MatDialog } from '@angular/material/dialog';
+import { StockManagerProductService } from '../stock-manager-product.service';
 
 @Component({
   selector: 'app-stock-manager-product',
   templateUrl: './stock-manager-product.component.html',
   styleUrls: ['./stock-manager-product.component.css']
 })
-export class StockManagerProductComponent {
+export class StockManagerProductComponent implements OnInit {
 
-  constructor(private _dialog: MatDialog){}
+  productStock!: ProductStock[];
+
+  constructor(private _dialog: MatDialog, private stockManagerProductService: StockManagerProductService){}
+  ngOnInit(): void {
+    this.loadStockProducts();
+    throw new Error('Method not implemented.');
+  }
+
+  loadStockProducts(){
+    this.stockManagerProductService.getStockProducts().subscribe(
+      data => {
+        this.productStock = data;
+    },
+    error => {
+        // Handle error
+    }
+
+    );
+  }
 
   openAddEditProductForm(author: any, operation: String) {
     var dialogRef = null as any;
     if (operation === 'add') {
       dialogRef = this._dialog.open(StockManagerProductPopupComponent);
     }
-   /* if (operation === 'edit') {
-      dialogRef = this.dialog.open(EditAuthorModalComponent, {
-        data: author // passing author data to the dialog component
-      });
-    }*/
-   /* dialogRef.afterClosed().subscribe(() => {
-      this.onGetProducts();
-    });*/
   }
+}
+
+export interface ProductStock {
+  product_id : any;
+  category_id : any;
+  product_brand : any;
+  product_name : any;
+  product_price : any;
+  product_quantity : any;
 }

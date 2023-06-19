@@ -7,7 +7,7 @@ import { User } from '../app/user';
   providedIn: 'root'
 })
 export class UserdetailsService {
-  private apiUrl = 'http://localhost:8080/api/admin/all';
+  private apiUrl = 'http://localhost:8080/api/product/getAllProduct';
 
   constructor(private http: HttpClient) { }
 
