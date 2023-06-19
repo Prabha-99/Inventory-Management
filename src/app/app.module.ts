@@ -49,13 +49,15 @@ import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
 import { InventoryAdDeletePopComponent } from './inventory-ad-delete-pop/inventory-ad-delete-pop.component';
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
+import { ShowroomComponent } from './showroom/showroom.component';
+
 
 
 
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     NavbarComponent,
     HomeComponent,
@@ -83,13 +85,15 @@ import { GetUserDetailsComponent } from './get-user-details/get-user-details.com
     SystemAdminSideComponent,
     SystemAdminDashComponent,
     InventoryAdDeletePopComponent,
-    GetUserDetailsComponent
+    GetUserDetailsComponent,
+    ShowroomComponent
 
- 
 
- 
 
-    
+
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -110,8 +114,10 @@ import { GetUserDetailsComponent } from './get-user-details/get-user-details.com
     BrowserAnimationsModule,
     MatIconModule,
     MatTableModule,
-    MatCardModule
-   
+    MatCardModule,
+
+
+
 
   ],
   providers: [],

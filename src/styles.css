@@ -10,7 +10,7 @@
 
 .sidebar-nav{
     width: var(--offcanvas-width);
-    
+
 }
 
 @media(min-width: 150px){
@@ -25,3 +25,27 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*showroom file upload*/
+@import "~bootstrap/dist/css/bootstrap.css";
+img{
+  float: left;
+  width: 49%;
+  height: 80%;
+}
+
+#upload{
+  float: right;
+
+  width: 420px;
+  height: 250px;
+
+}
+
+
+ body{
+  background-color: rgb(157, 216, 196);
+ }
+
+
+

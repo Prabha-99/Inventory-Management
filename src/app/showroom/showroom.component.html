@@ -1,0 +1,29 @@
+<div class="container col-md-8">
+
+
+  <h1 style="color: rgb(19, 39, 129);"><b>Upload File</b></h1>
+  <form class="container" >
+
+      <img src="assets/PM.jpeg" alt="logo">
+
+      <br/>
+      <div id="upload">
+      <p style="font-size:20px;"><b>File Name:</b></p>
+      <input type="text" class="form-control form-control-sm" (change)="getName(name.value)" #name required><br/>
+      <div>
+        <label for="formFileLg" class="form-label" style="font-size:20px;"><b>File:</b></label>
+        <br>
+        <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="getFile($event)" required>
+      </div>
+      <br>
+       <div style="text-align: right;">
+        <button type="button" class="btn btn-primary" (click)="submitData()">Upload file</button>
+       </div>
+       </div>
+
+  </form>
+</div>
+
+
+
+
