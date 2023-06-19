@@ -8,9 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ShowroomComponent {
 
-
-
-
   constructor(
     private http:HttpClient
   ) {
