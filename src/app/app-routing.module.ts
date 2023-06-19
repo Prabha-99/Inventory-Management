@@ -53,7 +53,7 @@ const routes: Routes = [
   {path:"get-user-details",component:GetUserDetailsComponent},
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
-  
+  {path:"puchase-coordinator-product",component:StockManagerProductComponent}
 
 
 ];
