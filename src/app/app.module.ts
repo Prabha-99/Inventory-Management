@@ -49,6 +49,12 @@ import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
 import { InventoryAdDeletePopComponent } from './inventory-ad-delete-pop/inventory-ad-delete-pop.component';
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
+import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
+import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/purchase-coordinator-side.component';
+import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
+import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
+import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator-product-popup/purchase-coordinator-product-popup.component';
+import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 
 
 
@@ -83,7 +89,13 @@ import { GetUserDetailsComponent } from './get-user-details/get-user-details.com
     SystemAdminSideComponent,
     SystemAdminDashComponent,
     InventoryAdDeletePopComponent,
-    GetUserDetailsComponent
+    GetUserDetailsComponent,
+    PurchaseCoordinatorDashComponent,
+    PurchaseCoordinatorSideComponent,
+    PurchaseCoordinatorNavComponent,
+    PurchaseCoordinatorProductComponent,
+    PurchaseCoordinatorProductPopupComponent,
+    PurchaseCoordinatorProfileComponent
 
  
 

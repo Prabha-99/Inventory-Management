@@ -1,0 +1,100 @@
+<p>purchase-coordinator-product works!</p>
+<div class="container">
+    <div class="row">
+      <app-navbar></app-navbar> <!--Call navbar-->
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <app-purchase-coordinator-side></app-purchase-coordinator-side>
+        </div>
+        <div class="col-10 mt-5">
+        <div class="mt-5">
+          <br>
+          <div>
+          <!--Add Product button-->
+          <button mat-raised-button (click)=" openAddEditProductForm(null,'add')" class="btn btn-dark float-right">Add Product</button>
+            <br><br>
+          <!--Search bar-->
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Filter" aria-label="Search" />
+          </div>
+          </div>
+          <br>
+           <!-- <table class="table align-middle mb-0 bg-white mt-5">
+                <thead class="bg-light mt-5">
+                  <tr>
+                    <th>Product ID</th>
+                    <th>Category ID</th>
+                    <th>Product Brand</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>-->
+                   <!--<td><button type="button" class="btn btn-link-dark"><span class="bi bi-trash"></span></button></td>-->
+                <!--  </tr>
+                </tbody>
+              </table>-->
+
+              <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th class="th-sm">Product Id</th>
+                    <th class="th-sm">Category Id</th>
+                    <th class="th-sm">Product Brand</th>
+                    <th class="th-sm">Product Name</th>
+                    <th class="th-sm">Product Price</th>
+                    <th class="th-sm">Product Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>$320,800</td>
+                    <td>
+                      <a href="#" class="edit" data-toggle="modal">
+                        <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                      </a>
+                    </td>
+                    <td>
+                      <a href="#" class="delete" data-toggle="modal">
+                        <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+               <!-- <tfoot>
+                  <tr>
+                    <th>Name
+                    </th>
+                    <th>Position
+                    </th>
+                    <th>Office
+                    </th>
+                    <th>Age
+                    </th>
+                    <th>Start date
+                    </th>
+                    <th>Salary
+                    </th>
+                  </tr>
+                </tfoot>-->
+              </table>
+        </div>
+        </div>
+    </div>
+</div>
+
