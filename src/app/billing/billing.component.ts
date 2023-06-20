@@ -180,20 +180,33 @@ formData = {
 
 };
 
+emailerror='';
+tele_error='';
+tele_error_fix='';
+emailerror_fix='';
 
 onSubmit() {
   if (!this.isValidFormData())  {
-    alert('Please fill  required fields.');
+    alert('Please Enter Required Fields!!');
     return;
   }
-  if (!this.isValidEmail(this.formData.other)) {
-    alert('Invalid email address.');
-    return;
-  }
+  
   if (!this.isValidPhoneNumber(this.formData.cu_tele)) {
-    alert(`Invalid Phone number.`);
+    this.tele_error='Invalid Telephone Number!';
     return;
+  }else{
+    this.tele_error='';
+    this.tele_error_fix='OK!';
   }
+
+  if (!this.isValidEmail(this.formData.other)) {
+    this.emailerror='Invalid Email Address!';
+    return;
+  }else{
+    this.emailerror='';
+    this.emailerror_fix='OK!';
+  }
+
 
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {

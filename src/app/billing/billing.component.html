@@ -107,15 +107,20 @@
                                         <td>
                                             <div class="input-group input-group-sm">
                                           <input type="text" class="form-control" placeholder="Telephone no."[(ngModel)]="formData.cu_tele" required>
+                                          <div *ngIf="tele_error" class="error-message">{{ tele_error }}</div>
+                                            <div *ngIf="tele_error_fix" class="error-message-ok">{{ tele_error_fix }}</div>
                                         </div>
+                                        
                                     </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="input-group input-group-sm ">
                                           <input type="text" class="form-control" placeholder="E-mail"[(ngModel)]="formData.other" >
-                                         
+                                          <div *ngIf="emailerror" class="error-message">{{ emailerror }}</div>
+                                            <div *ngIf="emailerror_fix" class="error-message-ok">{{ emailerror_fix }}</div>
                                             </div>
+                                            
                                     </td>
                                     </tr>
                                  
