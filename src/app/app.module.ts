@@ -59,6 +59,7 @@ import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-prof
 
 
 
+
 @NgModule({
   declarations: [
     
@@ -95,7 +96,8 @@ import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-prof
     PurchaseCoordinatorNavComponent,
     PurchaseCoordinatorProductComponent,
     PurchaseCoordinatorProductPopupComponent,
-    PurchaseCoordinatorProfileComponent
+    PurchaseCoordinatorProfileComponent,
+
 
  
 

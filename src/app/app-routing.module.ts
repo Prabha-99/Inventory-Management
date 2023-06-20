@@ -26,8 +26,6 @@ import { GetUserDetailsComponent } from './get-user-details/get-user-details.com
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
 
 
-
-
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"home",component:HomeComponent},
