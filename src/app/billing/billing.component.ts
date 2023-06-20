@@ -155,7 +155,6 @@ export class BillingComponent implements OnInit{
   }
 
  
-
   confirmRefresh(): void {
     if (confirm('Are you sure you want to clear?')) {
       location.reload();
@@ -191,6 +190,10 @@ onSubmit() {
     alert('Invalid email address.');
     return;
   }
+  if (!this.isValidPhoneNumber(this.formData.cu_tele)) {
+    alert(`Invalid Phone number.`);
+    return;
+  }
 
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
@@ -223,6 +226,12 @@ isValidFormData(): boolean {
 isValidEmail(other: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(other);
+}
+
+//phone number validation
+ isValidPhoneNumber(cu_tele) {
+  const regexPattern = /^0\d{9}$/;
+  return regexPattern.test(cu_tele);
 }
 
 }
