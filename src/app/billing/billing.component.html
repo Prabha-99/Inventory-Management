@@ -11,10 +11,16 @@
     <body>
 
         <!--Description table-->
-
+        <app-navbar></app-navbar>
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-2">
+                <app-sidebar></app-sidebar>
+            </div>
 
         <div class="container" id="print-section" >
-            <div id="pdf-content" #pdfContent style="padding-top: 25px;">
+            <div id="pdf-content" #pdfContent style="padding-top:110px;">
         
             <div class="row">
              
@@ -101,14 +107,20 @@
                                         <td>
                                             <div class="input-group input-group-sm">
                                           <input type="text" class="form-control" placeholder="Telephone no."[(ngModel)]="formData.cu_tele" required>
+                                          <div *ngIf="tele_error" class="error-message">{{ tele_error }}</div>
+                                            <div *ngIf="tele_error_fix" class="error-message-ok">{{ tele_error_fix }}</div>
                                         </div>
+                                        
                                     </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="input-group input-group-sm ">
-                                          <input type="text" class="form-control" placeholder="Other"[(ngModel)]="formData.other" >
-                                        </div>
+                                          <input type="text" class="form-control" placeholder="E-mail"[(ngModel)]="formData.other" >
+                                          <div *ngIf="emailerror" class="error-message">{{ emailerror }}</div>
+                                            <div *ngIf="emailerror_fix" class="error-message-ok">{{ emailerror_fix }}</div>
+                                            </div>
+                                            
                                     </td>
                                     </tr>
                                  
@@ -241,8 +253,8 @@
          
         <br>
         <br>
-     
-       
+    </div>
+    </div>   
     </body>
 
 </html>
