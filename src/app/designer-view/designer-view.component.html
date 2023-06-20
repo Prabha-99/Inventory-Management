@@ -1,2 +1,47 @@
-<p>designer-view works!</p>
->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+      <app-navbar></app-navbar>
+    </div>
+    <div>
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="file">
+    <h1 class="text-center"><b>View File</b></h1>
+    <div class="container">
+
+    <div class="my-3">
+      <a routerLink="/add">
+        <button type="button" class="btn btn-primary">view</button>
+      </a>
+    </div>
+      <table class="table border">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">File</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let list of fileList">
+            <td>{{ list.id }}</td>
+            <td><img height="250px" [src]="'/display?id=' + list.id" alt=""></td>
+            <td>{{ list.date }}</td>
+            <td><button type="button" class="btn btn-primary">Download</button></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+

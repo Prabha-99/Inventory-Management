@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./designer-view.component.css']
 })
 export class DesignerViewComponent {
-
+fileList
 }
