@@ -1,28 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StockManagerProductPopupComponent } from '../stock-manager-product-popup/stock-manager-product-popup.component';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-stock-manager-product',
   templateUrl: './stock-manager-product.component.html',
   styleUrls: ['./stock-manager-product.component.css']
 })
-export class StockManagerProductComponent {
+export class StockManagerProductComponent implements OnInit {
 
-  constructor(private _dialog: MatDialog){}
+  ProductArray : any[] = [];
+  
+  constructor(private _dialog: MatDialog, private http: HttpClient){
+    this.getAllProducts();
+  }
+
+  ngOnInit(): void {
+    this.getAllProducts();  
+  }
+
+  getAllProducts(){
+    this.http.get("http://localhost:8080/api/product/getAllProduct").subscribe((resultData: any)=>
+    {
+
+      console.log(resultData);
+      this.ProductArray = resultData;
+    });
+  }
 
   openAddEditProductForm(author: any, operation: String) {
     var dialogRef = null as any;
     if (operation === 'add') {
       dialogRef = this._dialog.open(StockManagerProductPopupComponent);
     }
-   /* if (operation === 'edit') {
-      dialogRef = this.dialog.open(EditAuthorModalComponent, {
-        data: author // passing author data to the dialog component
-      });
-    }*/
-   /* dialogRef.afterClosed().subscribe(() => {
-      this.onGetProducts();
-    });*/
   }
 }

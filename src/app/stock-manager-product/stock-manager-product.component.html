@@ -21,31 +21,6 @@
           </div>
           </div>
           <br>
-           <!-- <table class="table align-middle mb-0 bg-white mt-5">
-                <thead class="bg-light mt-5">
-                  <tr>
-                    <th>Product ID</th>
-                    <th>Category ID</th>
-                    <th>Product Brand</th>
-                    <th>Product Name</th>
-                    <th>Product Price</th>
-                    <th>Product Quantity</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>-->
-                   <!--<td><button type="button" class="btn btn-link-dark"><span class="bi bi-trash"></span></button></td>-->
-                <!--  </tr>
-                </tbody>
-              </table>-->
-
               <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead>
                   <tr>
@@ -58,14 +33,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                    <td>
+                  <tr *ngFor="let ProductItem of ProductArray">
+                    <td>{{ ProductItem.product_id }}</td>
+                    <td>{{ ProductItem.category_id }}</td>
+                    <td>{{ ProductItem.product_brand }}</td>
+                    <td>{{ ProductItem.product_name }}</td>
+                    <td>{{ ProductItem.product_price }}</td>
+                    <td>{{ ProductItem.product_quantity }}</td>
+                    <!--<td>
                       <a href="#" class="edit" data-toggle="modal">
                         <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                       </a>
@@ -74,25 +49,9 @@
                       <a href="#" class="delete" data-toggle="modal">
                         <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
                       </a>
-                    </td>
+                    </td>-->
                   </tr>
                 </tbody>
-               <!-- <tfoot>
-                  <tr>
-                    <th>Name
-                    </th>
-                    <th>Position
-                    </th>
-                    <th>Office
-                    </th>
-                    <th>Age
-                    </th>
-                    <th>Start date
-                    </th>
-                    <th>Salary
-                    </th>
-                  </tr>
-                </tfoot>-->
               </table>
         </div>
         </div>
