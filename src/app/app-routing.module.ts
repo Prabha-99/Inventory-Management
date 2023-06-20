@@ -25,6 +25,9 @@ import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
+import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
+import { PurchaseCoordinatorOrderComponent } from './purchase-coordinator-order/purchase-coordinator-order.component';
+import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/purchase-coordinator-bill.component';
 
 
 
@@ -53,9 +56,10 @@ const routes: Routes = [
   {path:"get-user-details",component:GetUserDetailsComponent},
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
-  {path:"puchase-coordinator-product",component:StockManagerProductComponent}
-
-
+  {path:"puchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
+  {path:"purchase-coordinator-order",component:PurchaseCoordinatorOrderComponent},
+  {path:"purchase-coordinator-bill",component:PurchaseCoordinatorBillComponent}
+   
 ];
 
 @NgModule({
