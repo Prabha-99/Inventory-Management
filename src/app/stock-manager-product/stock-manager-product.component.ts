@@ -11,15 +11,24 @@ import { StockManagerProductService } from './stock-manager-product.service';
 export class StockManagerProductComponent implements OnInit {
 
   products: any[] = [];
+  filteredProducts: any[] = [];
 
   constructor(private _dialog: MatDialog, private productService: StockManagerProductService){}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(product => {
       this.products = product;
+      this.filterProducts();
     });
 
     
+  }
+
+  filterProducts() {
+    this.filteredProducts = this.products.filter(product => {
+      // Filter products based on category_id
+      return product.category_id === 'c2' || product.category_id === 'c3';
+    });
   }
 
   openAddEditProductForm(author: any, operation: String) {
