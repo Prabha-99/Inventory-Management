@@ -22,17 +22,6 @@ export class StockManagerProductComponent implements OnInit {
     
   }
 
-  // loadProducts() {
-  //   this.productService.getProducts().subscribe(
-  //     (response: any[]) => {
-  //       this.products = response;
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching products:', error);
-  //     }
-  //   );
-  // }
-
   openAddEditProductForm(author: any, operation: String) {
     var dialogRef = null as any;
     if (operation === 'add') {

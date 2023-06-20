@@ -12,6 +12,6 @@ export class StockManagerProductService {
   constructor(private http: HttpClient) { }
 
   getProducts() {
-    return this.http.get<any[]>('http://localhost:8090/api/product/getAllProduct'); //get bill details
+    return this.http.get<any[]>('http://localhost:8090/api/product/getAllProduct'); //get products
   }
 }
