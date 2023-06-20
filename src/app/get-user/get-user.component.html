@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title> 
+</head>
+<body>
+    <app-system-admin-nav></app-system-admin-nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <app-system-admin-side></app-system-admin-side>
+            </div>
+            <div class="col-10">
+                <br><br><br><br><br><br><br><br>
+                <div class="d-flex justify-content-center">
+                    <div>
+                        <h2>User Details</h2>
+                        <input type="text" [(ngModel)]="searchValue" placeholder="Search by name" (input)="searchUsers()" />
+                        <button type="button" (click)="clearSearch()">Clear</button>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>Email</th>
+                              <th>Role</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let user of filteredUsers">
+                              <td>{{ user.id }}</td>
+                              <td>{{ user.firstname }}</td>
+                              <td>{{ user.lastname }}</td>
+                              <td>{{ user.email }}</td>
+                              <td>{{ user.role }}</td>
+                              <td>
+                                <button type="button">View</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      
+                </div>
+
+                
+                                    
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
