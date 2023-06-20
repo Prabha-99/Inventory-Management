@@ -56,7 +56,6 @@ import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-prod
 import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator-product-popup/purchase-coordinator-product-popup.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
-import { GetUserDailogComponent } from './get-user-dailog/get-user-dailog.component';
 
 
 
@@ -98,8 +97,7 @@ import { GetUserDailogComponent } from './get-user-dailog/get-user-dailog.compon
     PurchaseCoordinatorProductComponent,
     PurchaseCoordinatorProductPopupComponent,
     PurchaseCoordinatorProfileComponent,
-    GetUserComponent,
-    GetUserDailogComponent
+    GetUserComponent
 
  
 
