@@ -78,7 +78,6 @@ const routes: Routes = [
   {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent},
   {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
-
   {path:"users",component:UpdateUserComponent},
   {path:"update-user/:id",component:UpdateOneUserComponent}
 
