@@ -116,12 +116,12 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     StockKeeperDashComponent,
     StockKeeperNavComponent,
     StockKeeperProfileComponent,
-    StockKeeperSidebarComponent
+    StockKeeperSidebarComponent,
 
     GINReportsComponent,
     GRNReportsComponent,
 
-    StockManagerEditComponent
+    StockManagerEditComponent,
 
     DeleteUserComponent
 
