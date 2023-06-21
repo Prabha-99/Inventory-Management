@@ -115,10 +115,6 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 
 
-    // OrderComponent,
-    // PurchaseCoordinatorOrderComponent,
-    // PurchaseCoordinatorBillComponent,
-
 
 
     StockKeeperDashComponent,
@@ -133,8 +129,7 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 
     DeleteUserComponent,
 
-
-
+  
 
  
 
