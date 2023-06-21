@@ -25,6 +25,12 @@ import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
 import { GetUserComponent } from './get-user/get-user.component';
+
+import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/purchase-coordinator-side.component';
+import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
+import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
+import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
+
 import { StockKeeperDashComponent } from './stock-keeper-dash/stock-keeper-dash.component';
 import { StockKeeperNavComponent } from './stock-keeper-nav/stock-keeper-nav.component';
 import { StockKeeperProfileComponent } from './stock-keeper-profile/stock-keeper-profile.component';
@@ -32,6 +38,7 @@ import { StockKeeperSidebarComponent } from './stock-keeper-sidebar/stock-keeper
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+
 
 
 
@@ -58,6 +65,15 @@ const routes: Routes = [
   {path:"system-admin-dash",component:SystemAdminDashComponent},
   {path:"get-user-details",component:GetUserDetailsComponent},
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
+
+  {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},
+  {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent},
+  {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
+  {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
+ 
+
+  {path:"get-user",component:GetUserComponent},
+
   {path:"get-user",component:GetUserComponent},
 
   {path:"stock-keeper-dash",component:StockKeeperDashComponent},
@@ -67,6 +83,7 @@ const routes: Routes = [
   {path:"gin-reports",component:GINReportsComponent},
   {path:"grn-reports",component:GRNReportsComponent},
   {path:"delete-user",component:DeleteUserComponent}
+
 
 
 
