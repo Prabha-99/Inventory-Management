@@ -109,7 +109,7 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     GINReportsComponent,
     GRNReportsComponent,
 
-    StockManagerEditComponent
+    StockManagerEditComponent,
 
     DeleteUserComponent
 
