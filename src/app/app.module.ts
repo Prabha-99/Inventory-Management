@@ -57,9 +57,8 @@ import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
 
-import { OrderComponent } from './order/order.component';
-import { PurchaseCoordinatorOrderComponent } from './purchase-coordinator-order/purchase-coordinator-order.component';
-import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/purchase-coordinator-bill.component';
+// import { OrderComponent } from './order/order.component';
+
 
 import { StockKeeperDashComponent } from './stock-keeper-dash/stock-keeper-dash.component';
 import { StockKeeperNavComponent } from './stock-keeper-nav/stock-keeper-nav.component';
@@ -116,9 +115,9 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 
 
-    OrderComponent,
-    PurchaseCoordinatorOrderComponent,
-    PurchaseCoordinatorBillComponent,
+    // OrderComponent,
+    // PurchaseCoordinatorOrderComponent,
+    // PurchaseCoordinatorBillComponent,
 
 
 
@@ -134,10 +133,6 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 
     DeleteUserComponent,
 
-    OrderComponent,
-    OrderComponent,
-    PurchaseCoordinatorOrderComponent,
-    PurchaseCoordinatorBillComponent
 
 
 
