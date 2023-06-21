@@ -1,11 +1,6 @@
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
       <title>Bill Generating</title>  
     </head>
     <body>
@@ -175,7 +170,7 @@
                                     <th>Special Notes</th>
                                 </tr>
                                 <tr>
-                                    <td><textarea id="are"  rows="3" cols="30" [(ngModel)]="formData.note" class="form-control" >
+                                    <td><textarea id="are"  rows="3" cols="30" [(ngModel)]="formData.note" name="note" class="form-control" >
                                         </textarea></td>
                                 </tr>
                             </table>
@@ -190,7 +185,7 @@
                                 <th>Subtotal</th>
                                 <div class="mags ">
                                     <td>Rs.</td>
-                                <td><input type="number" style="width:100px; height:30px;text-align:center;"value="{{calSubTotal(rows)}}" [(ngModel)]="formData.subtotal" min="0.00" step="0.5" placeholder="00"></td>
+                                <td><input type="number" style="width:100px; height:30px;text-align:center;"value="{{calSubTotal(rows)}}" [(ngModel)]="formData.subtotal" min="0.00" step="0.5" value="subtotal" placeholder="00"></td>
                                 <td>.00</td>
                                 </div>
                             </tr>
@@ -198,7 +193,7 @@
                                 <th>Total Discount</th>
                                 <div class="mags ">
                                     <td>Rs.</td>
-                                <td ><input type="number"  style="width:100px; height:30px;text-align:center;" value="{{ calcTotalDiscount(rows)}}" [(ngModel)]="formData.discount" min="0.00" step="0.5" placeholder="00"></td>
+                                <td ><input type="number"  style="width:100px; height:30px;text-align:center;" value="{{ calcTotalDiscount(rows)}}" [(ngModel)]="formData.discount" value="discount" min="0.00" step="0.5" placeholder="00"></td>
                                 <td>.00</td>
                                 </div>
                             </tr>
@@ -219,7 +214,7 @@
                                 <th>Total</th>     
                                 <div class="mags"style="border:1px ">
                                     <td>Rs.</td>
-                                <td ><input type="number" [(ngModel)]="formData.total_amount"  id="total_amount"  style="width:100px; height:30px;text-align:center;"value="{{calculateTotalAmount()}}" min=".00" step="0.5" placeholder="00"></td>
+                                <td ><input type="number" [(ngModel)]="formData.total_amount"  id="total_amount"  style="width:100px; height:30px;text-align:center;"value="{{calculateTotalAmount()}}" name="total_amount" min=".00" step="0.5" placeholder="00"></td>
                                 <td>.00</td>
                                 </div>
                             </tr>
@@ -255,6 +250,6 @@
         <br>
     </div>
     </div>   
-    </body>
+</body>
 
 </html>
