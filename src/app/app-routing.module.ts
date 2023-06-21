@@ -72,20 +72,16 @@ const routes: Routes = [
   {path:"gin-reports",component:GINReportsComponent},
   {path:"grn-reports",component:GRNReportsComponent},
   {path:"delete-user",component:DeleteUserComponent},
-<<<<<<< Updated upstream
   {path:"update-user",component:UpdateUserComponent},
   {path:"update-one-user",component:UpdateOneUserComponent},
   {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},
   {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent},
   {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
-  {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent}
- 
-=======
+  {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
+
   {path:"users",component:UpdateUserComponent},
   {path:"update-user/:id",component:UpdateOneUserComponent}
 
-
->>>>>>> Stashed changes
 
 ];
 
