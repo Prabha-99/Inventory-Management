@@ -77,7 +77,7 @@ const routes: Routes = [
 
   // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent}
   {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent},
-  {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService}
+  {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService},
  
 
   {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},
