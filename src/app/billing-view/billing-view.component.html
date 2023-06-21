@@ -79,8 +79,8 @@
     <tr *ngFor="let pdf of pdfList">
       <td>{{ pdf.bill_id }}</td>
       <td>{{ pdf.filename }}</td>
-      
-      <td><button (click)="getPdfFile(pdf.filepath)" class="btn btn-outline-primary btn-sm">Open</button></td>
+      <!-- <td><a  [href]="openPdf(pdf.filepath)">file</a></td> -->
+      <td><button (click)="openPdf(pdf.filepath)" class="btn btn-outline-primary btn-sm">Open</button></td>
       <td>
         <button (click)="onDeletepdf(pdf.bill_id)" class="btn btn-outline-danger btn-sm">Delete</button>
       </td>

@@ -203,6 +203,7 @@ onSubmit() {
     this.tele_error='';
     this.tele_error_fix='OK!';
   }
+  this.tele_error_fix='';
 
   if (!this.isValidEmail(this.formData.other)) {
     this.emailerror='Invalid Email Address!';
@@ -212,7 +213,7 @@ onSubmit() {
     this.emailerror='';
     this.emailerror_fix='OK!';
   }
-
+  this.emailerror_fix='';
 
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
