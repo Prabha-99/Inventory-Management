@@ -1,0 +1,96 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+<div class="container">
+    <div class="row">
+      <app-stock-keeper-nav></app-stock-keeper-nav>
+      </div>
+      <div class="row">
+      <div class="col-2">
+        <app-stock-keeper-sidebar></app-stock-keeper-sidebar><!--Admin Sidebar calling-->
+      </div>
+      <div class="col-10 mt-5">
+                <div>
+                  
+                  <div class="card-body px-4 py-5 px-md-5">
+                      <div class="d-flex justify-content-center">
+                      <div class="col-lg-10 mt-5">
+                          <h2 class="d-flex justify-content-center">Profile</h2>
+                          
+                          <form>
+                              <div class="row">
+                                  <div class="col-md-6 mb-6">
+                                    <div class="form-outline">
+                                      <label class="form-label" >First name</label>
+                                      <input type="text"name="fname" class="form-control"[(ngModel)]="profile.fname" required/>
+                                      
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                      <label class="form-label" >Last name</label>
+                                      <input type="text" name="lname" class="form-control"[(ngModel)]="profile.lname" required/>
+                                      
+                                    </div>
+                                  </div>
+                              </div>
+                          
+                          <!-- User Name -->
+                          <div class="form-outline mb-4">
+                          <label class="form-label" >User Name</label>
+                          <input type="text" name="uname"  class="form-control"[(ngModel)]="profile.uname" required/>
+                          
+                          </div>
+                          <!--Email -->
+                          <div class="form-outline mb-4">
+                            <label class="form-label" >Email address</label>
+                            <input type="text" name="email"  class="form-control" [(ngModel)]="profile.email" required/>
+                            <div *ngIf="emailerror" class="error-message">{{ emailerror }}</div>
+                            <div *ngIf="emailerror_fix" class="error-message-ok">{{ emailerror_fix }}</div>
+                          </div>
+          
+                          <!-- Password input -->
+                          <div class="row">
+                              <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                  <label class="form-label" >Password</label>
+                                  <input type="password" name="password" class="form-control" [(ngModel)]="profile.password" required/>
+                                  
+                                </div>
+                              </div>
+                              <!-- <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                  <label class="form-label" >Re-Type Password</label>
+                                  <input type="password"  class="form-control" [(ngModel)]="profile.repassword"required/>
+                                  
+                                </div> -->
+                              <!-- </div> -->
+                          </div>
+          
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                              <button class="btn btn-primary btn btn-dark" type="submit" (click)="onUpdate()">Update</button>
+                              <button class="btn btn-primary btn btn-dark" type="button"(click)="Cancel()">Cancel</button>
+                            </div>
+          
+                      </form>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+      </div>
+    </div>
+  </div>
+</body>
+  </html>
+  
+  
+  
+  
+  
+  
+  
+  
+  
