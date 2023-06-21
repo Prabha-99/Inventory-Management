@@ -33,7 +33,7 @@ export class ShowroomComponent {
     formData.set("file",this.file)
 
     //submit data in API
-    this.http.post("http://localhost:8080/api/file/uploadDb",formData)
+    this.http.post("http://localhost:8080/api/file/add",formData)
     .subscribe((Response) =>{});
   }
 

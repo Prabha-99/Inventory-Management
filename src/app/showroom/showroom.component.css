@@ -1,3 +1,24 @@
-.file-input {
-  display: none;
+
+/*showroom file upload
+@import "~bootstrap/dist/css/bootstrap.css";*/
+
+#upload{
+  float: right;
+
+  width: 320px;
+  height: 200px;
+  margin-right: 100px;
+  margin-bottom: 60px;
+
+
 }
+
+ body{
+  background-color: rgb(157, 216, 196);
+ }
+
+ .frame{
+  background-color: aqua;
+ }
+
+
