@@ -14,4 +14,8 @@ export class GetUserService {
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+  deleteUser(id: number): Observable<any> {
+    const url = `${this.adminUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
 }

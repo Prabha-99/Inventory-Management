@@ -27,7 +27,7 @@ import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/pu
 import { GetUserComponent } from './get-user/get-user.component';
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
-
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 
 
@@ -56,7 +56,9 @@ const routes: Routes = [
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
   {path:"get-user",component:GetUserComponent},
   {path:"gin-reports",component:GINReportsComponent},
-  {path:"grn-reports",component:GRNReportsComponent}
+  {path:"grn-reports",component:GRNReportsComponent},
+  {path:"delete-user",component:DeleteUserComponent}
+
 
 
 ];
