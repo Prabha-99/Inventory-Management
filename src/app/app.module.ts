@@ -68,7 +68,13 @@ import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-edit.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+
+import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
+import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-reports-grn/stock-keeper-order-reports-grn.component';
+// import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
+
 import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
+
 
 
 
@@ -127,6 +133,13 @@ import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/pu
     GRNReportsComponent,
 
     StockManagerEditComponent,
+
+
+    DeleteUserComponent,
+      StockKeeperOrderReportsComponent,
+      StockKeeperOrderReportsGRNComponent,
+     
+
 
     DeleteUserComponent,
       PurchaseCoordinatorEditComponent,
