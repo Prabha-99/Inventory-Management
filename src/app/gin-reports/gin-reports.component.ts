@@ -27,7 +27,7 @@ export class GINReportsComponent implements OnInit{
     this.ginService.downloadFile(report_id).subscribe(
       (response) => {
         // Create a temporary link and trigger the file download
-        const blob = new Blob([response], { type: 'application/pdf' });
+        const blob = new Blob([response], { type: 'pdf' });
         const url = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
