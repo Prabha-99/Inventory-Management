@@ -7,15 +7,11 @@ import { Component , } from '@angular/core';
   styleUrls: ['./showroom.component.css']
 })
 export class ShowroomComponent {
+name:string = ""
+file:any;
+  constructor(private http:HttpClient) {}
 
-  constructor(
-    private http:HttpClient
-  ) {
 
-  }
-
-  name:string = ""
-  file:any;
 
   getName(name:string){
     this.name = name;
