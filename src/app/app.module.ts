@@ -68,6 +68,8 @@ import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-edit.component';
 
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
+// import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
 
 
 
@@ -116,14 +118,16 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     StockKeeperDashComponent,
     StockKeeperNavComponent,
     StockKeeperProfileComponent,
-    StockKeeperSidebarComponent
+    StockKeeperSidebarComponent,
 
     GINReportsComponent,
     GRNReportsComponent,
 
-    StockManagerEditComponent
+    StockManagerEditComponent,
 
-    DeleteUserComponent
+    DeleteUserComponent,
+      StockKeeperOrderReportsComponent,
+     
 
 
 

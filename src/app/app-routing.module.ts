@@ -32,6 +32,9 @@ import { StockKeeperSidebarComponent } from './stock-keeper-sidebar/stock-keeper
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { StockKeeperGINService } from './stock-keeper-order-reports/stock-keeper-gin.service';
+import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
+// import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
 
 
 
@@ -66,8 +69,9 @@ const routes: Routes = [
   {path:"stock-keeper-sidebar",component:StockKeeperSidebarComponent},
   {path:"gin-reports",component:GINReportsComponent},
   {path:"grn-reports",component:GRNReportsComponent},
-  {path:"delete-user",component:DeleteUserComponent}
-
+  {path:"delete-user",component:DeleteUserComponent},
+  // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent}
+  {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent}
 
 
 ];
