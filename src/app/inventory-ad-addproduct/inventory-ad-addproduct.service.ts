@@ -9,6 +9,6 @@ export class InventoryAdAddproductService {
   constructor(private http: HttpClient) { }
 
   getProducts() {
-    return this.http.get<any[]>('http://localhost:8090/api/product/getAllProduct'); //get products
+    return this.http.get<any[]>('http://localhost:8080/api/product/getAllProduct'); //get products
   }
 }

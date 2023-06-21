@@ -60,6 +60,19 @@ import { OrderComponent } from './order/order.component';
 import { PurchaseCoordinatorOrderComponent } from './purchase-coordinator-order/purchase-coordinator-order.component';
 import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/purchase-coordinator-bill.component';
 
+import { StockKeeperDashComponent } from './stock-keeper-dash/stock-keeper-dash.component';
+import { StockKeeperNavComponent } from './stock-keeper-nav/stock-keeper-nav.component';
+import { StockKeeperProfileComponent } from './stock-keeper-profile/stock-keeper-profile.component';
+import { StockKeeperSidebarComponent } from './stock-keeper-sidebar/stock-keeper-sidebar.component';
+
+import { GINReportsComponent } from './gin-reports/gin-reports.component';
+import { GRNReportsComponent } from './grn-reports/grn-reports.component';
+
+import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-edit.component';
+
+import { DeleteUserComponent } from './delete-user/delete-user.component';
+
+
 
 
 
@@ -102,9 +115,25 @@ import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/pu
     PurchaseCoordinatorProductPopupComponent,
     PurchaseCoordinatorProfileComponent,
     GetUserComponent,
+
     OrderComponent,
     PurchaseCoordinatorOrderComponent,
     PurchaseCoordinatorBillComponent
+
+
+    StockKeeperDashComponent,
+    StockKeeperNavComponent,
+    StockKeeperProfileComponent,
+    StockKeeperSidebarComponent
+
+    GINReportsComponent,
+    GRNReportsComponent,
+
+    StockManagerEditComponent
+
+    DeleteUserComponent
+
+
 
  
 
