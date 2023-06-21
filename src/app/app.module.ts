@@ -59,6 +59,8 @@ import { GetUserComponent } from './get-user/get-user.component';
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
 
 
 
@@ -104,7 +106,9 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     GetUserComponent,
     GINReportsComponent,
     GRNReportsComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    UpdateUserComponent,
+    UpdateOneUserComponent
 
  
 

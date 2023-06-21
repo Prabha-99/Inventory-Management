@@ -18,4 +18,13 @@ export class GetUserService {
     const url = `${this.adminUrl}/${id}`;
     return this.http.delete<any>(url);
   }
+  getUser(id: number): Observable<any> {
+    const url = `${this.adminUrl}/${id}`;
+    return this.http.get<any>(url);
+  }
+
+  updateUser(id: number, user: any): Observable<any> {
+    const url = `${this.adminUrl}/${id}`;
+    return this.http.put<any>(url, user);
+  }
 }
