@@ -68,6 +68,7 @@ import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-edit.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
 
 
 
@@ -115,10 +116,6 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 
 
-    // OrderComponent,
-    // PurchaseCoordinatorOrderComponent,
-    // PurchaseCoordinatorBillComponent,
-
 
 
     StockKeeperDashComponent,
@@ -132,9 +129,9 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     StockManagerEditComponent,
 
     DeleteUserComponent,
+      PurchaseCoordinatorEditComponent,
 
-
-
+  
 
  
 
