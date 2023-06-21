@@ -7,7 +7,11 @@ import {GetUserService} from '../get-user.service';
   styleUrls: ['./delete-user.component.css']
 })
 export class DeleteUserComponent implements OnInit{
-  users: any[] | undefined;
+  users: any[] = [];
+  filteredUsers: any[] = [];
+  searchValue: string = '';
+  dialog: any;
+  router: any;
 
   constructor(private userService: GetUserService) { }
 
@@ -24,6 +28,18 @@ export class DeleteUserComponent implements OnInit{
   deleteUser(id: number): void {
     this.userService.deleteUser(id).subscribe(() => {
       this.getUsers();
+      alert('Delete successfully');
     });
+  }
+  searchUsers(): void {
+    this.filteredUsers = this.users.filter(user => {
+      const fullName = `${user.firstname} ${user.lastname}`;
+      return fullName.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+  }
+
+  clearSearch(): void {
+    this.searchValue = '';
+    this.filteredUsers = this.users;
   }
 }

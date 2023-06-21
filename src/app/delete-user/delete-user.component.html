@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Details</title> 
+  <title>Delete User Details</title> 
 </head>
 <body>
     <app-system-admin-nav></app-system-admin-nav>
@@ -19,8 +19,12 @@
                 <div class="d-flex justify-content-center">
                     <div>
                       <div class="d-flex justify-content-center">
-                        <h1>User Details</h1>
+                        <h1>Delete User Details</h1>
                         </div>
+                        <!-- <div style=" padding:5px;" class = "d-flex justify-content-around">
+                            <input style=" padding-left:5px;" type="text" [(ngModel)]="searchValue" placeholder="Search by name" (input)="searchUsers()" />
+                            <button type="button" class="btn btn-primary margin-right:10px " (click)="clearSearch()">Clear</button>
+                        </div> -->
                         <br>
                         <table class="table">
                           <thead>
@@ -41,7 +45,7 @@
                               <td>{{ user.email }}</td>
                               <td>{{ user.role }}</td>
                               <td>
-                                <button (click)="deleteUser(user.id)">Delete</button>
+                                <button (click)="deleteUser(user.id)" class="btn btn-primary " >Delete</button>
                               </td>
                             </tr>
                           </tbody>
@@ -51,10 +55,9 @@
                 </div>
 
                 
-                                    
+            </div>              
             </div>
         </div>
-    </div>
 </body>
 </html>
 
