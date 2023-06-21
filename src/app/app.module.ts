@@ -69,6 +69,7 @@ import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-ed
 
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 
+import { OrderComponent } from './order/order.component';
 
 
 
@@ -123,8 +124,9 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 
     StockManagerEditComponent,
 
-    DeleteUserComponent
+    DeleteUserComponent,
 
+    OrderComponent
 
 
  
