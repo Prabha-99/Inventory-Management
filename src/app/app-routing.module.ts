@@ -32,13 +32,12 @@ import { StockKeeperSidebarComponent } from './stock-keeper-sidebar/stock-keeper
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
-
 import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/purchase-coordinator-side.component';
 import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
 import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -72,14 +71,12 @@ const routes: Routes = [
   {path:"gin-reports",component:GINReportsComponent},
   {path:"grn-reports",component:GRNReportsComponent},
   {path:"delete-user",component:DeleteUserComponent},
-  {path:"update-user",component:UpdateUserComponent},
-  {path:"update-one-user",component:UpdateOneUserComponent},
   {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},
   {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent},
   {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
-  {path:"users",component:UpdateUserComponent},
-  {path:"update-user/:id",component:UpdateOneUserComponent}
+  {path:"update-user/:id",component:UpdateOneUserComponent},
+  {path:"user-update",component:UserUpdateComponent}
 
 
 ];

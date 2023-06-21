@@ -1,5 +1,9 @@
 <div>
     <h2>All Users</h2>
+  
+    <input type="text" [(ngModel)]="searchQuery" (input)="searchUsers()" placeholder="Search users">
+    <button type="button" class="btn btn-primary margin-right:10px " (click)="clearSearch()">Clear</button>
+  
     <table>
       <thead>
         <tr>
@@ -11,13 +15,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users">
+        <tr *ngFor="let user of filteredUsers">
           <td>{{ user.firstname }}</td>
           <td>{{ user.lastname }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.role }}</td>
           <td>
-            <button (click)="openUpdateForm(user.id)">Update</button>
+            <button (click)="openUpdateForm(user)">Update</button>
           </td>
         </tr>
       </tbody>
