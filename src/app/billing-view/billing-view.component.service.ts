@@ -24,6 +24,12 @@ export class BillService {
     return this.http.delete<void>(url);
   }
 
+  private apipdfUrl = 'http://localhost:8080/api/bill/delete';
+  deleteBillpdf(bill_id: number): Observable<void> {
+    const url = `${this.apipdfUrl}/${bill_id}`;
+    return this.http.delete<void>(url);
+  }
+
 
 
 

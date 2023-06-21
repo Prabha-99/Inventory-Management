@@ -27,8 +27,6 @@ import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/pu
 import { GetUserComponent } from './get-user/get-user.component';
 
 
-
-
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"home",component:HomeComponent},

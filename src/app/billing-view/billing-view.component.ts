@@ -18,7 +18,7 @@ export class BillingViewComponent implements OnInit{
 
   // pdfList!: any[];
   bills: any[] = [];
-  imageUrls: any[] = [];
+  fileURL: any[] = [];
 
   ngOnInit() {
     this.billService.getAllBills().subscribe(bill => {
@@ -31,8 +31,11 @@ export class BillingViewComponent implements OnInit{
 
     this.loadPdfList();
 
+
   }
 
+
+  //delete function
   onDelete(id: number) {
     if (confirm("Are you sure you want to delete this bill?")) {
       this.billService.deleteBill(id).subscribe(() => {
@@ -46,9 +49,18 @@ export class BillingViewComponent implements OnInit{
     }
   }
 
+  onDeletepdf(bill_id: number) {
+      this.billService.deleteBillpdf(bill_id).subscribe(() => {
+        this.pdfList = this.pdfList.filter(pdf => pdf.bill_id !== bill_id);
+       // alert("Bill deleted successfully.");
+       // location.reload(); // Refresh the page
+      }, () => {
+        location.reload();
+      });
+    
+  }
 
   pdfList: any[]=[];
-
 
 
   loadPdfList(): void {
