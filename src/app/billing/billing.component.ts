@@ -29,7 +29,7 @@ export class BillingComponent implements OnInit{
   constructor(private productService: ProductService , dialog: MatDialog) { }
 
   Billingsend() {
-    window.open('/billingsend', '_blank','width=800,height=500');
+    window.open('/billingsend', '_blank','width=800,height=600');
   }
 
   Billingview() {
@@ -180,11 +180,15 @@ formData = {
 
 };
 
+
+//error handling
 emailerror='';
 tele_error='';
 tele_error_fix='';
 emailerror_fix='';
 
+
+//submit form
 onSubmit() {
   if (!this.isValidFormData())  {
     alert('Please Enter Required Fields!!');
@@ -193,6 +197,7 @@ onSubmit() {
   
   if (!this.isValidPhoneNumber(this.formData.cu_tele)) {
     this.tele_error='Invalid Telephone Number!';
+    this.tele_error_fix='';
     return;
   }else{
     this.tele_error='';
@@ -201,6 +206,7 @@ onSubmit() {
 
   if (!this.isValidEmail(this.formData.other)) {
     this.emailerror='Invalid Email Address!';
+    this.emailerror_fix='';
     return;
   }else{
     this.emailerror='';
