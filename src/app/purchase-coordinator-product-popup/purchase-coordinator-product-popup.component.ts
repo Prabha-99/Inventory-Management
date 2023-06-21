@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { PurchaseCoordinatorProductPopupService } from '../purchase-coordinator-product-popup.service';
 
+
+
 @Component({
   selector: 'app-purchase-coordinator-product-popup',
   templateUrl: './purchase-coordinator-product-popup.component.html',
@@ -16,10 +18,10 @@ export class PurchaseCoordinatorProductPopupComponent {
     product_price: null
   };
 
-  constructor(private PurchaseCoordinatorProductPopupService:PurchaseCoordinatorProductPopupService) {}
+  constructor(private purchaseCoordinatorProductPopupService: PurchaseCoordinatorProductPopupService) {}
 
   addProduct() {
-    this.PurchaseCoordinatorProductPopupService.addProduct(this.product).subscribe(
+    this.purchaseCoordinatorProductPopupService.addProduct(this.product).subscribe(
       (response) => {
         console.log('Product added successfully');
         // Reset the form
