@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PurchaseCoordinatorProductPopupService } from '../purchase-coordinator-product-popup.service';
+import { PurchaseCoordinatorProductPopupService } from './purchase-coordinator-product-popup.service';
 
 @Component({
   selector: 'app-purchase-coordinator-product-popup',
