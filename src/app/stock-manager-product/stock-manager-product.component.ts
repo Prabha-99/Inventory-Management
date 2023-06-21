@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StockManagerProductPopupComponent } from '../stock-manager-product-popup/stock-manager-product-popup.component';
 import { MatDialog } from '@angular/material/dialog';
 import { StockManagerProductService } from './stock-manager-product.service';
+import { StockManagerEditComponent } from '../stock-manager-edit/stock-manager-edit.component';
 
 @Component({
   selector: 'app-stock-manager-product',
@@ -35,6 +36,15 @@ export class StockManagerProductComponent implements OnInit {
     var dialogRef = null as any;
     if (operation === 'add') {
       dialogRef = this._dialog.open(StockManagerProductPopupComponent);
+    }
+    
+  
+  }
+
+  openEditProductForm(author: any, operation: String) {
+    var dialogRef = null as any;
+    if (operation === 'edit') {
+      dialogRef = this._dialog.open(StockManagerEditComponent);
     }
     
   
