@@ -29,6 +29,10 @@ import { StockKeeperDashComponent } from './stock-keeper-dash/stock-keeper-dash.
 import { StockKeeperNavComponent } from './stock-keeper-nav/stock-keeper-nav.component';
 import { StockKeeperProfileComponent } from './stock-keeper-profile/stock-keeper-profile.component';
 import { StockKeeperSidebarComponent } from './stock-keeper-sidebar/stock-keeper-sidebar.component';
+import { GINReportsComponent } from './gin-reports/gin-reports.component';
+import { GRNReportsComponent } from './grn-reports/grn-reports.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
+
 
 
 const routes: Routes = [
@@ -55,10 +59,15 @@ const routes: Routes = [
   {path:"get-user-details",component:GetUserDetailsComponent},
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
   {path:"get-user",component:GetUserComponent},
+
   {path:"stock-keeper-dash",component:StockKeeperDashComponent},
   {path:"stock-keeper-nav",component:StockKeeperNavComponent},
   {path:"stock-keeper-profile",component:StockKeeperProfileComponent},
   {path:"stock-keeper-sidebar",component:StockKeeperSidebarComponent},
+  {path:"gin-reports",component:GINReportsComponent},
+  {path:"grn-reports",component:GRNReportsComponent},
+  {path:"delete-user",component:DeleteUserComponent}
+
 
 
 ];
