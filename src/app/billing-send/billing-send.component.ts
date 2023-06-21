@@ -13,9 +13,9 @@ import { HttpClient} from '@angular/common/http';
 
 export class BillingSendComponent {
 
-  to!:'';
-  subject!:'';
-  bodyMsg!:'';
+  to:any;
+  subject:any;
+  bodyMsg:any;
   file: any;
   formData: any;
 
@@ -25,7 +25,12 @@ export class BillingSendComponent {
   onFileSelected(event: any) {
     this.file = event.target.files[0];
   }
-
+  
+  Cancel(): void {
+    if (confirm('Are you sure you want to Cancel?')) {
+      location.reload();
+    }
+  }
   
 //email validation
 isValidEmailsend(to: any): boolean {
