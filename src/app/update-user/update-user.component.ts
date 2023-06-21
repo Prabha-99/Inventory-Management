@@ -17,9 +17,15 @@ export class UpdateUserComponent implements OnInit{
   }
 
   getUsers(): void {
-    this.userService.getUsers().subscribe(users => {
-      this.users = users;
-    });
+    this.userService.getUsers().subscribe(
+      (users: any[]) => {
+        this.users = users;
+      },
+      (error: any) => {
+        console.error(error);
+        // Handle the error and display an appropriate message
+      }
+    );
   }
 
   openUpdateForm(user: any): void {

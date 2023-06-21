@@ -8,7 +8,7 @@ import {GetUserService} from '../get-user.service';
   styleUrls: ['./update-one-user.component.css']
 })
 export class UpdateOneUserComponent implements OnInit{
-  user: any;
+  user: any={};
 
   constructor(
     private route: ActivatedRoute,
@@ -17,25 +17,36 @@ export class UpdateOneUserComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {
-    const idParam = this.route.snapshot.paramMap.get('id');
-    if (idParam) {
-      const id = +idParam;
+    this.route.params.subscribe((params) => {
+      const id = params['id'];
       this.getUser(id);
-    }
+    });
   }
 
   getUser(id: number): void {
-    this.userService.getUser(id).subscribe(user => {
-      this.user = user;
-    });
+    this.userService.getUser(id).subscribe(
+      (user: any) => {
+        this.user = user;
+      },
+      (error: any) => {
+        console.error(error);
+        // Handle the error and display an appropriate message
+      }
+    );
   }
 
   updateUser(): void {
     if (this.validateForm()) {
-      this.userService.updateUser(this.user.id, this.user).subscribe(() => {
-        // Navigate to the user list or perform any other action
-        this.router.navigate(['/users']);
-      });
+      this.userService.updateUser(this.user.id, this.user).subscribe(
+        () => {
+          // Navigate to the user list or perform any other action
+          this.router.navigate(['/users']);
+        },
+        (error: any) => {
+          console.error(error);
+          // Handle the error and display an appropriate message
+        }
+      );
     }
   }
 
