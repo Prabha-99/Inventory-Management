@@ -37,7 +37,10 @@ import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/s
 import { StockKeeperGRNService } from './stock-keeper-order-reports-grn/stock-keeper-grn.service';
 // import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
 
-
+import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/purchase-coordinator-side.component';
+import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
+import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
+import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -71,10 +74,20 @@ const routes: Routes = [
   {path:"gin-reports",component:GINReportsComponent},
   {path:"grn-reports",component:GRNReportsComponent},
   {path:"delete-user",component:DeleteUserComponent},
+
   // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent}
   {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent},
   {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService}
+ 
 
+  {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},
+  {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent},
+  {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
+  {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
+ 
+ 
+
+  {path:"get-user",component:GetUserComponent}
 
 ];
 

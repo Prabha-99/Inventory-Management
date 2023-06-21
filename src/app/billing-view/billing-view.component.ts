@@ -30,34 +30,46 @@ export class BillingViewComponent implements OnInit{
     // });
 
     this.loadPdfList();
-
-
   }
 
 
-  //delete function
+
+  //delete bill data function
   onDelete(id: number) {
     if (confirm("Are you sure you want to delete this bill?")) {
+
       this.billService.deleteBill(id).subscribe(() => {
         this.bills = this.bills.filter(bill => bill.id !== id);
        // alert("Bill deleted successfully.");
        // location.reload(); // Refresh the page
+
+
+
       }, () => {
         alert("Bill Deleted Successfully!"); // Display error message
         location.reload();
       });
     }
+    
   }
 
+
+
+  //delete pdf function
   onDeletepdf(bill_id: number) {
+    if (confirm("Are you sure you want to delete this bill?")) {
       this.billService.deleteBillpdf(bill_id).subscribe(() => {
         this.pdfList = this.pdfList.filter(pdf => pdf.bill_id !== bill_id);
        // alert("Bill deleted successfully.");
        // location.reload(); // Refresh the page
+
+
+
       }, () => {
+        alert("Bill Deleted Successfully!"); // Display error message
         location.reload();
       });
-    
+    }
   }
 
   pdfList: any[]=[];
