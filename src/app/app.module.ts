@@ -70,6 +70,8 @@ import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-ed
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 import { OrderComponent } from './order/order.component';
+import { PurchaseCoordinatorOrderComponent } from './purchase-coordinator-order/purchase-coordinator-order.component';
+import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/purchase-coordinator-bill.component';
 
 
 
@@ -126,7 +128,10 @@ import { OrderComponent } from './order/order.component';
 
     DeleteUserComponent,
 
-    OrderComponent
+    OrderComponent,
+    OrderComponent,
+    PurchaseCoordinatorOrderComponent,
+    PurchaseCoordinatorBillComponent
 
 
  
