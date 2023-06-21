@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+  <div class="container" style="padding-top: 150px;">
+
   <app-sidebar></app-sidebar>
   <app-navbar></app-navbar>
 
-<div class="frame" >
-  <h1 style="color: rgb(19, 39, 129);"><b>Upload File</b></h1>
-  <form class="container" (ngSubmit)="submitData()">
 
       <img src="assets/PM.jpeg" alt="logo" style="
-        width: 500px; height: 400px; margin-left: 350px; margin-bottom: 150px; margin-top: 10px;
+        width: 500px; height: 400px; margin-left: 200px; margin-bottom: 60px; margin-top: 5px;
         ">
       <div id="upload">
+
+  <h2 style="color: rgb(19, 39, 129);"><b>Upload File</b></h2>
+
 
       <p style="font-size:20px;"><b>File Name:</b></p>
       <input type="text" class="form-control form-control-sm" (change)="getName(name.value)" #name required><br/>
@@ -32,9 +34,7 @@
 
        </div>
 
-
-  </form>
-</div>
+      </div>
 </body>
 </html>
 
