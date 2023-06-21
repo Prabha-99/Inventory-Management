@@ -38,7 +38,6 @@ import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purc
 import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 
-
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"home",component:HomeComponent},
@@ -79,7 +78,6 @@ const routes: Routes = [
  
 
   {path:"get-user",component:GetUserComponent}
-
 
 ];
 
