@@ -57,6 +57,8 @@ import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
 import { OrderComponent } from './order/order.component';
+import { PurchaseCoordinatorOrderComponent } from './purchase-coordinator-order/purchase-coordinator-order.component';
+import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/purchase-coordinator-bill.component';
 
 
 
@@ -100,7 +102,9 @@ import { OrderComponent } from './order/order.component';
     PurchaseCoordinatorProductPopupComponent,
     PurchaseCoordinatorProfileComponent,
     GetUserComponent,
-    OrderComponent
+    OrderComponent,
+    PurchaseCoordinatorOrderComponent,
+    PurchaseCoordinatorBillComponent
 
  
 
