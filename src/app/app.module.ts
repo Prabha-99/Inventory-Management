@@ -57,6 +57,7 @@ import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
+import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 
 
 
@@ -99,7 +100,8 @@ import { GINReportsComponent } from './gin-reports/gin-reports.component';
     PurchaseCoordinatorProductPopupComponent,
     PurchaseCoordinatorProfileComponent,
     GetUserComponent,
-    GINReportsComponent
+    GINReportsComponent,
+    GRNReportsComponent
 
  
 
