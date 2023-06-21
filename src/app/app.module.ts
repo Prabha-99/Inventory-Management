@@ -58,6 +58,8 @@ import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-prof
 import { GetUserComponent } from './get-user/get-user.component';
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
+
 
 
 
@@ -101,7 +103,8 @@ import { GRNReportsComponent } from './grn-reports/grn-reports.component';
     PurchaseCoordinatorProfileComponent,
     GetUserComponent,
     GINReportsComponent,
-    GRNReportsComponent
+    GRNReportsComponent,
+    DeleteUserComponent
 
  
 
