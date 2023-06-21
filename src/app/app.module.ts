@@ -56,6 +56,9 @@ import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-prod
 import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator-product-popup/purchase-coordinator-product-popup.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
+import { OrderComponent } from './order/order.component';
+import { PurchaseCoordinatorOrderComponent } from './purchase-coordinator-order/purchase-coordinator-order.component';
+import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/purchase-coordinator-bill.component';
 
 import { StockKeeperDashComponent } from './stock-keeper-dash/stock-keeper-dash.component';
 import { StockKeeperNavComponent } from './stock-keeper-nav/stock-keeper-nav.component';
@@ -115,6 +118,7 @@ import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/pu
     PurchaseCoordinatorProductPopupComponent,
     PurchaseCoordinatorProfileComponent,
     GetUserComponent,
+<<<<<<< HEAD
 
     StockKeeperDashComponent,
     StockKeeperNavComponent,
@@ -133,6 +137,11 @@ import { PurchaseCoordinatorBillComponent } from './purchase-coordinator-bill/pu
     PurchaseCoordinatorOrderComponent,
     PurchaseCoordinatorBillComponent
 
+=======
+    OrderComponent,
+    PurchaseCoordinatorOrderComponent,
+    PurchaseCoordinatorBillComponent
+>>>>>>> aa73e78519d9b8750cb14f5271c856ccb5618e22
 
  
 
