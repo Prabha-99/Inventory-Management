@@ -25,6 +25,10 @@ import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
 import { GetUserComponent } from './get-user/get-user.component';
+import { GINReportsComponent } from './gin-reports/gin-reports.component';
+import { GRNReportsComponent } from './grn-reports/grn-reports.component';
+
+
 
 
 const routes: Routes = [
@@ -50,7 +54,9 @@ const routes: Routes = [
   {path:"system-admin-dash",component:SystemAdminDashComponent},
   {path:"get-user-details",component:GetUserDetailsComponent},
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
-  {path:"get-user",component:GetUserComponent}
+  {path:"get-user",component:GetUserComponent},
+  {path:"gin-reports",component:GINReportsComponent},
+  {path:"grn-reports",component:GRNReportsComponent}
 
 
 ];

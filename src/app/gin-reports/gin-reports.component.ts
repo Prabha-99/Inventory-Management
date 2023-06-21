@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ReportService } from './report.service';
+import { GINService } from './gin.service';
 
 @Component({
-  selector: 'app-order-reports',
-  templateUrl: './order-reports.component.html',
-  styleUrls: ['./order-reports.component.css']
+  selector: 'app-gin-reports',
+  templateUrl: './gin-reports.component.html',
+  styleUrls: ['./gin-reports.component.css']
 })
-export class OrderReportsComponent implements OnInit{
+export class GINReportsComponent implements OnInit{
 
   files!: any[];
 
-  constructor(private reportService: ReportService) { }
+  constructor(private ginService: GINService) { }
 
   ngOnInit(): void {
-    this.reportService.getAllFiles().subscribe(
+    this.ginService.getAllFiles().subscribe(
       (response) => {
         this.files = response;
       },
@@ -24,7 +24,7 @@ export class OrderReportsComponent implements OnInit{
   }
 
   downloadFile(report_id: number, report_name: string): void {
-    this.reportService.downloadFile(report_id).subscribe(
+    this.ginService.downloadFile(report_id).subscribe(
       (response) => {
         // Create a temporary link and trigger the file download
         const blob = new Blob([response], { type: 'application/pdf' });
@@ -39,6 +39,5 @@ export class OrderReportsComponent implements OnInit{
       }
     );
   }
- 
 
 }
