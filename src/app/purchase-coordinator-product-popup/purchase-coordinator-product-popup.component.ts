@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { PurchaseCoordinatorProductPopupService } from './purchase-coordinator-product-popup.service';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 78fd1bb (update purchase coordinator product component)
 
 @Component({
   selector: 'app-purchase-coordinator-product-popup',
