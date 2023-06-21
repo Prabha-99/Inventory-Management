@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component , } from '@angular/core';
 
 @Component({
   selector: 'app-showroom',
@@ -33,7 +33,7 @@ export class ShowroomComponent {
     formData.set("file",this.file)
 
     //submit data in API
-    this.http.post("http://localhost:8080/api/file/add",formData)
+    this.http.post("http://localhost:8080/api/showroom/add",formData)
     .subscribe((Response) =>{});
   }
 
