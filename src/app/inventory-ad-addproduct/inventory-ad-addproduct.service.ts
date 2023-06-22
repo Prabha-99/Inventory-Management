@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class InventoryAdAddproductService {
 
-  private adminUrl = 'http://localhost:8080/api/product/deleteProduct';
+  private adminUrl = 'http://localhost:8080/api/product/delete';
 
   constructor(private http: HttpClient, public dialog: MatDialog) { }
 
