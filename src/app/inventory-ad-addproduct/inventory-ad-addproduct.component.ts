@@ -23,13 +23,20 @@ export class InventoryAdAddproductComponent implements OnInit{
   });
   }
 
-  deleteProductForm(author: any, operation: String) {
+ /* deleteProductForm(author: any, operation: String) {
     var dialogRef = null as any;
     if (operation === 'delete') {
       dialogRef = this._dialog.open(DeleteProductComponent);
     }
     
   
+  }*/
+
+  deleteProducts(productID: number): void {
+    this.productService.deleteProduct(productID).subscribe(() => {
+      this.productService.getProducts();
+      alert('Delete successfully');
+    });
   }
 
   openAddEditProductForm(author: any, operation: String) {
