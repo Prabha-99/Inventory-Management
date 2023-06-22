@@ -23,6 +23,10 @@ import { SystemAdminNavComponent } from './system-admin-nav/system-admin-nav.com
 import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.component';
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
+
+import { ShowroomComponent } from './showroom/showroom.component';
+
+
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
 import { GetUserComponent } from './get-user/get-user.component';
 import { StockKeeperDashComponent } from './stock-keeper-dash/stock-keeper-dash.component';
@@ -42,6 +46,7 @@ import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purc
 import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -65,6 +70,8 @@ const routes: Routes = [
   {path:"system-admin-side",component:SystemAdminSideComponent},
   {path:"system-admin-dash",component:SystemAdminDashComponent},
   {path:"get-user-details",component:GetUserDetailsComponent},
+  {path:"showroom",component:ShowroomComponent},
+
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
   {path:"get-user",component:GetUserComponent},
 
@@ -92,7 +99,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
- 
+
 
 })
 export class AppRoutingModule { }

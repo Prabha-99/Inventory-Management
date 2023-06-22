@@ -49,6 +49,7 @@ import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
 import { InventoryAdDeletePopComponent } from './inventory-ad-delete-pop/inventory-ad-delete-pop.component';
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
+import { ShowroomComponent } from './showroom/showroom.component';
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
 import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/purchase-coordinator-side.component';
 import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
@@ -84,10 +85,9 @@ import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.
 
 
 
-
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     NavbarComponent,
     HomeComponent,
@@ -116,6 +116,7 @@ import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.
     SystemAdminDashComponent,
     InventoryAdDeletePopComponent,
     GetUserDetailsComponent,
+    ShowroomComponent,
     PurchaseCoordinatorDashComponent,
     PurchaseCoordinatorSideComponent,
     PurchaseCoordinatorNavComponent,
@@ -123,10 +124,6 @@ import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.
     PurchaseCoordinatorProductPopupComponent,
     PurchaseCoordinatorProfileComponent,
     GetUserComponent,
-
-
-
-
 
     StockKeeperDashComponent,
     StockKeeperNavComponent,
@@ -150,16 +147,9 @@ import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.
 
       PurchaseCoordinatorEditComponent,
       DeleteProductComponent,
-      InventoryAdEditComponent,
+      InventoryAdEditComponent
 
 
-  
-
- 
-
- 
-
-    
   ],
   imports: [
     BrowserModule,
@@ -180,8 +170,10 @@ import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.
     BrowserAnimationsModule,
     MatIconModule,
     MatTableModule,
-    MatCardModule
-   
+    MatCardModule,
+
+
+
 
   ],
   providers: [],
