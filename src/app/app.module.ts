@@ -78,6 +78,7 @@ import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-report
 import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
+import { InventoryAdSellingComponent } from './inventory-ad-selling/inventory-ad-selling.component';
 
 
 
@@ -151,6 +152,7 @@ import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.
       PurchaseCoordinatorEditComponent,
       DeleteProductComponent,
       InventoryAdEditComponent,
+      InventoryAdSellingComponent,
 
 
   
