@@ -7,7 +7,7 @@ import { Component , } from '@angular/core';
   styleUrls: ['./showroom.component.css']
 })
 export class ShowroomComponent {
-name:string = ""
+name:string = "";
 file:any;
   constructor(private http:HttpClient) {}
 
@@ -25,15 +25,20 @@ file:any;
   submitData(){
     //create formData object
     let formData = new FormData();
-    formData.set("name",this.name)
-    formData.set("file",this.file)
+    formData.append("name",this.name)
+    formData.append("file",this.file)
+
 
     //submit data in API
     this.http.post("http://localhost:8080/api/showroom/add",formData)
-    .subscribe((Response) =>{});
+    .subscribe((response) =>{
+    console.log(response);
+        alert("Successfully Saved!!");
+  });
+ }
   }
 
 
-  }
+
 
 
