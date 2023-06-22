@@ -11,8 +11,6 @@ name:string = "";
 file:any;
   constructor(private http:HttpClient) {}
 
-
-
   getName(name:string){
     this.name = name;
   }
@@ -28,12 +26,12 @@ file:any;
     formData.append("name",this.name)
     formData.append("file",this.file)
 
-
+    alert('Successfully submitted!');
     //submit data in API
     this.http.post("http://localhost:8080/api/showroom/add",formData)
     .subscribe((response) =>{
     console.log(response);
-        alert("Successfully Saved!!");
+
   });
  }
   }
