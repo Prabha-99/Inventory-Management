@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InventoryAdAddproductService } from './inventory-ad-addproduct.service';
 import { InventoryAdProductPopupComponent } from '../inventory-ad-product-popup/inventory-ad-product-popup.component';
+import { DeleteProductComponent } from '../delete-product/delete-product.component';
+import { InventoryAdEditComponent } from '../inventory-ad-edit/inventory-ad-edit.component';
 
 
 
@@ -21,13 +23,29 @@ export class InventoryAdAddproductComponent implements OnInit{
   });
   }
 
- 
+  deleteProductForm(author: any, operation: String) {
+    var dialogRef = null as any;
+    if (operation === 'delete') {
+      dialogRef = this._dialog.open(DeleteProductComponent);
+    }
+    
+  
+  }
 
   openAddEditProductForm(author: any, operation: String) {
     var dialogRef = null as any;
     if (operation === 'add') {
       dialogRef = this._dialog.open(InventoryAdProductPopupComponent);
     }
+  
+  }
+
+  openEditProductForm(author: any, operation: String) {
+    var dialogRef = null as any;
+    if (operation === 'edit') {
+      dialogRef = this._dialog.open(InventoryAdEditComponent);
+    }
+    
   
   }
 

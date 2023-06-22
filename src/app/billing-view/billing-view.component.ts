@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BillService } from './billing-view.component.service';
 import { Observable } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { HttpResponse } from '@angular/common/http';
 
 export class BillingViewComponent implements OnInit{
 
-  constructor(private billService: BillService) { }
+  constructor(private billService: BillService, private sanitizer: DomSanitizer) { }
 
   // pdfList!: any[];
   bills: any[] = [];
@@ -30,6 +31,7 @@ export class BillingViewComponent implements OnInit{
     // });
 
     this.loadPdfList();
+    
   }
 
 
@@ -75,6 +77,7 @@ export class BillingViewComponent implements OnInit{
   pdfList: any[]=[];
 
 
+
   loadPdfList(): void {
     this.billService.getAllPdf().subscribe(
       (data: any[]) => {
@@ -86,21 +89,35 @@ export class BillingViewComponent implements OnInit{
     );
   }
 
-  getPdfFile(filepath: string) {
-    if (filepath == null || filepath.trim().length == 0) {
-      alert(console.log("File path is null or empty"));
-      return;
-    }
-    this.billService.getPdfFileByPath(filepath).subscribe(
-      (data) => {
-        const file = new Blob([data], { type: 'application/pdf' });
-        const fileURL = URL.createObjectURL(file);
-        window.open(fileURL);
-      },
-      (error) => {
-        alert(console.log(error));
-      }
-    );
+
+  // showPdfFile(filepath: string) {
+  //   if (filepath == null || filepath.trim().length == 0) {
+  //     alert("File path is null or empty");
+  //     return;
+  //   }
+  //   this.billService.getPdfFileByPath(filepath).subscribe(
+  //     (data) => {
+  //       const file = new Blob([data], { type: 'application/pdf' });
+  //       const fileURL = URL.createObjectURL(file);
+  //       this.pdfFileUrl = fileURL;
+  //       this.showPdf = true;
+  //     },
+  //     (error) => {
+  //       alert(error);
+  //     }
+  //   );
+  // }
+
+  // getSafeUrl(filePath: string): SafeUrl {
+  //   return this.sanitizer.bypassSecurityTrustUrl(`file:///${filePath}`);
+  // }
+
+   openPdf(filepath) {
+    // Construct the file URL using the filepath
+    const fileURL = `file://${filepath}`;
+  
+    // Open the PDF file in a new window/tab
+    window.open(fileURL, '_blank');
   }
 
 }

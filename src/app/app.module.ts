@@ -71,6 +71,15 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
 
+import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
+import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-reports-grn/stock-keeper-order-reports-grn.component';
+// import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
+
+import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
+import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
+
+
 
 
 
@@ -117,10 +126,6 @@ import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 
-    // OrderComponent,
-    // PurchaseCoordinatorOrderComponent,
-    // PurchaseCoordinatorBillComponent,
-
 
 
     StockKeeperDashComponent,
@@ -130,15 +135,25 @@ import { UserUpdateComponent } from './user-update/user-update.component';
 
     GINReportsComponent,
     GRNReportsComponent,
-
     DeleteUserComponent,
     UpdateOneUserComponent,
-
+    StockManagerEditComponent,
+    DeleteUserComponent,
+      StockKeeperOrderReportsComponent,
+      StockKeeperOrderReportsGRNComponent,
+   
     StockManagerEditComponent,
 
     DeleteUserComponent,
-      UserUpdateComponent
 
+      UserUpdateComponent,
+
+      PurchaseCoordinatorEditComponent,
+      DeleteProductComponent,
+      InventoryAdEditComponent,
+
+
+  
 
  
 
