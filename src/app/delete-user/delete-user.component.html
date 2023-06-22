@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete User Details</title> 
+</head>
+<body>
+    <app-system-admin-nav></app-system-admin-nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <app-system-admin-side></app-system-admin-side>
+            </div>
+            <div class="col-10">
+                <br><br><br><br><br><br><br><br>
+                <div class="d-flex justify-content-center">
+                    <div>
+                      <div class="d-flex justify-content-center">
+                        <h1>Delete User Details</h1>
+                        </div>
+                        <!-- <div style=" padding:5px;" class = "d-flex justify-content-around">
+                            <input style=" padding-left:5px;" type="text" [(ngModel)]="searchValue" placeholder="Search by name" (input)="searchUsers()" />
+                            <button type="button" class="btn btn-primary margin-right:10px " (click)="clearSearch()">Clear</button>
+                        </div> -->
+                        <br>
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">ID</th>
+                              <th scope="col">First Name</th>
+                              <th scope="col">Last Name</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Role</th>
+                              <th scope="col">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr scope="row" *ngFor="let user of users">
+                              <td>{{ user.id }}</td>
+                              <td>{{ user.firstname }}</td>
+                              <td>{{ user.lastname }}</td>
+                              <td>{{ user.email }}</td>
+                              <td>{{ user.role }}</td>
+                              <td>
+                                <button (click)="deleteUser(user.id)" class="btn btn-primary " >Delete</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      
+                </div>
+
+                
+            </div>              
+            </div>
+        </div>
+</body>
+</html>
+
+
+
+
+
+

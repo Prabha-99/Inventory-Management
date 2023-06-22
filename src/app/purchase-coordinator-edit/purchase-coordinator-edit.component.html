@@ -1,0 +1,55 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Edit Product</mat-card-title>
+    </mat-card-header>
+  
+    <form #productForm="ngForm">
+      <mat-card-content>
+        <p>
+
+          <select class="form-select" name="category_id" aria-label="category" required>
+            <option selected value="" disabled [ngValue]="null">Select Category</option>
+            <option value="c2">Accessories</option>
+            <option value="c3">Appliances</option>
+          </select>
+          <br>
+          <!-- Product Name -->
+          <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input matInput name="product_name" placeholder="Product Name" required>
+          </mat-form-field>
+  
+          <!-- Product Brand -->
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Product Brand</mat-label>
+            <input matInput name="product_brand" placeholder="Product Brand" required>
+          </mat-form-field>
+        </p>
+       
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Product Quantity</mat-label>
+            <input matInput name="product_quantity" type="number" placeholder="Product Quantity" required>
+          </mat-form-field>
+
+          <!-- Product Price -->
+          <mat-form-field appearance="outline">
+            <mat-label>Product Price</mat-label>
+            <input matInput name="product_price" type="number" placeholder="Product Price" required>
+          </mat-form-field>
+        </p>
+  
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <input class="btn btn-primary" type="Edit" value="Edit">
+          <input class="btn btn-primary" type="reset" value="Reset">
+          <button type="button" class="btn btn-danger">Cancel</button>
+        </div>
+      </mat-card-actions>
+    </form>
+  
+  </mat-card>
+  

@@ -11,74 +11,54 @@
            <app-inventory-ad-side-bar></app-inventory-ad-side-bar> <!--Call sidebar-->
        </div>
        <br><br><br>
-       <div class="container mt-4" class="align-right">
-         <mat-card class="example-card">
-           <mat-card-header>
-             <mat-card-subtitle>Product List</mat-card-subtitle>
-             <mat-card-title></mat-card-title>
-           </mat-card-header>
-       
-           <mat-card-content>
-             <mat-table>
-       
-               <ng-container matColumnDef="id">
-                 <mat-header-cell *matHeaderCellDef>Product Id</mat-header-cell>
-                 <mat-cell></mat-cell>
-               </ng-container>
-       
-               <ng-container matColumnDef="firstName">
-                 <mat-header-cell *matHeaderCellDef>Category Id</mat-header-cell>
-                 <mat-cell></mat-cell>
-               </ng-container>
-       
-               <ng-container matColumnDef="lastName">
-                 <mat-header-cell *matHeaderCellDef>Product Brand</mat-header-cell>
-                 <mat-cell></mat-cell>
-               </ng-container>
-       
-               <ng-container matColumnDef="birthDate">
-                 <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
-                 <mat-cell></mat-cell>
-               </ng-container>
-       
-               <ng-container matColumnDef="address">
-                 <mat-header-cell *matHeaderCellDef>Product Price</mat-header-cell>
-                 <mat-cell></mat-cell>
-               </ng-container>
-       
-               <ng-container matColumnDef="action">
-                 <mat-header-cell *matHeaderCellDef>Product Quantity</mat-header-cell>
-                 <mat-cell>
-                   <button mat-icon-button>
-                     <mat-icon>edit</mat-icon>
-                   </button>
-                   <button mat-icon-button color="warn">
-                     <mat-icon>delete</mat-icon>
-                   </button>
-                 </mat-cell>
-               </ng-container>
-       
-               <mat-header-row
-                 *matHeaderRowDef="['id', 'firstName', 'lastName', 'birthDate', 'address', 'action']"></mat-header-row>
-               <mat-row
-                 *matRowDef="let row; columns: ['id', 'firstName', 'lastName', 'birthDate', 'address', 'action']"></mat-row>
-       
-             </mat-table>
-           </mat-card-content>
-       
-       
-          <mat-card-footer>
-             <mat-card-actions>
-               <button type="button" class="btn btn-outline-primary" (click)=" openAddEditProductForm(null,'add')">Add a Product</button>
-             </mat-card-actions>
-           </mat-card-footer>
-       
-         </mat-card>
-       
-       </div>
-       
 
-
+       <div class="col-10 mt-5">
+        <div class="mt-5">
+          <br>
+          <div>
+          <!--Add Product button-->
+          <button mat-raised-button (click)=" openAddEditProductForm(null,'add')" class="btn btn-dark float-right">Add Product</button>
+            <br><br>
+          <!--Search bar-->
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Filter" aria-label="Search" />
+          </div>
+          </div>
+          <br>   
+              <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th class="th-sm">Product Id</th>
+                      <th class="th-sm">Category Id</th>
+                      <th class="th-sm">Product Brand</th>
+                      <th class="th-sm">Product Name</th>
+                      <th class="th-sm">Product Price</th>
+                      <th class="th-sm">Product Quantity</th>
+                      <th class="th-sm">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of products">
+                      <td>{{ product.product_id }}</td>
+                      <td>{{ product.category_id }}</td>
+                      <td>{{ product.product_brand }}</td>
+                      <td>{{ product.product_name }}</td>
+                      <td>{{ product.product_price }}</td>
+                      <td>{{ product.product_quantity }}</td>
+                      <td>
+                        <a class="edit" data-toggle="modal" (click)="openEditProductForm(null,'edit')" style="cursor: pointer;">
+                          <i class="material-icons" data-toggle="tooltip" title="Edit" style="cursor: pointer;">&#xE254;</i>
+                        </a>
+                        <a class="delete" data-toggle="modal" (click)="deleteProductForm(null,'delete')" style="cursor: pointer;">
+                          <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              
+        </div>
+        </div>
    </div>
 </div>
 

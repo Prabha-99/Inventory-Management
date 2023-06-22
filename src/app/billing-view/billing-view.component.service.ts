@@ -24,20 +24,13 @@ export class BillService {
     return this.http.delete<void>(url);
   }
 
+  private apipdfUrl = 'http://localhost:8080/api/bill/delete';
+  deleteBillpdf(bill_id: number): Observable<void> {
+    const url = `${this.apipdfUrl}/${bill_id}`;
+    return this.http.delete<void>(url);
+  }
 
 
-
-// private apiEndpoint = 'http://localhost:8080/api/bill/view';
-
-//  getImage(): Observable<any> {
-//    return this.http.get(this.apiEndpoint, { responseType: 'blob' }).pipe(
-//      map((blob: Blob) => {
-//        const reader = new FileReader();
-//        reader.readAsDataURL(blob);
-//        return reader.result as any;
-//      })
-//    );
-//  }
 
  private baseUrl = 'http://localhost:8080/api/bill';
 
@@ -45,9 +38,8 @@ export class BillService {
   return this.http.get<string[]>(`${this.baseUrl}/all`);
 }
 
-getPdfFileByPath(filepath: string): Observable<Blob> {
-  return this.http.get(`${this.baseUrl}/file/${filepath}`, { responseType: 'blob' });
-}
-
+// getPdfFileByPath(filepath: string): Observable<Blob> {
+//   return this.http.get(`${this.baseUrl}/file/${filepath}`, { responseType: 'blob' });
+// }
 
   }

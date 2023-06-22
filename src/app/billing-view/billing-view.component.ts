@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BillService } from './billing-view.component.service';
 import { Observable } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,11 +15,11 @@ import { HttpResponse } from '@angular/common/http';
 
 export class BillingViewComponent implements OnInit{
 
-  constructor(private billService: BillService) { }
+  constructor(private billService: BillService, private sanitizer: DomSanitizer) { }
 
   // pdfList!: any[];
   bills: any[] = [];
-  imageUrls: any[] = [];
+  fileURL: any[] = [];
 
   ngOnInit() {
     this.billService.getAllBills().subscribe(bill => {
@@ -30,22 +31,48 @@ export class BillingViewComponent implements OnInit{
     // });
 
     this.loadPdfList();
-
+    
   }
 
+
+
+  //delete bill data function
   onDelete(id: number) {
     if (confirm("Are you sure you want to delete this bill?")) {
+
       this.billService.deleteBill(id).subscribe(() => {
         this.bills = this.bills.filter(bill => bill.id !== id);
        // alert("Bill deleted successfully.");
        // location.reload(); // Refresh the page
+
+
+
+      }, () => {
+        alert("Bill Deleted Successfully!"); // Display error message
+        location.reload();
+      });
+    }
+    
+  }
+
+
+
+  //delete pdf function
+  onDeletepdf(bill_id: number) {
+    if (confirm("Are you sure you want to delete this bill?")) {
+      this.billService.deleteBillpdf(bill_id).subscribe(() => {
+        this.pdfList = this.pdfList.filter(pdf => pdf.bill_id !== bill_id);
+       // alert("Bill deleted successfully.");
+       // location.reload(); // Refresh the page
+
+
+
       }, () => {
         alert("Bill Deleted Successfully!"); // Display error message
         location.reload();
       });
     }
   }
-
 
   pdfList: any[]=[];
 
@@ -62,21 +89,35 @@ export class BillingViewComponent implements OnInit{
     );
   }
 
-  getPdfFile(filepath: string) {
-    if (filepath == null || filepath.trim().length == 0) {
-      alert(console.log("File path is null or empty"));
-      return;
-    }
-    this.billService.getPdfFileByPath(filepath).subscribe(
-      (data) => {
-        const file = new Blob([data], { type: 'application/pdf' });
-        const fileURL = URL.createObjectURL(file);
-        window.open(fileURL);
-      },
-      (error) => {
-        alert(console.log(error));
-      }
-    );
+
+  // showPdfFile(filepath: string) {
+  //   if (filepath == null || filepath.trim().length == 0) {
+  //     alert("File path is null or empty");
+  //     return;
+  //   }
+  //   this.billService.getPdfFileByPath(filepath).subscribe(
+  //     (data) => {
+  //       const file = new Blob([data], { type: 'application/pdf' });
+  //       const fileURL = URL.createObjectURL(file);
+  //       this.pdfFileUrl = fileURL;
+  //       this.showPdf = true;
+  //     },
+  //     (error) => {
+  //       alert(error);
+  //     }
+  //   );
+  // }
+
+  // getSafeUrl(filePath: string): SafeUrl {
+  //   return this.sanitizer.bypassSecurityTrustUrl(`file:///${filePath}`);
+  // }
+
+   openPdf(filepath) {
+    // Construct the file URL using the filepath
+    const fileURL = `file://${filepath}`;
+  
+    // Open the PDF file in a new window/tab
+    window.open(fileURL, '_blank');
   }
 
 }

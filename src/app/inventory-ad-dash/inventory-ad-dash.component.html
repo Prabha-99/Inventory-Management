@@ -10,47 +10,53 @@
         <div class="col-2">
             <app-inventory-ad-side-bar></app-inventory-ad-side-bar> <!--Call sidebar-->
         </div>
-        <div class="col-10 mt-5">
-        <div class="mt-5">
-        <table>
-            <tr>
-                <td>
-                    <!--Total of categories-->
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Total Categories</h5>
-                          <hr>
-                          <p class="card-text">{{ count2 }}</p>
-                          <a href="#" class="btn btn-primary">View</a>
-                        </div>
+        
+        <div class="col-10">
+          <br><br><br><br>
+  
+  
+  
+  
+          <div class="container">
+              
+              <div class="row">
+                  <div class="col-sm-4">
+                      <div class="card bg-c-blue text-white">
+                          <div class="card-body">
+                              <h6>Available</h6>
+                              <h2 class="text-end"><i class="bi bi-cart-plus"></i><span> {{category}}</span></h2>
+                              <p>Total Categories<span class="float-end"> 5</span></p>
+                          </div>
                       </div>
-                </td>
-                <td>
-                    <!--Total of Products-->
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Total Products</h5>
-                          <hr>
-                          <p class="card-text">{{ count }}</p>
-                          <a href="#" class="btn btn-primary">View</a>
-                        </div>
+                  </div>
+          
+                  <div class="col-sm-4">
+                      <div class="card bg-c-green text-white">
+                          <div class="card-body">
+                              <h6>Available</h6>
+                              <h2 class="text-end"><i class="bi bi-rocket"></i><span> {{products}}</span></h2>
+                              <p>Total Products<span class="float-end"> 1480</span></p>
+                          </div>
                       </div>
-                </td>
-                <td>
-                    <!--Total of bill-->
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Total Bill</h5>
-                          <hr>
-                          <p class="card-text">6</p>
-                          <a href="#" class="btn btn-primary">View</a>
-                        </div>
+                  </div>
+          
+                  <div class="col-sm-4">
+                      <div class="card bg-c-yellow text-white">
+                          <div class="card-body">
+                              <h6>Last Month</h6>
+                              <h2 class="text-end"><i class="bi bi-currency-dollar"></i><span> 100K</span></h2>
+                              <p>Total Sales<span class="float-end"> 2460K</span></p>
+                          </div>
                       </div>
-                </td>
-            </tr>
-        </table>
-        </div>
-        </div>
+                  </div>
+          
+                  
+              </div>
+          </div>
+          
+          
+          
+      </div>
     </div>
 </div>
 

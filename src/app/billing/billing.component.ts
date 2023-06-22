@@ -4,6 +4,7 @@ import { ProductService } from './billing.component.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import * as html2pdf from 'html2pdf.js';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   
@@ -25,10 +26,10 @@ import * as html2pdf from 'html2pdf.js';
 
 
 export class BillingComponent implements OnInit{
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService , dialog: MatDialog) { }
 
   Billingsend() {
-    window.open('/billingsend', '_blank','width=800,height=500');
+    window.open('/billingsend', '_blank','width=800,height=600');
   }
 
   Billingview() {
@@ -154,7 +155,6 @@ export class BillingComponent implements OnInit{
   }
 
  
-
   confirmRefresh(): void {
     if (confirm('Are you sure you want to clear?')) {
       location.reload();
@@ -173,19 +173,47 @@ formData = {
   cu_address: '',
   cu_tele: '',
   other: '',
-  total_amount:null,
-  discount:null,
-  subtotal:null,
+  total_amount:0,
+  discount:0,
+  subtotal:0,
   note:'',
 
 };
 
 
+//error handling
+emailerror='';
+tele_error='';
+tele_error_fix='';
+emailerror_fix='';
+
+
+//submit form
 onSubmit() {
-  if (!this.isValidFormData()) {
-    alert('Please fill  required fields.');
+  if (!this.isValidFormData())  {
+    alert('Please Enter Required Fields!!');
     return;
   }
+  
+  if (!this.isValidPhoneNumber(this.formData.cu_tele)) {
+    this.tele_error='Invalid Telephone Number!';
+    this.tele_error_fix='';
+    return;
+  }else{
+    this.tele_error='';
+    this.tele_error_fix='OK!';
+  }
+  this.tele_error_fix='';
+
+  if (!this.isValidEmail(this.formData.other)) {
+    this.emailerror='Invalid Email Address!';
+    this.emailerror_fix='';
+    return;
+  }else{
+    this.emailerror='';
+    this.emailerror_fix='OK!';
+  }
+  this.emailerror_fix='';
 
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
@@ -208,11 +236,23 @@ onSubmit() {
   });
 }
 
-
+//requred validation
 isValidFormData(): boolean {
-  return !!this.formData.qu_no && !!this.formData.st_date && !!this.formData.end_date && !!this.formData.cu_name;
+  return !!this.formData.qu_no && !!this.formData.st_date && !!this.formData.end_date && !!this.formData.cu_name && !!this.formData.cu_address
+  && !!this.formData.cu_tele;
 }
 
+//email validation
+isValidEmail(other: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(other);
+}
+
+//phone number validation
+ isValidPhoneNumber(cu_tele) {
+  const regexPattern = /^0\d{9}$/;
+  return regexPattern.test(cu_tele);
+}
 
 }
 
