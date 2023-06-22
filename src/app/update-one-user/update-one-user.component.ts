@@ -36,12 +36,19 @@ export class UpdateOneUserComponent implements OnInit {
   }
 
   updateUser(): void {
-    console.log('Updating user:', this.user); // Check if the user object is populated correctly
     if (this.validateForm()) {
-      this.userService.updateUser(this.user.id, this.user).subscribe(() => {
-        // Navigate to the user list or perform any other action
-        this.router.navigate(['/users']);
-      });
+      this.userService.updateUser(this.user.id, this.user).subscribe(
+        () => {
+          // Success
+          console.log('User details updated successfully');
+          this.router.navigate(['/user-update']);
+        },
+        error => {
+          // Error
+          console.error('Error updating user:', error);
+          // Handle the error (display error message, etc.)
+        }
+      );
     }
   }
 
