@@ -4,7 +4,7 @@
       <mat-card-title>Edit Product</mat-card-title>
     </mat-card-header>
   
-    <form #productForm="ngForm">
+    <form #productForm="ngForm"  (ngSubmit)="updateProduct()">
       <mat-card-content>
         <p>
 
