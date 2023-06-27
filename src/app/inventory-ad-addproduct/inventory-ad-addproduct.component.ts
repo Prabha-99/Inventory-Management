@@ -49,4 +49,15 @@ export class InventoryAdAddproductComponent implements OnInit{
   
   }
 
+  deleteProduct(product_id: number){
+    this.productService.deleteProduct().subscribe({
+      next: (res) =>{
+        alert('Employee Deleted......')
+      },
+
+      error: console.log,
+    })
+    
+  }
+
 }
