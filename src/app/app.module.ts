@@ -157,7 +157,8 @@ import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart
     DeleteUserComponent,
       StockKeeperOrderReportsComponent,
       StockKeeperOrderReportsGRNComponent,
-
+    StockKeeperOrderReportsComponent,
+    StockKeeperOrderReportsGRNComponent,
     StockManagerEditComponent,
 
     DeleteUserComponent,
