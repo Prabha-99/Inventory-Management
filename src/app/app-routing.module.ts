@@ -41,6 +41,7 @@ import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/pu
 import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
 import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
+import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-reports-grn/stock-keeper-order-reports-grn.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -77,7 +78,7 @@ const routes: Routes = [
 
   // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent}
   {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent},
-  {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService}
+  {path:"stock-keeper-order-reports-grn",component:StockKeeperOrderReportsGRNComponent},
  
 
   {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},

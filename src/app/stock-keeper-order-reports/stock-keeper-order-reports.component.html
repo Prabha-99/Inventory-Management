@@ -20,6 +20,7 @@
             <tr>
               <th>ID</th>
               <th>File Name</th>
+              <th>From</th>
               <th>Date</th>
               <th>Action</th>
             </tr>
@@ -28,9 +29,10 @@
             <tr *ngFor="let file of files">
               <td>{{ file.report_id }}</td>
               <td>{{ file.report_name }}</td>
+              <td>{{ file.role_name }}</td>
               <td>{{ file.date }}</td>
-              <td><button class="btn btn-secondary margin-left">Confirm</button></td>
-              <td><button class="btn btn-secondary margin-left">Reject</button></td>
+              <td><button type="button" class="btn btn-outline-warning" (click)="confirmFile(file.id, file.fileName)">Confirm</button></td>
+              <td><button type="button" class="btn btn-outline-warning" (click)="rejectFile(file.id, file.fileName)">Reject</button></td>
             </tr>
           </tbody>
         </table>
