@@ -49,4 +49,20 @@ export class InventoryAdAddproductComponent implements OnInit{
   
   }
 
+  onDelete(product_id: number) {
+    if (confirm("Are you sure you want to delete this Product?")) {
+
+      this.productService.deleteProduct(product_id).subscribe(() => {
+        this.products = this.products.filter(product => product.product_id !== product_id);
+       
+      }, () => {
+        alert("Product Deleted Successfully!"); // Display error message
+        location.reload();
+      });
+    }
+    
+  }
+
+
+
 }
