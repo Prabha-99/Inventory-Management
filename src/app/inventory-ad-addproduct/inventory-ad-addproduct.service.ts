@@ -14,7 +14,9 @@ export class InventoryAdAddproductService {
     return this.http.get<any[]>('http://localhost:8080/api/product/getAllProduct'); //get products
   }
 
-  deleteProduct(): Observable<any>{
-    return this.http.delete('http://localhost:8080/api/product/deleteProduct/${product_id}');
+  private apiUrl = 'http://localhost:8080/api/product/deleteProduct';
+  deleteProduct(product_id: number): Observable<void> {
+    const url = `${this.apiUrl}/${product_id}`;
+    return this.http.delete<void>(url);
   }
 }
