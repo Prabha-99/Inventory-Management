@@ -1,21 +1,38 @@
 .navbar-nav li {
-    color: aliceblue;
+    background-color: rgb(184, 0, 0);
     text-decoration: none;
     user-select: none;
 }
 
 .navbar-nav li a{
     font-weight: bolder;
-    color: #fa1c1c;
-    text-decoration: none;
+    color: #fdfdfd;
+    /* text-decoration: none; */
     outline: none;
   
 }
 
-.navbar-nav li a::after{
-    text-decoration: none;  
+.navbar-nav ul{
+    background-color:  rgb(196, 19, 19);
 }
+
 
 .custom-button {
     background-color: #FFB64D;
+}
+
+.logout-button {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    background-color: rgb(196, 19, 19);
+    color: rgb(196, 19, 19);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
   }
+  
+
+  
