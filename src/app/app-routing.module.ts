@@ -48,6 +48,8 @@ import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-prof
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { InventoryAdSellOrderComponent } from './inventory-ad-sell-order/inventory-ad-sell-order.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
+import { StockManagerPurchaseOrderComponent } from './stock-manager-purchase-order/stock-manager-purchase-order.component';
+import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock-manager-sell-order.component';
 
 
 const routes: Routes = [
@@ -95,8 +97,9 @@ const routes: Routes = [
   {path:"update-user/:id",component:UpdateOneUserComponent},
   {path:"user-update",component:UserUpdateComponent},
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent},
-  {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent}
-
+  {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent},
+  {path:"stock-manager-purchase-order",component:StockManagerPurchaseOrderComponent},
+  {path:"stock-manager-sell-order",component:StockManagerSellOrderComponent}
 
 ];
 
