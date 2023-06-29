@@ -46,6 +46,8 @@ import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purc
 import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { InventoryAdSellOrderComponent } from './inventory-ad-sell-order/inventory-ad-sell-order.component';
+import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
 
 
 const routes: Routes = [
@@ -91,7 +93,9 @@ const routes: Routes = [
   {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
   {path:"update-user/:id",component:UpdateOneUserComponent},
-  {path:"user-update",component:UserUpdateComponent}
+  {path:"user-update",component:UserUpdateComponent},
+  {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent},
+  {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent}
 
 
 ];
