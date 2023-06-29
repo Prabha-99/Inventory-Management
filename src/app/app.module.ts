@@ -81,12 +81,6 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
 import { InventoryAdSellOrderComponent } from './inventory-ad-sell-order/inventory-ad-sell-order.component';
-import { InventoryAdViewGINComponent } from './inventory-ad-view-gin/inventory-ad-view-gin.component';
-import { InventoryAdViewGRNComponent } from './inventory-ad-view-grn/inventory-ad-view-grn.component';
-import { StockManagerPurchaseOrderComponent } from './stock-manager-purchase-order/stock-manager-purchase-order.component';
-import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock-manager-sell-order.component';
-import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-manager-view-gin.component';
-import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
 
 
 
@@ -157,13 +151,7 @@ import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-man
       DeleteProductComponent,
       InventoryAdEditComponent,
       InventoryAdPurchaseOrderComponent,
-      InventoryAdSellOrderComponent,
-      InventoryAdViewGINComponent,
-      InventoryAdViewGRNComponent,
-      StockManagerPurchaseOrderComponent,
-      StockManagerSellOrderComponent,
-      StockManagerViewGINComponent,
-      StockManagerViewGRNComponent
+      InventoryAdSellOrderComponent
 
 
   ],
