@@ -136,8 +136,8 @@ import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.
     UpdateOneUserComponent,
     StockManagerEditComponent,
     DeleteUserComponent,
-      StockKeeperOrderReportsComponent,
-      StockKeeperOrderReportsGRNComponent,
+    StockKeeperOrderReportsComponent,
+    StockKeeperOrderReportsGRNComponent,
    
     StockManagerEditComponent,
 
