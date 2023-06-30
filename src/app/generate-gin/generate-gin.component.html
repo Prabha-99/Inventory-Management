@@ -22,6 +22,11 @@
                           
                           <form>
                               <div class="row">
+                                <div class="form-outline mb-4">
+                                  <label class="form-label" >Customer Name</label>
+                                  <input type="text" name="name"  class="form-control"[(ngModel)]="profile.name" required/>
+                                  
+                                  </div>
                                   <div class="col-md-6 mb-6">
                                     <div class="form-outline">
                                       <label class="form-label" >Address</label>
@@ -39,11 +44,7 @@
                           
                           </div>
 
-                          <div class="form-outline mb-4">
-                            <label class="form-label" >Customer Name</label>
-                            <input type="text" name="name"  class="form-control"[(ngModel)]="profile.name" required/>
-                            
-                            </div>
+                          
                             
                             <div class="form-outline mb-4">
                                 <label class="form-label" >Date</label>
