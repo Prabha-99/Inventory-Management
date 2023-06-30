@@ -28,6 +28,7 @@
                 <tr>
                 <th>ID</th>
                 <th>File Name</th>
+                <th>Customer</th>
                 <th>Date</th>
                 <th></th>
                 </tr>
@@ -36,6 +37,7 @@
                 <tr *ngFor="let file of files">
                 <td>{{ file.report_id }}</td>
                 <td>{{ file.report_name }}</td>
+                <td>{{ file.customer}}</td>
                 <td>{{ file.date }}</td>
                 <td>
                     <button type="button" class="btn btn-outline-warning" (click)="downloadFile(file.report_id, file.fileName)">Download</button>
