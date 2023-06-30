@@ -50,6 +50,8 @@ import { InventoryAdSellOrderComponent } from './inventory-ad-sell-order/invento
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
 import { StockManagerPurchaseOrderComponent } from './stock-manager-purchase-order/stock-manager-purchase-order.component';
 import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock-manager-sell-order.component';
+import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
+import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 
 
 const routes: Routes = [
@@ -99,7 +101,9 @@ const routes: Routes = [
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent},
   {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent},
   {path:"stock-manager-purchase-order",component:StockManagerPurchaseOrderComponent},
-  {path:"stock-manager-sell-order",component:StockManagerSellOrderComponent}
+  {path:"stock-manager-sell-order",component:StockManagerSellOrderComponent},
+  {path:"purchase-coordinator-sell-order",component:PurchaseCoordinatorSellOrderComponent},
+  {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent}
 
 ];
 
