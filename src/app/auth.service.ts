@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable , throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 
 
@@ -11,6 +12,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
   private apiUrl2 = 'http://localhost:8080/api/auth/CurrentUser';
+  private apiUrl3 = 'http://localhost:8080/api/auth/CurrentUserRole';
 
   constructor(private http: HttpClient) { }
 
@@ -41,6 +43,16 @@ export class AuthService {
     const headers = this.getHeaders();
     return this.http.get<string>(`${this.apiUrl2}`,{ headers }); //Using stored token 
   }
+  getUserRole(): Observable<string> {
+    const headers = this.getHeaders();
+    return this.http.get<string>(`${this.apiUrl3}`, { headers }).pipe(
+      catchError((error) => {
+        console.error('Failed to get user role', error);
+        return throwError('Failed to get user role');
+      })
+    );
+  }
+  
   
 
 }

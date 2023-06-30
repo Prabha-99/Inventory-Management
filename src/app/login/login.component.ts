@@ -16,24 +16,50 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit() {
-    this.authService.login(this.email, this.password)
-      .subscribe(
-        (response) => {
-          localStorage.setItem('token', response['token']);
-          this.router.navigate(['/home']);
-        },
-        (error) => {
-          if (error.status === 401) {
-            this.error = 'Please Enter Credentials!!!';
-          } else {
-            this.error = 'Invalid email or password..!!!';
+    this.authService.login(this.email, this.password).subscribe(
+      (response) => {
+        localStorage.setItem('token', response['token']);
+  
+        this.authService.getUserRole().subscribe(
+          (role) => {
+            this.redirectToDashboard(role);
+          },
+          (error) => {
+            console.error('Error getting user role:', error);
+            this.error = 'Failed to get user role';
           }
+        );
+      },
+      (error) => {
+        if (error.status === 401) {
+          this.error = 'Please Enter Credentials!!!';
+        } else {
+          this.error = 'Invalid email or password..!!!';
         }
-      );
+      }
+    );
   }
+  
 
   onLogout() {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+  redirectToDashboard(role: string) {
+    switch (role) {
+      case 'ADMIN':
+        this.router.navigate(['/system-admin-dash']);
+        break;
+      case 'INVENTORY_ADMIN':
+        this.router.navigate(['/inventory-ad-dash']);
+        break;
+      case 'STOCK_MANAGER':
+        this.router.navigate(['/stock-manager-dash']);
+        break;
+      default:
+        // Redirect to a default dashboard or handle unknown roles
+        this.router.navigate(['/home']);
+        break;
+    }
   }
 }
