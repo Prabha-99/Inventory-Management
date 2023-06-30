@@ -5,6 +5,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import * as html2pdf from 'html2pdf.js';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable, map } from 'rxjs';
 
 @Component({
   
@@ -102,13 +103,24 @@ export class BillingComponent implements OnInit{
 
   
 
-  productNames: string[] = [];
+  product_name: string[]=[];
+  selectedProductName!: string;
+  product_price!: number;
 
   ngOnInit() {
-    this.productService.getProductNames().subscribe(names => {
-      this.productNames = names;
+    this.productService.getproduct_name().subscribe(names => {
+      this.product_name = names;
+    });
+
+
+  }
+  onProductNameSelect() {
+    this.productService.getProductPrice(this.selectedProductName).subscribe(price => {
+      this.product_price = price;
     });
   }
+
+
     
 
   exportToPDF() {

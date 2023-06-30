@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Product } from './billing.component';
+import { Observable, map } from 'rxjs';
+import { String } from 'lodash';
 
 
 @Injectable({
@@ -8,15 +11,22 @@ import { HttpClient } from '@angular/common/http';
 
 export class ProductService {
 
-
-  getProductNames() {
-    return this.http.get<string[]>('http://localhost:8080/api/bill/getnames'); //get material name
-  }
-
-
+  
   constructor(private http: HttpClient) { 
 
   }
+
+
+  getproduct_name() {
+    return this.http.get<any>('http://localhost:8080/api/bill/getnames'); //get material name
+  }
+
+
+  private baseUrl = 'http://localhost:8080/api/bill';
+  getProductPrice(productName: string): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/getprice/${productName}`);
+  }
+
 
   private apiUrl = 'http://localhost:8080/api/billdata';
 
@@ -30,4 +40,6 @@ export class ProductService {
   uploadFile(fData: FormData) {
     return this.http.post('http://localhost:8080/api/bill/pdf', fData);
   }
+
+
 }
