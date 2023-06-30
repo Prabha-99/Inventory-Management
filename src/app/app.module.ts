@@ -74,6 +74,7 @@ import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-report
 // import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
 
 import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
+import { GenerateGINComponent } from './generate-gin/generate-gin.component';
 
 
 
@@ -143,6 +144,7 @@ import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/pu
 
     DeleteUserComponent,
       PurchaseCoordinatorEditComponent,
+      GenerateGINComponent,
 
   
 

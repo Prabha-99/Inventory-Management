@@ -58,8 +58,20 @@ export class StockKeeperOrderReportsComponent implements OnInit{
         console.log('Error downloading file:', error);
       }
     );
+
   }
 
+  // confirmAction() {
+  //   // Perform the action here
+  //   // This can include making HTTP requests, updating data, etc.
+
+  //   // For example, you can show an alert message
+  //   alert('Action confirmed!');
+  // }
+   
+
+ 
+  
 
 
   // Confirm(): void {
