@@ -38,11 +38,11 @@ export class BillingComponent implements OnInit{
   }
 
   rowCount=1;
-  rows = [{id:1, product_name: '', qty: null, product_price:null, discount: null, amount: 0}];
+  rows = [{id:1, name: '', qty: null, product_price:null, discount: null, amount: 0}];
 
   addRow() {
     this.rowCount++;
-    this.rows.push({id:this.rowCount , product_name: '', qty: null ,product_price:null, discount:null, amount: 0 });
+    this.rows.push({id:this.rowCount , name: '', qty: null ,product_price:null, discount:null, amount: 0 });
   }
 
   deleteRow(index: number) {
@@ -104,21 +104,24 @@ export class BillingComponent implements OnInit{
   
 
   product_name: string[]=[];
-  selectedProductName!: string;
-  product_price!: number;
+  product_price: any;
 
   ngOnInit() {
-    this.productService.getproduct_name().subscribe(names => {
-      this.product_name = names;
+    this.productService.getproduct_name().subscribe(pnames => {
+      this.product_name = pnames;
     });
 
-
-  }
-  onProductNameSelect() {
-    this.productService.getProductPrice(this.selectedProductName).subscribe(price => {
+    this.productService.getproduct_price().subscribe(price => {
       this.product_price = price;
     });
+
   }
+
+  // onProductNameSelect() {
+  //   this.productService.getProductPrice(this.name).subscribe(price => {
+  //     this.productPrice = price;
+  //   });
+  // }
 
 
     

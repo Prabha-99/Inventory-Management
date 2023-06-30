@@ -21,11 +21,11 @@ export class ProductService {
     return this.http.get<any>('http://localhost:8080/api/bill/getnames'); //get material name
   }
 
-
-  private baseUrl = 'http://localhost:8080/api/bill';
-  getProductPrice(productName: string): Observable<number> {
-    return this.http.get<number>(`${this.baseUrl}/getprice/${productName}`);
+  getproduct_price() {
+    return this.http.get<any>('http://localhost:8080/api/bill/getprice'); //get material name
   }
+
+
 
 
   private apiUrl = 'http://localhost:8080/api/billdata';
