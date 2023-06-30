@@ -29,6 +29,23 @@ export class GRNReportsComponent implements OnInit{
     );
   }
 
+  filterReports(): void {
+    if (this.searchValue) {
+      this.filteredReports = this.files.filter((file) => {
+        // Compare the date value with the selected search date (without time)
+        const fileDate = new Date(file.date);
+        const searchDate = new Date(this.searchValue);
+        return (
+          fileDate.getFullYear() === searchDate.getFullYear() &&
+          fileDate.getMonth() === searchDate.getMonth() &&
+          fileDate.getDate() === searchDate.getDate()
+        );
+      });
+    } else {
+      this.filteredReports = this.files; // If no search date is selected, show all files
+    }
+  }
+
   downloadFile(report_id: number, report_name: string): void {
     this.grnService.downloadFile(report_id).subscribe(
       (response) => {
@@ -50,16 +67,6 @@ export class GRNReportsComponent implements OnInit{
     );
   }
 
-  searchUsers(): void {
-    this.filteredReports = this.files.filter(report => {
-      const fullName = `${report.date} ${report.report_name}`;
-      return fullName.toLowerCase().includes(this.searchValue.toLowerCase());
-    });
-  }
 
-  clearSearch(): void {
-    this.searchValue = '';
-    this.filteredReports = this.files;
-  }
 
 }

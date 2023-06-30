@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -58,6 +57,7 @@ import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
 
+
 // import { OrderComponent } from './order/order.component';
 
 
@@ -87,6 +87,8 @@ import { StockManagerPurchaseOrderComponent } from './stock-manager-purchase-ord
 import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock-manager-sell-order.component';
 import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-manager-view-gin.component';
 import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -187,7 +189,8 @@ import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-man
     MatIconModule,
     MatTableModule,
     MatCardModule,
-
+    MatDatepickerModule,
+    MatNativeDateModule
 
 
 

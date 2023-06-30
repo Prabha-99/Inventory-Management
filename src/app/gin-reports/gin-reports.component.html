@@ -16,10 +16,13 @@
         
             <br><br><br><br><br>
             <h1>Filter Report here:</h1>
-            <div style=" padding:5px;" class = "d-flex justify-content-around">
-                <input style=" padding-left:5px;" type="text" [(ngModel)]="searchValue" placeholder="Search by name" (input)="searchUsers()" />
-                <button type="button" class="btn btn-danger margin-right:10px " (click)="clearSearch()">Clear</button>
-            </div>
+
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Select Date" [(ngModel)]="searchValue" (ngModelChange)="filterReports()">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
             <table class="table">
             <thead>
                 <tr>
