@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./inventory-ad-purchase-order.component.css']
 })
 export class InventoryAdPurchaseOrderComponent {
+  product: any = {
 
+    product_name: '',
+    product_brand: '',
+    product_quantity: null
+  };
+
+  increaseQuantity() {
+
+    if(!this.isRequired()){
+      alert("Pleace fill all Fields!!");
+      return;
+    }
+
+  }
+
+  isRequired(): boolean{
+    return !!this.product.product_name && !!this.product.product_brand && !!this.product.quantity;
+  }
 }
