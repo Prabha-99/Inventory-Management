@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class InventoryAdSellOrderService {
+export class StockManagerSellOrderService {
 
   private readonly API_URL = 'http://localhost:8080/api/product';
 
