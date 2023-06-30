@@ -20,6 +20,11 @@ export class PurchaseCoordinatorProductPopupComponent {
   constructor(private purchaseCoordinatorProductPopupService: PurchaseCoordinatorProductPopupService) {}
 
   addProduct() {
+
+    if(!this.isRequired()){
+      alert("Pleace fill all Fields!!");
+      return;
+    }
     this.purchaseCoordinatorProductPopupService.addProduct(this.product).subscribe(
       (response) => {
         console.log('Product added successfully');
@@ -40,5 +45,10 @@ export class PurchaseCoordinatorProductPopupComponent {
       product_quantity: null,
       product_price: null
     };
+  }
+
+  isRequired(): boolean{
+    return !!this.product.category_id && !!this.product.product_name && !!this.product.product_brand && !!this.product.product_price
+    && !!this.product.product_quantity;
   }
 }
