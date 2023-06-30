@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StockManagerSellOrderService } from './stock-manager-sell-order.service';
 
 @Component({
   selector: 'app-stock-manager-sell-order',
@@ -7,24 +8,20 @@ import { Component } from '@angular/core';
 })
 export class StockManagerSellOrderComponent {
 
-  product: any = {
-
-    product_name: '',
-    product_brand: '',
-    product_quantity: null
-  };
-
-  reduceQuantity() {
-
-    if(!this.isRequired()){
-      alert("Pleace fill all Fields!!");
-      return;
-    }
-
+  
+  constructor(private productService: StockManagerSellOrderService) {}
+  
+  reduceQuantity(product_name: string, product_brand: string, product_quantity: number): void {
+    this.productService.reduceProductQuantity(product_name, product_brand, product_quantity).subscribe(() => {
+      alert('Product quantity updated successfully');
+    }, error => {
+      alert('Error updating product quantity');
+      console.error(error);
+    });
   }
 
-  isRequired(): boolean{
-    return !!this.product.product_name && !!this.product.product_brand && !!this.product.quantity;
+  onSubmit(formValue: any): void {
+    this.reduceQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
   }
 
 }
