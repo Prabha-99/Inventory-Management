@@ -88,6 +88,7 @@ import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock
 import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-manager-view-gin.component';
 import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
+import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 
 
 
@@ -165,7 +166,8 @@ import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-se
       StockManagerSellOrderComponent,
       StockManagerViewGINComponent,
       StockManagerViewGRNComponent,
-      PurchaseCoordinatorSellOrderComponent
+      PurchaseCoordinatorSellOrderComponent,
+      PurchaseCoordinatorPurchaseOrderComponent
 
 
   ],
