@@ -43,6 +43,7 @@ import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-prod
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-reports-grn/stock-keeper-order-reports-grn.component';
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
+import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -87,6 +88,7 @@ const routes: Routes = [
   {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
   {path:"generate-GIN",component:GenerateGINComponent},
+  {path:"generate-GRN",component:GenerateGRNComponent},
  
  
 
