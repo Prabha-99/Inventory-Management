@@ -47,8 +47,8 @@ export class AuthService {
     const headers = this.getHeaders();
     return this.http.get<string>(`${this.apiUrl3}`, { headers }).pipe(
       catchError((error) => {
-        console.error('Failed to get user role', error);
-        return throwError('Failed to get user role');
+        console.error('Failed to get user role Auth', error);
+        return throwError('Failed to get user role Auth');
       })
     );
   }
