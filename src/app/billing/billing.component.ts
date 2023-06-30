@@ -5,6 +5,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import * as html2pdf from 'html2pdf.js';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable, map } from 'rxjs';
 
 @Component({
   
@@ -37,11 +38,11 @@ export class BillingComponent implements OnInit{
   }
 
   rowCount=1;
-  rows = [{id:1, product_name: '', qty: null, product_price:null, discount: null, amount: 0}];
+  rows = [{id:1, name: '', qty: null, product_price:null, discount: null, amount: 0}];
 
   addRow() {
     this.rowCount++;
-    this.rows.push({id:this.rowCount , product_name: '', qty: null ,product_price:null, discount:null, amount: 0 });
+    this.rows.push({id:this.rowCount , name: '', qty: null ,product_price:null, discount:null, amount: 0 });
   }
 
   deleteRow(index: number) {
@@ -102,16 +103,28 @@ export class BillingComponent implements OnInit{
 
   
 
-  productNames: string[] = [];
+  product_name: string[]=[];
+  product_price: any;
 
   ngOnInit() {
-    this.productService.getProductNames().subscribe(names => {
-      this.productNames = names;
+    this.productService.getproduct_name().subscribe(pnames => {
+      this.product_name = pnames;
     });
+
+    this.productService.getproduct_price().subscribe(price => {
+      this.product_price = price;
+    });
+
   }
+
+  // onProductNameSelect() {
+  //   this.productService.getProductPrice(this.name).subscribe(price => {
+  //     this.productPrice = price;
+  //   });
+  // }
+
+
     
-
-
 
   exportToPDF() {
     const printSection = document.getElementById('print-section')!;
@@ -125,16 +138,14 @@ export class BillingComponent implements OnInit{
     const imgData = canvas.toDataURL('image/jpeg', 0.5); // Decrease the quality of the image
     doc.addImage(imgData, 'JPEG', 10, 10, 180, 240);
 
-    // Save the jsPDF document
-   // const jsPDFFile = doc.output('blob');
 
     // Convert the HTML element to a PDF using html2pdf library
     const options = {
-      margin: 0.2,
+      margin: 0.5,
       filename: 'html2pdf-document.pdf',
       image: { type: 'jpeg', quality: 0.5 }, // Decrease the quality of the image
-      html2canvas: { scale:9},
-      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      html2canvas: { scale:7},
+      jsPDF: { unit: 'in', format: 'a3', orientation: 'portrait' }
     };
 
 
@@ -148,18 +159,13 @@ export class BillingComponent implements OnInit{
       // Send the files to the productService
       this.productService.uploadFile(fData).subscribe(response => {
         console.log(response);
-        alert("Successfully Saved!!");
+        alert("PDF Successfully Saved!!");
       });
     });
   }); 
   }
 
  
-  confirmRefresh(): void {
-    if (confirm('Are you sure you want to clear?')) {
-      location.reload();
-    }
-  }
 
 
 
@@ -173,9 +179,9 @@ formData = {
   cu_address: '',
   cu_tele: '',
   other: '',
-  total_amount:0,
-  discount:0,
-  subtotal:0,
+  total_amount:this.calculateTotalAmount(),
+  discount:'',
+  subtotal:'',
   note:'',
 
 };
@@ -215,6 +221,7 @@ onSubmit() {
   }
   this.emailerror_fix='';
 
+  
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
       console.log(data);
@@ -253,6 +260,14 @@ isValidEmail(other: string): boolean {
   const regexPattern = /^0\d{9}$/;
   return regexPattern.test(cu_tele);
 }
+
+
+confirmRefresh(): void {
+  if (confirm('Are you sure you want to clear?')) {
+    location.reload();
+  }
+}
+
 
 }
 
