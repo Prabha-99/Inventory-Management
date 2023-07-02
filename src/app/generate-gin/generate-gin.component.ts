@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { GenerateGINService } from './generate-gin.service';
 
 @Component({
   selector: 'app-generate-gin',
@@ -7,65 +8,85 @@ import { Component } from '@angular/core';
   styleUrls: ['./generate-gin.component.css']
 })
 export class GenerateGINComponent {
-  profile={
+  gin:any ={
     address:'',
-    cnumber:'',
-    name:'',
-    date:'',
-    inumber:'',
-    quantity:'',
-    iquantity:'',
-    ides:'',
+    contact_nu:'',
+    customer_name:'',
+    date:null,
+    invoice_no:null,
+    invoiced_quantity:null,
+    issued_quantity:null,
+    item_description:'',
     remarks:'',
 
    
 };
+tele_error='';
+tele_error_fix='';
 
-formData: any = {}; // Object to store form data
+constructor(private generateGINService: GenerateGINService) {}
 
-constructor(private http: HttpClient) { }
+submit() {
+    if (!this.isValidFormData())  {
+      alert('Please Enter Required Fields!!');
+      return;
+    }
+    
+    if (!this.isValidPhoneNumber(this.gin.contact_nu)) {
+      this.tele_error='Invalid Telephone Number!';
+      this.tele_error_fix='';
+      return;
+    }else{
+      this.tele_error='';
+      this.tele_error_fix='OK!';
+    }
+  
+  
+  
+  this.generateGINService.submit(this.gin).subscribe(
+    (response) => {
+      console.log('Product added successfully');
+      // Reset the form
+      this.reset();
+    },
+    (error) => {
+      console.error('Failed to add product:', error);
+    }
+  );
 
-submitForm() {
-  this.http.post('/api/submit', this.formData)
-    .subscribe(response => {
-      console.log('Form submitted successfully');
-      // Reset the form after successful submission
-      this.formData = {};
-    }, error => {
-      console.error('An error occurred while submitting the form:', error);
-    });
+}
+
+isValidFormData(): boolean {
+  return !!this.gin.address && !!this.gin.contact_nu && !!this.gin.customer_name && !!this.gin. date && !!this.gin. invoice_no
+  && !!this.gin.invoiced_quantity && !!this.gin.issued_quantity && !!this.gin.item_description;
+}
+
+isValidPhoneNumber(contact_nu) {
+  const regexPattern = /^0\d{9}$/;
+  return regexPattern.test(contact_nu);
 }
 
 
-// emailerror='';
-// emailerror_fix='';
-
-// onSubmit() {
-  
-//   if (!this.isRequired()) {
-//     alert('Please fill  required fields.');
-//     return;
-   
-//   }
-
-    
-    
-// }
 
 
-// isRequired(): boolean{
-// return !!this.profile.address && !!this.profile.cnumber && !!this.profile.name && !!this.profile.date && !!this.profile.inumber && !!this.profile.quantity && !!this.profile.iquantity
-// && !!this.profile.ides && !!this.profile.remarks;
-// }
+Cancel(): void {
+  if (confirm('Are you sure you want to Cancel?')) {
+    location.reload();
+  }
+}
 
-// isValidEmail(email: string): boolean {
-// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// return emailRegex.test(email);
-// }
+reset() {
+  this.gin = {
+    address:'',
+    contact_nu:null,
+    name:'',
+    date:null,
+    invoice_no:null,
+    quantity:null,
+    invoiced_quantity:null,
+    ides:'',
+    remarks:'',
+  };
+}
 
-// Cancel(): void {
-// if (confirm('Are you sure you want to Cancel?')) {
-//   location.reload();
-// }
-// }
 }
