@@ -11,9 +11,11 @@ interface ShowroomFile {
   templateUrl: './designer.component.html',
   styleUrls: ['./designer.component.css']
 })
+
 export class DesignerComponent implements OnInit  {
+
 toggleFileList() {
-throw new Error('Method not implemented.');
+  this.showFileList = !this.showFileList;
 }
   files: ShowroomFile[] = [];
 showFileList: any;
@@ -29,18 +31,18 @@ showFileList: any;
       .subscribe(files => this.files = files);
   }
 
-  downloadFile(id: number) {
+  downloadFile(id: number,fileName: string) {
     // Your existing downloadFile method implementation
     const fileId = 30; // Replace with the actual file ID
 
-    this.http.get('http://localhost:8080/api/designer/download/' + fileId, {
+    this.http.get('http://localhost:8080/api/designer/download/' + id, {
       responseType: 'arraybuffer',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     }).subscribe((response: ArrayBuffer) => {
       const blob = new Blob([response], { type: 'application/octet-stream' });
       const downloadLink = document.createElement('a');
       downloadLink.href = window.URL.createObjectURL(blob);
-      downloadLink.download = 'bill.jpeg '; // Replace with the actual filename
+      downloadLink.download = fileName; // Replace with the actual filename
       downloadLink.click();
     });
   }

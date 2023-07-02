@@ -11,15 +11,29 @@
   <app-sidebar></app-sidebar>
   <div id="view">
     <!--button (click)="downloadFile()">Download File</button-->
-    <!--button (click)="toggleFileList()">View</button-->
+    <button (click)="toggleFileList()" class="btn btn-warning">View Files</button>
 
-    <!--div *ngIf="showFileList"-->
-      <div *ngFor="let file of files">
-        <p>{{ file.name }}</p>
-        <button (click)="downloadFile(file.id)">Download</button>
-      </div>
-    <!--/div-->
+    <div *ngIf="showFileList">
 
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th><b>ID</b></th>
+            <th><b>Name</b></th>
+            <th><b>Download</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let file of files">
+            <td>{{ file.id }}</td>
+            <td>{{ file.name }}</td>
+            <td>
+              <button (click)="downloadFile(file.id, file.name)" class="btn btn-outline-success">Download</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
