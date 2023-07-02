@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container" style="padding-top: 120px;">
+  <app-navbar></app-navbar>
+  <app-sidebar></app-sidebar>
+  <div id="view">
+    <!--button (click)="downloadFile()">Download File</button-->
+    <!--button (click)="toggleFileList()">View</button-->
+
+    <!--div *ngIf="showFileList"-->
+      <div *ngFor="let file of files">
+        <p>{{ file.name }}</p>
+        <button (click)="downloadFile(file.id)">Download</button>
+      </div>
+    <!--/div-->
+
+  </div>
+</div>
+
+</body>
+</html>
+
+

@@ -57,6 +57,7 @@ import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-prod
 import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator-product-popup/purchase-coordinator-product-popup.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
+import { DesignerComponent } from './designer/designer.component';
 
 // import { OrderComponent } from './order/order.component';
 
@@ -89,6 +90,7 @@ import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-man
 import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
+
 
 
 
@@ -148,7 +150,7 @@ import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinato
     DeleteUserComponent,
       StockKeeperOrderReportsComponent,
       StockKeeperOrderReportsGRNComponent,
-   
+
     StockManagerEditComponent,
 
     DeleteUserComponent,
@@ -167,7 +169,8 @@ import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinato
       StockManagerViewGINComponent,
       StockManagerViewGRNComponent,
       PurchaseCoordinatorSellOrderComponent,
-      PurchaseCoordinatorPurchaseOrderComponent
+      PurchaseCoordinatorPurchaseOrderComponent,
+      DesignerComponent
 
 
   ],
