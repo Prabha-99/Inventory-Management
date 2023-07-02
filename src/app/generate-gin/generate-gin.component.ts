@@ -41,8 +41,7 @@ submit() {
       this.tele_error_fix='OK!';
     }
   
-  
-  
+
   this.generateGINService.submit(this.gin).subscribe(
     (response) => {
       console.log('Product added successfully');

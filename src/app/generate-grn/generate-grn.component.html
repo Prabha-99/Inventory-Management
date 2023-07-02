@@ -25,7 +25,7 @@
                                   <div class="col-md-6 mb-6">
                                     <div class="form-outline">
                                       <label class="form-label" >Supplier Name</label>
-                                      <input type="text"name="sname" class="form-control"[(ngModel)]="profile.sname" required/>
+                                      <input type="text"name="sname" class="form-control"[(ngModel)]="grn.sname" required/>
                                       
                                     </div>
                                   </div>
@@ -35,24 +35,24 @@
                           <!-- User Name -->
                           <div class="form-outline">
                             <label class="form-label" >Supplier Name</label>
-                            <input type="text"name="sname" class="form-control"[(ngModel)]="profile.sname" required/>
+                            <input type="text"name="supplier_name" class="form-control"[(ngModel)]="grn.supplier_name" required/>
                             
                           </div>
                           <div class="form-outline">
                             <label class="form-label" >Address</label>
-                            <input type="text"name="address" class="form-control"[(ngModel)]="profile.address" required/>
+                            <input type="text"name="address" class="form-control"[(ngModel)]="grn.address" required/>
                             
                           </div>
 
                           <div class="form-outline mb-4">
                           <label class="form-label" >Contact Number</label>
-                          <input type="text" name="cnumber"  class="form-control"[(ngModel)]="profile.cnumber" required/>
+                          <input type="text" name="contact_number"  class="form-control"[(ngModel)]="grn.contact_number" required/>
                           
                           </div>
  
                             <div class="form-outline mb-4">
                                 <label class="form-label" >Date</label>
-                                <input type="date" class="form-control"name="date"[(ngModel)]="profile.date" required/>
+                                <input type="date" class="form-control"name="date"[(ngModel)]="grn.date" required/>
                                 
                             </div>
 
@@ -61,13 +61,13 @@
                                <div class="form-outline mb-4">
                               
                                 <label class="form-label" >Invoice Number</label>
-                                <input type="number" [(ngModel)]="profile.inumber" name="inumber" style="width:130px; height:32px;text-align:center;"class="form-control">
+                                <input type="number" [(ngModel)]="grn.invoice_no" name="invoice_no" style="width:130px; height:32px;text-align:center;"class="form-control">
                                 
                                 <label class="form-label" >Quantity</label>
-                                <input type="number" [(ngModel)]="profile.quantity" name="quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
+                                <input type="number" [(ngModel)]="grn.ordered_quantity" name="ordered_quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
 
                                 <label class="form-label" >Receive Quantity</label>
-                                <input type="text" name="rquantity"  class="form-control"[(ngModel)]="profile.rquantity" required/>
+                                <input type="text" name="received_quantity"  class="form-control"[(ngModel)]="grn.received_quantity" required/>
                               </div>
                             </div>
                           </div>
@@ -75,34 +75,34 @@
 
                             <!-- <div class="form-outline mb-4">
                               <label class="form-label" >Quantity</label>
-                              <input type="number" [(ngModel)]="profile.quantity" name="quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
+                              <input type="number" [(ngModel)]="grn.quantity" name="quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
                               
                           </div> -->
 
                           <!-- <div class="form-outline mb-4">
                             <label class="form-label" >Issue Quantity</label>
-                            <input type="text" name="iquantity"  class="form-control"[(ngModel)]="profile.iquantity" required/>
+                            <input type="text" name="iquantity"  class="form-control"[(ngModel)]="grn.iquantity" required/>
                             
                         </div> -->
 
                         <div class="form-outline mb-4">
                           <label class="form-label" >Item Description</label>
-                          <textarea id="item"  rows="3" cols="30" [(ngModel)]="profile.ides" name="ides" class="form-control" >
+                          <textarea id="item"  rows="3" cols="30" [(ngModel)]="grn.item_description" name="item_description" class="form-control" >
                           </textarea>
                           
                       </div>
 
                       <div class="form-outline mb-4">
                         <label class="form-label" >Remarks</label>
-                        <textarea id="area"  rows="3" cols="30" [(ngModel)]="profile.remarks" name="remarks" class="form-control" >
+                        <textarea id="area"  rows="3" cols="30" [(ngModel)]="grn.remarks" name="remarks" class="form-control" >
                         </textarea>
                         
                     </div>
 
                          
                       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                              <button class="btn btn-primary btn btn-dark" type="submit"   >Submit</button>
-                              <button class="btn btn-primary btn btn-dark" type="button"  >Cancel</button>
+                              <button class="btn btn-primary btn btn-dark" type="submit" (click)="submit()"  >Submit</button>
+                              <button class="btn btn-primary btn btn-dark" type="button" (click)="reset()" >Cancel</button>
                             </div> 
           
                       </form>
