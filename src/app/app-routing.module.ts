@@ -25,8 +25,7 @@ import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
 
 import { ShowroomComponent } from './showroom/showroom.component';
-
-
+import { DesignerComponent } from './designer/designer.component';
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
 import { GetUserComponent } from './get-user/get-user.component';
 import { StockKeeperDashComponent } from './stock-keeper-dash/stock-keeper-dash.component';
@@ -54,6 +53,7 @@ import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-se
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 
 
+
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"home",component:HomeComponent},
@@ -77,7 +77,7 @@ const routes: Routes = [
   {path:"system-admin-dash",component:SystemAdminDashComponent},
   {path:"get-user-details",component:GetUserDetailsComponent},
   {path:"showroom",component:ShowroomComponent},
-
+  { path: 'designer', component: DesignerComponent },
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
   {path:"get-user",component:GetUserComponent},
 
