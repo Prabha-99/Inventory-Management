@@ -53,6 +53,7 @@ import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 import { ForecastingDashboardComponent } from './forecasting-dashboard/forecasting-dashboard.component';
+import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart.component';
 
 
 const routes: Routes = [
@@ -105,7 +106,8 @@ const routes: Routes = [
   {path:"stock-manager-sell-order",component:StockManagerSellOrderComponent},
   {path:"purchase-coordinator-sell-order",component:PurchaseCoordinatorSellOrderComponent},
   {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent},
-  {path:"forecasting-dashboard",component:ForecastingDashboardComponent}
+  {path:"forecasting-dashboard",component:ForecastingDashboardComponent},
+  {path:"forecasting-chart",component:ForecastingChartComponent}
 
 ];
 
