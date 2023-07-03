@@ -1,23 +1,21 @@
-
 <div class="container">
-<div id="divChart">
-
-  
-  <canvas id="myChart" width="500" height="300"></canvas>
-
-</div>
-
-<br><br><br>
-
   <div class="row">
-    <h1>Welcome To the Forecasting Dashboard!</h1>
-    <br>
-    <br>
-
-
-<div>
+    <div class="col-5">
+      <br><br><br>
+      <div>
+    <h1><b>Welcome To Inventory Analysis</b></h1>
+    </div>
+    <br><br>
+  <div>
+    <label for="cars">Select Status:</label>
+    <select #status (change)="onSelectedStatus(status.value)">
+      <option value="grn">Purchasing</option>
+      <option value="gin">Selling</option>
+    </select>
+  </div>
+  <br><br>
+  <div>
     <label for="cars">Select Category:</label>
-
     <select #category (change)="onSelectedCategory(category.value)">
       <option value="">All</option>
       <option value="c1">Steron</option>
@@ -26,31 +24,26 @@
       <option value="c4">Accessories</option>
       <option value="c5">appliances</option>
     </select>
-
-      
-</div>
-<br>
-<br>
-<br>
-<div>    
-    <label for="cars">Select Status:</label>
-
-    <select #status (change)="onSelectedStatus(status.value)">
-      <option value="Purchasing">Purchasing</option>
-      <option value="selling">Selling</option>
-    </select>
-    <br>
-</div>
-
-
-
   </div>
   <br><br>
-
-<div>
-
-  <button type="button" (click)="onClickMe()">Submit</button>
-
+  <div>
+    <label for="cars">Select Chart Type:</label>
+    <select #chartType (change)=" onSelectedChartType(chartType.value)">
+      <option value="line">Line Chart</option>
+      <option value="bar">Bar Chart</option>
+      <option value="pie">Pie Chart</option>
+    </select>
+  </div>
+  <br><br>
+  <div>
+    <button type="button" (click)="onClickMe()">Submit</button>
+  </div>
+  </div>
+  <div class="col-5">
+    <br><br><br><br><br><br>
+  <div id="divChart">
+    <canvas id="myChart" width="200" height="200"></canvas>
+  </div>
+  </div>
 </div>
-
 </div>
