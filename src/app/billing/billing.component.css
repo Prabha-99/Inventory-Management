@@ -34,3 +34,31 @@ textarea{
 body{
   font-size: 14px;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  background-color: #ffffff;
+  position: fixed;
+  align-content:center;
+  bottom: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+button{
+margin-right:15px;
+margin-left:5px;
+}
+
+.fix{
+  position:relative;
+  margin-left:80px;
+   margin-bottom:150px;
+}

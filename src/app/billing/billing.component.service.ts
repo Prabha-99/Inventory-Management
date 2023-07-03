@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   getproduct_price() {
-    return this.http.get<any>('http://localhost:8080/api/bill/getprice'); //get material name
+    return this.http.get<any>('http://localhost:8080/api/bill/getprice'); //get material price
   }
 
 

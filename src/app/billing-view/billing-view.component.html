@@ -8,16 +8,15 @@
     </head>
     <body>
       <app-navbar></app-navbar>
+
       <div class="container">
-       
-
           
-      <div class="container" style="padding-top: 110px;">
+      <div class="container" style="padding-top:80px;">
+          <div class="row my-2 mx-1 justify-content-center">
+           
 
-         <h1 class="bg-secondary"style="text-align:center;padding-left:10px;padding-right:7px;color:white;"> Bill Information</h1>
-          <div class="row my-2 mx-1 justify-content-center"style="padding-left: 10px; padding-top:15px;">
-
-      <table  class="table align-middle mb-0 bg-white mt-5">
+      <table  class="table align-middle mb-0 bg-white mt-5 table caption-top">
+        <caption><h1 class="bg-secondary"style="text-align:center;color:white;"> Bill Information</h1></caption>
         <thead  style="background-color:#222222 ;" class="text-white">
         <tr>
             <th scope="col"style="text-align:center;">bill_id</th>
@@ -60,12 +59,12 @@
         </tbody>
       </table>
       </div>
+
 <hr>
-      <div style="padding-bottom: 50px; padding-top:5px;text-align: center;padding-left:100px;padding-right:100px;">
-        <h1 class="bg-secondary"style="text-align:center;padding-left:10px;padding-right:7px;color:white;">Generated Bills</h1>
+      <div style="padding-bottom:50px; padding-top:10px; text-align:center;">
 
-
-<table class="table align-middle mb-0 bg-white mt-5">
+<table class="table align-middle mb-0 bg-white mt-5 table caption-top">
+  <caption>  <h1 class="bg-secondary"style="text-align:center;color:white;">Generated Bills</h1></caption>
   <thead style="background-color:#222222 ;" class="text-white">
     <tr>
       <th>File id</th>
@@ -79,12 +78,11 @@
       <td>{{ pdf.bill_id}}</td>
       <td>{{ pdf.filename }}</td>
       <!-- <td><a  [href]="openPdf(pdf.filepath)">file</a></td> -->
-      <td><button (click)="openPdf(pdf.filepath)" class="btn btn-outline-primary btn-sm">Open</button></td>
+      <td><button (click)="openPdf(pdf.filename)" class="btn btn-outline-primary btn-sm">Open</button></td>
 
     </tr>
   </tbody>
 </table>
-<iframe [src]="pdfUrl" width="100%" height="600"></iframe>
       </div>
       </div>
   </div>
