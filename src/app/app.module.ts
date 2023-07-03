@@ -58,6 +58,7 @@ import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-prof
 import { GetUserComponent } from './get-user/get-user.component';
 import { DesignerComponent } from './designer/designer.component';
 
+
 // import { OrderComponent } from './order/order.component';
 
 
@@ -77,10 +78,8 @@ import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-report
 // import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
 
 import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
- 
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
 import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
- 
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
@@ -91,10 +90,13 @@ import { StockManagerPurchaseOrderComponent } from './stock-manager-purchase-ord
 import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock-manager-sell-order.component';
 import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-manager-view-gin.component';
 import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 import { ForecastingDashboardComponent } from './forecasting-dashboard/forecasting-dashboard.component';
 import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart.component';
+
 
 
 
@@ -204,7 +206,8 @@ import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart
     MatIconModule,
     MatTableModule,
     MatCardModule,
-
+    MatDatepickerModule,
+    MatNativeDateModule
 
 
 
