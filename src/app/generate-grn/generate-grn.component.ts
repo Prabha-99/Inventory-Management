@@ -57,7 +57,7 @@ submit() {
 }
 
 isValidFormData(): boolean {
-  return !!this.grn.address && !!this.grn.contact_nu && !!this.grn.supplier_name && !!this.grn. date && !!this.grn.invoice_no
+  return !!this.grn.address && !!this.grn.contact_nu && !!this.grn.supplier_name && !!this.grn.date && !!this.grn.invoice_no
   && !!this.grn.ordered_quantity && !!this.grn.received_quantity ;
 }
 
