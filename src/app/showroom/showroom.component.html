@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <div class="container" style="padding-top: 150px;">
+
+  <app-sidebar></app-sidebar>
+  <app-navbar></app-navbar>
+
+
+      <img src="assets/PM.jpeg" alt="logo" style="
+        width: 550px; height: 400px; margin-left: 200px; margin-bottom: 60px; margin-top: 5px;
+        ">
+      <div id="upload">
+
+      <h2 style="color: rgb(19, 39, 129);"><b>Upload File</b></h2>
+
+      <div>
+        <label for="formFileLg" class="form-label" style="font-size:20px;"><b>File:</b></label>
+        <br>
+        <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="getFile($event)" required>
+      </div>
+      <br>
+       <div style="text-align: right;" >
+        <button type="button" class="btn btn-primary" (click)="submitData()">Upload file</button>
+       </div>
+
+       </div>
+
+      </div>
+</body>
+</html>
+
+
+
+
+
+

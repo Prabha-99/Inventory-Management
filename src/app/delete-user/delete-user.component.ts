@@ -26,10 +26,16 @@ export class DeleteUserComponent implements OnInit{
   }
 
   deleteUser(id: number): void {
-    this.userService.deleteUser(id).subscribe(() => {
-      this.getUsers();
-      alert('Delete successfully');
-    });
+    const confirmed = confirm('Are you sure you want to delete this user?');
+    if (confirmed) {
+      this.userService.deleteUser(id).subscribe(() => {
+        // Show a success message
+        alert('User deleted successfully');
+
+        // Refresh the user list
+        this.getUsers();
+      });
+    }
   }
   searchUsers(): void {
     this.filteredUsers = this.users.filter(user => {

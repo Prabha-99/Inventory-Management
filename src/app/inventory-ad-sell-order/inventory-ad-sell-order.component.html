@@ -1,0 +1,61 @@
+
+<div class="container">
+    <div class="row">
+        <app-navbar></app-navbar> <!--Call navbar-->
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-2">
+            <app-inventory-ad-side-bar></app-inventory-ad-side-bar> <!--Call sidebar-->
+        </div>
+        
+        <div class="col-10 mt-5">
+            <div>
+              
+              <div class="card-body px-4 py-5 px-md-5">
+                  <div class="d-flex justify-content-center">
+                  <div class="col-lg-10 mt-5">
+                      <h2 class="d-flex justify-content-center">Sell Product</h2>
+                      
+                      <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Product Name</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="product_name" placeholder="Product Name" ngModel required>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Product Brand</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="product_brand" placeholder="Product Brand" ngModel required>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="form-group col-md-2">
+                          <label class="col-sm col-form-label">Product Quantity</label>
+                          <div class="col-sm">
+                            <input type="number" class="form-control" name="product_quantity" ngModel required>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                          <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;" [disabled]="!productForm.valid">Confirm</button>
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                          </div>
+                        </div>
+                      </form>
+
+                </div>
+                </div>
+              </div>
+            </div>
+  </div>
+
+
+    </div>
+</div>
+

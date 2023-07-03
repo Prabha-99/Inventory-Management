@@ -49,6 +49,7 @@ import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
 import { InventoryAdDeletePopComponent } from './inventory-ad-delete-pop/inventory-ad-delete-pop.component';
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
+import { ShowroomComponent } from './showroom/showroom.component';
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
 import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/purchase-coordinator-side.component';
 import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
@@ -56,6 +57,7 @@ import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-prod
 import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator-product-popup/purchase-coordinator-product-popup.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
+import { DesignerComponent } from './designer/designer.component';
 
 // import { OrderComponent } from './order/order.component';
 
@@ -68,14 +70,31 @@ import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-edit.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
 import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-reports-grn/stock-keeper-order-reports-grn.component';
 // import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
 
 import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
+ 
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
 import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
+=======
+import { DeleteProductComponent } from './delete-product/delete-product.component';
+import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
+import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
+import { InventoryAdSellOrderComponent } from './inventory-ad-sell-order/inventory-ad-sell-order.component';
+import { InventoryAdViewGINComponent } from './inventory-ad-view-gin/inventory-ad-view-gin.component';
+import { InventoryAdViewGRNComponent } from './inventory-ad-view-grn/inventory-ad-view-grn.component';
+import { StockManagerPurchaseOrderComponent } from './stock-manager-purchase-order/stock-manager-purchase-order.component';
+import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock-manager-sell-order.component';
+import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-manager-view-gin.component';
+import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
+import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
+import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
+ 
 
 
 
@@ -85,7 +104,7 @@ import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     NavbarComponent,
     HomeComponent,
@@ -114,6 +133,7 @@ import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
     SystemAdminDashComponent,
     InventoryAdDeletePopComponent,
     GetUserDetailsComponent,
+    ShowroomComponent,
     PurchaseCoordinatorDashComponent,
     PurchaseCoordinatorSideComponent,
     PurchaseCoordinatorNavComponent,
@@ -122,10 +142,6 @@ import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
     PurchaseCoordinatorProfileComponent,
     GetUserComponent,
 
-
-
-
-
     StockKeeperDashComponent,
     StockKeeperNavComponent,
     StockKeeperProfileComponent,
@@ -133,28 +149,40 @@ import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
 
     GINReportsComponent,
     GRNReportsComponent,
-
+    DeleteUserComponent,
+    UpdateOneUserComponent,
     StockManagerEditComponent,
-
-
     DeleteUserComponent,
       StockKeeperOrderReportsComponent,
       StockKeeperOrderReportsGRNComponent,
-     
 
+    StockManagerEditComponent,
 
     DeleteUserComponent,
+ 
       PurchaseCoordinatorEditComponent,
       GenerateGINComponent,
       GenerateGRNComponent,
-
-  
-
  
 
- 
+      UserUpdateComponent,
 
-    
+      PurchaseCoordinatorEditComponent,
+      DeleteProductComponent,
+      InventoryAdEditComponent,
+      InventoryAdPurchaseOrderComponent,
+      InventoryAdSellOrderComponent,
+      InventoryAdViewGINComponent,
+      InventoryAdViewGRNComponent,
+      StockManagerPurchaseOrderComponent,
+      StockManagerSellOrderComponent,
+      StockManagerViewGINComponent,
+      StockManagerViewGRNComponent,
+      PurchaseCoordinatorSellOrderComponent,
+      PurchaseCoordinatorPurchaseOrderComponent,
+      DesignerComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -175,8 +203,10 @@ import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatTableModule,
-    MatCardModule
-   
+    MatCardModule,
+
+
+
 
   ],
   providers: [],

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
@@ -19,8 +19,8 @@ export class BillService {
   }
 
   private apiUrl = 'http://localhost:8080/api/billdata/delete';
-  deleteBill(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
+  deleteBill(bill_id: number): Observable<void> {
+    const url = `${this.apiUrl}/${bill_id}`;
     return this.http.delete<void>(url);
   }
 
@@ -32,28 +32,22 @@ export class BillService {
 
 
 
-
-// private apiEndpoint = 'http://localhost:8080/api/bill/view';
-
-//  getImage(): Observable<any> {
-//    return this.http.get(this.apiEndpoint, { responseType: 'blob' }).pipe(
-//      map((blob: Blob) => {
-//        const reader = new FileReader();
-//        reader.readAsDataURL(blob);
-//        return reader.result as any;
-//      })
-//    );
-//  }
-
  private baseUrl = 'http://localhost:8080/api/bill';
 
  getAllPdf(): Observable<string[]> {
   return this.http.get<string[]>(`${this.baseUrl}/all`);
 }
 
-getPdfFileByPath(filepath: string): Observable<Blob> {
-  return this.http.get(`${this.baseUrl}/file/${filepath}`, { responseType: 'blob' });
-}
+// getPdfFileByPath(filepath: string): Observable<Blob> {
+//   return this.http.get(`${this.baseUrl}/file/${filepath}`, { responseType: 'blob' });
+// }
 
+private getpdfUrl = 'http://localhost:8080/api/bill';
+
+
+getPdf(filename: string): Observable<ArrayBuffer> {
+  const headers = new HttpHeaders({ 'Content-Type': 'application/pdf' });
+  return this.http.get(`${this.getpdfUrl}/${filename}`, { headers, responseType: 'arraybuffer' });
+}
 
   }

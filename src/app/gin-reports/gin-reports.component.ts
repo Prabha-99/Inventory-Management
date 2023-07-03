@@ -9,6 +9,12 @@ import { GINService } from './gin.service';
 export class GINReportsComponent implements OnInit{
 
   files!: any[];
+  reports: any[] = [];
+  filteredReports: any[] = [];
+  searchValue: string = '';
+  dialog: any;
+  router: any;
+  error='';
 
   constructor(private ginService: GINService) { }
 
@@ -27,7 +33,7 @@ export class GINReportsComponent implements OnInit{
     this.ginService.downloadFile(report_id).subscribe(
       (response) => {
         // Create a temporary link and trigger the file download
-        const blob = new Blob([response], { type: 'application/pdf' });
+        const blob = new Blob([response], { type: 'pdf' });
         const url = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
@@ -35,9 +41,25 @@ export class GINReportsComponent implements OnInit{
         link.click();
       },
       (error) => {
-        console.log('Error downloading file:', error);
+        if (error.status === 401) {
+          this.error = 'Error downloading file..!!!';
+        } else {
+          this.error = 'Error downloading file..!!!';
+        }
       }
     );
+  }
+
+  searchUsers(): void {
+    this.filteredReports = this.files.filter(report => {
+      const fullName = `${report.date} ${report.report_name}`;
+      return fullName.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+  }
+
+  clearSearch(): void {
+    this.searchValue = '';
+    this.filteredReports = this.files;
   }
 
 }

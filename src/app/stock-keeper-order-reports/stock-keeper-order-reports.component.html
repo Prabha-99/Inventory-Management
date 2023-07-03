@@ -31,8 +31,13 @@
               <td>{{ file.report_name }}</td>
               <td>{{ file.role_name }}</td>
               <td>{{ file.date }}</td>
+ 
               <td><button type="button" class="btn btn-outline-warning" (click)="confirmFile(file.id, file.fileName)">Confirm</button></td>
               <td><button type="button" class="btn btn-outline-warning" (click)="rejectFile(file.id, file.fileName)">Reject</button></td>
+ 
+              <td><button class="btn btn-outline-success">Confirm</button></td>
+              <td><button class="btn btn-outline-danger">Reject</button></td>
+ 
             </tr>
           </tbody>
         </table>
