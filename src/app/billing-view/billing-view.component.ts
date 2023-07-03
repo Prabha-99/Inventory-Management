@@ -22,6 +22,12 @@ export class BillingViewComponent implements OnInit{
   fileURL: any[] = [];
   pdfUrl!: SafeUrl;
 
+  filepath!: string;
+  fileContent!: ArrayBuffer;
+  fileUrl!: string;
+  filename!:string;
+
+
   ngOnInit() {
     this.billService.getAllBills().subscribe(bill => {
       this.bills = bill;
@@ -36,26 +42,22 @@ export class BillingViewComponent implements OnInit{
     
   }
 
-  openPdf(filepath: string) {
-    if (typeof filepath !== 'string') {
-      console.error('Invalid filepath:', filepath);
-      return;
-    }
+  // openPdf(filename: string): void {
+  //   this.billService.getPdf(filename).subscribe(response => {
+  //     const blob = new Blob([response.statusText], { type: 'application/pdf' });
+  //     const url = window.URL.createObjectURL(blob);
+  //     const link = document.createElement('a');
+  //     link.href = url;
+  //     link.download = filename;
+  //     link.click();
+  //   });
+  // }
 
-    const filename = filepath.split('/').pop();
-    if (!filename) {
-      console.error('Invalid filename:', filename);
-      return;
-    }
-
-    this.billService.getPdf(filename).subscribe({
-      next: arrayBuffer => {
-        const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
-        this.pdfUrl = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(blob));
-      },
-      error: err => {
-        console.error('Error retrieving PDF:', err);
-      }
+  openPdf(filename: string): void {
+    this.billService.getPdf(filename).subscribe(response => {
+      const blob = new Blob([response], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      window.open(url, '_blank');
     });
   }
 
@@ -99,7 +101,6 @@ export class BillingViewComponent implements OnInit{
   }
 
   pdfList: any[]=[];
-
 
 
   loadPdfList(): void {
