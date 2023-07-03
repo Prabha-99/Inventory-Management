@@ -94,8 +94,8 @@ import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-man
 import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
- 
-
+import { ForecastingDashboardComponent } from './forecasting-dashboard/forecasting-dashboard.component';
+import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart.component';
 
 
 
@@ -180,6 +180,8 @@ import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinato
       StockManagerViewGRNComponent,
       PurchaseCoordinatorSellOrderComponent,
       PurchaseCoordinatorPurchaseOrderComponent,
+      ForecastingDashboardComponent,
+      ForecastingChartComponent,
       DesignerComponent
 
 
