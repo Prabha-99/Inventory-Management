@@ -10,24 +10,34 @@ Chart.register(...registerables);
   styleUrls: ['./forecasting-chart.component.css'],
 })
 export class ForecastingChartComponent implements OnInit {
+
+  selectedCategory = '';
+  selectedStatus = '';
+  myChart: Chart<"line", number[] | undefined, string> | undefined;
+
   // data: object | undefined;
   data:{ content: [ { id: number, purchase_year: number, purchase_month: number, total_purchases: number } ] } | undefined;
   // data:{ code: string, message: string, content: Array<{ id: number, purchase_year: number, purchase_month: number, total_purchases: number }>} | undefined ;
   constructor(private forecastingChartComponentService: ForecastingChartComponentService) {}
 
   async getData(){
-    const jsonData = await this.forecastingChartComponentService.getData();
+    const jsonData = await this.forecastingChartComponentService.getData(this.selectedCategory, this.selectedStatus);
     this.data = jsonData.data;
   }
 
   async ngOnInit(): Promise<void> {
+    await this.drawChart();
+  }
+
+  async drawChart() {
+    this.myChart?.destroy();
     await this.getData();
     const dataArray = this.data?.content.map(i => i.total_purchases );
     console.log(dataArray);
-    const myChart = new Chart('myChart', {
+    this.myChart = new Chart('myChart', {
       type: 'line',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: this.data?.content.map(i => `${i.purchase_year}/${i.purchase_month}` ),
         datasets: [
           {
             label: '# of Votes',
@@ -44,5 +54,19 @@ export class ForecastingChartComponent implements OnInit {
         },
       },
     });
-  }
+  }
+
+  onClickMe() {
+      console.log(`Selected category: ${this.selectedCategory} and selected staus: ${this.selectedStatus}`);
+      this.drawChart();
+  }
+
+  onSelectedCategory(value:string): void {
+		this.selectedCategory = value;
+	}
+
+  onSelectedStatus(value:string): void {
+		this.selectedStatus = value;
+	}
+
 }

@@ -6,13 +6,13 @@ import axios from 'axios';
 export class ForecastingChartComponentService {
   constructor() { }
   
-  getData = async () => {
+  getData = async (category, status) => {
     const response = await axios.post(
       `http://localhost:8080/api/forecasting/grn`,
       {
         timeDuration: "monthly",
-        category: "",
-        status: ""
+        category: category,
+        status: status
       }
     );
     
