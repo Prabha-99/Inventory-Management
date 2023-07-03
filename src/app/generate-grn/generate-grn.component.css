@@ -1,0 +1,14 @@
+.error-message {
+    color: red;
+    font-weight: bold;
+    font-size: 13px;
+    padding-left: 15px;
+    
+  }
+  
+  .error-message-ok{
+    color:green;
+    font-weight: bold;
+    font-size: 13px;
+    padding-left: 15px;
+  }
