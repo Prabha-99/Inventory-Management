@@ -41,7 +41,8 @@
                           <div class="form-outline mb-4">
                           <label class="form-label" >Contact Number</label>
                           <input type="text" name="contact_nu"  class="form-control"[(ngModel)]="gin.contact_nu" required/>
-                          
+                          <div *ngIf="tele_error" class="error-message">{{ tele_error }}</div>
+                          <div *ngIf="tele_error_fix" class="error-message-ok">{{ tele_error_fix }}</div>
                           </div>
 
                           
@@ -97,8 +98,10 @@
 
                          
                       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                      
                               <button class="btn btn-primary btn btn-dark" type="submit"  (click)="submit()">Submit</button>
                               <button class="btn btn-primary btn btn-dark" type="button" (click)="reset()" >Cancel</button>
+
                             </div> 
           
                       </form>

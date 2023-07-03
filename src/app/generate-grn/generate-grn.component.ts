@@ -11,11 +11,11 @@ export class GenerateGRNComponent {
     supplier_name:'',
     address:'',
     contact_nu:'',
-    date:'',
-    invoice_number:'',
+    date:null,
+    invoice_number:null,
     item_description:'',
-    ordered_quantity:'',
-    received_quantity:'',
+    ordered_quantity:null,
+    received_quantity:null,
     
     remarks:'',
 
@@ -34,31 +34,31 @@ submit() {
   
   if (!this.isValidPhoneNumber(this.grn.contact_nu)) {
     this.tele_error='Invalid Telephone Number!';
+    alert("Invalid Phone Number");
     this.tele_error_fix='';
     return;
   }else{
     this.tele_error='';
-    this.tele_error_fix='OK!';
+    this.tele_error_fix='';
   }
-
-
 
   this.generateGRNService.submit(this.grn).subscribe(
     (response) => {
-      console.log('Product added successfully');
+      console.log('GRN added successfully',response);
       // Reset the form
+        alert('GRN Added Successfully!!')
       this.reset();
     },
     (error) => {
-      console.error('Failed to add product:', error);
+      console.error('Failed to add GRN', error);
     }
   );
 
 }
 
 isValidFormData(): boolean {
-  return !!this.grn.supplier_name && !!this.grn.address && !!this.grn.contact_nu && !!this.grn.date && !!this.grn. invoice_number
-  && !!this.grn.item_description && !!this.grn.ordered_quantity && !!this.grn. received_quantity && !!this.grn.remarks
+  return !!this.grn.address && !!this.grn.contact_nu && !!this.grn.supplier_name && !!this.grn. date && !!this.grn.invoice_no
+  && !!this.grn.ordered_quantity && !!this.grn.received_quantity ;
 }
 
 isValidPhoneNumber(contact_nu) {
@@ -84,7 +84,7 @@ reset() {
     ordered_quantity:null,
     received_quantity:null,
     
-    remarks:'',
+    remarks:''
 
   };
 }

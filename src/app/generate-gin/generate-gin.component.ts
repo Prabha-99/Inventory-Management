@@ -34,22 +34,25 @@ submit() {
     
     if (!this.isValidPhoneNumber(this.gin.contact_nu)) {
       this.tele_error='Invalid Telephone Number!';
+      alert("Invalid Phone Number");
       this.tele_error_fix='';
       return;
     }else{
       this.tele_error='';
-      this.tele_error_fix='OK!';
+      this.tele_error_fix='';
     }
   
 
   this.generateGINService.submit(this.gin).subscribe(
     (response) => {
-      console.log('Product added successfully');
+      console.log('GIN added successfully',response);
+      alert('GIN added successfully');
       // Reset the form
       this.reset();
     },
     (error) => {
-      console.error('Failed to add product:', error);
+      console.error('GIN added Fail!',error);
+      alert('Failed to add product:');
     }
   );
 
@@ -57,7 +60,7 @@ submit() {
 
 isValidFormData(): boolean {
   return !!this.gin.address && !!this.gin.contact_nu && !!this.gin.customer_name && !!this.gin. date && !!this.gin. invoice_no
-  && !!this.gin.invoiced_quantity && !!this.gin.issued_quantity && !!this.gin.item_description;
+  && !!this.gin.invoiced_quantity && !!this.gin.issued_quantity ;
 }
 
 isValidPhoneNumber(contact_nu) {
@@ -77,13 +80,13 @@ Cancel(): void {
 reset() {
   this.gin = {
     address:'',
-    contact_nu:null,
-    name:'',
+    contact_nu:'',
+    customer_name:'',
     date:null,
     invoice_no:null,
-    quantity:null,
     invoiced_quantity:null,
-    ides:'',
+    issued_quantity:null,
+    item_description:'',
     remarks:'',
   };
 }
