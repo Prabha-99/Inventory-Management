@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -80,8 +79,6 @@ import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-report
 import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
  
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
-import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
-=======
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
@@ -162,7 +159,6 @@ import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinato
  
       PurchaseCoordinatorEditComponent,
       GenerateGINComponent,
-      GenerateGRNComponent,
  
 
       UserUpdateComponent,

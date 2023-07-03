@@ -47,8 +47,7 @@ import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-prof
  
 import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-reports-grn/stock-keeper-order-reports-grn.component';
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
-import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
-=======
+
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { InventoryAdSellOrderComponent } from './inventory-ad-sell-order/inventory-ad-sell-order.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
@@ -109,11 +108,11 @@ const routes: Routes = [
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
  
   {path:"generate-GIN",component:GenerateGINComponent},
-  {path:"generate-GRN",component:GenerateGRNComponent},
+
  
  
 
-  {path:"get-user",component:GetUserComponent}
+  {path:"get-user",component:GetUserComponent},
  
   {path:"update-user/:id",component:UpdateOneUserComponent},
   {path:"user-update",component:UserUpdateComponent},
