@@ -79,6 +79,8 @@ import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-report
 import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
  
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
+import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
+ 
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
@@ -91,8 +93,8 @@ import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-man
 import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
- 
-
+import { ForecastingDashboardComponent } from './forecasting-dashboard/forecasting-dashboard.component';
+import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart.component';
 
 
 
@@ -176,6 +178,8 @@ import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinato
       StockManagerViewGRNComponent,
       PurchaseCoordinatorSellOrderComponent,
       PurchaseCoordinatorPurchaseOrderComponent,
+      ForecastingDashboardComponent,
+      ForecastingChartComponent,
       DesignerComponent
 
 
