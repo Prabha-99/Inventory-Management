@@ -1,0 +1,125 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+<div class="container">
+    <div class="row">
+      <app-navbar></app-navbar>
+      </div>
+      <div class="row">
+      <div class="col-2">
+        <app-stock-keeper-sidebar></app-stock-keeper-sidebar><!--Admin Sidebar calling-->
+      </div>
+      <div class="col-10 mt-5">
+                <div>
+                  
+                  <div class="card-body px-4 py-5 px-md-5">
+                      <div class="d-flex justify-content-center">
+                      <div class="col-lg-10 mt-5">
+                          <h2 class="d-flex justify-content-center">Create Good Issue Note</h2>
+                          
+                          <form>
+                              <div class="row">
+                                <div class="form-outline mb-4">
+                                  <label class="form-label" >Customer Name</label>
+                                  <input type="text" name="customer_name"  class="form-control"[(ngModel)]="gin.customer_name" required/>
+                                  
+                                  </div>
+                                  <div class="col-md-6 mb-6">
+                                    <div class="form-outline">
+                                      <label class="form-label" >Address</label>
+                                      <input type="text"name="address" class="form-control"[(ngModel)]="gin.address" required/>
+                                      
+                                    </div>
+                                  </div>
+                                  
+                              </div>
+                          
+                          <!-- User Name -->
+                          <div class="form-outline mb-4">
+                          <label class="form-label" >Contact Number</label>
+                          <input type="text" name="contact_nu"  class="form-control"[(ngModel)]="gin.contact_nu" required/>
+                          <div *ngIf="tele_error" class="error-message">{{ tele_error }}</div>
+                          <div *ngIf="tele_error_fix" class="error-message-ok">{{ tele_error_fix }}</div>
+                          </div>
+
+                          
+                            
+                            <div class="form-outline mb-4">
+                                <label class="form-label" >Date</label>
+                                <input type="date" class="form-control"name="date"[(ngModel)]="gin.date" required/>
+                                
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6 mb-6">
+                               <div class="form-outline mb-4">
+                              
+                                <label class="form-label" >Invoice Number</label>
+                                <input type="number" [(ngModel)]="gin.invoice_no" name="invoice_no" style="width:130px; height:32px;text-align:center;"class="form-control">
+                                
+                                <label class="form-label" >Quantity</label>
+                                <input type="number" [(ngModel)]="gin.invoiced_quantity" name="invoiced_quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
+
+                                <label class="form-label" >Issue Quantity</label>
+                                <input type="text" name="issued_quantity"  class="form-control"[(ngModel)]="gin.issued_quantity" required/>
+                              </div>
+                            </div>
+                          </div>
+                             
+
+                            <!-- <div class="form-outline mb-4">
+                              <label class="form-label" >Quantity</label>
+                              <input type="number" [(ngModel)]="gin.quantity" name="quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
+                              
+                          </div> -->
+
+                          <!-- <div class="form-outline mb-4">
+                            <label class="form-label" >Issue Quantity</label>
+                            <input type="text" name="invoiced_quantity"  class="form-control"[(ngModel)]="gin.invoiced_quantity" required/>
+                            
+                        </div> -->
+
+                        <div class="form-outline mb-4">
+                          <label class="form-label" >Item Description</label>
+                          <textarea id="item"  rows="3" cols="30" [(ngModel)]="gin.item_description" name="item_description" class="form-control" >
+                          </textarea>
+                          
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <label class="form-label" >Remarks</label>
+                        <textarea id="area"  rows="3" cols="30" [(ngModel)]="gin.remarks" name="remarks" class="form-control" >
+                        </textarea>
+                        
+                    </div>
+
+                         
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                      
+                              <button class="btn btn-primary btn btn-dark" type="submit"  (click)="submit()">Submit</button>
+                              <button class="btn btn-primary btn btn-dark" type="button" (click)="reset()" >Cancel</button>
+
+                            </div> 
+          
+                      </form>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+      </div>
+    </div>
+  </div>
+</body>
+  </html>
+  
+  
+  
+  
+  
+  
+  
+  
+  

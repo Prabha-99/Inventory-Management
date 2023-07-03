@@ -22,8 +22,56 @@ export class StockKeeperOrderReportsComponent implements OnInit{
         console.log('Error retrieving files:', error);
       }
     );
+
+    
   }
 
+  confirmFile(report_id: number, report_name: string): void {
+    this.stockKeeperGIN.confirmFile(report_id).subscribe(
+      (response) => {
+        // Create a temporary link and trigger the file download
+        const blob = new Blob([response], { type: 'application/pdf' });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = report_name;
+        link.click();
+      },
+      (error) => {
+        console.log('Error downloading file:', error);
+      }
+    );
+  }
+
+  rejectFile(report_id: number, report_name: string): void {
+    this.stockKeeperGIN.rejectFile(report_id).subscribe(
+      (response) => {
+        // Create a temporary link and trigger the file download
+        const blob = new Blob([response], { type: 'application/pdf' });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = report_name;
+        link.click();
+      },
+      (error) => {
+        console.log('Error downloading file:', error);
+      }
+    );
+
+  }
+
+  // confirmAction() {
+  //   // Perform the action here
+  //   // This can include making HTTP requests, updating data, etc.
+
+  //   // For example, you can show an alert message
+  //   alert('Action confirmed!');
+  // }
+   
+
+ 
+  
 
 
   // Confirm(): void {

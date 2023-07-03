@@ -57,6 +57,7 @@ import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-prod
 import { PurchaseCoordinatorProductPopupComponent } from './purchase-coordinator-product-popup/purchase-coordinator-product-popup.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
 import { GetUserComponent } from './get-user/get-user.component';
+import { DesignerComponent } from './designer/designer.component';
 
 // import { OrderComponent } from './order/order.component';
 
@@ -77,6 +78,10 @@ import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-report
 // import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
 
 import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/purchase-coordinator-edit.component';
+ 
+import { GenerateGINComponent } from './generate-gin/generate-gin.component';
+import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
+ 
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
@@ -150,10 +155,15 @@ import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart
     DeleteUserComponent,
       StockKeeperOrderReportsComponent,
       StockKeeperOrderReportsGRNComponent,
-   
+
     StockManagerEditComponent,
 
     DeleteUserComponent,
+ 
+      PurchaseCoordinatorEditComponent,
+      GenerateGINComponent,
+      GenerateGRNComponent,
+ 
 
       UserUpdateComponent,
 
@@ -171,7 +181,8 @@ import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart
       PurchaseCoordinatorSellOrderComponent,
       PurchaseCoordinatorPurchaseOrderComponent,
       ForecastingDashboardComponent,
-      ForecastingChartComponent
+      ForecastingChartComponent,
+      DesignerComponent
 
 
   ],
