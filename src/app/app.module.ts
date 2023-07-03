@@ -81,7 +81,7 @@ import { PurchaseCoordinatorEditComponent } from './purchase-coordinator-edit/pu
  
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
 import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
-=======
+ 
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { InventoryAdEditComponent } from './inventory-ad-edit/inventory-ad-edit.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
