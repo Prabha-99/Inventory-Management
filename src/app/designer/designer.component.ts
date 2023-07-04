@@ -13,6 +13,15 @@ interface ShowroomFile {
 })
 
 export class DesignerComponent implements OnInit  {
+//billsend
+filename:string = "";
+file:any;
+showFileUpload: boolean = false;
+
+
+toggleFileUpload(){
+  this.showFileUpload = !this.showFileUpload;
+}
 
 toggleFileList() {
   this.showFileList = !this.showFileList;
@@ -31,6 +40,27 @@ showFileList: any;
       .subscribe(files => this.files = files);
   }
 
+  //billsend
+  billSend(event:any){
+    this.file=event.target.files[0];
+  }
+
+  //billsend
+  uploadBill(){
+    //create formData object
+    let formData = new FormData();
+    formData.append("filename",this.filename)
+    formData.append("file",this.file)
+
+    alert('Successfully submitted!');
+
+    //submit data in API
+    this.http.post("http://localhost:8080/api/designer/billSend",formData)
+    .subscribe((response) =>{
+    console.log(response);
+    });
+  }
+
   downloadFile(id: number,fileName: string) {
     // Your existing downloadFile method implementation
     const fileId = 30; // Replace with the actual file ID
@@ -46,26 +76,9 @@ showFileList: any;
       downloadLink.click();
     });
   }
-  }
+}
 
 
 
-/*export class DesignerComponent {
 
-  constructor(private http: HttpClient) { }
 
-  downloadFile() {
-    const fileId = 30; // Replace with the actual file ID
-
-    this.http.get('http://localhost:8080/api/designer/download/' + fileId, {
-      responseType: 'arraybuffer',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    }).subscribe((response: ArrayBuffer) => {
-      const blob = new Blob([response], { type: 'application/octet-stream' });
-      const downloadLink = document.createElement('a');
-      downloadLink.href = window.URL.createObjectURL(blob);
-      downloadLink.download = 'bill.jpeg '; // Replace with the actual filename
-      downloadLink.click();
-    });
-  }
-}*/
