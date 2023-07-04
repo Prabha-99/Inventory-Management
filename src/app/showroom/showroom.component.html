@@ -11,7 +11,7 @@
   <app-sidebar></app-sidebar>
   <app-navbar></app-navbar>
 
-
+      <button (click)="toggleFileList()" class="btn btn-warning">View Files</button>
       <img src="assets/PM.jpeg" alt="logo" style="
         width: 550px; height: 400px; margin-left: 200px; margin-bottom: 60px; margin-top: 5px;
         ">
@@ -31,6 +31,29 @@
 
        </div>
 
+      </div>
+
+      <!--billview-->
+      <div *ngIf="showFileList">
+
+        <table class="table table-hover" >
+          <thead>
+            <tr>
+              <th><b>ID</b></th>
+              <th><b>Name</b></th>
+              <th><b>Download</b></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let file of file">
+              <td>{{ file.id }}</td>
+              <td>{{ file.name }}</td>
+              <td>
+                <button (click)="downloadFile(file.id, file.name)" class="btn btn-outline-success">Download</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 </body>
 </html>
