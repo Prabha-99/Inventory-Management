@@ -1,4 +1,8 @@
 
+body{
+  background-color: rgba(238, 203, 187, 0.959);
+}
+
 #view{
 
   width: 1200px;
@@ -8,4 +12,15 @@
   /*background-color: rgb(145, 179, 187)*/
 }
 
+.billsend{
+  /*background-color: blue;*/
+  width: 60%;
+}
+
+#upload{
+  float: right;
+  /*background-color: blueviolet;*/
+  margin-right: 70px;
+  margin-top: 60px;
+}
 
