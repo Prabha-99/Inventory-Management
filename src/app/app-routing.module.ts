@@ -23,7 +23,6 @@ import { SystemAdminNavComponent } from './system-admin-nav/system-admin-nav.com
 import { SystemAdminSideComponent } from './system-admin-side/system-admin-side.component';
 import { SystemAdminDashComponent } from './system-admin-dash/system-admin-dash.component';
 import { GetUserDetailsComponent } from './get-user-details/get-user-details.component';
-
 import { ShowroomComponent } from './showroom/showroom.component';
 import { DesignerComponent } from './designer/designer.component';
 import { PurchaseCoordinatorDashComponent } from './purchase-coordinator-dash/purchase-coordinator-dash.component';
@@ -36,7 +35,6 @@ import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
-import { StockKeeperGINService } from './stock-keeper-order-reports/stock-keeper-gin.service';
 import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
 import { StockKeeperGRNService } from './stock-keeper-order-reports-grn/stock-keeper-grn.service';
 // import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
@@ -44,12 +42,9 @@ import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/pu
 import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
 import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
- 
 import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-reports-grn/stock-keeper-order-reports-grn.component';
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
-
 import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
- 
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { InventoryAdSellOrderComponent } from './inventory-ad-sell-order/inventory-ad-sell-order.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
@@ -86,26 +81,20 @@ const routes: Routes = [
   {path:"system-admin-dash",component:SystemAdminDashComponent},
   {path:"get-user-details",component:GetUserDetailsComponent},
   {path:"showroom",component:ShowroomComponent},
-  { path: 'designer', component: DesignerComponent },
+  {path:'designer', component: DesignerComponent },
   {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
   {path:"get-user",component:GetUserComponent},
-
   {path:"stock-keeper-dash",component:StockKeeperDashComponent},
   {path:"stock-keeper-nav",component:StockKeeperNavComponent},
   {path:"stock-keeper-profile",component:StockKeeperProfileComponent},
   {path:"stock-keeper-sidebar",component:StockKeeperSidebarComponent},
   {path:"gin-reports",component:GINReportsComponent},
-  {path:"grn-reports",component:GRNReportsComponent},
+  // {path:"grn-reports",component:GRNReportsComponent},
   {path:"delete-user",component:DeleteUserComponent},
-  // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent}
+  // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent},
   {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent},
- 
   {path:"stock-keeper-order-reports-grn",component:StockKeeperOrderReportsGRNComponent},
- 
- 
   {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService},
- 
-
   {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},
   {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent},
   {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
@@ -118,7 +107,6 @@ const routes: Routes = [
 
 
   {path:"get-user",component:GetUserComponent},
- 
   {path:"update-user/:id",component:UpdateOneUserComponent},
   {path:"user-update",component:UserUpdateComponent},
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent},
