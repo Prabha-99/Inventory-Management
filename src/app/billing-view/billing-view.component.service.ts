@@ -42,12 +42,20 @@ export class BillService {
 //   return this.http.get(`${this.baseUrl}/file/${filepath}`, { responseType: 'blob' });
 // }
 
-private getpdfUrl = 'http://localhost:8080/api/bill';
+private getpdfUrl = 'http://localhost:8080/api/bill/files';
 
 
-getPdf(filename: string): Observable<ArrayBuffer> {
-  const headers = new HttpHeaders({ 'Content-Type': 'application/pdf' });
-  return this.http.get(`${this.getpdfUrl}/${filename}`, { headers, responseType: 'arraybuffer' });
+getPdf(filename: string): Observable<any> {
+  return this.http.get(`${this.getpdfUrl}/${filename}`, { responseType: 'arraybuffer' });
 }
+
+// getPdf(filename: string): Observable<HttpResponse<Blob>> {
+//   const headers = new HttpHeaders().set('Content-Type', 'application/pdf');
+//   return this.http.get<Blob>(`${this.getpdfUrl}/${filename}`, {
+//     headers,
+//     observe: 'response',
+//     responseType: 'blob' as 'json' // specify the expected response type as a blob
+//   });
+// }
 
   }

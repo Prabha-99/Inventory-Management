@@ -1,6 +1,12 @@
 body{
-  background-color: rgb(48, 48, 48);
+  background-image:url("../blured.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgb(48, 48, 48); 
 }
+
+
 
 .login-form-container {
   width: 50%;
@@ -19,6 +25,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: blur(0px);
 }
 
 .company-image {
@@ -40,13 +47,13 @@ body{
 }
 
 label{
-  color: aliceblue;
+  color: rgb(0, 0, 0);
 }
 
 h1{
   font-size: 30px;
   font-weight: bolder;
-  color: rgb(250, 223, 174);
+  color: #ffbf65;
 }
 
 
