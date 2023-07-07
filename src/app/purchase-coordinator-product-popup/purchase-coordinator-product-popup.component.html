@@ -1,4 +1,3 @@
-<p>purchase-coordinator-product-popup works!</p>
 <mat-card>
     <mat-card-header>
       <mat-card-title>Add Product</mat-card-title>
@@ -10,8 +9,8 @@
 
           <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="product.category_id"  required>
             <option selected value="" disabled [ngValue]="null">Select Category</option>
-            <option value="c2">Accessories</option>
-            <option value="c3">Appliances</option>
+            <option value="c4">Accessories</option>
+            <option value="c5">Appliances</option>
           </select>
           <br>
           <!-- Product Name -->
@@ -50,8 +49,7 @@
           <button type="button" class="btn btn-danger">Cancel</button>
         </div>
         
-       <!-- <input class="btn btn-primary" type="submit" value="Submit" [disabled]="!productForm.valid">
-        <input class="btn btn-primary" type="reset" value="Reset" (click)="resetForm()">-->
+       
       </mat-card-actions>
     </form>
   
