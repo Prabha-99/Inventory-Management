@@ -23,7 +23,7 @@
                 <thead>
                   <tr>
                     <th class="th-sm">Product Id</th>
-                    <th class="th-sm">Category Id</th>
+                    <th class="th-sm">Category name</th>
                     <th class="th-sm">Product Brand</th>
                     <th class="th-sm">Product Name</th>
                     <th class="th-sm">Product Price</th>
@@ -34,7 +34,7 @@
                 <tbody>
                   <tr *ngFor="let product of filteredProducts">
                     <td>{{ product.product_id }}</td>
-                    <td>{{ product.category_id }}</td>
+                    <td>{{ product.category_name }}</td>
                     <td>{{ product.product_brand }}</td>
                     <td>{{ product.product_name }}</td>
                     <td>{{ product.product_price }}</td>

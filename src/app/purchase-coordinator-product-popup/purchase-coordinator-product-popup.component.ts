@@ -10,7 +10,7 @@ import { PurchaseCoordinatorProductPopupService } from './purchase-coordinator-p
 export class PurchaseCoordinatorProductPopupComponent {
   product: any = {
 
-    category_id: '',
+    category_name: '',
     product_name: '',
     product_brand: '',
     product_quantity: null,
@@ -39,7 +39,7 @@ export class PurchaseCoordinatorProductPopupComponent {
 
   resetForm() {
     this.product = {
-      category_id: '',
+      category_name: '',
       product_name: '',
       product_brand: '',
       product_quantity: null,
@@ -48,7 +48,7 @@ export class PurchaseCoordinatorProductPopupComponent {
   }
 
   isRequired(): boolean{
-    return !!this.product.category_id && !!this.product.product_name && !!this.product.product_brand && !!this.product.product_price
+    return !!this.product.category_name && !!this.product.product_name && !!this.product.product_brand && !!this.product.product_price
     && !!this.product.product_quantity;
   }
 }
