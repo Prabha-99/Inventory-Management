@@ -51,7 +51,7 @@ import { StockManagerPurchaseOrderComponent } from './stock-manager-purchase-ord
 import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock-manager-sell-order.component';
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
-
+import { ProductManagementComponent } from './designer/designer.component';
 
 
 const routes: Routes = [
@@ -103,7 +103,9 @@ const routes: Routes = [
   {path:"stock-manager-purchase-order",component:StockManagerPurchaseOrderComponent},
   {path:"stock-manager-sell-order",component:StockManagerSellOrderComponent},
   {path:"purchase-coordinator-sell-order",component:PurchaseCoordinatorSellOrderComponent},
-  {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent}
+  {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent},
+  { path: '', redirectTo: '/product', pathMatch: 'full' },
+  { path: 'product', component: ProductManagementComponent }
 
 ];
 

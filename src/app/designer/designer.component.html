@@ -12,10 +12,12 @@
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
     <button (click)="toggleFileList()" class="btn btn-warning">View Files</button>
+    <button (click)="toggleProductManagement()" class="btn btn-warning">Edit</button>
+
     <a routerLink="/billing">
       <button (click)="toggleFileList()" class="btn btn-warning">Create Bill</button>
     </a>
-    <button (click)="toggleFileUpload()" class="btn btn-warning">Send</button>
+    <button (click)="toggleFileUpload()" class="btn btn-warning">Send Bill</button>
     </div>
 
     <div id="view">
@@ -38,6 +40,37 @@
        </div>
        </div>
     </div>
+
+    <!--div *ngIf="showProductManagement">
+      <h1>Product Management</h1>
+
+      <form (ngSubmit)="deductProduct(product.productID)">
+        <label for="productId">Product ID:</label>
+        <input type="int" id="productId" [(ngModel)]="product.productID" name="productId" required>
+
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" [(ngModel)]="product.productName" name="productName" required>
+
+        <label for="productQuantity">Product Quantity:</label>
+        <input type="int" id="productQuantity" [(ngModel)]="product.productQuantity" name="productQuantity" required>
+
+        <button type="submit">Deduct Product</button>
+      </form>
+      </div-->
+
+      <div *ngIf="showProductManagement">
+      <form (ngSubmit)="deductProduct(product.productID)">
+        <div>
+          <label for="productId">Product ID:</label>
+          <input type="int" id="productId" name="productId" [(ngModel)]="product.productId" required>
+        </div>
+        <div>
+          <label for="quantityToDeduct">Quantity to Deduct:</label>
+          <input type="int" id="quantityToDeduct" name="quantityToDeduct" [(ngModel)]="product.productQuantity" required>
+        </div>
+        <button type="submit">Deduct Product</button>
+      </form>
+      </div>
 
 
 
@@ -64,7 +97,6 @@
     </div>
   </div>
 </div>
-
 </body>
 </html>
 
