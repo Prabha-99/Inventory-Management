@@ -109,7 +109,7 @@ const routes: Routes = [
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
  
   {path:"generate-GIN",component:GenerateGINComponent},
-
+  {path:"generate-GRN",component:GenerateGRNComponent},
  
  
 
