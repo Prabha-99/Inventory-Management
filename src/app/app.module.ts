@@ -148,7 +148,7 @@ import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinato
     StockKeeperSidebarComponent,
 
     GINReportsComponent,
-  
+    GRNReportsComponent,
     DeleteUserComponent,
     UpdateOneUserComponent,
     StockManagerEditComponent,
