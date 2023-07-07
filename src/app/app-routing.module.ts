@@ -51,7 +51,7 @@ import { StockManagerPurchaseOrderComponent } from './stock-manager-purchase-ord
 import { StockManagerSellOrderComponent } from './stock-manager-sell-order/stock-manager-sell-order.component';
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
-import { DesignerDeductProductComponent } from './designer-deduct-product/designer-deduct-product.component';
+
 
 
 
@@ -106,13 +106,16 @@ const routes: Routes = [
   {path:"purchase-coordinator-sell-order",component:PurchaseCoordinatorSellOrderComponent},
   {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent},
   { path: '', redirectTo: '/product', pathMatch: 'full' },
-  {path: "DesignerDeductProductComponent",component:DesignerDeductProductComponent}
+
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    FormsModule
+  ],
   exports: [RouterModule],
 
 
