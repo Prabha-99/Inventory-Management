@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ProductManagementComponent } from './designer/designer.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -90,6 +90,7 @@ import { StockManagerViewGINComponent } from './stock-manager-view-gin/stock-man
 import { StockManagerViewGRNComponent } from './stock-manager-view-grn/stock-manager-view-grn.component';
 import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-sell-order/purchase-coordinator-sell-order.component';
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
+import { DesignerDeductProductComponent } from './designer-deduct-product/designer-deduct-product.component';
 
 
 
@@ -171,6 +172,7 @@ import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinato
       PurchaseCoordinatorSellOrderComponent,
       PurchaseCoordinatorPurchaseOrderComponent,
       DesignerComponent,
+      DesignerDeductProductComponent,
 
 
 

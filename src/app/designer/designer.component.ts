@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DesignerProductService } from './designer-product.service';
-import { Product } from './Product';
-
 
 
 interface ShowroomFile {
   id: number;
   name: string;
 }
-
-
 
 @Component({
   selector: 'app-designer',
@@ -19,10 +14,7 @@ interface ShowroomFile {
 })
 
 export class DesignerComponent implements OnInit  {
-product: any;
-deductProduct(arg0: any) {
-throw new Error('Method not implemented.');
-}
+product: any = {};
 
 //billsend
 filename:string = "";
@@ -93,48 +85,28 @@ showFileList: any;
       downloadLink.click();
     });
   }
-}
 
-
-export class ProductManagementComponent {
-
-
-  product: Product = new Product();
-
-
-  constructor(private productService: DesignerProductService) {}
-
-
-  /*deductProduct(productId: number) {
-    this.productService.deductProduct(productId, this.product)
-      .subscribe(updatedProduct => {
-        // Handle the updated product as needed
-        console.log('Product deducted successfully:', updatedProduct);
-      }, error => {
-        // Handle the error
-        console.error('Error deducting product:', error);
-      });
-  }*/
   deductProduct() {
-    this.productService.deductProduct(this.product).subscribe(
-      (response) => {
-        // Handle successful response
-        console.log('Product deducted:', response);
-        // You can perform any additional actions after deducting the product
-      },
-      (error) => {
-        // Handle error response
-        console.error('Error deducting product:', error);
-        // You can display an error message to the user or perform other error handling
-      }
-    );
+    this.http.put('/deductProduct', this.product)
+      .subscribe(
+        (response: any) => {
+          // Handle success response here
+          console.log(response);
+        },
+        (error: any) => {
+          // Handle error response here
+          console.error(error);
+        }
+      );
   }
-}
-export class Product {
-  productID: number  ;
-  productName: string;
-  productQuantity: number ;
-}
+  }
+
+
+
+
+
+
+
 
 
 
