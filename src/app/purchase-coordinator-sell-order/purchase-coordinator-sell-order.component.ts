@@ -21,8 +21,5 @@ export class PurchaseCoordinatorSellOrderComponent {
   onSubmit(formValue: any): void {
     this.reduceQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
 
-    formValue.product_name = '';
-    formValue.product_brand = '';
-    formValue.product_quantity = null;
   }
 }
