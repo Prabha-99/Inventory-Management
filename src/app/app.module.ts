@@ -59,6 +59,7 @@ import { GetUserComponent } from './get-user/get-user.component';
 import { DesignerComponent } from './designer/designer.component';
 
 
+
 // import { OrderComponent } from './order/order.component';
 
 
@@ -160,7 +161,7 @@ import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart
     StockManagerEditComponent,
 
     DeleteUserComponent,
- 
+
       PurchaseCoordinatorEditComponent,
       GenerateGINComponent,
       GenerateGRNComponent,
