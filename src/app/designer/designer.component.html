@@ -44,11 +44,8 @@
       <h2>Deduct Product</h2>
       <label for="productID">Product ID:</label>
       <input type="number" id="productID" [(ngModel)]="product.product_id" />
-
-
       <label for="quantityToDeduct">Quantity to Deduct:</label>
       <input type="number" id="quantityToDeduct" [(ngModel)]="product.product_quantity" />
-
       <button (click)="deductProduct()">Deduct Product</button>
 
     </div>

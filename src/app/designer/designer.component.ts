@@ -89,9 +89,6 @@ product: DesignerProduct = {
   }
 
   downloadFile(id: number,fileName: string) {
-
-    //const fileId = 30;
-
     this.http.get('http://localhost:8080/api/designer/download/' + id, {
       responseType: 'arraybuffer',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
