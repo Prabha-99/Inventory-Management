@@ -88,17 +88,34 @@ product: DesignerProduct = {
     });
   }
 
-  downloadFile(id: number,fileName: string) {
-    this.http.get('http://localhost:8080/api/designer/download/' + id, {
-      responseType: 'arraybuffer',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    }).subscribe((response: ArrayBuffer) => {
-      const blob = new Blob([response], { type: 'application/octet-stream' });
-      const downloadLink = document.createElement('a');
-      downloadLink.href = window.URL.createObjectURL(blob);
-      downloadLink.download = fileName;
-      downloadLink.click();
-    });
+
+  downloadFile(id: number, fileName: string) {
+
+    const httpOptions = {
+      responseType: 'blob' as 'json',
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    // Send a GET request to the backend endpoint
+    this.http.get('http://localhost:8080/api/designer/download?id=' + id, httpOptions)
+    .subscribe((response: any) => {
+
+        // Create a blob from the response data
+        const blob = new Blob([response], { type: 'application/octet-stream' });
+
+        // Create a temporary URL for the blob
+        const url = URL.createObjectURL(blob);
+
+        // Trigger the file download
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        link.click();
+      }, error => {
+        console.error('Error occurred while downloading the file:', error);
+      });
   }
 
   deductProduct(): void {
