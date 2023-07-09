@@ -51,12 +51,13 @@ export class GINReportsComponent implements OnInit{
     this.ginService.downloadFile(report_id).subscribe(
       (response) => {
         // Create a temporary link and trigger the file download
-        const blob = new Blob([response], { type: 'pdf' });
+        const blob = new Blob([response], { type: 'application/pdf' });
         const url = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
         link.download = report_name;
         link.click();
+        link.remove();
       },
       (error) => {
         if (error.status === 401) {
@@ -67,6 +68,44 @@ export class GINReportsComponent implements OnInit{
       }
     );
   }
+  
+
+
+  // download() {
+  //   const filePath = '/api/files/135'; // Replace with the appropriate file path or ID
+  //   this.ginService.downloadFile(filePath)
+  //     .subscribe(response => {
+  //       const blob = new Blob([response], { type: 'application/pdf' });
+  //       const url = window.URL.createObjectURL(blob);
+  //       const link = document.createElement('a');
+  //       link.href = url;
+  //       link.download = 'file.pdf'; // Set the desired file name
+  //       link.click();
+  //     });
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // searchUsers(): void {
   //   this.filteredReports = this.files.filter(report => {
