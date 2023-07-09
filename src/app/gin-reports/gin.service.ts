@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class GINService {
 
   private baseUrl = 'http://localhost:8080/api/reports/getAllGINReport';
+  private downUrl = 'http://localhost:8080/api/reports';
 
   constructor(private http: HttpClient) { }
 
@@ -15,7 +16,11 @@ export class GINService {
     return this.http.get(this.baseUrl);
   }
 
-  downloadFile(report_id: number): Observable<Blob> {
-    return this.http.get(`${this.baseUrl}/${report_id}/download`, { responseType: 'blob' });
+  downloadFile(id: number): Observable<Blob> {
+    return this.http.get(`${this.downUrl}/${id}/download`, { responseType: 'blob' });
   }
+
+  // downloadFile(filePath: string) {
+  //   return this.http.get(filePath, { responseType: 'blob' });
+  // }
 }
