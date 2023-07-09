@@ -8,14 +8,43 @@
 
   <div class="container" style="padding-top: 150px;">
 
-  <app-sidebar></app-sidebar>
-  <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+    <app-navbar></app-navbar>
 
+     <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+      <button (click)="toggleFileList()" class="btn btn-warning">View Bills</button>
+      <button (click)="toggleFileUpload()" class="btn btn-warning">Send File</button>
+     </div>
 
-      <img src="assets/PM.jpeg" alt="logo" style="
-        width: 550px; height: 400px; margin-left: 200px; margin-bottom: 60px; margin-top: 5px;
-        ">
-      <div id="upload">
+     <div class="list-view">
+     <div *ngIf="showFileList">
+
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th><b>ID</b></th>
+            <th><b>Name</b></th>
+            <th><b>Download</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let file of files">
+            <td>{{ file.id }}</td>
+            <td>{{ file.fileName }}</td>
+            <td>
+              <button (click)="downloadFile(file.id, file.fileName)" class="btn btn-outline-success">Download</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+     <div *ngIf="showFileUpload">
+        <img src="assets/PM.jpeg" alt="logo" style="
+          width: 480px; height: 350px; margin-left: 150px; margin-bottom: 60px; margin-top: 5px;
+          ">
+     <div id="upload">
 
       <h2 style="color: rgb(19, 39, 129);"><b>Upload File</b></h2>
 
@@ -24,14 +53,17 @@
         <br>
         <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="getFile($event)" required>
       </div>
+
       <br>
        <div style="text-align: right;" >
-        <button type="button" class="btn btn-primary" (click)="submitData()">Upload file</button>
+          <button type="button" class="btn btn-primary" (click)="submitData()">Upload file</button>
+       </div>
        </div>
 
-       </div>
 
-      </div>
+
+    </div>
+  </div>
 </body>
 </html>
 
