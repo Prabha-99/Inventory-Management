@@ -1,7 +1,4 @@
-
-<div style="font-family: consolas">
-    # Web Based Inventory Management System for Monara Creations Pvt.Ltd
-</div>
+# Web Based Inventory Management System for Monara Creations Pvt.Ltd
 
 ![Project Logo](/src/assets/PM.jpeg)
 
@@ -10,6 +7,7 @@ The Web-Based Inventory Management System is a comprehensive solution for managi
 ## Table of Contents
 
 - [Features](#features)
+- [UI](#UI)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Development Server](#development-server)
@@ -29,6 +27,11 @@ The Web-Based Inventory Management System is a comprehensive solution for managi
 - User authentication and role-based access control.
 - Reporting and analytics for data-driven decision making.
 - Responsive design, compatible with various devices and screen sizes.
+
+## UI
+
+<img src="/src/assets/PM.jpeg" alt="Project Logo" width="640" height="478" />
+
 
 ## Prerequisites
 
