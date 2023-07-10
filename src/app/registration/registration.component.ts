@@ -34,7 +34,7 @@ export class RegistrationComponent {
         error => {
           // Handle the error response from the server
           console.log(error);
-          alert('Registration failed. Please try again.');
+          alert('Email is Already Registered! Please Check Your Email!');
           
         }
 
