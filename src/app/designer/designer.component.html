@@ -20,7 +20,7 @@
     <a routerLink="/reports">
       <button class="btn btn-warning">Create GIN</button>
     </a>
-    <button  class="btn btn-warning">Send GIN</button>
+    <button (click)="toggleGinUpload()" class="btn btn-warning">Send GIN</button>
     </div>
 
     <div id="view">
@@ -43,6 +43,27 @@
        </div>
 
     </div>
+
+    <div id="GIN">
+      <div *ngIf="showGinUpload">
+
+        <img src="assets/PM.jpeg" alt="logo" style="
+          width: 480px; height: 360px; margin-left: 60px; margin-top: 20px;
+          ">
+        <div id="upload">
+        <h2 style="color: rgb(19, 39, 129);"><b>Upload GIN</b></h2>
+        <div>
+          <label for="formFileLg" class="form-label" style="font-size:20px;"><b>File:</b></label>
+          <br>
+          <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="ginSend($event)">
+        </div>
+        <br>
+         <div style="text-align: right;" >
+          <button type="button" class="btn btn-primary" (click)="uploadGIN()">Send GIN</button>
+         </div>
+         </div>
+
+      </div>
 
     <div *ngIf="showProductManagement">
 
@@ -96,7 +117,7 @@
   </div>
 </div>
 
-
+</div>
 </body>
 </html>
 
