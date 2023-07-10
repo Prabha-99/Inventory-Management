@@ -201,6 +201,7 @@ onSubmit() {
     return;
   }
   
+  //mobile validate
   if (!this.isValidPhoneNumber(this.formData.cu_tele)) {
     this.tele_error='Invalid Telephone Number!';
     this.tele_error_fix='';
@@ -211,17 +212,23 @@ onSubmit() {
   }
   this.tele_error_fix='';
 
-  if (!this.isValidEmail(this.formData.other)) {
-    this.emailerror='Invalid Email Address!';
-    this.emailerror_fix='';
-    return;
-  }else{
-    this.emailerror='';
-    this.emailerror_fix='OK!';
-  }
-  this.emailerror_fix='';
 
+  //email validate
+  if (this.formData.other) {
+    if (!this.isValidEmail(this.formData.other)) {
+      this.emailerror='Invalid Email Address!';
+      this.emailerror_fix='';
+      return;
+    } else {
+      this.emailerror='';
+      this.emailerror_fix='OK!';
+    }
+  } 
+    this.emailerror='';
+    this.emailerror_fix='';
   
+
+// save bill data to database
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
       console.log(data);
@@ -251,8 +258,8 @@ isValidFormData(): boolean {
 
 //email validation
 isValidEmail(other: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(other);
+const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+return emailRegex.test(other);
 }
 
 //phone number validation

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, of, throwError } from 'rxjs';
+import jwt_decode from 'jwt-decode';
+
 
 
 
@@ -41,6 +43,15 @@ export class AuthService {
     const headers = this.getHeaders();
     return this.http.get<string>(`${this.apiUrl2}`,{ headers }); //Using stored token 
   }
+
+
+  getUserRole(): Observable<string> {
+    const token = localStorage.getItem('token') || ''; // Providing a default value of an empty string if token is null
+    const decodedToken: any = jwt_decode(token);
+    const role = decodedToken.role[0];
+    return of(role);
+  }
   
+
 
 }
