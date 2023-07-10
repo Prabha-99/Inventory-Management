@@ -63,10 +63,18 @@ export class RegistrationComponent {
       alert('All fields are required');
       return false;
     }
+    
+
 
     if (!this.validateEmail(this.regData.email)) {
       // Show an error message or perform any other desired actions
       alert('Invalid email');
+      return false;
+    }
+
+    if (!this.validatePassword(this.regData.password)) {
+      // Show an error message or perform any other desired actions
+      alert('Invalid password. It should contain at least one lowercase letter, one uppercase letter, one special character, one number, and be at least 8 characters long.  Example - @Example8');
       return false;
     }
 
@@ -79,6 +87,10 @@ export class RegistrationComponent {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
   }
-  
+  validatePassword(password: string): boolean {
+    // Password validation logic
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+  }
 
 }
