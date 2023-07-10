@@ -1,6 +1,6 @@
 # Web Based Inventory Management System for Monara Creations Pvt.Ltd
 
-![Project Logo](/path/to/logo.png)
+![Project Logo](/src/assets/PM.jpeg)
 
 The Web-Based Inventory Management System is a comprehensive solution for managing inventory and stock control in a user-friendly web interface. The frontend of the system has been developed using Angular, a popular JavaScript framework. This README file provides an overview of the system, including its features, installation instructions, and other relevant details.
 
