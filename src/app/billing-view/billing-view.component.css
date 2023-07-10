@@ -1,3 +1,31 @@
 body{
     font-size: 12px;
 }
+
+.table td {
+    font-family:Arial, sans-serif;
+    font-size:13px;
+    padding:10px 5px;
+    overflow:hidden;
+    word-break:normal;
+}
+.table th {
+    font-family:Arial, sans-serif;
+    font-size:13.5px;
+    font-weight:normal;
+    padding:10px 5px;
+    border-width:1px;
+    border-style:solid;
+    overflow:hidden;
+    word-break:normal;
+    height: 53px;
+}
+.table2 {
+
+    max-width: 800px;
+    padding-bottom:50px;
+     padding-top:10px;
+     margin-left:260px;
+     font-family:Arial, sans-serif;
+     text-align: center;
+}
