@@ -17,7 +17,42 @@
               <div class="card-body px-4 py-5 px-md-5">
                   <div class="d-flex justify-content-center">
                   <div class="col-lg-10 mt-5">
-                      <h2 class="d-flex justify-content-center">Sell Product</h2>
+                    <h2 class="d-flex justify-content-center">Good Issue Notes - GIN</h2>
+                    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                      <thead>
+                        <tr>
+                          <th class="th-sm">Invoice No</th>
+                          <th class="th-sm">Date</th>
+                          <th class="th-sm">Customer Name</th>
+                          <th class="th-sm">Address</th>
+                          <th class="th-sm">Contact Number</th>
+                          <th class="th-sm">Item Description</th>
+                          <th class="th-sm">Invoiced Quantity</th>
+                          <th class="th-sm">Issued Quantity</th>
+                          <th class="th-sm">Remarks</th>
+                          <th class="th-sm">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>
+                            <button type="button" class="btn btn-outline-warning">Download</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br><br><br><br>
+
+                      <h2 class="d-flex justify-content-center">Issue Product</h2>
                       
                       <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
                         <div class="form-group row">
