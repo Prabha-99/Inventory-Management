@@ -1,4 +1,7 @@
-# Web Based Inventory Management System for Monara Creations Pvt.Ltd
+
+<div style="font-family: consolas">
+    # Web Based Inventory Management System for Monara Creations Pvt.Ltd
+</div>
 
 ![Project Logo](/src/assets/PM.jpeg)
 
