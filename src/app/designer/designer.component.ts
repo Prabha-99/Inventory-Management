@@ -21,23 +21,34 @@ export class DesignerComponent implements OnInit  {
   showFileUpload: boolean = false;
   showProductManagement: boolean = false;
   showFileList: boolean = false;
+  showGinUpload: boolean = false;
 
   toggleFileUpload() {
     this.showFileUpload = !this.showFileUpload;
     this.showProductManagement = false;
     this.showFileList = false;
+    this.showGinUpload = false;
   }
 
   toggleProductManagement() {
     this.showProductManagement = !this.showProductManagement;
     this.showFileUpload = false;
     this.showFileList = false;
+    this.showGinUpload = false;
   }
 
   toggleFileList() {
     this.showFileList = !this.showFileList;
     this.showFileUpload = false;
     this.showProductManagement = false;
+    this.showGinUpload = false;
+  }
+
+  toggleGinUpload(){
+    this.showGinUpload= !this.showGinUpload;
+    this.showProductManagement = false;
+    this.showFileList = false;
+    this.showFileUpload = false;
   }
 
 
@@ -72,6 +83,12 @@ product: DesignerProduct = {
     this.file=event.target.files[0];
   }
 
+  //ginsend
+  ginSend(event:any){
+    this.file=event.target.files[0];
+  }
+
+
   //billsend
   uploadBill(){
     //create formData object
@@ -87,6 +104,23 @@ product: DesignerProduct = {
     console.log(response);
     });
   }
+
+  //Upload GIN
+  uploadGIN(){
+    //create formData object
+    let formData = new FormData();
+    formData.append("filename",this.filename)
+    formData.append("file",this.file)
+
+    alert('Successfully submitted!');
+
+    //submit data in API
+    this.http.post("http://localhost:8080/api/designer/ginSend",formData)
+    .subscribe((response) =>{
+    console.log(response);
+    });
+  }
+
 
 
   downloadFile(id: number, fileName: string) {

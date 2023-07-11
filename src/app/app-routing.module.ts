@@ -54,69 +54,80 @@ import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-se
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 import { ForecastingDashboardComponent } from './forecasting-dashboard/forecasting-dashboard.component';
 import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart.component';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { AuthGuardService } from './auth-guard.service';
+import { RouteResolverService } from './route-resolver.service';
 
 
  
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
-  {path:"home",component:HomeComponent},
+  {path:"home",component:HomeComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
-  {path:"billing",component:BillingComponent},
-  {path:"billingsend",component:BillingSendComponent},
-  {path:"billingview",component:BillingViewComponent},
-  {path:"reports",component:ReportsComponent},
-  {path:"orderreports",component:OrderReportsComponent},
-  {path:"inventory-ad-dash",component: InventoryAdDashComponent},
-  {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent},
-  {path:"inventory-ad-profile",component:InventoryAdProfileComponent},
-  {path:"stock-manager-dash",component:StockManagerDashComponent},
-  {path:"stock-manager-profile",component:StockManagerProfileComponent},
-  {path:"stock-manager-product",component:StockManagerProductComponent},
-  {path:"billingview",component:BillingViewComponent},
-  {path:"registration",component:RegistrationComponent},
-  {path:"system-admin-nav",component:SystemAdminNavComponent},
-  {path:"system-admin-side",component:SystemAdminSideComponent},
-  {path:"system-admin-dash",component:SystemAdminDashComponent},
-  {path:"get-user-details",component:GetUserDetailsComponent},
-  {path:"showroom",component:ShowroomComponent},
-  {path:'designer', component: DesignerComponent },
-  {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent},
-  {path:"get-user",component:GetUserComponent},
-  {path:"stock-keeper-dash",component:StockKeeperDashComponent},
-  {path:"stock-keeper-nav",component:StockKeeperNavComponent},
-  {path:"stock-keeper-profile",component:StockKeeperProfileComponent},
-  {path:"stock-keeper-sidebar",component:StockKeeperSidebarComponent},
-  {path:"gin-reports",component:GINReportsComponent},
-  // {path:"grn-reports",component:GRNReportsComponent},
-  {path:"delete-user",component:DeleteUserComponent},
-  // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent},
-  {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent},
-  {path:"stock-keeper-order-reports-grn",component:StockKeeperOrderReportsGRNComponent},
-  {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService},
-  {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},
-  {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent},
-  {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
-  {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
+  {path:"billing",component:BillingComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"billingsend",component:BillingSendComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"billingview",component:BillingViewComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"reports",component:ReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"orderreports",component:OrderReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"inventory-ad-dash",component: InventoryAdDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"inventory-ad-profile",component:InventoryAdProfileComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"stock-manager-dash",component:StockManagerDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path:"stock-manager-profile",component:StockManagerProfileComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path:"stock-manager-product",component:StockManagerProductComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path:"billingview",component:BillingViewComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"registration",component:RegistrationComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"system-admin-nav",component:SystemAdminNavComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"system-admin-side",component:SystemAdminSideComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"system-admin-dash",component:SystemAdminDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"get-user-details",component:GetUserDetailsComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"showroom",component:ShowroomComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['SHOWROOM_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path: 'designer', component: DesignerComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['DESIGNER'] },resolve: { userRole: RouteResolverService } },
+  {path:"purchase-coordinator-dash",component:PurchaseCoordinatorDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path:"get-user",component:GetUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+
+  {path:"stock-keeper-dash",component:StockKeeperDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"stock-keeper-nav",component:StockKeeperNavComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"stock-keeper-profile",component:StockKeeperProfileComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"stock-keeper-sidebar",component:StockKeeperSidebarComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"gin-reports",component:GINReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"grn-reports",component:GRNReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"delete-user",component:DeleteUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent}
+  {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+ 
+  {path:"stock-keeper-order-reports-grn",component:StockKeeperOrderReportsGRNComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+ 
+ 
+  {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
  
 
-  {path:"generate-GIN",component:GenerateGINComponent},
+  {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+ 
 
-  {path:"generate-GRN",component:GenerateGRNComponent},
+  {path:"generate-GIN",component:GenerateGINComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+
+  {path:"generate-GRN",component:GenerateGRNComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
 
 
-  {path:"get-user",component:GetUserComponent},
-  {path:"update-user/:id",component:UpdateOneUserComponent},
-  {path:"user-update",component:UserUpdateComponent},
-  {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent},
-  {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent},
-  {path:"stock-manager-purchase-order",component:StockManagerPurchaseOrderComponent},
-  {path:"stock-manager-sell-order",component:StockManagerSellOrderComponent},
-  {path:"purchase-coordinator-sell-order",component:PurchaseCoordinatorSellOrderComponent},
-  {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent},
-  {path:"forecasting-dashboard",component:ForecastingDashboardComponent},
-  {path:"forecasting-chart",component:ForecastingChartComponent}
+  {path:"get-user",component:GetUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+ 
+  {path:"update-user/:id",component:UpdateOneUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"user-update",component:UserUpdateComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"stock-manager-purchase-order",component:StockManagerPurchaseOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path:"stock-manager-sell-order",component:StockManagerSellOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path:"purchase-coordinator-sell-order",component:PurchaseCoordinatorSellOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path:"forecasting-dashboard",component:ForecastingDashboardComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"forecasting-chart",component:ForecastingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"unauthorized",component:UnauthorizedComponent}
 
 ];
 
