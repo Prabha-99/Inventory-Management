@@ -66,7 +66,7 @@ const routes: Routes = [
   {path:"home",component:HomeComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
-  {path:"billing",component:BillingComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"billing",component:BillingComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path:"billingsend",component:BillingSendComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
   {path:"billingview",component:BillingViewComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
   {path:"reports",component:ReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
