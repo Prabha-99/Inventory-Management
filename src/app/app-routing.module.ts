@@ -125,8 +125,8 @@ const routes: Routes = [
   {path:"stock-manager-sell-order",component:StockManagerSellOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path:"purchase-coordinator-sell-order",component:PurchaseCoordinatorSellOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
   {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
-  {path:"forecasting-dashboard",component:ForecastingDashboardComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
-  {path:"forecasting-chart",component:ForecastingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"forecasting-dashboard",component:ForecastingDashboardComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','STOCK_MANAGER','PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path:"forecasting-chart",component:ForecastingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','STOCK_MANAGER','PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
   {path:"unauthorized",component:UnauthorizedComponent}
 
 ];
