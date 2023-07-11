@@ -163,7 +163,7 @@ import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart
  
       PurchaseCoordinatorEditComponent,
       GenerateGINComponent,
- 
+      GenerateGRNComponent,
 
       UserUpdateComponent,
 

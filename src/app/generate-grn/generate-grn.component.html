@@ -61,10 +61,19 @@
                               <div class="col-md-6 mb-6">
                                <div class="form-outline mb-4">
                               
-                                <label class="form-label" >Invoice Number</label>
-                                <input type="number" [(ngModel)]="grn.invoice_no" name="invoice_no" style="width:130px; height:32px;text-align:center;"class="form-control">
+                                <!-- <label class="form-label" >Invoice Number</label>
+                                <input type="number" [(ngModel)]="grn.invoice_no" name="invoice_no" style="width:130px; height:32px;text-align:center;"class="form-control"> -->
+
+                                <label class="form-label" >Category Id</label>
+                                <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="grn.category_id"  required>
+                                  <option selected value="" disabled [ngValue]="null">Category Id</option>
+                                  <option value="accessories">Accessories</option>
+                                  <option value="appliances">Appliances</option>
+                                  <option value="melamineboard">Melamine Board</option>
+                                  <option value="edge band">Edge Band</option>
+                                </select>
                                 
-                                <label class="form-label" >Quantity</label>
+                                <label class="form-label" >Ordered Quantity</label>
                                 <input type="number" [(ngModel)]="grn.ordered_quantity" name="ordered_quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
 
                                 <label class="form-label" >Receive Quantity</label>
