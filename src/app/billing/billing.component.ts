@@ -53,9 +53,9 @@ export class BillingComponent implements OnInit{
 
   //cal Total amounts
   calAmount(row: any, index: number) {
-    const product_price =parseInt(row.product_price);
-    const qty = parseInt(row.qty);
-    const discount = parseInt(row.discount);
+    const product_price =parseFloat(row.product_price);
+    const qty = parseFloat(row.qty);
+    const discount = parseFloat(row.discount);
     const amount = (qty*product_price) - ( qty * product_price)*(discount/100);
     this.rows[index].amount = amount;
 
@@ -66,9 +66,9 @@ export class BillingComponent implements OnInit{
    calcTotalDiscount(rows: any[]): number {
     let totalDiscount = 0;
     for (let i = 0; i < rows.length; i++) {
-      const product_price = parseInt(rows[i].product_price);
-      const qty = parseInt(rows[i].qty);
-      const discount = parseInt(rows[i].discount);
+      const product_price = parseFloat(rows[i].product_price);
+      const qty = parseFloat(rows[i].qty);
+      const discount = parseFloat(rows[i].discount);
       const discountAmount = (qty * product_price) * (discount / 100);
       
       totalDiscount += discountAmount;
@@ -81,8 +81,8 @@ export class BillingComponent implements OnInit{
   calSubTotal(rows: any[]): number {
     let subtotal = 0;
     for (let i = 0; i < rows.length; i++) {
-      const product_price = parseInt(rows[i].product_price);
-      const qty = parseInt(rows[i].qty);
+      const product_price = parseFloat(rows[i].product_price);
+      const qty = parseFloat(rows[i].qty);
       const subtotalamount = (qty * product_price);
       
       subtotal += subtotalamount;

@@ -14,8 +14,8 @@
       <div class="container" style="padding-top:80px;">
           <div class="row my-2 mx-1 justify-content-center">
            
-
-      <table  class="table align-middle mb-0 bg-white mt-5 table caption-top">
+<!-- BILL INFORMATION -->
+      <table  class="table align-middle mb-0 bg-white mt-5 table caption-top table-striped table-borderless">
         <caption><h1 class="bg-secondary"style="text-align:center;color:white;"> Bill Information</h1></caption>
         <thead  style="background-color:#222222 ;" class="text-white">
         <tr>
@@ -31,13 +31,11 @@
             <th scope="col"style="text-align:center;">Sub Total</th>
             <th scope="col"style="text-align:center;">Total Amount</th>
             <th scope="col"style="text-align:center;">Notes</th>
-           
-            
-            <th scope="col"></th>
-           
-            
+ 
+            <th scope="col"></th>  
         </tr>
         </thead>
+
         <tbody>
           <tr *ngFor="let bill of bills">
             <td style="text-align:center;">{{ bill.bill_id }}</td>
@@ -48,9 +46,9 @@
             <td style="text-align:center;">{{ bill.cu_address }}</td>
             <td style="text-align:center;">{{ bill.cu_tele }}</td>
             <td style="text-align:center;">{{ bill.other }}</td>
-            <td style="text-align:center;">{{ bill.discount }}</td>
-            <td style="text-align:center;">{{ bill.subtotal }}</td>
-            <td style="text-align:center;">{{ bill.total_amount }}</td>
+            <td style="text-align:center;">Rs.{{ bill.discount}}</td>
+            <td style="text-align:center;">Rs.{{ bill.subtotal}}</td>
+            <td style="text-align:center;">Rs.{{ bill.total_amount}}</td>
             <td style="text-align:center;">{{ bill.note }}</td>
             <td>
               <button (click)="onDelete(bill.bill_id)" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -58,34 +56,37 @@
           </tr>
         </tbody>
       </table>
-      </div>
+    </div>
+  </div>
 
+      <div class="table2" >
+        
 <hr>
-      <div style="padding-bottom:50px; padding-top:10px; text-align:center;">
 
-<table class="table align-middle mb-0 bg-white mt-5 table caption-top">
+<!-- GENERATED PDF LIST -->
+<table class="table align-center mb-0 bg-white mt-5 table caption-top table-striped table-borderless">
   <caption>  <h1 class="bg-secondary"style="text-align:center;color:white;">Generated Bills</h1></caption>
   <thead style="background-color:#222222 ;" class="text-white">
     <tr>
       <th>File id</th>
       <th>File Name</th>
-      <th>Action</th>
-      <th></th>
+      <th>Get File</th>
     </tr>
   </thead>
   <tbody>
+
     <tr *ngFor="let pdf of pdfList">
       <td>{{ pdf.bill_id}}</td>
       <td>{{ pdf.filename }}</td>
+      <td> <button (click)="openPdf(pdf.filename)" class="btn btn-outline-primary btn-sm">Open</button></td>
       <!-- <td><a  [href]="openPdf(pdf.filepath)">file</a></td> -->
-      <td><button (click)="openPdf(pdf.filename)" class="btn btn-outline-primary btn-sm">Open</button></td>
 
     </tr>
   </tbody>
 </table>
-      </div>
-      </div>
-  </div>
-</body>
 
+ </div>  
+</div>
+
+</body>
 </html>
