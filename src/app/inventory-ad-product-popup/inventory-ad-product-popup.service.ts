@@ -14,4 +14,8 @@ export class InventoryAdProductPopupService {
   addProduct(product: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, product);
   }
+
+  getCategory() {
+    return this.http.get<any[]>('http://localhost:8080/api/v1/category/getAllCategory'); //get categories
+  }
 }
