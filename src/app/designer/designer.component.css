@@ -4,23 +4,25 @@ body{
 }
 
 #view{
-
-  width: 1200px;
-  height: 580px;
-  margin-bottom: 10px;
+  width: 1050px;
+  height: 480px;
   margin-left: 150px;
   /*background-color: rgb(145, 179, 187)*/
 }
 
-.billsend{
-  /*background-color: blue;*/
-  width: 60%;
+#GIN{
+  width: 1050px;
+  height: 480px;
+  margin-left: 10px;
+
 }
+
+
 
 #upload{
   float: right;
   /*background-color: blueviolet;*/
-  margin-right: 70px;
+  margin-right: 30px;
   margin-top: 60px;
 }
 

@@ -14,6 +14,7 @@ export class ForecastingChartComponent implements OnInit {
   selectedCategory = '';
   selectedStatus = '';
   selectedChartType = 'line';
+  
   myChart: Chart<"line" | "bar" | "pie", number[] | undefined, string> | undefined;
 
   data:{ content: [ { id: number, purchase_year: number, purchase_month: number, total: number } ] } | undefined;
@@ -55,8 +56,20 @@ export class ForecastingChartComponent implements OnInit {
       options: {
         scales: {
           y: {
+            display: this.selectedChartType !== 'pie', // Hide Y-axis for non-pie charts
             beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Quantity' // Y-axis label
+            }
           },
+          x: {
+            display: this.selectedChartType !== 'pie', // Hide X-axis for non-pie charts
+            title: {
+              display: true,
+              text: 'Month' // X-axis label
+            }
+          }
         },
       },
     });

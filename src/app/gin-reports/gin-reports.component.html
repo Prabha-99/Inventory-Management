@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-2">
-            <app-sidebar></app-sidebar>
+            <app-inventory-ad-side-bar></app-inventory-ad-side-bar>
         </div>
         <div class="col-10">
         
@@ -41,6 +41,8 @@
                 <td>{{ file.date }}</td>
                 <td>
                     <button type="button" class="btn btn-outline-warning" (click)="downloadFile(file.report_id, file.fileName)">Download</button>
+                    <!-- <button (click)="download()">Download File</button> -->
+
                 </td>
                 </tr>
             </tbody>

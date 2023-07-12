@@ -59,6 +59,7 @@ import { GetUserComponent } from './get-user/get-user.component';
 import { DesignerComponent } from './designer/designer.component';
 
 
+
 // import { OrderComponent } from './order/order.component';
 
 
@@ -96,6 +97,7 @@ import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-se
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 import { ForecastingDashboardComponent } from './forecasting-dashboard/forecasting-dashboard.component';
 import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart.component';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 
 
@@ -156,11 +158,12 @@ import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart
     DeleteUserComponent,
       StockKeeperOrderReportsComponent,
       StockKeeperOrderReportsGRNComponent,
-
+    StockKeeperOrderReportsComponent,
+    StockKeeperOrderReportsGRNComponent,
     StockManagerEditComponent,
 
     DeleteUserComponent,
- 
+
       PurchaseCoordinatorEditComponent,
       GenerateGINComponent,
       GenerateGRNComponent,
@@ -182,7 +185,8 @@ import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart
       PurchaseCoordinatorPurchaseOrderComponent,
       ForecastingDashboardComponent,
       ForecastingChartComponent,
-      DesignerComponent
+      DesignerComponent,
+      UnauthorizedComponent
 
 
   ],

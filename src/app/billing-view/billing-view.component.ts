@@ -1,7 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BillService } from './billing-view.component.service';
-import { Observable } from 'rxjs';
-import { HttpResponse } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 
@@ -39,19 +37,8 @@ export class BillingViewComponent implements OnInit{
 
     this.loadPdfList();
 
-    
+   
   }
-
-  // openPdf(filename: string): void {
-  //   this.billService.getPdf(filename).subscribe(response => {
-  //     const blob = new Blob([response.statusText], { type: 'application/pdf' });
-  //     const url = window.URL.createObjectURL(blob);
-  //     const link = document.createElement('a');
-  //     link.href = url;
-  //     link.download = filename;
-  //     link.click();
-  //   });
-  // }
 
   openPdf(filename: string): void {
     this.billService.getPdf(filename).subscribe(response => {
@@ -113,18 +100,6 @@ export class BillingViewComponent implements OnInit{
       }
     );
   }
-
-
-
-
-
-  //  openPdf(filepath) {
-  //   // Construct the file URL using the filepath
-  //   const fileURL = `file://${filepath}`;
-  
-  //   // Open the PDF file in a new window/tab
-  //   window.open(fileURL, '_blank');
-  // }
 
 }
 
