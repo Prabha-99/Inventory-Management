@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InventoryAdProductPopupService } from './inventory-ad-product-popup.service';
 
 @Component({
@@ -6,7 +6,8 @@ import { InventoryAdProductPopupService } from './inventory-ad-product-popup.ser
   templateUrl: './inventory-ad-product-popup.component.html',
   styleUrls: ['./inventory-ad-product-popup.component.css']
 })
-export class InventoryAdProductPopupComponent {
+export class InventoryAdProductPopupComponent implements OnInit{
+  categories: any[] = [];
   product: any = {
 
     category_id: '',
@@ -19,6 +20,12 @@ export class InventoryAdProductPopupComponent {
   disableQuantityField = true;
 
   constructor(private inventoryAdProductPopupService: InventoryAdProductPopupService) {}
+  
+  ngOnInit(): void {
+    this.inventoryAdProductPopupService.getCategory().subscribe(category => {
+      this.categories = category;
+  });
+  }
 
   updateQuantityField() {
     this.disableQuantityField = this.product.category_id !== "c1";
