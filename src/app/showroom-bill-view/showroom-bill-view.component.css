@@ -1,0 +1,18 @@
+#upload{
+  float: right;
+
+  width: 450px;
+  height: 100px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+}
+
+ body{
+  background-color: rgb(208, 195, 224);
+ }
+
+.list-view{
+  /*background-color: blue;*/
+  width: 990px;
+  float:right;
+}
