@@ -20,7 +20,7 @@ export class InventoryAdProductPopupComponent implements OnInit{
   disableQuantityField = true;
 
   constructor(private inventoryAdProductPopupService: InventoryAdProductPopupService) {}
-  
+
   ngOnInit(): void {
     this.inventoryAdProductPopupService.getCategory().subscribe(category => {
       this.categories = category;
@@ -28,7 +28,7 @@ export class InventoryAdProductPopupComponent implements OnInit{
   }
 
   updateQuantityField() {
-    this.disableQuantityField = this.product.category_id !== "c1";
+    this.disableQuantityField = this.product.category_id !== "cat_staron";
   }
 
   addProduct() {
