@@ -201,7 +201,7 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
       DesigerViewFilesComponent,
       DesignerDeQuantityComponent,
       DesignerBillSendComponent,
-      DesignerSendGINComponent
+      DesignerSendGINComponent,
 
       UnauthorizedComponent
 
