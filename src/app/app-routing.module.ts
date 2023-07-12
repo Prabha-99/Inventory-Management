@@ -44,12 +44,12 @@ import { PurchaseCoordinatorSideComponent } from './purchase-coordinator-side/pu
 import { PurchaseCoordinatorNavComponent } from './purchase-coordinator-nav/purchase-coordinator-nav.component';
 import { PurchaseCoordinatorProductComponent } from './purchase-coordinator-product/purchase-coordinator-product.component';
 import { PurchaseCoordinatorProfileComponent } from './purchase-coordinator-profile/purchase-coordinator-profile.component';
- 
+
 import { StockKeeperOrderReportsGRNComponent } from './stock-keeper-order-reports-grn/stock-keeper-order-reports-grn.component';
 import { GenerateGINComponent } from './generate-gin/generate-gin.component';
 
 import { GenerateGRNComponent } from './generate-grn/generate-grn.component';
- 
+
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { InventoryAdSellOrderComponent } from './inventory-ad-sell-order/inventory-ad-sell-order.component';
 import { InventoryAdPurchaseOrderComponent } from './inventory-ad-purchase-order/inventory-ad-purchase-order.component';
@@ -59,9 +59,12 @@ import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-se
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 import { ForecastingDashboardComponent } from './forecasting-dashboard/forecasting-dashboard.component';
 import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart.component';
-
-
- 
+import { DesigerViewFilesComponent } from './desiger-view-files/desiger-view-files.component';
+import { DesignerDashComponent } from './designer-dash/designer-dash.component';
+import { DesignerSideBarComponent } from './designer-side-bar/designer-side-bar.component';
+import { DesignerDeQuantityComponent } from './designer-de-quantity/designer-de-quantity.component';
+import { DesignerBillSendComponent } from './designer-bill-send/designer-bill-send.component';
+import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -99,18 +102,18 @@ const routes: Routes = [
   {path:"delete-user",component:DeleteUserComponent},
   // {path:"stock-keeper-order-reports-component",component:StockKeeperOrderReportsComponentComponent}
   {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent},
- 
+
   {path:"stock-keeper-order-reports-grn",component:StockKeeperOrderReportsGRNComponent},
- 
- 
+
+
   {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService},
- 
+
 
   {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent},
   {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent},
   {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent},
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent},
- 
+
 
   {path:"generate-GIN",component:GenerateGINComponent},
 
@@ -118,7 +121,7 @@ const routes: Routes = [
 
 
   {path:"get-user",component:GetUserComponent},
- 
+
   {path:"update-user/:id",component:UpdateOneUserComponent},
   {path:"user-update",component:UserUpdateComponent},
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent},
@@ -128,7 +131,14 @@ const routes: Routes = [
   {path:"purchase-coordinator-sell-order",component:PurchaseCoordinatorSellOrderComponent},
   {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent},
   {path:"forecasting-dashboard",component:ForecastingDashboardComponent},
-  {path:"forecasting-chart",component:ForecastingChartComponent}
+  {path:"forecasting-chart",component:ForecastingChartComponent},
+  {path:"desiger-view-files",component:DesigerViewFilesComponent},
+  {path: "designer-dash",component:DesignerDashComponent},
+  {path: "designer-side-bar",component:DesignerSideBarComponent},
+  {path: "designer-de-quantity",component:DesignerDeQuantityComponent},
+  {path: "designer-bill-send",component:DesignerBillSendComponent},
+  {path: "designer-send-gin",component:DesignerSendGINComponent}
+
 
 ];
 

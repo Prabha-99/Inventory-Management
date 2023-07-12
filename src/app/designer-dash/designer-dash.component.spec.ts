@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesignerComponent } from './designer.component';
+import { DesignerDashComponent } from './designer-dash.component';
 
-describe('DesignerComponent', () => {
-  let component: DesignerComponent;
-  let fixture: ComponentFixture<DesignerComponent>;
+describe('DesignerDashComponent', () => {
+  let component: DesignerDashComponent;
+  let fixture: ComponentFixture<DesignerDashComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DesignerComponent ]
+      declarations: [ DesignerDashComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DesignerComponent);
+    fixture = TestBed.createComponent(DesignerDashComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container" style="padding-top: 120px;">
+  <app-navbar></app-navbar>
+  <app-designer-side-bar></app-designer-side-bar>
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th><b>ID</b></th>
+            <th><b>Name</b></th>
+            <th><b>Download</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let file of files">
+            <td>{{ file.id }}</td>
+            <td>{{ file.name }}</td>
+            <td>
+              <button (click)="downloadFile(file.id, file.name)" class="btn btn-outline-success">Download</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>
+
+
+
