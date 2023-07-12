@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container" style="padding-top: 20px;">
+      <app-navbar></app-navbar>
+      <app-designer-side-bar></app-designer-side-bar>
+
+    <div id="view">
+        <img src="assets/PM.jpeg" alt="logo" style="
+          width: 440px; height: 360px; margin-left: 30px; margin-top:120px;">
+    </div>
+        <div id="upload">
+          <h2 style="color: rgb(19, 39, 129);"><b>Upload Bill</b></h2>
+
+          <div>
+            <label for="formFileLg" class="form-label" style="font-size:20px;"><b>File:</b></label>
+            <br>
+            <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="billSend($event)">
+          </div>
+          <br>
+
+          <div style="text-align: right;" >
+            <button type="button" class="btn btn-primary" (click)="uploadBill()">Send Bill</button>
+          </div>
+       </div>
+    </div>
+</body>
+</html>
+
+
