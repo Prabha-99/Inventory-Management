@@ -12,18 +12,22 @@
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
     <button (click)="toggleFileList()" class="btn btn-warning">View Files</button>
+    <button (click)="toggleProductManagement()" class="btn btn-warning">Deduct Quantity</button>
     <a routerLink="/billing">
-      <button (click)="toggleFileList()" class="btn btn-warning">Create Bill</button>
+      <button class="btn btn-warning">Create Bill</button>
     </a>
-    <button (click)="toggleFileUpload()" class="btn btn-warning">Send</button>
+    <button (click)="toggleFileUpload()" class="btn btn-warning">Send Bill</button>
+    <a routerLink="/reports">
+      <button class="btn btn-warning">Create GIN</button>
+    </a>
+    <button (click)="toggleGinUpload()" class="btn btn-warning">Send GIN</button>
     </div>
 
     <div id="view">
     <div *ngIf="showFileUpload">
 
-
       <img src="assets/PM.jpeg" alt="logo" style="
-        width: 550px; height: 400px; margin-left: 100px; margin-top: 20px;
+        width: 480px; height: 360px; margin-left: 60px; margin-top: 20px;
         ">
       <div id="upload">
       <h2 style="color: rgb(19, 39, 129);"><b>Upload Bill</b></h2>
@@ -37,8 +41,56 @@
         <button type="button" class="btn btn-primary" (click)="uploadBill()">Send Bill</button>
        </div>
        </div>
+
     </div>
 
+    <div id="GIN">
+      <div *ngIf="showGinUpload">
+
+        <img src="assets/PM.jpeg" alt="logo" style="
+          width: 480px; height: 360px; margin-left: 60px; margin-top: 20px;
+          ">
+        <div id="upload">
+        <h2 style="color: rgb(19, 39, 129);"><b>Upload GIN</b></h2>
+        <div>
+          <label for="formFileLg" class="form-label" style="font-size:20px;"><b>File:</b></label>
+          <br>
+          <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="ginSend($event)">
+        </div>
+        <br>
+         <div style="text-align: right;" >
+          <button type="button" class="btn btn-primary" (click)="uploadGIN()">Send GIN</button>
+         </div>
+         </div>
+
+      </div>
+
+    <div *ngIf="showProductManagement">
+
+      <h2>Deduct Quantity</h2>
+      <br>
+      <hr/>
+
+      <div class="container px-2 text-center">
+
+      <div class="row gx-3">
+        <div class="col">
+          <div class="p-1"><label for="productID">Product ID:</label></div>
+          <div class="p-1"><input type="number" id="productID" [(ngModel)]="product.product_id" /></div>
+        </div>
+
+        <div class="col">
+          <div class="p-1"><label for="quantityToDeduct">Quantity to Deduct:</label></div>
+            <div class="p-1"><input type="number" id="quantityToDeduct" [(ngModel)]="product.product_quantity" /></div>
+        </div>
+        <div class="col">
+              <div class="p-3"><button (click)="deductProduct()" class="btn btn-outline-success">Deduct Product</button></div>
+        </div>
+        </div>
+
+      </div>
+
+    </div>
 
 
     <div *ngIf="showFileList">
@@ -65,6 +117,7 @@
   </div>
 </div>
 
+</div>
 </body>
 </html>
 
