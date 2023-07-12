@@ -97,12 +97,16 @@ import { PurchaseCoordinatorSellOrderComponent } from './purchase-coordinator-se
 import { PurchaseCoordinatorPurchaseOrderComponent } from './purchase-coordinator-purchase-order/purchase-coordinator-purchase-order.component';
 import { ForecastingDashboardComponent } from './forecasting-dashboard/forecasting-dashboard.component';
 import { ForecastingChartComponent } from './forecasting-chart/forecasting-chart.component';
+
 import { DesignerDashComponent } from './designer-dash/designer-dash.component';
 import { DesignerSideBarComponent } from './designer-side-bar/designer-side-bar.component';
 import { DesigerViewFilesComponent } from './desiger-view-files/desiger-view-files.component';
 import { DesignerDeQuantityComponent } from './designer-de-quantity/designer-de-quantity.component';
 import { DesignerBillSendComponent } from './designer-bill-send/designer-bill-send.component';
 import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.component';
+
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+
 
 
 
@@ -163,7 +167,8 @@ import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.
     DeleteUserComponent,
       StockKeeperOrderReportsComponent,
       StockKeeperOrderReportsGRNComponent,
-
+    StockKeeperOrderReportsComponent,
+    StockKeeperOrderReportsGRNComponent,
     StockManagerEditComponent,
 
     DeleteUserComponent,
@@ -190,12 +195,16 @@ import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.
       ForecastingDashboardComponent,
       ForecastingChartComponent,
       DesignerComponent,
+
       DesignerDashComponent,
       DesignerSideBarComponent,
       DesigerViewFilesComponent,
       DesignerDeQuantityComponent,
       DesignerBillSendComponent,
       DesignerSendGINComponent
+
+      UnauthorizedComponent
+
 
 
   ],

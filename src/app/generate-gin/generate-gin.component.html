@@ -38,7 +38,7 @@
                               </div>
                           
                           <!-- User Name -->
-                          <div class="form-outline mb-4">
+                          <div class="form-outline mb-4" >
                           <label class="form-label" >Contact Number</label>
                           <input type="text" name="contact_nu"  class="form-control"[(ngModel)]="gin.contact_nu" required/>
                           <div *ngIf="tele_error" class="error-message">{{ tele_error }}</div>
@@ -48,22 +48,32 @@
                           
                             
                             <div class="form-outline mb-4">
-                                <label class="form-label" >Date</label>
+                                <label class="form-label" >Date
                                 <input type="date" class="form-control"name="date"[(ngModel)]="gin.date" required/>
-                                
+                              </label>
                             </div>
 
                             <div class="row">
                               <div class="col-md-6 mb-6">
                                <div class="form-outline mb-4">
                               
-                                <label class="form-label" >Invoice Number</label>
-                                <input type="number" [(ngModel)]="gin.invoice_no" name="invoice_no" style="width:130px; height:32px;text-align:center;"class="form-control">
+                                <!-- <label class="form-label" >Category Id</label>
+                                <input type="number" [(ngModel)]="gin.invoice_no" name="invoice_no" style="width:130px; height:32px;text-align:center;"class="form-control"> -->
+
+                                <label class="form-label" >Category Id</label>
+                                <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="gin.category_id"  required>
+                                  <option selected value="" disabled [ngValue]="null">Category Id</option>
+                                  <option value="accessories">Accessories</option>
+                                  <option value="appliances">Appliances</option>
+                                  <option value="edge band">Staron</option>
+                                  <option value="melamineboard">Melamine Board</option>
+                                  <option value="edge band">Edge Band</option>
+                                </select>
                                 
-                                <label class="form-label" >Quantity</label>
+                                <label class="form-label" >Invoiced Quantity</label>
                                 <input type="number" [(ngModel)]="gin.invoiced_quantity" name="invoiced_quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
 
-                                <label class="form-label" >Issue Quantity</label>
+                                <label class="form-label" >Issued Quantity</label>
                                 <input type="text" name="issued_quantity"  class="form-control"[(ngModel)]="gin.issued_quantity" required/>
                               </div>
                             </div>
