@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PurchaseCoordinatorProductPopupService } from './purchase-coordinator-product-popup.service';
 
 
@@ -7,7 +7,9 @@ import { PurchaseCoordinatorProductPopupService } from './purchase-coordinator-p
   templateUrl: './purchase-coordinator-product-popup.component.html',
   styleUrls: ['./purchase-coordinator-product-popup.component.css']
 })
-export class PurchaseCoordinatorProductPopupComponent {
+export class PurchaseCoordinatorProductPopupComponent implements OnInit{
+
+  categories: any[] = [];
   product: any = {
 
     category_id: '',
@@ -18,6 +20,16 @@ export class PurchaseCoordinatorProductPopupComponent {
   };
 
   constructor(private  purchaseCoordinatorProductPopupService: PurchaseCoordinatorProductPopupService) {}
+
+  ngOnInit(): void {
+    this.purchaseCoordinatorProductPopupService.getCategory().subscribe(category => {
+      this.categories = category;
+  });
+  }
+
+  filterCategories(category: any): boolean {
+    return category.category_id === 'cat_accessories' || category.category_id === 'cat_appliances';
+  }
 
   addProduct() {
 
