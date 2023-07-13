@@ -1,4 +1,14 @@
-<!--Designer Sidebar-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Off Canvas -->
+
 <div class="offcanvas offcanvas-start sidebar-nav bg-dark"  tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
@@ -10,60 +20,79 @@
       <ul class="navbar-nav">
         <li>
           <div class="text-muted small fw-bold text-uppercase px-3">
-
           </div>
         </li>
+
         <li>
-          <a routerLink="/designer-dash" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
-            <span class="me-5">
+          <a routerLink="/designer-dash" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-house-door-fill"></i>
+
             </span>
-            <span><h4> Dashboard</h4></span>
+            <span style="font-size: 15px">HOME</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/desiger-view-files" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-file-earmark-bar-graph"></i>
+            </span>
+            <span style="font-size: 15px">View Files</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/designer-de-quantity" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-people-fill"></i>
+            </span>
+            <span style="font-size: 15px">Deduct Quantity</span>
+
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/billing" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-people-fill"></i>
+            </span>
+            <span style="font-size: 15px">Create Bill</span>
+
           </a>
         </li>
         <li>
-          <a routerLink="/desiger-view-files" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
-            <span class="me-5">
+          <a routerLink="/designer-bill-send" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-people-fill"></i>
             </span>
-            <span><h4> View Showroom Files</h4></span>
+            <span style="font-size: 15px">Send Bill</span>
           </a>
         </li>
         <li>
-          <a routerLink="/designer-de-quantity" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
-            <span class="me-5">
+          <a routerLink="/reports" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-people-fill"></i>
             </span>
-            <span><h4> Deduct Quantity</h4></span>
+            <span style="font-size: 15px">Create GIN</span>
           </a>
         </li>
         <li>
-          <a routerLink='/billing' class="nav-link px-3 active " data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
-            <span class="me-5">
+          <a routerLink="/designer-send-gin" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-people-fill"></i>
+
             </span>
-            <span><h4>Create Bill</h4></span>
-          </a>
-        </li>
-        <li>
-          <a routerLink='/designer-bill-send' class="nav-link px-3 active " data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
-            <span class="me-5">
-            </span>
-            <span><h4>Send Bill</h4></span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/reports" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
-            <span class="me-5">
-            </span>
-            <span><h4>Create GIN</h4></span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/designer-send-gin" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
-            <span class="me-5">
-            </span>
-            <span><h4>Send GIN</h4></span>
+            <span style="font-size: 15px">Send GIN</span>
           </a>
         </li>
       </ul>
     </div>
+
+
   </div>
 </div>
+<!-- Off canvas Ends -->
+</body>
+</html>
 
