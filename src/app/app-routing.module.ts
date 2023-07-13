@@ -159,7 +159,7 @@ const routes: Routes = [
   {path: "designer-side-bar",component:DesignerSideBarComponent},
   {path: "designer-de-quantity",component:DesignerDeQuantityComponent},
   {path: "designer-bill-send",component:DesignerBillSendComponent},
-  {path: "designer-send-gin",component:DesignerSendGINComponent}
+  {path: "designer-send-gin",component:DesignerSendGINComponent},
 
 
   {path:"get-user",component:GetUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
