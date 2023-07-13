@@ -8,13 +8,8 @@
 
   <div class="container" style="padding-top: 150px;">
 
-    <app-sidebar></app-sidebar>
+    <app-showroom-side-bar></app-showroom-side-bar>
     <app-navbar></app-navbar>
-
-     <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
-      <button (click)="toggleFileList()" class="btn btn-warning">View Bills</button>
-      <button (click)="toggleFileUpload()" class="btn btn-warning">Send File</button>
-     </div>
 
      <div class="list-view">
      <div *ngIf="showFileList">
