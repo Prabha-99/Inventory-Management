@@ -46,11 +46,12 @@ submit() {
     (response) => {
       console.log('GRN added successfully',response);
       // Reset the form
-        alert('GRN Added Successfully!!')
+        alert('GRN created successfully!!')
       this.reset();
     },
     (error) => {
-      console.error('Failed to add GRN', error);
+      console.error('Failed to create GRN', error);
+      alert('Failed to create GRN');
     }
   );
 
