@@ -13,7 +13,7 @@ export class GenerateGINComponent {
     contact_nu:'',
     customer_name:'',
     date:null,
-    categoty_id:null,
+    category_id:null,
     invoiced_quantity:null,
     issued_quantity:null,
     item_description:'',
@@ -46,13 +46,13 @@ submit() {
   this.generateGINService.submit(this.gin).subscribe(
     (response) => {
       console.log('GIN added successfully',response);
-      alert('GIN added successfully');
+      alert('GIN created successfully');
       // Reset the form
       this.reset();
     },
     (error) => {
       console.error('GIN added Fail!',error);
-      alert('Failed to add product:');
+      alert('Failed to create GIN');
     }
   );
 

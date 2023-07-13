@@ -27,13 +27,13 @@
                                   <input type="text" name="customer_name"  class="form-control"[(ngModel)]="gin.customer_name" required/>
                                   
                                   </div>
-                                  <div class="col-md-6 mb-6">
-                                    <div class="form-outline">
+                                  <!-- <div class="col-md-6 mb-6"> -->
+                                    <div class="form-outline mb-4">
                                       <label class="form-label" >Address</label>
                                       <input type="text"name="address" class="form-control"[(ngModel)]="gin.address" required/>
                                       
                                     </div>
-                                  </div>
+                                  <!-- </div> -->
                                   
                               </div>
                           
@@ -46,14 +46,18 @@
                           </div>
 
                           
-                            
+                          <div class="row">
+                            <div class="col-md-6 mb-6">
+                             <div class="form-outline mb-4">  
                             <div class="form-outline mb-4">
                                 <label class="form-label" >Date
                                 <input type="date" class="form-control"name="date"[(ngModel)]="gin.date" required/>
                               </label>
                             </div>
+                            </div>
+                            </div>
 
-                            <div class="row">
+                             
                               <div class="col-md-6 mb-6">
                                <div class="form-outline mb-4">
                               
@@ -62,7 +66,7 @@
 
                                 <label class="form-label" >Category Id</label>
                                 <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="gin.category_id"  required>
-                                  <option selected value="" disabled [ngValue]="null">Category Id</option>
+                                  <option selected value="Accessories" disabled [ngValue]="null"> </option>
                                   <option value="accessories">Accessories</option>
                                   <option value="appliances">Appliances</option>
                                   <option value="edge band">Staron</option>
