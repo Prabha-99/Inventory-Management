@@ -106,6 +106,10 @@ import { DesignerBillSendComponent } from './designer-bill-send/designer-bill-se
 import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.component';
 
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
+import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
+import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
+import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-file.component';
 
 
 
@@ -203,7 +207,11 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
       DesignerBillSendComponent,
       DesignerSendGINComponent,
 
-      UnauthorizedComponent
+      UnauthorizedComponent,
+        ShowroomDashComponent,
+        ShowroomSideBarComponent,
+        ShowroomBillViewComponent,
+        ShowroomSendFileComponent
 
 
 

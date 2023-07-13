@@ -115,6 +115,7 @@ export class BillingComponent implements OnInit{
       this.product_price = price;
     });
 
+
   }
 
   // onProductNameSelect() {
@@ -179,13 +180,21 @@ formData = {
   cu_address: '',
   cu_tele: '',
   other: '',
-  total_amount:this.calculateTotalAmount(),
+  total_amount:'',
   discount:'',
   subtotal:'',
   note:'',
-
 };
 
+
+
+updateFormData(field: string, value: number) {
+  const tempValue = value;
+  this.formData = {
+    ...this.formData,
+    [field]: tempValue
+  };
+}
 
 //error handling
 emailerror='';

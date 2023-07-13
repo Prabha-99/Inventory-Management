@@ -63,13 +63,17 @@ import { DesignerSideBarComponent } from './designer-side-bar/designer-side-bar.
 import { DesignerDeQuantityComponent } from './designer-de-quantity/designer-de-quantity.component';
 import { DesignerBillSendComponent } from './designer-bill-send/designer-bill-send.component';
 import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.component';
+import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
+import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
+import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
+import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-file.component';
 
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
 
 
- 
+
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -122,18 +126,18 @@ const routes: Routes = [
 
 
   {path:"stock-keeper-order-reports",component:StockKeeperOrderReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
- 
+
   {path:"stock-keeper-order-reports-grn",component:StockKeeperOrderReportsGRNComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
- 
- 
+
+
   {path:"stock-keeper-order-reports-grn",component:StockKeeperGRNService, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
- 
+
 
   {path:"purchase-coordinator-side",component:PurchaseCoordinatorSideComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
   {path:"purchase-coordinator-nav",component:PurchaseCoordinatorNavComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
   {path:"purchase-coordinator-product",component:PurchaseCoordinatorProductComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
   {path:"purchase-coordinator-profile",component:PurchaseCoordinatorProfileComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
- 
+
 
 
   {path:"generate-GIN",component:GenerateGINComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
@@ -163,7 +167,7 @@ const routes: Routes = [
 
 
   {path:"get-user",component:GetUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
- 
+
   {path:"update-user/:id",component:UpdateOneUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"user-update",component:UserUpdateComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
@@ -174,7 +178,11 @@ const routes: Routes = [
   {path:"purchase-coordinator-purchase-order",component:PurchaseCoordinatorPurchaseOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
   {path:"forecasting-dashboard",component:ForecastingDashboardComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','STOCK_MANAGER','PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
   {path:"forecasting-chart",component:ForecastingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','STOCK_MANAGER','PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
-  {path:"unauthorized",component:UnauthorizedComponent}
+  {path:"unauthorized",component:UnauthorizedComponent},
+  {path: "showroom-dash",component:ShowroomDashComponent},
+  {path: "showroom-side-bar",component:ShowroomSideBarComponent},
+  {path: "showroom-bill-view",component:ShowroomBillViewComponent},
+  {path: "showroom-send-file",component:ShowroomSendFileComponent}
 
 
 ];

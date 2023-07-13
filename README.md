@@ -32,7 +32,7 @@ The Web-Based Inventory Management System is a comprehensive solution for managi
 
 
 <figure>
-  <img src="/src/assets/PM.jpeg" alt="Project Logo" width="640" height="478" />
+  <img src="/src/assets/" alt="Project Logo" width="640" height="478" />
   <figcaption>Login_Page</figcaption>
 </figure>
 
