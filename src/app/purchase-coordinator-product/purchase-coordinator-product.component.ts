@@ -29,7 +29,7 @@ export class PurchaseCoordinatorProductComponent implements OnInit{
   filterProducts() {
     this.filteredProducts = this.products.filter(product => {
       // Filter products based on category_id
-      return product.category_id === 'c4' || product.category_id === 'c5';
+      return product.category_id === 'cat_accessories' || product.category_id === 'cat_appliances';
     });
   }
 
