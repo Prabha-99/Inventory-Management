@@ -59,7 +59,7 @@ isValidEmailsend(to: any): boolean {
       this.emailerror='';
     
    
-      this.http.post('http://localhost:8080/api/mail/send', this.formData).subscribe(
+      this.http.post('http://localhost:8080/api/billmail/send', this.formData).subscribe(
         (response) => {
      
           window.alert('Email sent successfully!');

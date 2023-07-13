@@ -61,7 +61,7 @@ export class BillingViewComponent implements OnInit{
 
 
       }, () => {
-        alert("Bill Deleted Successfully!"); // Display error message
+        alert("Bill Deleted Successfully!"); // Display success message
         location.reload();
       });
     }
@@ -81,7 +81,7 @@ export class BillingViewComponent implements OnInit{
 
 
       }, () => {
-        alert("Bill Deleted Successfully!"); // Display error message
+        alert("Bill Deleted Successfully!"); // Display success message
         location.reload();
       });
     }
@@ -101,9 +101,22 @@ export class BillingViewComponent implements OnInit{
     );
   }
 
+
+  onSend(bill_id: number) {
+    if (confirm("Are you sure you want to Send this bill?")) {
+
+      this.billService.sendBillPdfByEmail(bill_id).subscribe(() => {
+        this.bills = this.bills.filter(bill => bill.id !== bill_id);
+        alert("Bill Send Successfully!"); 
+
+      }, () => {
+        alert("Bill Send Fail!"); 
+      });
+    }
+
+  }
+
 }
-
-
 
 
 

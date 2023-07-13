@@ -49,13 +49,12 @@ getPdf(filename: string): Observable<any> {
   return this.http.get(`${this.getpdfUrl}/${filename}`, { responseType: 'arraybuffer' });
 }
 
-// getPdf(filename: string): Observable<HttpResponse<Blob>> {
-//   const headers = new HttpHeaders().set('Content-Type', 'application/pdf');
-//   return this.http.get<Blob>(`${this.getpdfUrl}/${filename}`, {
-//     headers,
-//     observe: 'response',
-//     responseType: 'blob' as 'json' // specify the expected response type as a blob
-//   });
-// }
+private sendUrl='http://localhost:8080/api/billmail';
+
+sendBillPdfByEmail(bill_id: number) {
+  return this.http.post(`${this.sendUrl}/send/${bill_id}`, null, { responseType: 'text' });
+}
+
+
 
   }
