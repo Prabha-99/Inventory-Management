@@ -222,16 +222,15 @@
            <br><br>
            
          </div>  
-            
             <ul>
             <div class ="cols btn-group" >
             <li><button type="button" (click)="addRow()" class="btn btn-outline-secondary " >Add Row</button></li>
             <li><button (click)="confirmRefresh()" type="button" class="btn btn-outline-secondary "> Reset </button></li>
 
            <li><button class="btn btn-warning margin-left"  printSectionId="print-section" [useExistingCss]="true" id="export" ngxPrint >Export</button></li> 
-            <li><button  class="btn btn-secondary margin-left" (click)="onSubmit()" >Save Details</button></li> 
-             <li> <button class="btn btn-primary margin-left"id="view" (click)="Billingview()">View</button></li> 
-             <li> <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Mail</button></li> 
+            <li><button  class="btn btn-secondary margin-left" (click)="onSubmit()" >Save </button></li> 
+             <li> <button class="btn btn-primary margin-left"id="view" (click)="Billingview()">View & Send</button></li> 
+             <!-- <li> <button class="btn btn-secondary margin-left"id="send" (click)="Billingsend()">Mail</button></li>  -->
            <!-- <button  class="btn btn-outline-secondary margin-left" (click)="exportToPDF()">Save PDF</button> -->
         
             </div></ul>
