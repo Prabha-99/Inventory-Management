@@ -13,7 +13,7 @@ export class GenerateGINComponent {
     contact_nu:'',
     customer_name:'',
     date:null,
-    invoice_no:null,
+    categoty_id:null,
     invoiced_quantity:null,
     issued_quantity:null,
     item_description:'',
@@ -59,7 +59,7 @@ submit() {
 }
 
 isValidFormData(): boolean {
-  return !!this.gin.address && !!this.gin.contact_nu && !!this.gin.customer_name && !!this.gin. date && !!this.gin. invoice_no
+  return !!this.gin.address && !!this.gin.contact_nu && !!this.gin.customer_name && !!this.gin. date && !!this.gin.category_id
   && !!this.gin.invoiced_quantity && !!this.gin.issued_quantity ;
 }
 
@@ -83,7 +83,7 @@ reset() {
     contact_nu:'',
     customer_name:'',
     date:null,
-    invoice_no:null,
+    category_id:null,
     invoiced_quantity:null,
     issued_quantity:null,
     item_description:'',
