@@ -66,7 +66,7 @@
 
                                 <label class="form-label" >Category Id</label>
                                 <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="grn.category_id"  required>
-                                  <option selected value="" disabled [ngValue]="null">Category Id</option>
+                                  <option selected value="Select category" disabled [ngValue]="null">Category Id</option>
                                   <option value="accessories">Accessories</option>
                                   <option value="appliances">Appliances</option>
                                   <option value="staron">Staron</option>
@@ -81,7 +81,7 @@
                              <div class="form-outline ">
 
                                 <label class="form-label" >Ordered Quantity</label>
-                                <input type="text" name="Ordered_quantity"  class="form-control"[(ngModel)]="grn.Ordered_quantity" required/>
+                                <input type="text" name="Ordered_quantity"  class="form-control"[(ngModel)]="grn.ordered_quantity" required/>
                               </div>
                             </div>
                            
