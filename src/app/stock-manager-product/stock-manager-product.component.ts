@@ -28,7 +28,7 @@ export class StockManagerProductComponent implements OnInit {
   filterProducts() {
     this.filteredProducts = this.products.filter(product => {
       // Filter products based on category_id
-      return product.category_id === 'c2' || product.category_id === 'c3';
+      return product.category_id === 'cat_edge' || product.category_id === 'cat_melamine';
     });
   }
 
