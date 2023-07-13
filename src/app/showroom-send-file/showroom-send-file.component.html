@@ -17,10 +17,13 @@
      <div id="upload">
         <h2 style="color: rgb(19, 39, 129);"><b>Upload File</b></h2>
 
+
       <div>
         <label for="formFileLg" class="form-label" style="font-size:20px;"><b>File:</b></label>
         <br>
+        <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="getFile($event)" required>
       </div>
+
 
       <br>
        <div style="text-align: right;" >
