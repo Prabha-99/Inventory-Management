@@ -20,14 +20,9 @@
           <button mat-raised-button (click)=" openAddEditProductForm(null,'add')" class="btn btn-dark float-right">Add Product</button>
             <br><br>
           <!--Search bar-->
-          <!--<div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Filter" aria-label="Search" />
-          </div>-->
-
-          <div style=" padding:5px;" class = "d-flex justify-content-around">
-            <input style=" padding-left:5px;" type="text" [(ngModel)]="searchValue" placeholder="Search by name" (input)="searchProducts()" />
-            <button type="button" class="btn btn-danger margin-right:10px " (click)="clearSearch()">Clear</button>
-            </div>
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Filter" [(ngModel)]="searchValue" (input)="searchProducts()" aria-label="Search" />
+          </div>
           </div>
           <br>   
               <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
