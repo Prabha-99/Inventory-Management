@@ -6,17 +6,17 @@
     <h1><b>Welcome To Inventory Analysis</b></h1>
     </div>
     <br><br>
-  <div>
-    <label for="cars">Select Status:</label>
-    <select #status (change)="onSelectedStatus(status.value)">
+  <div class="select-container">
+    <label for="status">Select Status:</label>
+    <select class="custom-select" #status (change)="onSelectedStatus(status.value)">
       <option value="grn">Purchasing</option>
       <option value="gin">Selling</option>
     </select>
   </div>
   <br><br>
-  <div>
-    <label for="cars">Select Category:</label>
-    <select #category (change)="onSelectedCategory(category.value)">
+  <div class="select-container">
+    <label for="category">Select Category:</label>
+    <select class="custom-select" #category (change)="onSelectedCategory(category.value)">
       <option value="">All</option>
       <option value="cat_staron">Staron</option>
       <option value="cat_melamine">Melamine Board</option>
@@ -26,9 +26,9 @@
     </select>
   </div>
   <br><br>
-  <div>
-    <label for="cars">Select Chart Type:</label>
-    <select #chartType (change)=" onSelectedChartType(chartType.value)">
+  <div class="select-container">
+    <label for="chartType">Select Chart Type:</label>
+    <select class="custom-select" #chartType (change)=" onSelectedChartType(chartType.value)">
       <option value="line">Line Chart</option>
       <option value="bar">Bar Chart</option>
       <option value="pie">Pie Chart</option>
@@ -36,7 +36,7 @@
   </div>
   <br><br>
   <div>
-    <button type="button" (click)="onClickMe()">Submit</button>
+    <button type="button"  class="btn btn-primary" (click)="onClickMe()">Submit</button>
   </div>
   </div>
   <div class="col-5">

@@ -30,11 +30,11 @@ export class BillingComponent implements OnInit{
   constructor(private productService: ProductService , dialog: MatDialog) { }
 
   Billingsend() {
-    window.open('/billingsend', '_blank','width=800,height=600');
+    window.open('/billingsend', '_self',);
   }
 
   Billingview() {
-    window.open('/billingview', '_blank');
+    window.open('/billingview', '_self');
   }
 
   rowCount=1;

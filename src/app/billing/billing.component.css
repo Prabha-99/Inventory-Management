@@ -42,10 +42,10 @@ ul {
   padding-bottom: 20px;
   overflow: hidden;
   background-color: #ffffff;
-  position: fixed;
+  position:sticky;
   align-content:center;
   bottom: 0;
-  width: 100%;
+  margin-left: 110px;
 }
 
 li {
@@ -67,4 +67,11 @@ margin-left:5px;
   width:100px;
    height:30px;
    text-align:center;
+}
+
+.case{
+  background-color: #ffffff;
+  position:sticky;
+  align-content:center;
+  padding-left: 220px;
 }

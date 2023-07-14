@@ -1,4 +1,14 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Off Canvas -->
+
 <div class="offcanvas offcanvas-start sidebar-nav bg-dark"  tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
@@ -10,33 +20,43 @@
       <ul class="navbar-nav">
         <li>
           <div class="text-muted small fw-bold text-uppercase px-3">
-
           </div>
         </li>
+
         <li>
-          <a routerLink="/showroom-dash" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
-            <span class="me-5">
+          <a routerLink="/showroom-dash" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-house-door-fill"></i>
             </span>
-            <span><h4> Dashboard</h4></span>
+            <span style="font-size: 15px">HOME</span>
           </a>
         </li>
+
         <li>
-          <a routerLink="/desiger-vi" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
-            <span class="me-5">
+          <a routerLink="/showroom-bill-view" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-file-earmark-bar-graph"></i>
             </span>
-            <span><h4>Send File</h4></span>
+            <span style="font-size: 15px">View Bills</span>
           </a>
         </li>
+
         <li>
-          <a routerLink="/showroom-bill-view" class="nav-link px-3 active" mat-list-item routerLinkActive="list-item-active">
-            <span class="me-5">
+          <a routerLink="/showroom-send-file" class="nav-link px-3 active">
+            <span class="me-2" style="font-size: 25px">
+              <i class="bi bi-people-fill"></i>
             </span>
-            <span><h4> View Bills</h4></span>
+            <span style="font-size: 15px">Send File</span>
+
           </a>
         </li>
       </ul>
     </div>
+
+
   </div>
 </div>
-
+<!-- Off canvas Ends -->
+</body>
+</html>
 

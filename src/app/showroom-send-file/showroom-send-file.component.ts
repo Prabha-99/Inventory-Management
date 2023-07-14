@@ -11,6 +11,11 @@ export class ShowroomSendFileComponent  {
 name:string = "";
 file:any;
 
+getFile(event:any){
+  this.file=event.target.files[0];
+  console.log("file",this.file);
+}
+
 files: any;
   constructor(private http:HttpClient) {}
 
