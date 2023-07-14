@@ -14,25 +14,26 @@
         <button mat-raised-button (click)=" openAddEditProductForm(null,'add')" class="btn btn-dark float-right">Add Product</button>
           <br><br>
         <!--Search bar-->
+        <!--Search bar-->
         <div class="form-outline">
-          <input type="search" id="form1" class="form-control" placeholder="Filter" aria-label="Search" />
+          <input type="search" id="form1" class="form-control" placeholder="Filter" [(ngModel)]="searchValue" (input)="searchProducts()" aria-label="Search" />
         </div>
         </div>
-        <br>   
+        <br>  
             <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th class="th-sm">Product Id</th>
-                    <th class="th-sm">Category Id</th>
-                    <th class="th-sm">Product Brand</th>
-                    <th class="th-sm">Product Name</th>
-                    <th class="th-sm">Product Price</th>
-                    <th class="th-sm">Product Quantity</th>
-                    <th class="th-sm">Actions</th>
+                    <th class="th-sm" scope="col">Product Id</th>
+                    <th class="th-sm" scope="col">Category Id</th>
+                    <th class="th-sm" scope="col">Product Brand</th>
+                    <th class="th-sm" scope="col">Product Name</th>
+                    <th class="th-sm" scope="col">Product Price</th>
+                    <th class="th-sm" scope="col">Product Quantity</th>
+                    <th class="th-sm" scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let product of filteredProducts">
+                  <tr scope="row" *ngFor="let product of filteredProducts">
                     <td>{{ product.product_id }}</td>
                     <td>{{ product.category_id }}</td>
                     <td>{{ product.product_brand }}</td>
