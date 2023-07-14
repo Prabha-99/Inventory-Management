@@ -14,6 +14,9 @@ export class PurchaseCoordinatorProductComponent implements OnInit{
 
   products: any[] = [];
   filteredProducts: any[] = [];
+  fillProducts: any[] = [];
+  searchValue: string = '';
+
 
   constructor(private _dialog: MatDialog, private productService: PurchaseCoordinatorProductService){}
 
@@ -21,17 +24,26 @@ export class PurchaseCoordinatorProductComponent implements OnInit{
     this.productService.getProducts().subscribe(product => {
       this.products = product;
       this.filterProducts();
+      this.filteredProducts = this.fillProducts;
     });
 
     
   }
 
   filterProducts() {
-    this.filteredProducts = this.products.filter(product => {
+    this.fillProducts = this.products.filter(product => {
       // Filter products based on category_id
       return product.category_id === 'cat_accessories' || product.category_id === 'cat_appliances';
     });
   }
+
+  searchProducts(): void {
+    this.filteredProducts = this.fillProducts.filter(product => {
+      const searchDet = `${product.product_name} ${product.category_id}`;
+      return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+  }
+
 
   openAddEditProductForm(author: any, operation: String) {
     var dialogRef = null as any;
