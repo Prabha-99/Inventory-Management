@@ -11,6 +11,8 @@ import { DesignerService } from '../designer.service';
 })
 export class DesignerDeQuantityComponent {
   productService: any;
+  showSuccessMessage: boolean = false;
+  showErrorMessage: boolean = false;
 
 product: DesignerProduct = {
   product_id: 0,
@@ -25,18 +27,26 @@ product: DesignerProduct = {
       .subscribe(
         updatedProduct => {
           console.log('Product deducted successfully:', updatedProduct);
-          alert('Product deduct successfully');
+
+          this.showSuccessMessage = true;
+          setTimeout(() => {
+            this.showSuccessMessage = false;
+          }, 5000); // Adjust the time (in milliseconds)
 
           // Clear the input fields
         this.product = {
           product_id: null,
-          product_quantity: 0
+          product_quantity: null
         };
         },
         error => {
           console.error('Failed to deduct product:', error);
-          alert('Error deduct product quantity');
 
+          this.showErrorMessage = true;
+
+          setTimeout(() => {
+            this.showErrorMessage = false;
+          }, 5000);
         }
       );
   }
