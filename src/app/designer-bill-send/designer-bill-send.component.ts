@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DesignerProduct } from '../designer-product';
 import { DesignerService } from '../designer.service';
+
 
 @Component({
   selector: 'app-designer-bill-send',
@@ -27,15 +27,16 @@ file:any;
     formData.append("filename",this.filename)
     formData.append("file",this.file)
 
-    alert('Successfully submitted!');
 
     //submit data in API
     this.http.post("http://localhost:8080/api/designer/billSend",formData)
     .subscribe((response) =>{
-    console.log(response);
-    });
-  }
+
+  });
 }
+}
+
+
 
 
 
