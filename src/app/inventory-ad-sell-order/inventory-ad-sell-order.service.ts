@@ -15,4 +15,9 @@ export class InventoryAdSellOrderService {
     const payload = { product_name, product_brand, product_quantity };
     return this.http.post<void>(`${this.API_URL}/reduce`, payload);
   }
+
+
+  getGin() {
+    return this.http.get<any[]>('http://localhost:8080/api/GIN/getAllGin'); //get gin
+  }
 }
