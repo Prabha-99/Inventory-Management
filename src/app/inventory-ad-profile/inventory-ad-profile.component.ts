@@ -10,7 +10,6 @@ export class InventoryAdProfileComponent {
   profile={
     fname:'',
     lname:'',
-    uname:'',
     email:'',
     password:'',
 
@@ -41,7 +40,7 @@ emailerror='';
 
 
 isRequired(): boolean{
-  return !!this.profile.fname && !!this.profile.lname && !!this.profile.email && !!this.profile.uname && !!this.profile.password ;
+  return !!this.profile.fname && !!this.profile.lname && !!this.profile.email && !!this.profile.password ;
 }
 
 isValidEmail(email: string): boolean {
