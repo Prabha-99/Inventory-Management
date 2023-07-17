@@ -15,7 +15,7 @@ export class PurchaseCoordinatorPurchaseOrderService {
     return this.http.post<void>(`${this.API_URL}/increase`, payload);
   }
 
-  getGin() {
-    return this.http.get<any[]>('http://localhost:8080/api/GIN/getAllGin'); //get gin
+  getGrn() {
+    return this.http.get<any[]>('http://localhost:8080/api/GRN/getAllGrn'); //get gin
   }
 }

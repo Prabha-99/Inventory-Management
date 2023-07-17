@@ -9,30 +9,30 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class PurchaseCoordinatorPurchaseOrderComponent implements OnInit{
 
-  gins: any[] = [];
-  filteredGins: any[] = [];
-  fillGins: any[] = [];
+  grns: any[] = [];
+  filteredGrns: any[] = [];
+  fillGrns: any[] = [];
   searchValue: string = '';
 
   constructor(private _dialog: MatDialog, private productService: PurchaseCoordinatorPurchaseOrderService) {}
   ngOnInit(): void {
-    this.productService.getGin().subscribe(gin => {
-      this.gins = gin;
-      this.filterGins();
-      this.filteredGins = this.fillGins;
+    this.productService.getGrn().subscribe(gin => {
+      this.grns = gin;
+      this.filterGrns();
+      this.filteredGrns = this.fillGrns;
     });
   }
 
-  filterGins() {
-    this.fillGins = this.gins.filter(gin => {
+  filterGrns() {
+    this.fillGrns = this.grns.filter(grn => {
       // Filter gin based on category_id
-      return gin.category_id === 'edge band';
+      return grn.category_id === 'staron';
     });
   }
 
-  searchGins(): void {
-    this.filteredGins = this.fillGins.filter(gin => {
-      const searchDet = `${gin.date}`;
+  searchGrns(): void {
+    this.filteredGrns = this.fillGrns.filter(grn => {
+      const searchDet = `${grn.date}`;
       return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
     });
   }

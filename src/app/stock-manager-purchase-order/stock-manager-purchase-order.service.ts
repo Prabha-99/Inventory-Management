@@ -16,4 +16,8 @@ export class StockManagerPurchaseOrderService {
     return this.http.post<void>(`${this.API_URL}/increase`, payload);
   }
 
+  getGrn() {
+    return this.http.get<any[]>('http://localhost:8080/api/GRN/getAllGrn'); //get gin
+  }
+
 }
