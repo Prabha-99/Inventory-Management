@@ -21,16 +21,10 @@
 
                     <h3>Filter GIN Details Here:</h3>
 
-                   <!-- <mat-form-field>
-                        <input matInput type="search" [matDatepicker]="picker" placeholder="Select Date" [(ngModel)]="searchValue" (input)="searchGins()">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>-->
-
                     <div class="form-outline">
                       <input type="search" id="form1" class="form-control" placeholder="Filter" [(ngModel)]="searchValue" (input)="searchGins()" aria-label="Search" />
                     </div>
-
+                    <br>
                     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                       <thead>
                         <tr>
