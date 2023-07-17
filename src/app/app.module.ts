@@ -118,6 +118,8 @@ import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-fi
 
 
 
+
+
 @NgModule({
   declarations: [
 
@@ -211,7 +213,8 @@ import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-fi
         ShowroomDashComponent,
         ShowroomSideBarComponent,
         ShowroomBillViewComponent,
-        ShowroomSendFileComponent
+        ShowroomSendFileComponent,
+
 
 
 
@@ -237,7 +240,8 @@ import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-fi
     MatTableModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+
 
 
 

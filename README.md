@@ -1,4 +1,4 @@
-# Web Based Inventory Management System for Monara Creations Pvt.Ltd
+# Web Based Inventory Management System for Monara Creations Private Limited.
 
 ![Project Logo](/src/assets/PM.jpeg)
 
@@ -49,7 +49,7 @@ Before running the Web-Based Inventory Management System, ensure that you have t
 
 Follow these steps to install the project on your local machine:
 
-1. Clone the repository:
+1. Clone the repository
 
    ```shell
    git clone https://github.com/username/repository.git
