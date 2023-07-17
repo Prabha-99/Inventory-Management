@@ -33,7 +33,7 @@ export class InventoryAdSellOrderComponent implements OnInit{
   }
 
   searchGins(): void {
-    this.filteredGins = this.fillGins.filter(gin => {
+    this.filteredGins = this.gins.filter(gin => {
       const searchDet = `${gin.date}`;
       return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
     });
