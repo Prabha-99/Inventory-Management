@@ -15,4 +15,8 @@ export class InventoryAdPurchaseOrderService {
     const payload = { product_name, product_brand, product_quantity };
     return this.http.post<void>(`${this.API_URL}/increase`, payload);
   }
+
+  getGrn() {
+    return this.http.get<any[]>('http://localhost:8080/api/GRN/getAllGrn'); //get grn
+  }
 }

@@ -16,6 +16,6 @@ export class PurchaseCoordinatorPurchaseOrderService {
   }
 
   getGrn() {
-    return this.http.get<any[]>('http://localhost:8080/api/GRN/getAllGrn'); //get gin
+    return this.http.get<any[]>('http://localhost:8080/api/GRN/getAllGrn'); //get grn
   }
 }

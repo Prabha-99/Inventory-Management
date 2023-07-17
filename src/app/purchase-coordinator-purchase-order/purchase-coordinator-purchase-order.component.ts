@@ -25,7 +25,7 @@ export class PurchaseCoordinatorPurchaseOrderComponent implements OnInit{
 
   filterGrns() {
     this.fillGrns = this.grns.filter(grn => {
-      // Filter gin based on category_id
+      // Filter grn based on category_id
       return grn.category_id === 'staron';
     });
   }
