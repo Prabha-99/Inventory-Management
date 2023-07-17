@@ -1,15 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StockManagerSellOrderService } from './stock-manager-sell-order.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-stock-manager-sell-order',
   templateUrl: './stock-manager-sell-order.component.html',
   styleUrls: ['./stock-manager-sell-order.component.css']
 })
-export class StockManagerSellOrderComponent {
+export class StockManagerSellOrderComponent implements OnInit{
 
+  gins: any[] = [];
+  filteredGins: any[] = [];
+  fillGins: any[] = [];
+  searchValue: string = '';
   
-  constructor(private productService: StockManagerSellOrderService) {}
+  constructor(private _dialog: MatDialog, private productService: StockManagerSellOrderService) {}
+  ngOnInit(): void {
+    this.productService.getGin().subscribe(gin => {
+      this.gins = gin;
+      this.filterGins();
+      this.filteredGins = this.fillGins;
+    });
+  }
+
+  filterGins() {
+    this.fillGins = this.gins.filter(gin => {
+      // Filter gin based on category_id
+      return gin.category_id === 'edge band';
+    });
+  }
+
+  searchGins(): void {
+    this.filteredGins = this.fillGins.filter(gin => {
+      const searchDet = `${gin.date}`;
+      return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+  }
   
   reduceQuantity(product_name: string, product_brand: string, product_quantity: number): void {
     this.productService.reduceProductQuantity(product_name, product_brand, product_quantity).subscribe(() => {
