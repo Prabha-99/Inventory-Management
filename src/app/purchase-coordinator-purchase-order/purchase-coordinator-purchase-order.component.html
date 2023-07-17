@@ -18,34 +18,43 @@
                   <div class="col-lg-10 mt-5">
 
                     <h2 class="d-flex justify-content-center">Good Recieve Note - GRN</h2>
+
+                    <h3>Filter GRN Details Here:</h3>
+
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Select Date" [(ngModel)]="searchValue" (input)="searchGrns()">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
                     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                       <thead>
                         <tr>
-                          <th class="th-sm">Invoice No</th>
-                          <th class="th-sm">Date</th>
-                          <th class="th-sm">Supplier Name</th>
-                          <th class="th-sm">Address</th>
-                          <th class="th-sm">Contact Number</th>
-                          <th class="th-sm">Item Description</th>
-                          <th class="th-sm">Ordered Quantity</th>
-                          <th class="th-sm">Received Quantity</th>
-                          <th class="th-sm">Remarks</th>
-                          <th class="th-sm">Actions</th>
+                          <th class="th-sm" scope="col">Category Id</th>
+                          <th class="th-sm" scope="col">Supplier Name</th>
+                          <th class="th-sm" scope="col">Address</th>
+                          <th class="th-sm" scope="col">Contact Number</th>
+                          <th class="th-sm" scope="col">Date</th>
+                          <th class="th-sm" scope="col">Ordered Quantity</th>
+                          <th class="th-sm" scope="col">Received Quantity</th>
+                          <th class="th-sm" scope="col">Item Description</th>
+                          <th class="th-sm" scope="col">Remarks</th>
+                          <th class="th-sm" scope="col">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                        <tr scope="row" *ngFor="let grn of filteredGrns">
+                          <td>{{ grn.category_id }}</td>
+                          <td>{{ grn.supplier_name }}</td>
+                          <td>{{ grn.address }}</td>
+                          <td>{{ grn.contact_nu }}</td>
+                          <td>{{ grn.date }}</td>
+                          <td>{{ grn.ordered_quantity }}</td>
+                          <td>{{ grn.received_quantity }}</td>
+                          <td>{{ grn.item_description }}</td>
+                          <td>{{ grn.remarks }}</td>
                           <td>
-                            <button type="button" class="btn btn-outline-warning">Download</button>
+                            <button type="button" class="btn btn-outline-warning">View</button>
                           </td>
                         </tr>
                       </tbody>

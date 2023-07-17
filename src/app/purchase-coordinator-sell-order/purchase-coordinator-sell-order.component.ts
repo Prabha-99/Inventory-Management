@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PurchaseCoordinatorSellOrderService } from './purchase-coordinator-sell-order.service';
 
 @Component({
@@ -6,8 +6,35 @@ import { PurchaseCoordinatorSellOrderService } from './purchase-coordinator-sell
   templateUrl: './purchase-coordinator-sell-order.component.html',
   styleUrls: ['./purchase-coordinator-sell-order.component.css']
 })
-export class PurchaseCoordinatorSellOrderComponent {
+export class PurchaseCoordinatorSellOrderComponent implements OnInit{
+
+  gins: any[] = [];
+  filteredGins: any[] = [];
+  fillGins: any[] = [];
+  searchValue: string = '';
+
   constructor(private productService: PurchaseCoordinatorSellOrderService) {}
+  ngOnInit(): void {
+    this.productService.getGin().subscribe(gin => {
+      this.gins = gin;
+      this.filterGins();
+      this.filteredGins = this.fillGins;
+    });
+  }
+
+  filterGins() {
+    this.fillGins = this.gins.filter(gin => {
+      // Filter gin based on category_id
+      return gin.category_id === 'edge band';
+    });
+  }
+
+  searchGins(): void {
+    this.filteredGins = this.fillGins.filter(gin => {
+      const searchDet = `${gin.date}`;
+      return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+  }
   
   reduceQuantity(product_name: string, product_brand: string, product_quantity: number): void {
     this.productService.reduceProductQuantity(product_name, product_brand, product_quantity).subscribe(() => {
