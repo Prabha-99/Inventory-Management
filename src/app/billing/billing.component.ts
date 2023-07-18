@@ -173,28 +173,53 @@ export class BillingComponent implements OnInit{
 //////////////////////save bill details
 
 formData = {
-  qu_no: '',
+  qu_no: 'QN-',
   st_date: '',
   end_date: '',
   cu_name: '',
   cu_address: '',
   cu_tele: '',
   other: '',
-  total_amount:'',
-  discount:'',
-  subtotal:'',
+  total_amount:0,
+  discount:0,
+  subtotal:0,
   note:'',
 };
 
 
 
-updateFormData(field: string, value: number) {
-  const tempValue = value;
-  this.formData = {
-    ...this.formData,
-    [field]: tempValue
-  };
+
+updateFormData(field: string, value: any) {
+  this.formData[field] = value;
+  if (field === 'total_amount') {
+    this.calculateTotalAmount();
+  }
+  if(field === "subtotal"){
+      this.calSubTotal;
+  }
+  if(field === "discount"){
+    this.calcTotalDiscount;
 }
+}
+
+updateTotalAmount() {
+  this.formData.total_amount = this.calculateTotalAmount();
+  
+  const sub = this.calSubTotal(this.rows);
+  this.formData.subtotal= sub;
+
+  const dis = this.calcTotalDiscount(this.rows);
+  this.formData.discount=dis;
+}
+
+
+// updateFormData(field: string, value: number) {
+//   const tempValue = value;
+//   this.formData = {
+//     ...this.formData,
+//     [field]: tempValue
+//   };
+// }
 
 //error handling
 emailerror='';
@@ -236,7 +261,7 @@ onSubmit() {
     this.emailerror='';
     this.emailerror_fix='';
   
-
+this.updateTotalAmount();
 // save bill data to database
   this.productService.saveBill(this.formData).subscribe({
     next: (data: any) => {
@@ -285,7 +310,11 @@ confirmRefresh(): void {
 }
 
 
+
+
+
 }
+
 
 export interface Product {
   id: number;
