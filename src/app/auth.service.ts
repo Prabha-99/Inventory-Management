@@ -13,6 +13,7 @@ import jwt_decode from 'jwt-decode';
 export class AuthService {
   private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
   private apiUrl2 = 'http://localhost:8080/api/auth/CurrentUser';
+  private apiUrl3 = 'http://localhost:8080/api/auth/UserProfile';
 
   constructor(private http: HttpClient) { }
 
@@ -42,6 +43,11 @@ export class AuthService {
   getUsername(): Observable<string> { //Getting the Current Logged User
     const headers = this.getHeaders();
     return this.http.get<string>(`${this.apiUrl2}`,{ headers }); //Using stored token 
+  }
+
+  getUserProfile(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get<any>(`${this.apiUrl3}`, { headers });
   }
 
 
