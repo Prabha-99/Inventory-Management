@@ -1,8 +1,24 @@
-<div *ngIf="userProfile">
-    <h2>User Profile</h2>
-    <p><strong>First Name:</strong> {{ userProfile.firstname }}</p>
-    <p><strong>Last Name:</strong> {{ userProfile.lastname }}</p>
-    <p><strong>Email:</strong> {{ userProfile.email }}</p>
-    <p><strong>Role:</strong> {{ userProfile.role }}</p>
-    
-  </div>
+<h2>User Profile</h2>
+<div>
+  <label>First Name:</label>
+  <input [(ngModel)]="user.firstname" [disabled]="!editing" />
+</div>
+<div>
+  <label>Last Name:</label>
+  <input [(ngModel)]="user.lastname" [disabled]="!editing" />
+</div>
+<div>
+  <label>Email:</label>
+  <input [(ngModel)]="user.email" [disabled]="!editing" />
+</div>
+<div>
+  <label>Role:</label>
+  <input [(ngModel)]="user.role" [disabled]="!editing" />
+</div>
+<div *ngIf="editing">
+  <button (click)="updateUser()">Update</button>
+  <button (click)="cancelUpdate()">Cancel</button>
+</div>
+<div *ngIf="!editing">
+  <button (click)="editProfile()">Edit Profile</button>
+</div>

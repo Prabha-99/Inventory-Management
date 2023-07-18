@@ -8,17 +8,43 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  userProfile: any;
+  user: any;
+  editing: boolean = false;
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.loadUserProfile();
+  }
+
+  loadUserProfile() {
     this.authService.getUserProfile().subscribe(
-      (data: any) => {
-        this.userProfile = data;
+      (response: any) => {
+        this.user = response;
       },
       (error: any) => {
-        console.error('Failed to fetch user profile:', error);
+        console.log('Error retrieving user profile:', error);
+      }
+    );
+  }
+
+  editProfile() {
+    this.editing = true;
+  }
+
+  cancelUpdate() {
+    this.editing = false;
+    this.loadUserProfile();
+  }
+
+  updateUser() {
+    this.authService.updateUserProfile(this.user).subscribe(
+      (response: any) => {
+        console.log('User profile updated successfully:', response);
+        this.editing = false;
+      },
+      (error: any) => {
+        console.log('Error updating user profile:', error);
       }
     );
   }
