@@ -26,7 +26,7 @@ export class GetUserService {
     return this.http.get<any>(url);
   }
 
-  updateUser(user: any): Observable<any> {
+  updateUser(user: any){
     return this.http.put<any>(this.adminUrlupdate, user);
   }
 }

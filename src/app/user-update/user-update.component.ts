@@ -60,9 +60,16 @@ export class UserUpdateComponent implements OnInit {
     this.filteredUsers = this.users;
   }
 
-  updateUser(){
+  updateUser(): void {
     this.userService.updateUser(this.userUpdate).subscribe(
+      (response) => {
+        console.log('User updated successfully!');
+        this.getUsers(); // Refresh the user list after successful update
+      },
+      (error) => {
+        console.error('Error updating user:', error);
+      }
     );
   }
-
+  
 }

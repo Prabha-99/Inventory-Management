@@ -1,5 +1,9 @@
 <h2>User Profile</h2>
 <div>
+  <label>Id:</label>
+  <input [(ngModel)]="user.id" [disabled]="!editing" />
+</div>
+<div>
   <label>First Name:</label>
   <input [(ngModel)]="user.firstname" [disabled]="!editing" />
 </div>
@@ -12,9 +16,14 @@
   <input [(ngModel)]="user.email" [disabled]="!editing" />
 </div>
 <div>
+  <label>Password:</label>
+  <input [(ngModel)]="user.password" [disabled]="!editing" />
+</div>
+<div>
   <label>Role:</label>
   <input [(ngModel)]="user.role" [disabled]="!editing" />
 </div>
+
 <div *ngIf="editing">
   <button (click)="updateUser()">Update</button>
   <button (click)="cancelUpdate()">Cancel</button>
