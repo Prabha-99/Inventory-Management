@@ -39,7 +39,7 @@ export class AuthService {
     return localStorage.getItem('token') !== null;
   }
 
-  getUsername(): Observable<string> {
+  getUsername(): Observable<string> { //Getting the Current Logged User
     const headers = this.getHeaders();
     return this.http.get<string>(`${this.apiUrl2}`,{ headers }); //Using stored token 
   }
