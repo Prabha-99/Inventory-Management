@@ -71,6 +71,7 @@ import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-fi
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
+import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 
 
 
@@ -182,7 +183,8 @@ const routes: Routes = [
   {path: "showroom-dash",component:ShowroomDashComponent},
   {path: "showroom-side-bar",component:ShowroomSideBarComponent},
   {path: "showroom-bill-view",component:ShowroomBillViewComponent},
-  {path: "showroom-send-file",component:ShowroomSendFileComponent}
+  {path: "showroom-send-file",component:ShowroomSendFileComponent},
+  {path: "inventory-backup",component:InventoryBackupComponent}
 
 
 ];
