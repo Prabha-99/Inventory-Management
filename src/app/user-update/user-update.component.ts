@@ -14,6 +14,14 @@ export class UserUpdateComponent implements OnInit {
   searchValue: string = '';
   dialog: any;
 
+  userUpdate = {
+    id:"",
+    firstname:"",
+    lastname:"",
+    email:"",
+    role:""
+  }
+
   constructor(private userService: GetUserService, private router: Router) { }
 
   ngOnInit(): void {
@@ -28,7 +36,7 @@ export class UserUpdateComponent implements OnInit {
   }
 
   openUpdateForm(user: any): void {
-    this.router.navigate(['/update-user', user.id]);
+    this.userUpdate = user;
   }
 
   cancelUpdate(user: any): void {
@@ -50,6 +58,11 @@ export class UserUpdateComponent implements OnInit {
   clearSearch(): void {
     this.searchValue = '';
     this.filteredUsers = this.users;
+  }
+
+  updateUser(){
+    this.userService.updateUser(this.userUpdate).subscribe(
+    );
   }
 
 }

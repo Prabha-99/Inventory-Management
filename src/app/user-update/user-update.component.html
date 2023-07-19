@@ -53,7 +53,7 @@
                             <td>{{ user.email }}</td>
                             <td>{{ user.role }}</td>
                             <td>
-                              <button (click)="openUpdateForm(user)" class="btn btn-primary ">Update</button>
+                              <button (click)="openUpdateForm(user)" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">Update</button>
                             </td>
                           </tr>
                         </tbody>
@@ -67,6 +67,53 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateUser()">
+          <div class="form-group">
+            <label for="id">User Id :</label>
+            <input type="text" disabled #id [(ngModel)]="userUpdate.id" name="id" id="id"
+              class="form-control" placeholder="User Id">
+          </div>
+          <div class="form-group">
+            <label for="firstname">User First Name :</label>
+            <input type="text" #firstname [(ngModel)]="userUpdate.firstname" name="firstname" id="firstname" class="form-control"
+              placeholder="User First Name">
+          </div>
+          <div class="form-group">
+            <label for="lastname">User Last Name :</label>
+            <input type="text" #lastname [(ngModel)]="userUpdate.lastname" name="lastname" id="lastname" class="form-control"
+              placeholder="User Last Name">
+          </div>
+          <div class="form-group">
+            <label for="email">User Email :</label>
+            <input type="text" #email [(ngModel)]="userUpdate.email" name="email" id="email"
+              class="form-control" placeholder="User Email">
+          </div>
+          <div class="form-group">
+            <label for="role">User Role :</label>
+            <input type="role" #percentage [(ngModel)]="userUpdate.role" name="role" id="role"
+              class="form-control" placeholder="User Role">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-primary w-100">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
 

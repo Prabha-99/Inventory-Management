@@ -37,7 +37,7 @@ export class UpdateOneUserComponent implements OnInit {
 
   updateUser(): void {
     if (this.validateForm()) {
-      this.userService.updateUser(this.user.id, this.user).subscribe(
+      this.userService.updateUser(this.user).subscribe(
         () => {
           // Success
           console.log('User details updated successfully');
