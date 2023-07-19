@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class InventoryBackupService {
 
-  constructor() { }
+  private backupUrl = 'http://localhost:8080/api/backup/back';
+
+  constructor(private http: HttpClient) { }
+
+  createBackup() {
+    return this.http.post(this.backupUrl, {});
+  }
 }

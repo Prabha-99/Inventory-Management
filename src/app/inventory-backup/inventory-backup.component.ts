@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InventoryBackupService } from './inventory-backup.service';
 
 @Component({
   selector: 'app-inventory-backup',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class InventoryBackupComponent {
 
+  constructor(private backupService: InventoryBackupService) {}
+
+  createBackup() {
+    this.backupService.createBackup().subscribe(
+      response => console.log(response),
+      error => console.error(error)
+    );
+  }
 }
