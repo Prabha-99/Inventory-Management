@@ -1,16 +1,4 @@
-<div>
-    
-  </div>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Details</title> 
-</head>
-<body>
+  <div>
     <app-system-admin-nav></app-system-admin-nav>
 
     <div class="container">
@@ -52,9 +40,8 @@
                             <td>{{ user.lastname }}</td>
                             <td>{{ user.email }}</td>
                             <td>{{ user.role }}</td>
-                            <td>
-                              <button (click)="openUpdateForm(user)" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">Update</button>
-                            </td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                              (click)="openUpdateForm(user)">Update</button></td>
                           </tr>
                         </tbody>
                       </table>
@@ -67,55 +54,52 @@
             </div>
         </div>
     </div>
+    </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form #updateForm="ngForm" (ngSubmit)="updateUser()">
-          <div class="form-group">
-            <label for="id">User Id :</label>
-            <input type="text" disabled #id [(ngModel)]="userUpdate.id" name="id" id="id"
-              class="form-control" placeholder="User Id">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="form-group">
-            <label for="firstname">User First Name :</label>
-            <input type="text" #firstname [(ngModel)]="userUpdate.firstname" name="firstname" id="firstname" class="form-control"
-              placeholder="User First Name">
-          </div>
-          <div class="form-group">
-            <label for="lastname">User Last Name :</label>
-            <input type="text" #lastname [(ngModel)]="userUpdate.lastname" name="lastname" id="lastname" class="form-control"
-              placeholder="User Last Name">
-          </div>
-          <div class="form-group">
-            <label for="email">User Email :</label>
-            <input type="text" #email [(ngModel)]="userUpdate.email" name="email" id="email"
-              class="form-control" placeholder="User Email">
-          </div>
-          <div class="form-group">
-            <label for="role">User Role :</label>
-            <input type="role" #percentage [(ngModel)]="userUpdate.role" name="role" id="role"
-              class="form-control" placeholder="User Role">
-          </div>
-          <div class="form-group">
-            <input type="submit" value="Update" class="btn btn-primary w-100">
+          <div class="modal-body">
+            <form #updateForm="ngForm" (submit)="updateUser()">
+              <div class="form-group">
+                <label for="id">User Id :</label>
+                <input type="text" disabled #id [(ngModel)]="userUpdate.id" name="id" id="id"
+                  class="form-control" placeholder="User Id">
+              </div>
+              <div class="form-group">
+                <label for="firstname">User First Name :</label>
+                <input type="text" #firstname [(ngModel)]="userUpdate.firstname" name="firstname" id="firstname" class="form-control"
+                  placeholder="User First Name">
+              </div>
+              <div class="form-group">
+                <label for="lastname">User Last Name :</label>
+                <input type="text" #lastname [(ngModel)]="userUpdate.lastname" name="lastname" id="lastname" class="form-control"
+                  placeholder="User Last Name">
+              </div>
+              <div class="form-group">
+                <label for="email">User Email :</label>
+                <input type="text" disabled #email [(ngModel)]="userUpdate.email" name="email" id="email"
+                  class="form-control" placeholder="User Email">
+              </div>
+              <div class="form-group">
+                <label for="role">User Role :</label>
+                <input type="role" #percentage [(ngModel)]="userUpdate.role" name="role" id="role"
+                  class="form-control" placeholder="User Role">
+              </div>
+              <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Update</button>
           </div>
         </form>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-</body>
-</html>
+  
 
 
   

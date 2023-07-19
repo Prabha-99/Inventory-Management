@@ -33,7 +33,6 @@ import { StockKeeperSidebarComponent } from './stock-keeper-sidebar/stock-keeper
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
-import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
 import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
 import { StockKeeperGRNService } from './stock-keeper-order-reports-grn/stock-keeper-grn.service';
 // import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
@@ -153,8 +152,6 @@ const routes: Routes = [
 
 
   {path:"get-user",component:GetUserComponent},
-
-  {path:"update-user/:id",component:UpdateOneUserComponent},
   {path:"user-update",component:UserUpdateComponent},
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent},
   {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent},
@@ -174,7 +171,7 @@ const routes: Routes = [
 
   {path:"get-user",component:GetUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
 
-  {path:"update-user/:id",component:UpdateOneUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  // {path:"update-user/:id",component:UpdateOneUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"user-update",component:UserUpdateComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},

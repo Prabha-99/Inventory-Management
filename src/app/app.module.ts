@@ -71,7 +71,6 @@ import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-edit.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
-import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
 
 import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
@@ -168,7 +167,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     GINReportsComponent,
     GRNReportsComponent,
     DeleteUserComponent,
-    UpdateOneUserComponent,
     StockManagerEditComponent,
     DeleteUserComponent,
       StockKeeperOrderReportsComponent,
