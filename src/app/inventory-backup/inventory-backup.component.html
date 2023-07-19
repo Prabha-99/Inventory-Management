@@ -14,7 +14,15 @@
   
          <div class="col-10 mt-5">
           <div class="mt-5">
-            <button (click)="createBackup()">Backup Now</button>
+            <div>
+             <button (click)="createBackup()" class="btn btn-primary">
+                <span class="me-2" style="font-size: 25px">
+                  <i class="bi bi-file-earmark-arrow-up"></i> <!-- Replace with the appropriate backup icon from Bootstrap Icons -->
+                </span>
+                <span style="font-size: 13.5px">Backup Now</span>
+              </button>
+            </div>
+  
           </div>
           </div>
      </div>
