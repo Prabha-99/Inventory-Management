@@ -15,19 +15,19 @@ export class NavbarComponent implements OnInit{
   constructor(private authService: AuthService, private router: Router) { }
 
   
-    ngOnInit(): void {
+    ngOnInit(): void {    //Getting the Current Username
       this.authService.getUsername().subscribe(
         (response: any) => {
-          this.username = response.firstname.toString(); //Converting the Object that returning through the Endpoint as the response
+          const email = response.firstname; // Email is returned in the response
+          const atIndex = email.indexOf('@'); // Find the index of the '@' symbol
+          this.username = email.substring(0, atIndex); // Extract the string before the '@' symbol
         },
         (error: any) => {
-          // Handle error
         }
       );
     }
     
-  
-
+    
   onLogout() {
     this.authService.logout();
     this.router.navigate(['/']);
