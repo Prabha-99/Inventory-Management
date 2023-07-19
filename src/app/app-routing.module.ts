@@ -184,7 +184,7 @@ const routes: Routes = [
   {path: "showroom-side-bar",component:ShowroomSideBarComponent},
   {path: "showroom-bill-view",component:ShowroomBillViewComponent},
   {path: "showroom-send-file",component:ShowroomSendFileComponent},
-  {path: "inventory-backup",component:InventoryBackupComponent}
+  {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }}
 
 
 ];
