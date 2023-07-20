@@ -19,6 +19,11 @@ export class GINReportsComponent implements OnInit{
   router: any;
   error='';
 
+  filepath!: string;          //New
+  fileContent!: ArrayBuffer;
+  fileUrl!: string;
+  filename!:string;
+
   constructor(private ginService: GINService ) { }
 
 
@@ -60,27 +65,27 @@ export class GINReportsComponent implements OnInit{
 
   
 
-  downloadFile(report_id: number, report_name: string): void {
-    this.ginService.downloadFile(report_id).subscribe(
-      (response) => {
-        // Create a temporary link and trigger the file download
-        const blob = new Blob([response], { type: 'application/pdf' });
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = report_name;
-        link.click();
-        link.remove();
-      },
-      (error) => {
-        if (error.status === 401) {
-          this.error = 'Error downloading file..!!!';
-        } else {
-          this.error = 'Error downloading file..!!!';
-        }
-      }
-    );
-  }
+  // downloadFile(report_id: number, report_name: string): void {
+  //   this.ginService.downloadFile(report_id).subscribe(
+  //     (response) => {
+  //       // Create a temporary link and trigger the file download
+  //       const blob = new Blob([response], { type: 'application/pdf' });
+  //       const url = window.URL.createObjectURL(blob);
+  //       const link = document.createElement('a');
+  //       link.href = url;
+  //       link.download = report_name;
+  //       link.click();
+  //       link.remove();
+  //     },
+  //     (error) => {
+  //       if (error.status === 401) {
+  //         this.error = 'Error downloading file..!!!';
+  //       } else {
+  //         this.error = 'Error downloading file..!!!';
+  //       }
+  //     }
+  //   );
+  // }
   
 
 
@@ -97,19 +102,11 @@ export class GINReportsComponent implements OnInit{
   //     });
   // }
 
-
-
-
-  // searchUsers(): void {
-  //   this.filteredReports = this.files.filter(report => {
-  //     const fullName = `${report.date} ${report.report_name}`;
-  //     return fullName.toLowerCase().includes(this.searchValue.toLowerCase());
-  //   });
-  // }
-
-  // clearSearch(): void {
-  //   this.searchValue = '';
-  //   this.filteredReports = this.files;
-  // }
-
+  openPdf(report_name: string): void {             //New
+    this.ginService.getPdf(report_name).subscribe(response => {
+      const blob = new Blob([response], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      window.open(url, '_blank');
+    });
+  }
 }

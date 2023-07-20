@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { OrderReportsComponent } from './order-reports/order-reports.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BillingComponent } from './billing/billing.component';
@@ -72,6 +71,7 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
+import { StockReportsComponent } from './stock-reports/stock-reports.component';
 
 
 
@@ -85,7 +85,6 @@ const routes: Routes = [
   {path:"billingsend",component:BillingSendComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path:"billingview",component:BillingViewComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path:"reports",component:ReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
-  {path:"orderreports",component:OrderReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-dash",component: InventoryAdDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-profile",component:InventoryAdProfileComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
@@ -184,7 +183,8 @@ const routes: Routes = [
   {path: "showroom-side-bar",component:ShowroomSideBarComponent},
   {path: "showroom-bill-view",component:ShowroomBillViewComponent},
   {path: "showroom-send-file",component:ShowroomSendFileComponent},
-  {path: "inventory-backup",component:InventoryBackupComponent}
+  {path: "inventory-backup",component:InventoryBackupComponent},
+  {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }}
 
 
 ];
