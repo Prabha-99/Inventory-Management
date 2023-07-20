@@ -14,7 +14,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 export class BillingSendComponent implements OnInit{
 
-  constructor(private billService2:BillService2, private sanitizer: DomSanitizer) { }
+  constructor(private billService2:BillService2) { }
 
 
  bills: any[] = [];
