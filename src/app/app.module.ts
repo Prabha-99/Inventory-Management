@@ -110,6 +110,7 @@ import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
 import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
 import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
 import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-file.component';
+import { DesignerProfileComponent } from './designer-profile/designer-profile.component';
 
 
 
@@ -214,6 +215,7 @@ import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-fi
         ShowroomSideBarComponent,
         ShowroomBillViewComponent,
         ShowroomSendFileComponent,
+        DesignerProfileComponent,
 
 
 
