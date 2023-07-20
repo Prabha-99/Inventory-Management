@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class InventoryBackupService {
 
   constructor(private http: HttpClient) { }
 
-  createBackup() {
-    return this.http.post(this.backupUrl, {});
+  // Specify the return type as Observable<HttpEvent<any>>
+  createBackup(): Observable<HttpEvent<any>> {
+    return this.http.post(this.backupUrl, {}, { reportProgress: true, observe: 'events' });
   }
 }

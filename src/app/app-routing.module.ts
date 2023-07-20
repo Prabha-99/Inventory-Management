@@ -82,7 +82,7 @@ const routes: Routes = [
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
   {path:"billing",component:BillingComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
-  {path:"billingsend",component:BillingSendComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path:"billingsend",component:BillingSendComponent},
   {path:"billingview",component:BillingViewComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path:"reports",component:ReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-dash",component: InventoryAdDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
@@ -183,8 +183,9 @@ const routes: Routes = [
   {path: "showroom-side-bar",component:ShowroomSideBarComponent},
   {path: "showroom-bill-view",component:ShowroomBillViewComponent},
   {path: "showroom-send-file",component:ShowroomSendFileComponent},
-  {path: "inventory-backup",component:InventoryBackupComponent},
-  {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }}
+  {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }}
+
 
 
 ];

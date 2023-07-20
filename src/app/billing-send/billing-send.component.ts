@@ -1,6 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-
+import { BillService2 } from './billing-send.component.service';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-billing-send',
@@ -11,67 +12,109 @@ import { HttpClient} from '@angular/common/http';
 })
 
 
-export class BillingSendComponent {
+export class BillingSendComponent implements OnInit{
 
-  to:any;
-  subject:any;
-  bodyMsg:any;
-  file: any;
-  formData: any;
+  constructor(private billService2:BillService2) { }
 
 
-  constructor(private http: HttpClient) {}
+ bills: any[] = [];
+ fileURL: any[] = [];
+ pdfUrl!: SafeUrl;
 
-  onFileSelected(event: any) {
-    this.file = event.target.files[0];
-  }
+ filepath!: string;
+ fileContent!: ArrayBuffer;
+ fileUrl!: string;
+ filename!:string;
+
+
+ ngOnInit() {
+   this.billService2.getAllBills().subscribe(bill => {
+     this.bills = bill;
+   });
+
+ 
+
+   this.loadPdfList();
+
   
-  Cancel(): void {
-    if (confirm('Are you sure you want to Cancel?')) {
-      location.reload();
-    }
-  }
-  
-//email validation
-isValidEmailsend(to: any): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(to);
-}
+ }
 
-  emailerror='';
-  emailerror_fix='';
+ openPdf(filename: string): void {
+   this.billService2.getPdf(filename).subscribe(response => {
+     const blob = new Blob([response], { type: 'application/pdf' });
+     const url = URL.createObjectURL(blob);
+     window.open(url, '_blank');
+   });
+ }
 
-  sendMail() {
-    
-    let formData = new FormData();
-    formData.append('to', this.to);
-    formData.append('subject', this.subject);
-    formData.append('bodyMsg', this.bodyMsg);
-    formData.append('file', this.file);
 
-    if (!this.isValidEmailsend(this.to)) {
-      this.emailerror='Invalid Email Address!';
-      this.emailerror_fix='';
-      return;
+ //delete bill data function
+ onDelete(bill_id: number) {
+   if (confirm("Are you sure you want to delete this bill?")) {
 
-    }
-    this.emailerror_fix='ok!';
-      this.emailerror='';
-    
+     this.billService2.deleteBill(bill_id).subscribe(() => {
+       this.bills = this.bills.filter(bill => bill.id !== bill_id);
+      // alert("Bill deleted successfully.");
+      // location.reload(); // Refresh the page
+
+
+
+     }, () => {
+       alert("Bill Deleted Successfully!"); // Display success message
+       location.reload();
+     });
+   }
    
-      this.http.post('http://localhost:8080/api/billmail/send', this.formData).subscribe(
-        (response) => {
-     
-          window.alert('Email sent successfully!');
-          console.log(response);
-        },
-        (error) => {
-          window.alert('Error sending Mail');
-          console.error(error);
-        }
-   
-        );
-  }
+ }
+
+
+
+ //delete pdf function
+ onDeletepdf(bill_id: number) {
+   if (confirm("Are you sure you want to delete this bill?")) {
+     this.billService2.deleteBillpdf(bill_id).subscribe(() => {
+       this.pdfList = this.pdfList.filter(pdf => pdf.pdf_id !== bill_id);
+      // alert("Bill deleted successfully.");
+      // location.reload(); // Refresh the page
+
+
+
+     }, () => {
+       alert("Bill Deleted Successfully!"); // Display success message
+       location.reload();
+     });
+   }
+ }
+
+ pdfList: any[]=[];
+
+
+ loadPdfList(): void {
+   this.billService2.getAllPdf().subscribe(
+     (data: any[]) => {
+       this.pdfList = data;
+     },
+     (error) => {
+       console.log(error);
+     }
+   );
+ }
+
+
+ onSend(bill_id: number) {
+   if (confirm("Are you sure you want to Send this bill?")) {
+
+     this.billService2.sendBillPdfByEmail(bill_id).subscribe(() => {
+       this.bills = this.bills.filter(bill => bill.id !== bill_id);
+       alert("Bill Send Successfully!"); 
+
+     }, () => {
+       alert("Bill Send Fail!"); 
+     });
+   }
+
+ }
+
 
 
   
