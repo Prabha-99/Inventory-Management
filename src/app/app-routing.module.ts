@@ -82,7 +82,7 @@ const routes: Routes = [
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
   {path:"billing",component:BillingComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
-  {path:"billingsend",component:BillingSendComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path:"billingsend",component:BillingSendComponent},
   {path:"billingview",component:BillingViewComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path:"reports",component:ReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"orderreports",component:OrderReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},

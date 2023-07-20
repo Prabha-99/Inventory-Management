@@ -52,7 +52,7 @@
             <td style="text-align:center;">{{ bill.note }}</td>
            
             <td> <button (click)="onSend(bill.bill_id)" class="btn btn-outline-primary btn-sm">Send</button></td>
-            <td><button (click)="onDelete(bill.bill_id)" class="btn btn-outline-danger btn-sm">Delete</button></td>
+            <td><button (click)="onDelete(bill.bill_id)" *ngIf="shouldShowDeleteButton()" class="btn btn-outline-danger btn-sm">Delete</button></td>
             
           </tr>
         </tbody>
