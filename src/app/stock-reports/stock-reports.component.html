@@ -16,6 +16,13 @@
         
             <br><br><br><br><br>
             <h1>Filter Report here:</h1>
+
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Select Date" [(ngModel)]="searchValue" (ngModelChange)="filterReports()">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
             <table class="table">
             <thead>
                 <tr>
@@ -31,7 +38,10 @@
                 <td>{{ file.report_name }}</td>
                 <td>{{ file.date }}</td>
                 <td>
-                    <button type="button" class="btn btn-outline-warning" (click)="downloadFile(file.id, file.fileName)">Download</button>
+                    <!-- <button type="button" class="btn btn-outline-warning" (click)="downloadFile(file.report_id, file.fileName)">Download</button> -->
+                    <button type="button" class="btn btn-outline-warning" (click)="openPdf(file.report_name)">Download</button> 
+                    <!-- <button (click)="download()">Download File</button> -->
+
                 </td>
                 </tr>
             </tbody>
