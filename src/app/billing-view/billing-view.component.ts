@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BillService } from './billing-view.component.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 export class BillingViewComponent implements OnInit{
 
-  constructor(private billService: BillService, private sanitizer: DomSanitizer) { }
+  constructor(private billService: BillService, private sanitizer: DomSanitizer, private route: ActivatedRoute) { }
 
   // pdfList!: any[];
   bills: any[] = [];
@@ -24,7 +25,7 @@ export class BillingViewComponent implements OnInit{
   fileContent!: ArrayBuffer;
   fileUrl!: string;
   filename!:string;
-
+  userRole: any; 
 
   ngOnInit() {
     this.billService.getAllBills().subscribe(bill => {
@@ -37,7 +38,7 @@ export class BillingViewComponent implements OnInit{
 
     this.loadPdfList();
 
-   
+    this.userRole = this.route.snapshot.data['userRole'];
   }
 
   openPdf(filename: string): void {
@@ -110,10 +111,15 @@ export class BillingViewComponent implements OnInit{
         alert("Bill Send Successfully!"); 
 
       }, () => {
-        alert("Bill Send Fail!"); 
+        alert("Email Is Not Available !!"); 
       });
     }
 
+  }
+
+
+  shouldShowDeleteButton(): boolean {
+    return this.userRole === 'INVENTORY_ADMIN';
   }
 
 }
