@@ -14,7 +14,7 @@ export class AuthService {
   private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
   private apiUrl2 = 'http://localhost:8080/api/auth/CurrentUser';
   private apiUrl3 = 'http://localhost:8080/api/auth/UserProfile';
-  private apiUrl4 = 'http://localhost:8080/api/admin';
+  private apiUrl4 = 'http://localhost:8080/api/api/UpdateProfile';
 
   constructor(private http: HttpClient) { }
 
@@ -61,8 +61,7 @@ export class AuthService {
   
   updateUserProfile(user: any): Observable<any> {
     const headers = this.getHeaders();
-    const userId = user.id; // Assuming the user object has an 'id' property
-    return this.http.put<any>(`${this.apiUrl4}/${userId}`, user, { headers });
+    return this.http.put<any>(`${this.apiUrl4}`, user, { headers });
   }
 
 }
