@@ -220,7 +220,7 @@ import { StockReportsComponent } from './stock-reports/stock-reports.component';
         ShowroomBillViewComponent,
         ShowroomSendFileComponent,
 
-        ShowroomProfileComponent
+        ShowroomProfileComponent,
 
 
         DesignerProfileComponent,
