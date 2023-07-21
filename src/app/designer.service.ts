@@ -8,13 +8,15 @@ import { DesignerProduct } from './designer-product';
 })
 export class DesignerService {
 
-  private apiUrl = 'http://localhost:8080/api/designer/getAllProduct';
+  private apiUrl = 'http://localhost:8080/api/product/getAllProduct';
 
   constructor(private http: HttpClient) { }
 
-  getAllProducts(product: DesignerProduct): Observable<DesignerProduct[]> {
-    return this.http.get<DesignerProduct[]>((this.apiUrl));
+  getAllProducts(): Observable<DesignerProduct[]> {
+    return this.http.get<DesignerProduct[]>(this.apiUrl);
   }
+
+
 
 
   downloadFile(id: number, fileName: string): void {

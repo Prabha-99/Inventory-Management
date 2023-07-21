@@ -13,7 +13,7 @@
     <app-designer-side-bar></app-designer-side-bar>
 
       <div class="dq">
-          <h2>Products</h2>
+          <h1><b>Products</b></h1>
           <br>
       </div>
           <div class="table">
@@ -26,23 +26,62 @@
                   <th><b>Product Name</b></th>
                   <th><b>Product Price</b></th>
                   <th><b>Product Quantity</b></th>
-                  <th><b>Cat ID</b></th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let product of products!">
+                <tr *ngFor="let product of products">
                   <td>{{ product.product_id }}</td>
                   <td>{{ product.category_id}}</td>
                   <td>{{ product.product_brand}}</td>
                   <td>{{ product.product_name}}</td>
                   <td>{{ product.product_price}}</td>
                   <td>{{ product.product_quantity}}</td>
-                  <td>{{ product.cat_id}}</td>
                 </tr>
               </tbody>
             </table>
+            <br>
+          </div>
+
+          <h2 class="d-flex justify-content-center">Deduct Product Quantity</h2>
+
+          <div class="form">
+              <form #productForm="ngForm" >
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Product Name</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="product_name" [(ngModel)]="selectedProductName" required>
+                              <option *ngFor="let product of products" [value]="product.product_name">{{ product.product_name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                        <br>
+                    <div class="form-group row">
+                       <label class="col-sm-2 col-form-label">Product Brand</label>
+                          <div class="col-sm-10">
+                            <select class="form-control" name="product_brand" [(ngModel)]="selectedProductBrand" required>
+                              <option *ngFor="let product of products" [value]="product.product_brand">{{ product.product_brand }}</option>
+                            </select>
+                          </div>
+                    </div>
+
+                        <br>
+                    <div class="form-group col-md-2">
+                        <label class="col-sm col-form-label">Product Quantity</label>
+                          <div class="col-sm">
+                            <input type="number" class="form-control" name="product_quantity" ngModel required>
+                          </div>
+                    </div>
+                        <br>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;" [disabled]="!productForm.valid">Confirm</button>
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                        </div>
+                    </div>
+                </form>
           </div>
     </div>
+
 
 </body>
 </html>
