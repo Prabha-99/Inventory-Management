@@ -26,7 +26,15 @@ export class GetUserService {
     return this.http.get<any>(url);
   }
 
-  updateUser(user: any){
-    return this.http.put<any>(this.adminUrlupdate, user);
+  // updateUser(user: any){
+  //   return this.http.put<any>(this.adminUrlupdate, user);
+  // }
+
+  getUserById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.adminUrl}/${id}`);
+  }
+
+  updateUser(user: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/update`, user);
   }
 }

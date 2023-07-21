@@ -1,4 +1,4 @@
-  <html>
+  <!-- <html>
     <head>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       </head>
@@ -120,4 +120,89 @@
   
 
 
-  
+   -->
+
+   <div class="container">
+  <h1>Update All Users</h1>
+
+  <!-- Add your search input and table with user details here -->
+
+  <!-- Table to display user details -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" *ngFor="let user of filteredUsers">
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="openUpdateForm(user)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal for Update Form -->
+  <div *ngIf="showModal" class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update User Details</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="closeUpdateForm()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="updateUser()">
+            <div class="form-group">
+              <label for="id">User Id :</label>
+              <input type="text" disabled [(ngModel)]="userUpdate.id" name="id" id="id" class="form-control"
+                placeholder="User Id">
+            </div>
+            <div class="form-group">
+              <label for="firstname">User First Name :</label>
+              <input type="text" [(ngModel)]="userUpdate.firstname" name="firstname" id="firstname"
+                class="form-control" placeholder="User First Name">
+            </div>
+            <div class="form-group">
+              <label for="lastname">User Last Name :</label>
+              <input type="text" [(ngModel)]="userUpdate.lastname" name="lastname" id="lastname" class="form-control"
+                placeholder="User Last Name">
+            </div>
+            <div class="form-group">
+              <label for="email">User Email :</label>
+              <input type="text" disabled [(ngModel)]="userUpdate.email" name="email" id="email" class="form-control"
+                placeholder="User Email">
+            </div>
+            <div class="form-group">
+              <label for="role">User Role :</label>
+              <input type="text" [(ngModel)]="userUpdate.role" name="role" id="role" class="form-control"
+                placeholder="User Role">
+            </div>
+            <br>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeUpdateForm()">Close</button>
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+</div>
