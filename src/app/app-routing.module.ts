@@ -192,10 +192,10 @@ const routes: Routes = [
 
   {path: "designer-profile",component:DesignerProfileComponent},
 
-  {path: "showroom-profile",component:ShowroomProfileComponent}
+  {path: "showroom-profile",component:ShowroomProfileComponent},
 
 
-  {path: "designer-profile",component:DesignerProfileComponent}
+  {path: "designer-profile",component:DesignerProfileComponent},
 
 
   {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
