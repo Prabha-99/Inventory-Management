@@ -7,11 +7,10 @@
     <form #productForm="ngForm" (ngSubmit)="addProduct()">
       <mat-card-content>
         <p>
-
-          <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="product.category_id"  required>
-            <option selected value="" disabled [ngValue]="null">Select Category</option>
-            <option value="c2">Melamine Board</option>
-            <option value="c3">Edge Band</option>
+          <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="product.category_id" required>
+            <option *ngFor="let category of categories.filter(filterCategories); let i = index" [value]="category.category_id">
+              {{ category.category_name }}
+            </option>
           </select>
           <br>
           <!-- Product Name -->

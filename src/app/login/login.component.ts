@@ -41,7 +41,7 @@ export class LoginComponent {
                   this.router.navigate(['/stock-manager-dash']);
                   break;
                 case 'STOCK_KEEPER':
-                  this.router.navigate(['/home']);
+                  this.router.navigate(['/stock-keeper-dash']);
                   break;
                 case 'DESIGNER':
                   this.router.navigate(['/designer']);

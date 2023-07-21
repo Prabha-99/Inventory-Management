@@ -15,12 +15,28 @@ import { InventoryAdEditComponent } from '../inventory-ad-edit/inventory-ad-edit
 export class InventoryAdAddproductComponent implements OnInit{
 
   products: any[] = [];
-  
+  filteredProducts: any[] = [];
+  searchValue: string = '';
+
   constructor(private _dialog: MatDialog,  private productService: InventoryAdAddproductService){}
   ngOnInit(): void {
     this.productService.getProducts().subscribe(product => {
       this.products = product;
+      this.filteredProducts = product;
   });
+  }
+
+
+  searchProducts(): void {
+    this.filteredProducts = this.products.filter(product => {
+      const searchDet = `${product.product_name} ${product.category_id}`;
+      return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+  }
+
+  clearSearch(): void {
+    this.searchValue = '';
+    this.filteredProducts = this.products;
   }
 
   deleteProductForm(author: any, operation: String) {

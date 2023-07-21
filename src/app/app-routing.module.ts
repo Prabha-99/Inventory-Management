@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { OrderReportsComponent } from './order-reports/order-reports.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BillingComponent } from './billing/billing.component';
@@ -67,11 +66,17 @@ import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
 import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
 import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
 import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-file.component';
+
 import { ShowroomProfileComponent } from './showroom-profile/showroom-profile.component';
+
+import { DesignerProfileComponent } from './designer-profile/designer-profile.component';
+
 
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
+import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
+import { StockReportsComponent } from './stock-reports/stock-reports.component';
 
 
 
@@ -82,10 +87,9 @@ const routes: Routes = [
   {path:"navbar",component:NavbarComponent},
   {path:"sidebar",component:SidebarComponent},
   {path:"billing",component:BillingComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
-  {path:"billingsend",component:BillingSendComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
-  {path:"billingview",component:BillingViewComponent, canActivate: [AuthGuardService], data: { allowedRoles: [''] },resolve: { userRole: RouteResolverService }},
+  {path:"billingsend",component:BillingSendComponent},
+  {path:"billingview",component:BillingViewComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN','DESIGNER','PURCHASE_COORDINATOR','STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path:"reports",component:ReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
-  {path:"orderreports",component:OrderReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-dash",component: InventoryAdDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-addproduct",component: InventoryAdAddproductComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-profile",component:InventoryAdProfileComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
@@ -184,7 +188,17 @@ const routes: Routes = [
   {path: "showroom-side-bar",component:ShowroomSideBarComponent},
   {path: "showroom-bill-view",component:ShowroomBillViewComponent},
   {path: "showroom-send-file",component:ShowroomSendFileComponent},
+
   {path: "showroom-profile",component:ShowroomProfileComponent}
+
+
+  {path: "designer-profile",component:DesignerProfileComponent}
+
+  {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }}
+
+
+
 
 
 ];

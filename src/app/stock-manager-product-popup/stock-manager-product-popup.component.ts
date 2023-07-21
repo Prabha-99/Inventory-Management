@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StockManagerProductPopupService } from './stock-manager-product-popup.service';
 
 
@@ -7,7 +7,9 @@ import { StockManagerProductPopupService } from './stock-manager-product-popup.s
   templateUrl: './stock-manager-product-popup.component.html',
   styleUrls: ['./stock-manager-product-popup.component.css']
 })
-export class StockManagerProductPopupComponent {
+export class StockManagerProductPopupComponent implements OnInit{
+
+  categories: any[] = [];
   product: any = {
 
     category_id: '',
@@ -18,6 +20,18 @@ export class StockManagerProductPopupComponent {
   };
 
   constructor(private stockManagerProductPopupService: StockManagerProductPopupService) {}
+  
+  ngOnInit(): void {
+    this.stockManagerProductPopupService.getCategory().subscribe(category => {
+      this.categories = category;
+  });
+  }
+
+  // Inside StockManagerProductPopupComponent class
+  filterCategories(category: any): boolean {
+    return category.category_id === 'cat_edge' || category.category_id === 'cat_melamine';
+  }
+
 
   addProduct() {
 

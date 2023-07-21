@@ -15,4 +15,17 @@ export class StockManagerSellOrderService {
     const payload = { product_name, product_brand, product_quantity };
     return this.http.post<void>(`${this.API_URL}/reduce`, payload);
   }
+
+  getGin(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8080/api/GIN/getAllGin');
+  }
+
+  getProductNames(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.API_URL}/nameByCate`);
+  }
+
+  getProductBrands(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.API_URL}/brandNameByCate`);
+  }
 }
+

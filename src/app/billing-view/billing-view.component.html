@@ -19,7 +19,7 @@
         <caption><h1 class="bg-secondary"style="text-align:center;color:white;"> Bill Information</h1></caption>
         <thead  style="background-color:#222222 ;" class="text-white">
         <tr>
-            <th scope="col"style="text-align:center;">bill_id</th>
+            <th scope="col"style="text-align:center;">Bill Id</th>
             <th scope="col"style="text-align:center;">Quatation No.</th>
             <th scope="col"style="text-align:center;">Cu_Name</th>
             <th scope="col"style="text-align:center;">Billing Date</th>
@@ -31,7 +31,7 @@
             <th scope="col"style="text-align:center;">Sub Total</th>
             <th scope="col"style="text-align:center;">Total Amount</th>
             <th scope="col"style="text-align:center;">Notes</th>
- 
+            <th scope="col"></th>
             <th scope="col"></th>  
         </tr>
         </thead>
@@ -50,9 +50,10 @@
             <td style="text-align:center;">Rs.{{ bill.subtotal}}</td>
             <td style="text-align:center;">Rs.{{ bill.total_amount}}</td>
             <td style="text-align:center;">{{ bill.note }}</td>
-            <td>
-              <button (click)="onDelete(bill.bill_id)" class="btn btn-outline-danger btn-sm">Delete</button>
-            </td>
+           
+            <td> <button (click)="onSend(bill.bill_id)" class="btn btn-outline-primary btn-sm">Send</button></td>
+            <td><button (click)="onDelete(bill.bill_id)" *ngIf="shouldShowDeleteButton()" class="btn btn-outline-danger btn-sm">Delete</button></td>
+            
           </tr>
         </tbody>
       </table>
@@ -68,7 +69,7 @@
   <caption>  <h1 class="bg-secondary"style="text-align:center;color:white;">Generated Bills</h1></caption>
   <thead style="background-color:#222222 ;" class="text-white">
     <tr>
-      <th>File id</th>
+      <th>Bill Id</th>
       <th>File Name</th>
       <th>Get File</th>
     </tr>

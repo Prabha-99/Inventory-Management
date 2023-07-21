@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GRNService } from './grn.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-grn-reports',
@@ -9,9 +10,10 @@ import { GRNService } from './grn.service';
 export class GRNReportsComponent implements OnInit{
 
   files!: any[];
+  originalFiles!: any[]; // Store the original files before filtering
   reports: any[] = [];
   filteredReports: any[] = [];
-  searchValue: string = '';
+  searchValue: Date | null | undefined;
   dialog: any;
   router: any;
   error='';
@@ -22,6 +24,7 @@ export class GRNReportsComponent implements OnInit{
     this.grnService.getAllFiles().subscribe(
       (response) => {
         this.files = response;
+        this.originalFiles = response; // Assign the fetched files to originalFiles
       },
       (error) => {
         console.log('Error retrieving files:', error);
@@ -29,22 +32,31 @@ export class GRNReportsComponent implements OnInit{
     );
   }
 
-  filterReports(): void {
+  filterReports() {
     if (this.searchValue) {
-      this.filteredReports = this.files.filter((file) => {
-        // Compare the date value with the selected search date (without time)
-        const fileDate = new Date(file.date);
-        const searchDate = new Date(this.searchValue);
-        return (
-          fileDate.getFullYear() === searchDate.getFullYear() &&
-          fileDate.getMonth() === searchDate.getMonth() &&
-          fileDate.getDate() === searchDate.getDate()
-        );
+      const datePipe = new DatePipe('en-US');
+      const selectedDate = datePipe.transform(this.searchValue, 'MM/dd/yyyy');
+      this.files = this.originalFiles.filter((file) => {
+        const fileDate = file.date.substring(0, 10); // Extract the date part from the file date ('MM/dd/yyyy')
+
+        console.log('Search Date:', selectedDate);
+        console.log('File Date:', fileDate);
+
+        return fileDate === selectedDate; // Filter files that have the same date as the selected date
       });
     } else {
-      this.filteredReports = this.files; // If no search date is selected, show all files
+      this.files = this.originalFiles; // Reset files to the original list
     }
   }
+
+  resetFilter() {
+    this.searchValue = null; // Clear the selected date
+    this.files = this.files; // Reset files to the original list
+  }
+
+
+
+  
 
   downloadFile(report_id: number, report_name: string): void {
     this.grnService.downloadFile(report_id).subscribe(

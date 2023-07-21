@@ -13,6 +13,8 @@ export class StockManagerProductComponent implements OnInit {
 
   products: any[] = [];
   filteredProducts: any[] = [];
+  fillProducts: any[] = [];
+  searchValue: string = '';
 
   constructor(private _dialog: MatDialog, private productService: StockManagerProductService){}
 
@@ -20,15 +22,24 @@ export class StockManagerProductComponent implements OnInit {
     this.productService.getProducts().subscribe(product => {
       this.products = product;
       this.filterProducts();
+      this.filteredProducts = this.fillProducts;
+    
     });
 
     
   }
 
   filterProducts() {
-    this.filteredProducts = this.products.filter(product => {
+    this.fillProducts = this.products.filter(product => {
       // Filter products based on category_id
-      return product.category_id === 'c2' || product.category_id === 'c3';
+      return product.category_id === 'cat_edge' || product.category_id === 'cat_melamine';
+    });
+  }
+
+  searchProducts(): void {
+    this.filteredProducts = this.fillProducts.filter(product => {
+      const searchDet = `${product.product_name} ${product.category_id}`;
+      return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
     });
   }
 

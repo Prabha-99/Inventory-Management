@@ -1,0 +1,50 @@
+
+<div class="container">
+    <div class="row">
+         <app-navbar></app-navbar><!--Call navbar-->
+   </div>
+     <br>
+     <br>
+     <br>
+     <div class="row">
+         <div class="col-2">
+             <app-inventory-ad-side-bar></app-inventory-ad-side-bar> <!--Call sidebar-->
+         </div>
+         <br><br><br>
+  
+         <div class="col-10 mt-5">
+          <div class="mt-5">
+            <div>
+             <button (click)="createBackup()" class="btn btn-primary">
+                <span class="me-2" style="font-size: 25px">
+                  <i class="bi bi-file-earmark-arrow-up"></i>
+                </span>
+                <span style="font-size: 13.5px">Backup Now</span>
+              </button>
+            </div>
+            <br>
+            <div *ngIf="showProgress">
+                <div class="progress" style="height: 10px; width: 1000px;">
+                  <div class="progress-bar bg-primary" role="progressbar" [style.width.%]="progressValue" style="height: 100%;">
+                    {{ progressValue }}%
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Display the backup success message when the progress is 100% -->
+              <div *ngIf="backupCompleted" class="alert alert-success mt-3">
+                The Backup is successfully done!
+              </div>
+              
+              
+          </div>
+     </div>
+  </div>
+  
+  
+
+
+
+
+
+
