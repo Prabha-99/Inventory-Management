@@ -14,7 +14,6 @@ import { BillingSendComponent } from './billing-send/billing-send.component';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportsComponent } from './reports/reports.component';
-import { OrderReportsComponent } from './order-reports/order-reports.component';
 import { InventoryAdNavComponent } from './inventory-ad-nav/inventory-ad-nav.component';
 import { InventoryAdSideBarComponent } from './inventory-ad-side-bar/inventory-ad-side-bar.component';
 import { InventoryAdDashComponent } from './inventory-ad-dash/inventory-ad-dash.component';
@@ -110,7 +109,12 @@ import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
 import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
 import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
 import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-file.component';
+
 import { DesignerProfileComponent } from './designer-profile/designer-profile.component';
+
+import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
+import { StockReportsComponent } from './stock-reports/stock-reports.component';
+
 
 
 
@@ -131,7 +135,6 @@ import { DesignerProfileComponent } from './designer-profile/designer-profile.co
     BillingComponent,
     BillingSendComponent,
     ReportsComponent,
-    OrderReportsComponent,
     InventoryAdNavComponent,
     InventoryAdSideBarComponent,
     InventoryAdDashComponent,
@@ -215,7 +218,12 @@ import { DesignerProfileComponent } from './designer-profile/designer-profile.co
         ShowroomSideBarComponent,
         ShowroomBillViewComponent,
         ShowroomSendFileComponent,
+
         DesignerProfileComponent,
+
+        InventoryBackupComponent,
+        StockReportsComponent,
+
 
 
 

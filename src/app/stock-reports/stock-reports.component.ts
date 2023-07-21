@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { GINService } from './gin.service';
 import { DatePipe } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { StockService } from './stock.service';
+
 
 @Component({
-  selector: 'app-gin-reports',
-  templateUrl: './gin-reports.component.html',
-  styleUrls: ['./gin-reports.component.css']
-  
+  selector: 'app-stock-reports',
+  templateUrl: './stock-reports.component.html',
+  styleUrls: ['./stock-reports.component.css']
 })
-export class GINReportsComponent implements OnInit{
+export class StockReportsComponent implements OnInit{
 
   files!: any[];
   originalFiles!: any[]; // Store the original files before filtering
@@ -24,11 +24,11 @@ export class GINReportsComponent implements OnInit{
   fileUrl!: string;
   filename!:string;
 
-  constructor(private ginService: GINService ) { }
+  constructor(private stockService: StockService ) { }
 
 
   ngOnInit(): void {
-    this.ginService.getAllFiles().subscribe(
+    this.stockService.getAllFiles().subscribe(
       (response) => {
         this.files = response;
         this.originalFiles = response; // Assign the fetched files to originalFiles
@@ -103,10 +103,11 @@ export class GINReportsComponent implements OnInit{
   // }
 
   openPdf(report_name: string): void {             //New
-    this.ginService.getPdf(report_name).subscribe(response => {
+    this.stockService.getPdf(report_name).subscribe(response => {
       const blob = new Blob([response], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       window.open(url, '_blank');
     });
   }
+
 }

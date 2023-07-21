@@ -12,7 +12,7 @@ export class GenerateGRNComponent {
     address:'',
     contact_nu:'',
     date:null,
-    invoice_number:null,
+    category_id:null,
     item_description:'',
     ordered_quantity:null,
     received_quantity:null,
@@ -46,18 +46,19 @@ submit() {
     (response) => {
       console.log('GRN added successfully',response);
       // Reset the form
-        alert('GRN Added Successfully!!')
+        alert('GRN created successfully!!')
       this.reset();
     },
     (error) => {
-      console.error('Failed to add GRN', error);
+      console.error('Failed to create GRN', error);
+      alert('Failed to create GRN');
     }
   );
 
 }
 
 isValidFormData(): boolean {
-  return !!this.grn.address && !!this.grn.contact_nu && !!this.grn.supplier_name && !!this.grn.date && !!this.grn.invoice_no
+  return !!this.grn.address && !!this.grn.contact_nu && !!this.grn.supplier_name && !!this.grn.date && !!this.grn.category_id
   && !!this.grn.ordered_quantity && !!this.grn.received_quantity ;
 }
 
@@ -79,7 +80,7 @@ reset() {
     address:'',
     contact_nu:'',
     date:null,
-    invoice_number:null,
+    category_id:null,
     item_description:null,
     ordered_quantity:null,
     received_quantity:null,

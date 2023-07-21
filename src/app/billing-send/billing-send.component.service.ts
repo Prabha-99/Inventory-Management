@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 
-export class BillService {
+export class BillService2 {
 
  // pdfList!: any[];
 
