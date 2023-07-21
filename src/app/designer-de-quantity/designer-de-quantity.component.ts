@@ -1,56 +1,66 @@
+
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DesignerProduct } from '../designer-product';
+import { HttpClient} from '@angular/common/http';
 import { DesignerService } from '../designer.service';
 
+interface Product {
+
+  product_id:any;
+  category_id:string;
+  product_brand:string;
+  product_name:string;
+  product_price:any;
+  product_quantity:any;
+}
 
 @Component({
   selector: 'app-designer-de-quantity',
   templateUrl: './designer-de-quantity.component.html',
   styleUrls: ['./designer-de-quantity.component.css']
 })
-export class DesignerDeQuantityComponent {
-  productService: any;
-  showSuccessMessage: boolean = false;
-  showErrorMessage: boolean = false;
+export class DesignerDeQuantityComponent implements OnInit{
 
-product: DesignerProduct = {
-  product_id: 0,
-  product_quantity: 0
-};
-
-  constructor(private http: HttpClient, private designerService: DesignerService) { }
+  products: Product[]=[];
+  selectedProductName: string ='';
+  selectedProductBrand: string = '';
 
 
-  deductProduct(): void {
-    this.designerService.deductProduct(this.product)
-      .subscribe(
-        updatedProduct => {
-          console.log('Product deducted successfully:', updatedProduct);
 
-          this.showSuccessMessage = true;
-          setTimeout(() => {
-            this.showSuccessMessage = false;
-          }, 5000); // Adjust the time (in milliseconds)
+  constructor(private http: HttpClient,private productService: DesignerService) { }
 
-          // Clear the input fields
-        this.product = {
-          product_id: null,
-          product_quantity: null
-        };
-        },
-        error => {
-          console.error('Failed to deduct product:', error);
 
-          this.showErrorMessage = true;
 
-          setTimeout(() => {
-            this.showErrorMessage = false;
-          }, 5000);
-        }
-      );
+  ngOnInit(): void {
+    this.getFiles();
   }
+
+
+  getFiles() {
+    this.http.get<Product[]>('http://localhost:8080/api/product/getAllProduct')
+      .subscribe(products => this.products = products);
+  }
+
+  reduceQuantity(product_name: string, product_brand: string, product_quantity: number): void {
+    this.productService.reduceProductQuantity(product_name, product_brand, product_quantity).subscribe(() => {
+      alert('Product quantity updated successfully');
+    }, error => {
+      alert('Error updating product quantity');
+      console.error(error);
+    });
+  }
+
+  onSubmit(formValue: any): void {
+    this.reduceQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
+  }
+
+
+
+
+
+
 }
+
+
 
 
 

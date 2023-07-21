@@ -12,44 +12,77 @@
     <app-navbar></app-navbar>
     <app-designer-side-bar></app-designer-side-bar>
 
-    <div class="dq">
-    <h2>Deduct Quantity</h2>
-    <br>
-    <hr/>
+      <div class="dq">
+          <h1><b>Products</b></h1>
+          <br>
+      </div>
+          <div class="table">
+            <table class="table table-hover" >
+              <thead>
+                <tr>
+                  <th><b>Product ID</b></th>
+                  <th><b>Category ID</b></th>
+                  <th><b>Product Brand </b></th>
+                  <th><b>Product Name</b></th>
+                  <th><b>Product Price</b></th>
+                  <th><b>Product Quantity</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products">
+                  <td>{{ product.product_id }}</td>
+                  <td>{{ product.category_id}}</td>
+                  <td>{{ product.product_brand}}</td>
+                  <td>{{ product.product_name}}</td>
+                  <td>{{ product.product_price}}</td>
+                  <td>{{ product.product_quantity}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+          </div>
+
+          <h2 class="d-flex justify-content-center">Deduct Product Quantity</h2>
+
+          <div class="form">
+              <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)" >
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Product Name</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="product_name" [(ngModel)]="selectedProductName" required>
+                              <option *ngFor="let product of products" [value]="product.product_name">{{ product.product_name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                        <br>
+                    <div class="form-group row">
+                       <label class="col-sm-2 col-form-label">Product Brand</label>
+                          <div class="col-sm-10">
+                            <select class="form-control" name="product_brand" [(ngModel)]="selectedProductBrand" required>
+                              <option *ngFor="let product of products" [value]="product.product_brand">{{ product.product_brand }}</option>
+                            </select>
+                          </div>
+                    </div>
+
+                        <br>
+                    <div class="form-group col-md-2">
+                        <label class="col-sm col-form-label">Product Quantity</label>
+                          <div class="col-sm">
+                            <input type="number" class="form-control" name="product_quantity" ngModel required>
+                          </div>
+                    </div>
+                        <br>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;" [disabled]="!productForm.valid">Confirm</button>
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                        </div>
+                    </div>
+                </form>
+          </div>
     </div>
 
-    <div class="deduct">
-      <div class="container px-2 text-center">
-        <div class="row gx-3">
-            <div class="col">
-              <div class="p-1"><label for="productID">Product ID:</label></div>
-              <div class="p-1"><input type="text" id="productID" [(ngModel)]="product.product_id" /></div>
-            </div>
 
-            <div class="col">
-              <div class="p-1"><label for="quantityToDeduct">Quantity to Deduct:</label></div>
-              <div class="p-1"><input type="text" id="quantityToDeduct" [(ngModel)]="product.product_quantity" /></div>
-            </div>
-
-            <div class="col">
-              <div class="p-3"><button (click)="deductProduct()" class="btn btn-outline-success">Deduct Product</button></div>
-            </div>
-            <br>
-            <br>
-
-            <div *ngIf="showSuccessMessage" class="alert alert-success alert-dismissible fade show" role="alert">
-              Success! Your action was completed successfully.
-            </div>
-
-            <br>
-            <br>
-            <div *ngIf="showErrorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
-              Error! Something went wrong. Please try again.
-            </div>
-        </div>
-     </div>
-   </div>
-  </div>
 </body>
 </html>
 

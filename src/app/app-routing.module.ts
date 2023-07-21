@@ -66,6 +66,7 @@ import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
 import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
 import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
 import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-file.component';
+import { DesignerProfileComponent } from './designer-profile/designer-profile.component';
 
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { AuthGuardService } from './auth-guard.service';
@@ -183,8 +184,12 @@ const routes: Routes = [
   {path: "showroom-side-bar",component:ShowroomSideBarComponent},
   {path: "showroom-bill-view",component:ShowroomBillViewComponent},
   {path: "showroom-send-file",component:ShowroomSendFileComponent},
+
+  {path: "designer-profile",component:DesignerProfileComponent}
+=======
   {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }}
+
 
 
 
