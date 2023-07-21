@@ -21,10 +21,10 @@ export class PurchaseCoordinatorSellOrderService {
   }
 
   getProductNames(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.API_URL}/names`);
+    return this.http.get<string[]>(`${this.API_URL}/productByCate`);
   }
 
   getProductBrands(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.API_URL}/BrandNames`);
+    return this.http.get<string[]>(`${this.API_URL}/brandByCate`);
   }
 }
