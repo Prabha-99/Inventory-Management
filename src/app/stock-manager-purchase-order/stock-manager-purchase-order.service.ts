@@ -20,4 +20,12 @@ export class StockManagerPurchaseOrderService {
     return this.http.get<any[]>('http://localhost:8080/api/GRN/getAllGrn'); //get grn
   }
 
+  getProductNames(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.API_URL}/nameByCate`);
+  }
+
+  getProductBrands(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.API_URL}/brandNameByCate`);
+  }
+
 }
