@@ -45,7 +45,7 @@
           <h2 class="d-flex justify-content-center">Deduct Product Quantity</h2>
 
           <div class="form">
-              <form #productForm="ngForm" >
+              <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)" >
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Product Name</label>
                         <div class="col-sm-10">

@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import { DesignerService } from '../designer.service';
 
 interface Product {
 
@@ -25,7 +26,9 @@ export class DesignerDeQuantityComponent implements OnInit{
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private productService: DesignerService) { }
+
+
 
   ngOnInit(): void {
     this.getFiles();
@@ -35,6 +38,19 @@ export class DesignerDeQuantityComponent implements OnInit{
   getFiles() {
     this.http.get<Product[]>('http://localhost:8080/api/product/getAllProduct')
       .subscribe(products => this.products = products);
+  }
+
+  reduceQuantity(product_name: string, product_brand: string, product_quantity: number): void {
+    this.productService.reduceProductQuantity(product_name, product_brand, product_quantity).subscribe(() => {
+      alert('Product quantity updated successfully');
+    }, error => {
+      alert('Error updating product quantity');
+      console.error(error);
+    });
+  }
+
+  onSubmit(formValue: any): void {
+    this.reduceQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
   }
 
 
