@@ -13,13 +13,30 @@ export class PurchaseCoordinatorPurchaseOrderComponent implements OnInit{
   filteredGrns: any[] = [];
   fillGrns: any[] = [];
   searchValue: string = '';
+  productNames: string[] = [];
+  productBrands: string[] = [];
+  selectedProductName: string = '';
+  selectedProductBrand: string = '';
+  filteredProductNames: string[] = [];
+  filteredProductBrands: string[] = [];
 
   constructor(private _dialog: MatDialog, private productService: PurchaseCoordinatorPurchaseOrderService) {}
+
   ngOnInit(): void {
     this.productService.getGrn().subscribe(gin => {
       this.grns = gin;
       this.filterGrns();
       this.filteredGrns = this.fillGrns;
+    });
+
+    this.productService.getProductNames().subscribe(productNames => {
+      this.productNames = productNames;
+      this.filteredProductNames = productNames;
+    });
+
+    this.productService.getProductBrands().subscribe(productBrands => {
+      this.productBrands = productBrands;
+      this.filteredProductBrands = productBrands;
     });
   }
 
@@ -48,5 +65,13 @@ export class PurchaseCoordinatorPurchaseOrderComponent implements OnInit{
 
   onSubmit(formValue: any): void {
     this.reduceQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
+  }
+
+  searchProductNames(): void {
+    this.filteredProductNames = this.productNames.filter(name => name.toLowerCase().includes(this.selectedProductName.toLowerCase()));
+  }
+
+  searchProductBrands(): void {
+    this.filteredProductBrands = this.productBrands.filter(brand => brand.toLowerCase().includes(this.selectedProductBrand.toLowerCase()));
   }
 }
