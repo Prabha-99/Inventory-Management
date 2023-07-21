@@ -11,7 +11,7 @@ export class StockManagerPurchaseOrderService {
 
   constructor(private http: HttpClient) {}
 
-  reduceProductQuantity(product_name: string, product_brand: string, product_quantity: number): Observable<void> {
+  increaseProductQuantity(product_name: string, product_brand: string, product_quantity: number): Observable<void> {
     const payload = { product_name, product_brand, product_quantity };
     return this.http.post<void>(`${this.API_URL}/increase`, payload);
   }
