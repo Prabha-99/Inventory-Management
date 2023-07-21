@@ -65,19 +65,27 @@
                       <h2 class="d-flex justify-content-center">Sell Product</h2>
                       
                       <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
+                        
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Product Name</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="product_name" placeholder="Product Name" ngModel required>
+                            <select class="form-select" name="product_name" aria-label="product" required [(ngModel)]="selectedProductName">
+                              <option selected value="" disabled>Select Product name</option>
+                              <option *ngFor="let product of filteredProductNames" [value]="product">{{ product }}</option>
+                            </select>
                           </div>
                         </div>
                         <br>
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Product Brand</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="product_brand" placeholder="Product Brand" ngModel required>
+                            <select class="form-select" name="product_brand" aria-label="product" required [(ngModel)]="selectedProductBrand">
+                              <option selected value="" disabled>Select Product brand</option>
+                              <option *ngFor="let brand of filteredProductBrands" [value]="brand">{{ brand }}</option>
+                            </select>
                           </div>
                         </div>
+
                         <br>
                         <div class="form-group col-md-2">
                           <label class="col-sm col-form-label">Product Quantity</label>
