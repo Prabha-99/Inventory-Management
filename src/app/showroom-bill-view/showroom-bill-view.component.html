@@ -29,6 +29,7 @@
             <td>{{ file.id }}</td>
             <td>{{ file.fileName }}</td>
             <td>{{ formatDate(file.date)}}</td>
+            <td>{{ file.customerName}}</td>
             <td>
               <button (click)="downloadFile(file.id, file.fileName)" class="btn btn-outline-success">Download</button>
             </td>
