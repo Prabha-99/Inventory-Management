@@ -190,9 +190,15 @@ const routes: Routes = [
   {path: "showroom-send-file",component:ShowroomSendFileComponent},
 
 
+  {path: "showroom-profile",component:ShowroomProfileComponent},
+
+
   {path: "designer-profile",component:DesignerProfileComponent},
 
   {path: "showroom-profile",component:ShowroomProfileComponent},
+
+
+  {path: "designer-profile",component:DesignerProfileComponent},
 
 
   {path: "designer-profile",component:DesignerProfileComponent},
