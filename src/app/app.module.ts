@@ -59,6 +59,7 @@ import { DesignerComponent } from './designer/designer.component';
 
 
 
+
 // import { OrderComponent } from './order/order.component';
 
 
@@ -115,7 +116,7 @@ import { DesignerProfileComponent } from './designer-profile/designer-profile.co
 
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
-
+import { DatePipe } from '@angular/common';
 
 
 
@@ -220,7 +221,7 @@ import { StockReportsComponent } from './stock-reports/stock-reports.component';
         ShowroomBillViewComponent,
         ShowroomSendFileComponent,
 
-        ShowroomProfileComponent
+        ShowroomProfileComponent,
 
 
         DesignerProfileComponent,
@@ -255,13 +256,15 @@ import { StockReportsComponent } from './stock-reports/stock-reports.component';
     MatTableModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatNativeDateModule
+
 
 
 
 
   ],
-  providers: [],
+  providers: [DatePipe],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
