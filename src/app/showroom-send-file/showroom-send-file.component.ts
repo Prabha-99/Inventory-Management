@@ -37,19 +37,28 @@ file:any;
     formData.append("name",this.name)
     formData.append("file",this.file)
 
+    alert('File send successfully!');
+      this.refreshPage();
+
     //submit data in API
 
     this.http.post("http://localhost:8080/api/showroom/add",formData)
     .subscribe((response) =>{
+
+
 
       this.name = "";
       this.file = null;
 
     },
       (error:HttpErrorResponse) => {
-        alert('File send successfully!');
+
   });
  }
+
+ refreshPage() {
+  window.location.reload();
+}
 
 }
 
