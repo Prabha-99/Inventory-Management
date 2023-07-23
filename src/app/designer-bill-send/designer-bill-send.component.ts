@@ -21,11 +21,15 @@ customerName: string = '';
   //billsend
   billSend(event:any){
     this.file=event.target.files[0];
-  }
 
+  }
 
   //billsend
   uploadBill(customerName: string){
+    if (!this.file) {
+      alert('Please select a file.');
+      return;
+    }
     try{
     //create formData object
     let formData = new FormData();
@@ -41,6 +45,9 @@ customerName: string = '';
     this.http.post("http://localhost:8080/api/designer/billSend",formData)
     .subscribe((response) =>{
       console.log(response);
+
+      this.filename = "";
+      this.file = null;
 
   });
   }catch(error){
