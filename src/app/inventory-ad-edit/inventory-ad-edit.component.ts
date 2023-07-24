@@ -7,10 +7,11 @@ import { InventoryAdEditService } from './inventory-ad-edit.service';
   styleUrls: ['./inventory-ad-edit.component.css']
 })
 export class InventoryAdEditComponent implements OnInit {
+ 
   categories: any[] = [];
   isQuantityEnabled: boolean = false;
   product: any = {
-
+    product_id: '',
     category_id: '',
     product_name: '',
     product_brand: '',
@@ -19,20 +20,41 @@ export class InventoryAdEditComponent implements OnInit {
   };
 
   constructor(private inventoryAdEditService: InventoryAdEditService) {}
+
   ngOnInit(): void {
     this.inventoryAdEditService.getCategory().subscribe(category => {
       this.categories = category;
-  });
+    });
   }
 
   onCategoryChange() {
-    // Check if the selected category is cat_staron (category_id = cat_staron)
     if (this.product.category_id === 'cat_staron') {
-      this.isQuantityEnabled = true; // Enable quantity field
+      this.isQuantityEnabled = true;
     } else {
-      this.isQuantityEnabled = false; // Disable quantity field
-      this.product.product_quantity = null; // Clear the value in case it was entered previously
+      this.isQuantityEnabled = false;
+      this.product.product_quantity = null;
     }
+  }
+
+  onSubmit() {
+    this.inventoryAdEditService.updateProduct(this.product).subscribe(response => {
+      alert('Product is successfully updated..');
+      this.resetForm();
+    }, error => {
+      console.error(error);
+      alert('An error occurred while updating the product.');
+    });
+  }
+
+  resetForm() {
+    this.product = {
+      product_id: '',
+      category_id: '',
+      product_name: '',
+      product_brand: '',
+      product_quantity: null,
+      product_price: null
+    };
   }
 
 }

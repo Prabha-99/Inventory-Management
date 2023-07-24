@@ -3,7 +3,7 @@
     <mat-card-title>Edit Product</mat-card-title>
   </mat-card-header>
 
-  <form #productForm="ngForm">
+  <form #productForm="ngForm" (ngSubmit)="onSubmit()">
     <mat-card-content>
       <p>
         <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="product.category_id"
@@ -16,36 +16,37 @@
         <!-- Product Name -->
         <mat-form-field appearance="outline">
           <mat-label>Product Name</mat-label>
-          <input matInput name="product_name" placeholder="Product Name" required>
+          <input matInput name="product_name" placeholder="Product Name" [(ngModel)]="product.product_name" required>
         </mat-form-field>
 
         <!-- Product Brand -->
         <mat-form-field appearance="outline">
           <mat-label>Product Brand</mat-label>
-          <input matInput name="product_brand" placeholder="Product Brand" required>
+          <input matInput name="product_brand" placeholder="Product Brand" [(ngModel)]="product.product_brand" required>
         </mat-form-field>
       </p>
 
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Product Quantity</mat-label>
-          <input matInput name="product_quantity" type="number" placeholder="Product Quantity" [disabled]="!isQuantityEnabled"
-            required>
+          <input matInput name="product_quantity" type="number" placeholder="Product Quantity"
+            [(ngModel)]="product.product_quantity" [disabled]="!isQuantityEnabled" required>
         </mat-form-field>
 
         <!-- Product Price -->
         <mat-form-field appearance="outline">
           <mat-label>Product Price</mat-label>
-          <input matInput name="product_price" type="number" placeholder="Product Price" required>
+          <input matInput name="product_price" type="number" placeholder="Product Price" [(ngModel)]="product.product_price" required>
         </mat-form-field>
       </p>
     </mat-card-content>
 
     <mat-card-actions>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <input class="btn btn-primary" type="Edit" value="Edit">
-        <input class="btn btn-primary" type="reset" value="Reset">
-        <button type="button" class="btn btn-danger">Cancel</button>
+        <!-- Change the type of button to submit -->
+        <button mat-raised-button type="submit" class="btn btn-primary">Edit</button>
+        <button mat-raised-button type="button" class="btn btn-primary" (click)="resetForm()">Reset</button>
+        <button mat-raised-button type="button" class="btn btn-danger">Cancel</button>
       </div>
     </mat-card-actions>
   </form>

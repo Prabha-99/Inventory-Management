@@ -8,7 +8,12 @@ export class InventoryAdEditService {
 
   constructor(private http: HttpClient) { }
 
-   getCategory() {
-    return this.http.get<any[]>('http://localhost:8080/api/v1/category/getAllCategory'); //get categories
+  getCategory() {
+    return this.http.get<any[]>('http://localhost:8080/api/v1/category/getAllCategory');
   }
+
+  updateProduct(product: any) {
+    return this.http.put('http://localhost:8080/api/product/update', product);
+  }
+
 }
