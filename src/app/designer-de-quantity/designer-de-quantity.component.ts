@@ -6,7 +6,7 @@ import { DesignerService } from '../designer.service';
 interface Product {
 
   product_id:any;
-  cat_id:string;
+  category_id:string;
   product_brand:string;
   product_name:string;
   product_price:any;
