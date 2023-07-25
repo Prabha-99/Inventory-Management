@@ -8,11 +8,13 @@ import { Observable } from 'rxjs';
 export class ShowroomService {
 
   baseURL = 'http://localhost:8080/api/showroom/add';
-  HttpClient: any;
-  constructor(private Http: HttpClient) { }
 
-  submitData(file : File):Observable<any>{
-    console.log(file);
-    return this.HttpClient.post('$ {this.baseURL}/file',file);
+  constructor(private http: HttpClient) { }
+
+  submitData(formData: FormData): Observable<any> {
+
+    console.log(formData);
+
+    return this.http.post(this.baseURL, formData);
   }
 }

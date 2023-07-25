@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { ShowroomService } from '../showroom.service';
 
 
 
@@ -10,15 +11,14 @@ import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 })
 
 
-
 export class ShowroomSendFileComponent  {
 name:string = "";
 file:any;
 maxFileSizeMB: number = 20;
 
 
-  constructor(private http:HttpClient) {}
 
+  constructor(private showroomService: ShowroomService) {}
 
 
   getFile(event:any){
@@ -28,6 +28,7 @@ maxFileSizeMB: number = 20;
     // Validate file size
     const fileSizeMB = this.file.size / (1024 * 1024);
     if (fileSizeMB > this.maxFileSizeMB) {
+
       alert(`File size exceeds the limit of ${this.maxFileSizeMB}MB.`);
       this.file = null;
     }
@@ -45,21 +46,20 @@ maxFileSizeMB: number = 20;
     formData.append("name",this.name)
     formData.append("file",this.file)
 
-    alert('File send successfully!');
-      this.refreshPage();
 
-    //submit data in API
+    //submit data
 
-    this.http.post("http://localhost:8080/api/showroom/add",formData)
+    this.showroomService.submitData(formData)
     .subscribe((response) =>{
-
-
-
       this.name = "";
       this.file = null;
+      alert('File sent successfully!');
+      this.refreshPage();
+
 
     },
       (error:HttpErrorResponse) => {
+        alert('An error occurred while sending the file.');
 
   });
  }

@@ -22,8 +22,7 @@ export class DesignerService {
     return this.http.post<void>(`${this.API_URL}/reduce`, payload);
   }
 
-
-
+//showroom file download
 
   downloadFile(id: number, fileName: string): void {
     this.http.get('http://localhost:8080/api/designer/download/' + id, {
