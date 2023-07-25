@@ -145,7 +145,7 @@ const routes: Routes = [
 
 
 
-  {path:"generate-GIN",component:GenerateGINComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
+  {path:"generate-GIN",component:GenerateGINComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','DESIGNER'] },resolve: { userRole: RouteResolverService }},
 
   {path:"generate-GRN",component:GenerateGRNComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }},
 
