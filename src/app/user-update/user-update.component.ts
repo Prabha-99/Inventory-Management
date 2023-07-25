@@ -73,7 +73,7 @@
 //   }
   
 // }
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GetUserService } from '../get-user.service';
 
 @Component({
@@ -99,6 +99,7 @@ export class UserUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+    
   }
 
   getUsers(): void {
@@ -107,6 +108,67 @@ export class UserUpdateComponent implements OnInit {
       this.filteredUsers = users;
     });
   }
+
+  // openUpdateForm(user: any): void {
+  //   this.userUpdate = { ...user }; // Create a copy of the user object to prevent direct updates
+  //   this.showModal = true;
+  // }
+
+  // closeUpdateForm(): void {
+  //   this.showModal = false;
+  //   this.userUpdate = {
+  //     id: 0,
+  //     firstname: '',
+  //     lastname: '',
+  //     email: '',
+  //     role: ''
+  //   };
+  // }
+
+  // updateUser(){
+  //   this.userService.updateUserS(this.userUpdate).subscribe(
+  //     (response) => {
+  //       this.successMessage = 'User updated successfully!';
+  //       this.getUsers(); // Refresh the user list after successful update
+  //       setTimeout(() => {
+  //         this.successMessage = '';
+  //         this.closeUpdateForm();
+  //       }, 2000); // Hide the success message and close the modal after 2 seconds
+  //     },
+  //     (error) => {
+  //       alert('Error updating user:');
+  //       // You can display an error message to the user if desired
+  //     }
+  //   );
+  // }
+  
+  updateUser(): void {
+    const id = this.userUpdate.id;
+    const updatedUser = {
+      firstname: this.userUpdate.firstname,
+      lastname: this.userUpdate.lastname,
+      role: this.userUpdate.role
+    };
+
+    this.userService.updateUser(id, updatedUser).subscribe(
+      (updatedUserEntity) => {
+        this.successMessage = 'User updated successfully!';
+        this.userUpdate = updatedUserEntity;
+        // If the backend returns the updatedUser object, you can use it to update the user list in the frontend
+        // this.users = this.users.map(user => user.id === updatedUserEntity.id ? updatedUserEntity : user);
+        setTimeout(() => {
+          this.successMessage = '';
+          this.closeUpdateForm();
+          this.getUsers();
+        }, 2000); // Hide the success message and close the modal after 2 seconds
+      },
+      (error) => {
+        console.error('Error updating user:', error);
+        // You can display an error message to the user if desired
+      }
+    );
+  }
+
 
   openUpdateForm(user: any): void {
     this.userUpdate = { ...user }; // Create a copy of the user object to prevent direct updates
@@ -124,22 +186,7 @@ export class UserUpdateComponent implements OnInit {
     };
   }
 
-  updateUser(): void {
-    this.userService.updateUser(this.userUpdate).subscribe(
-      (response) => {
-        this.successMessage = 'User updated successfully!';
-        this.getUsers(); // Refresh the user list after successful update
-        setTimeout(() => {
-          this.successMessage = '';
-          this.closeUpdateForm();
-        }, 2000); // Hide the success message and close the modal after 2 seconds
-      },
-      (error) => {
-        console.error('Error updating user:', error);
-        // You can display an error message to the user if desired
-      }
-    );
-  }
+ 
 
   searchUsers(): void {
     if (this.searchQuery.trim() === '') {

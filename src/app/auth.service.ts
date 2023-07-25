@@ -14,7 +14,7 @@ export class AuthService {
   private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
   private apiUrl2 = 'http://localhost:8080/api/auth/CurrentUser';
   private apiUrl3 = 'http://localhost:8080/api/auth/UserProfile';
-  private apiUrl4 = 'http://localhost:8080/api/api/UpdateProfile';
+  private apiUrl4 = 'http://localhost:8080/api/auth/UpdateProfile';
 
   constructor(private http: HttpClient) { }
 

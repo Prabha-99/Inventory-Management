@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class GetUserService {
   private apiUrl = 'http://localhost:8080/api/admin/all';
   private adminUrl = 'http://localhost:8080/api/admin';
-  private adminUrlupdate = 'http://localhost:8080/api/admin/update'
+  private adminUrlupdate = 'http://localhost:8080/api/admin'
 
   constructor(private http: HttpClient) { }
 
@@ -34,7 +34,13 @@ export class GetUserService {
     return this.http.get<any>(`${this.adminUrl}/${id}`);
   }
 
-  updateUser(user: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/update`, user);
+  // updateUserS(User: any): Observable<any> {
+  //   return this.http.put<any>(`${this.adminUrlupdate}`, User);
+  // }
+
+  updateUser(id: number, updatedUser: any): Observable<any> {
+    return this.http.put<any>(`${this.adminUrl}/update/${id}`, updatedUser);
   }
+
+
 }
