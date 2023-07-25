@@ -53,7 +53,7 @@ export class InventoryAdAddproductComponent implements OnInit{
     if (operation === 'add') {
       dialogRef = this._dialog.open(InventoryAdProductPopupComponent);
     }
-    
+  
   }
 
   openEditProductForm(author: any, operation: String) {
