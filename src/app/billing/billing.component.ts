@@ -6,6 +6,7 @@ import html2canvas from 'html2canvas';
 import * as html2pdf from 'html2pdf.js';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, map } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   
@@ -29,9 +30,9 @@ import { Observable, map } from 'rxjs';
 export class BillingComponent implements OnInit{
   constructor(private productService: ProductService , dialog: MatDialog) { }
 
-  Billingsend() {
-    window.open('/billingsend', '_self',);
-  }
+  // Billingsend() {
+  //   window.open('/billingsend', '_self',);
+  // }
 
   Billingview() {
     window.open('/billingview', '_self');
@@ -100,7 +101,10 @@ export class BillingComponent implements OnInit{
   return total;
   }
 
-
+  generateUuid(): string {
+    const uuid = uuidv4().substr(0, 6);
+    return uuid;
+  }
   
 
   product_name: string[]=[];
@@ -173,7 +177,7 @@ export class BillingComponent implements OnInit{
 //////////////////////save bill details
 
 formData = {
-  qu_no: 'QN-',
+  qu_no:'QN-'+ this.generateUuid(),
   st_date: '',
   end_date: '',
   cu_name: '',
