@@ -13,16 +13,34 @@ export class StockManagerSellOrderComponent implements OnInit{
   filteredGins: any[] = [];
   fillGins: any[] = [];
   searchValue: string = '';
+  productNames: string[] = [];
+  productBrands: string[] = [];
+  selectedProductName: string = '';
+  selectedProductBrand: string = '';
+  filteredProductNames: string[] = [];
+  filteredProductBrands: string[] = [];
   
   constructor(private _dialog: MatDialog, private productService: StockManagerSellOrderService) {}
+  
   ngOnInit(): void {
     this.productService.getGin().subscribe(gin => {
       this.gins = gin;
       this.filterGins();
       this.filteredGins = this.fillGins;
     });
+
+    this.productService.getProductNames().subscribe(productNames => {
+      this.productNames = productNames;
+      this.filteredProductNames = productNames;
+    });
+
+    this.productService.getProductBrands().subscribe(productBrands => {
+      this.productBrands = productBrands;
+      this.filteredProductBrands = productBrands;
+    });
   }
 
+  
   filterGins() {
     this.fillGins = this.gins.filter(gin => {
       // Filter gin based on category_id
@@ -31,12 +49,20 @@ export class StockManagerSellOrderComponent implements OnInit{
   }
 
   searchGins(): void {
-    this.filteredGins = this.fillGins.filter(gin => {
+    this.filteredGins = this.gins.filter(gin => {
       const searchDet = `${gin.date}`;
       return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
     });
   }
-  
+
+  searchProductNames(): void {
+    this.filteredProductNames = this.productNames.filter(name => name.toLowerCase().includes(this.selectedProductName.toLowerCase()));
+  }
+
+  searchProductBrands(): void {
+    this.filteredProductBrands = this.productBrands.filter(brand => brand.toLowerCase().includes(this.selectedProductBrand.toLowerCase()));
+  }
+
   reduceQuantity(product_name: string, product_brand: string, product_quantity: number): void {
     this.productService.reduceProductQuantity(product_name, product_brand, product_quantity).subscribe(() => {
       alert('Product quantity updated successfully');

@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit , } from '@angular/core';
+import { DatePipe } from '@angular/common';
+
 
 
 interface DesignerBillSend {
@@ -19,8 +21,10 @@ file:any;
 showFileList: boolean = false;
 showFileUpload: boolean = false;
 
-files: any;
-  constructor(private http:HttpClient) {}
+files: any[] = [];;
+  constructor(private http:HttpClient,private datePipe: DatePipe) {
+    this.getFiles();
+  }
 
   ngOnInit() {
     this.getFiles();
@@ -33,6 +37,14 @@ files: any;
 
   getName(name:string){
     this.name = name;
+  }
+
+  formatDate(date: string): string {
+    // Convert the date string to a JavaScript Date object
+    const parsedDate = new Date(date);
+    // Format the date using the DatePipe
+    const formattedDate = this.datePipe.transform(parsedDate, 'yyyy-MM-dd'); // Adjust the format as per your preference
+    return formattedDate || '';
   }
 
   getFile(event:any){
@@ -70,6 +82,8 @@ files: any;
       console.error('Error occurred while downloading the file:', error);
     });
 }
+
+
 }
 
 

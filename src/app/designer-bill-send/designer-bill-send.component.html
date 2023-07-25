@@ -16,7 +16,7 @@
         <img src="assets/PM.jpeg" alt="logo" style="
           width: 440px; height: 360px; margin-left: 30px; margin-top:120px;">
     </div>
-        <div id="upload">
+        <form div id="upload" >
           <h2 style="color: rgb(19, 39, 129);"><b>Upload Bill</b></h2>
 
           <div>
@@ -26,11 +26,20 @@
           </div>
           <br>
 
-          <div style="text-align: right;" >
-            <button type="button" class="btn btn-primary" (click)="uploadBill()">Send Bill</button>
+          <div>
+            <label for="customerName" style="font-size: 20px;"><b>Customer Name:</b></label>
+            <br>
+            <input class="form-control form-control-lg" id="customerName" type="text" placeholder="Enter customer name" #customerNameInput>
           </div>
+          <br>
+
+
+          <div style="text-align: right;" >
+            <button type="button" class="btn btn-primary" (click)="uploadBill(customerNameInput.value)">Send Bill</button>
+          </div>
+
+        </form>
        </div>
-    </div>
 </body>
 </html>
 

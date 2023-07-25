@@ -18,7 +18,9 @@
         <thead>
           <tr>
             <th><b>ID</b></th>
-            <th><b>Name</b></th>
+            <th><b>File Name</b></th>
+            <th><b>Date</b></th>
+            <th><b>Customer Name</b></th>
             <th><b>Download</b></th>
           </tr>
         </thead>
@@ -26,6 +28,8 @@
           <tr *ngFor="let file of files">
             <td>{{ file.id }}</td>
             <td>{{ file.fileName }}</td>
+            <td>{{ formatDate(file.date)}}</td>
+            <td>{{ file.customerName}}</td>
             <td>
               <button (click)="downloadFile(file.id, file.fileName)" class="btn btn-outline-success">Download</button>
             </td>

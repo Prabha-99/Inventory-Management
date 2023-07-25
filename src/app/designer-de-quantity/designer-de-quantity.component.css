@@ -1,13 +1,20 @@
-.deduct{
-  width: 950px;
-  height: 300px;
-  margin-left: 220px;
-}
 
 .dq{
   margin-left: 220px;
 }
+.table{
+  /*background-color: blueviolet;)*/
+  width: 1000px;
+  height: auto;
+  margin-left: 80px;
+}
 
+.form{
+  /*background-color: blueviolet;*/
+  width: 800px;
+  height: 300px;
+  margin-left: 170px;
+}
 
 
 

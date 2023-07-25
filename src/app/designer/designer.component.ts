@@ -152,26 +152,7 @@ product: DesignerProduct = {
       });
   }
 
-  deductProduct(): void {
-    this.designerService.deductProduct(this.product)
-      .subscribe(
-        updatedProduct => {
-          console.log('Product deducted successfully:', updatedProduct);
-          alert('Product deduct successfully');
 
-          // Clear the input fields
-        this.product = {
-          product_id: null,
-          product_quantity: 0
-        };
-        },
-        error => {
-          console.error('Failed to deduct product:', error);
-          alert('Error deduct product quantity');
-
-        }
-      );
-  }
 }
 
 
