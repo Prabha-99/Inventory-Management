@@ -3,7 +3,6 @@ import { HttpClient} from '@angular/common/http';
 import { DesignerService } from '../designer.service';
 
 
-
 @Component({
   selector: 'app-designer-bill-send',
   templateUrl: './designer-bill-send.component.html',
@@ -26,8 +25,8 @@ customerName: string = '';
 
   //billsend
   uploadBill(customerName: string){
-    if (!this.file) {
-      alert('Please select a file.');
+    if (!this.file || !customerName) {
+      alert('Please select a file and customer name');
       return;
     }
     try{
@@ -37,22 +36,19 @@ customerName: string = '';
     formData.append("file",this.file)
     formData.append("customerName", customerName);
 
-
-    alert("file send successfully!")
-    this.refreshPage();
-
     //submit data in API
     this.http.post("http://localhost:8080/api/designer/billSend",formData)
     .subscribe((response) =>{
       console.log(response);
 
-      this.filename = "";
-      this.file = null;
+      //this.filename = "";
+      //this.file = null;
+      alert('File sent successfully!');
+      this.refreshPage();
 
   });
   }catch(error){
       console.error("Error uploading bill:", error);
-
   }
 }
 refreshPage() {
