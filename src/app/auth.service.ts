@@ -59,9 +59,10 @@ export class AuthService {
     return of(role);
   }
   
-  updateUserProfile(user: any): Observable<any> {
+  updateUserProfile(updatedUser: any): Observable<any> {
     const headers = this.getHeaders();
-    return this.http.put<any>(`${this.apiUrl4}`, user, { headers });
+    const id = updatedUser.id; // Assuming your updatedUser object contains the 'id' field
+    return this.http.put<any>(`${this.apiUrl4}/${id}`, updatedUser, { headers });
   }
 
 }

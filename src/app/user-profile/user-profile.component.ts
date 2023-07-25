@@ -9,12 +9,13 @@ import { AuthService } from '../auth.service';
 export class UserProfileComponent implements OnInit {
   user: any;
   editing: boolean = false;
-  originalUser: any; // To store the original user profile
+  originalUser: any;
   userUpdate: any = {
     id: 0,
     firstname: '',
     lastname: '',
     email: '',
+    password: '',
     role: ''
   };
 
@@ -28,8 +29,8 @@ export class UserProfileComponent implements OnInit {
     this.authService.getUserProfile().subscribe(
       (response: any) => {
         this.user = response;
-        this.originalUser = { ...response }; // Create a copy of the user profile for tracking changes
-        this.userUpdate = { ...response }; // Initialize the userUpdate array with the current user profile data
+        this.originalUser = { ...response };
+        this.userUpdate = { ...response };
       },
       (error: any) => {
         console.log('Error retrieving user profile:', error);
@@ -43,7 +44,7 @@ export class UserProfileComponent implements OnInit {
 
   cancelUpdate(): void {
     this.editing = false;
-    this.userUpdate = { ...this.originalUser }; // Reset the userUpdate array to the original user profile data
+    this.userUpdate = { ...this.originalUser };
   }
 
   updateUser(): void {
@@ -51,8 +52,8 @@ export class UserProfileComponent implements OnInit {
       (response: any) => {
         console.log('User profile updated successfully:', response);
         this.editing = false;
-        this.user = { ...this.userUpdate }; // Update the displayed user profile with the changes
-        this.originalUser = { ...this.userUpdate }; // Update the original user profile with the changes
+        this.user = { ...this.userUpdate };
+        this.originalUser = { ...this.userUpdate };
       },
       (error: any) => {
         console.log('Error updating user profile:', error);
