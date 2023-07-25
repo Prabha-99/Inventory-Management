@@ -36,7 +36,7 @@ export class InventoryAdProductPopupComponent implements OnInit{
     this.inventoryAdProductPopupService.addProduct(this.product).subscribe(
       (response) => {
         console.log('Product added successfully');
-        alert("Product Deleted Successfully!");
+        alert("Product Added Successfully!");
         // Reset the form
         this.resetForm();
         location.reload();
