@@ -64,6 +64,7 @@ export class StockManagerPurchaseOrderComponent implements OnInit{
 
   onSubmit(formValue: any): void {
     this.increaseQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
+    
   }
 
   searchProductNames(): void {

@@ -45,7 +45,6 @@ export class StockManagerProductPopupComponent implements OnInit{
         alert("Product Added Successfully!");
         // Reset the form
         this.resetForm();
-        location.reload();
       },
       (error) => {
         console.error('Failed to add product:', error);
