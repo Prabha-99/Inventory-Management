@@ -1,73 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Prodile</title> 
-</head>
-<body>
-    <app-system-admin-nav></app-system-admin-nav>
+<app-system-admin-nav></app-system-admin-nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <app-system-admin-side></app-system-admin-side>
-            </div>
-            <div class="col-10">
-                <br><br><br><br><br><br><br><br>
-
-                <!-- <form (submit)="updateUser()"> -->
-                    <div class="d-flex justify-content-center">
-                        <div class="col-lg-8">
-            
-                            
-                        <h2>User Profile</h2>
-                        <div class="mb-3">
-                          <label>Id:</label>
-                          <input class="form-control short-input" [(ngModel)]="user.id" [disabled]="!editing" />
-                        </div>
-                        <div class="mb-3">
-                          <label>First Name:</label>
-                          <input class="form-control short-input" [(ngModel)]="user.firstname" [disabled]="!editing" />
-                        </div >
-                        <div class="mb-3">
-                          <label>Last Name:</label>
-                          <input class="form-control short-input" [(ngModel)]="user.lastname" [disabled]="!editing" />
-                        </div>
-                        <div class="mb-3">
-                          <label>Email:</label>
-                          <input class="form-control short-input" [(ngModel)]="user.email" [disabled]="!editing" />
-                        </div>
-                        <div class="mb-3">
-                          <label>Password:</label>
-                          <input class="form-control short-input" [(ngModel)]="user.password" [disabled]="!editing" />
-                        </div>
-                        <div class="mb-3">
-                          <label>Role:</label>
-                          <select class="form-control" [(ngModel)]="user.role" [disabled]="!editing" >
-                            <option>INVENTORY_ADMIN</option>
-                              <option>ADMIN</option>
-                              <option>STOCK_MANAGER</option>
-                              <option>PURCHASE_COORDINATOR</option>
-                              <option>STOCK_KEEPER</option>
-                              <option>DESIGNER</option>
-                              <option>SHOWROOM_MANAGER</option>
-                            </select>
-                        </div>
-
-                        <div style=" padding:10px;" class = "d-flex justify-content-around" *ngIf="editing">
-                          <button class="btn btn-primary margin-right:10px " (click)="updateUser()">Update</button>
-                          <button class="btn btn-primary margin-right:10px " (click)="cancelUpdate()">Cancel</button>
-                        </div>
-                        <div style=" padding:10px;" class = "d-flex justify-content-around" *ngIf="!editing">
-                          <button class="btn btn-primary margin-right:10px " (click)="editProfile()">Edit Profile</button>
-                        </div>
-                        </div>
-                    </div>
-                <!-- </form> -->
-            </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <app-system-admin-side></app-system-admin-side>
     </div>
-</body>
-</html>
+    <div class="col-10">
+      <br><br><br><br><br><br><br><br>
+
+      <div class="d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2>User Profile</h2>
+          <div class="mb-3">
+            <label>Id:</label>
+            <input class="form-control short-input" [(ngModel)]="user.id" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>First Name:</label>
+            <input class="form-control short-input" [(ngModel)]="user.firstname" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>Last Name:</label>
+            <input class="form-control short-input" [(ngModel)]="user.lastname" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>Email:</label>
+            <input class="form-control short-input" [(ngModel)]="user.email" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>Password:</label>
+            <input class="form-control short-input" [(ngModel)]="user.password" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>Role:</label>
+            <select class="form-control" disabled [(ngModel)]="user.role" [disabled]="!editing" >
+              <option>INVENTORY_ADMIN</option>
+              <option>ADMIN</option>
+              <option>STOCK_MANAGER</option>
+              <option>PURCHASE_COORDINATOR</option>
+              <option>STOCK_KEEPER</option>
+              <option>DESIGNER</option>
+              <option>SHOWROOM_MANAGER</option>
+            </select>
+          </div>
+
+          <div style=" padding:10px;" class="d-flex justify-content-around" *ngIf="editing">
+            <button class="btn btn-primary margin-right:10px" (click)="updateUser()">Update</button>
+            <button class="btn btn-primary margin-right:10px" (click)="cancelUpdate()">Cancel</button>
+          </div>
+          <div style=" padding:10px;" class="d-flex justify-content-around" *ngIf="!editing">
+            <button class="btn btn-primary margin-right:10px" (click)="editProfile()">Edit Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

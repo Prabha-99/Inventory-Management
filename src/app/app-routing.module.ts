@@ -205,7 +205,8 @@ const routes: Routes = [
 
   {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
-  {path: "user-profile",component:UserProfileComponent}
+  {path: "user-profile",component:UserProfileComponent},
+
   
 
 
