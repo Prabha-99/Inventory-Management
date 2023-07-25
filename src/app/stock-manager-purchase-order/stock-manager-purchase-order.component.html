@@ -63,7 +63,7 @@
                     
                       <h2 class="d-flex justify-content-center">Purchased Order</h2>
                       
-                      <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
+                      <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value,productForm)" >
                        
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Product Name</label>

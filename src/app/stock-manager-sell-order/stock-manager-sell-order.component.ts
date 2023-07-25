@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StockManagerSellOrderService } from './stock-manager-sell-order.service';
 import { MatDialog } from '@angular/material/dialog';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-stock-manager-sell-order',
@@ -72,8 +73,10 @@ export class StockManagerSellOrderComponent implements OnInit{
     });
   }
 
-  onSubmit(formValue: any): void {
+  onSubmit(formValue: any,productForm: NgForm): void {
     this.reduceQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
+
+    productForm.resetForm();
   }
 
 }

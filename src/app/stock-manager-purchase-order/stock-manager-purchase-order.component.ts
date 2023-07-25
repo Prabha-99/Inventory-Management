@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StockManagerPurchaseOrderService } from './stock-manager-purchase-order.service';
 import { MatDialog } from '@angular/material/dialog';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-stock-manager-purchase-order',
@@ -56,15 +57,17 @@ export class StockManagerPurchaseOrderComponent implements OnInit{
   increaseQuantity(product_name: string, product_brand: string, product_quantity: number): void {
     this.productService.increaseProductQuantity(product_name, product_brand, product_quantity).subscribe(() => {
       alert('Product quantity updated successfully');
+      
     }, error => {
       alert('Error updating product quantity');
       console.error(error);
     });
   }
 
-  onSubmit(formValue: any): void {
+  onSubmit(formValue: any,productForm: NgForm): void {
     this.increaseQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
     
+    productForm.resetForm();
   }
 
   searchProductNames(): void {
