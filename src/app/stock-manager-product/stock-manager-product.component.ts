@@ -23,7 +23,7 @@ export class StockManagerProductComponent implements OnInit {
       this.products = product;
       this.filterProducts();
       this.filteredProducts = this.fillProducts;
-    
+   
     });
 
     

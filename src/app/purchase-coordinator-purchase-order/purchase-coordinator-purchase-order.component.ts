@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PurchaseCoordinatorPurchaseOrderService } from './purchase-coordinator-purchase-order.service';
 import { MatDialog } from '@angular/material/dialog';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-purchase-coordinator-purchase-order',
@@ -63,8 +64,10 @@ export class PurchaseCoordinatorPurchaseOrderComponent implements OnInit{
     });
   }
 
-  onSubmit(formValue: any): void {
+  onSubmit(formValue: any,productForm:NgForm): void {
     this.increaseQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
+
+    productForm.resetForm();
   }
 
   searchProductNames(): void {

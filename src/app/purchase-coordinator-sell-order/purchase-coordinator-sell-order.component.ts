@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PurchaseCoordinatorSellOrderService } from './purchase-coordinator-sell-order.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-purchase-coordinator-sell-order',
@@ -71,7 +72,8 @@ export class PurchaseCoordinatorSellOrderComponent implements OnInit{
     });
   }
 
-  onSubmit(formValue: any): void {
+  onSubmit(formValue: any,productForm:NgForm): void {
     this.reduceQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
+    productForm.resetForm();
   }
 }

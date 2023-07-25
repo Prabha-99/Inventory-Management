@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InventoryAdSellOrderService } from './inventory-ad-sell-order.service';
 import { MatDialog } from '@angular/material/dialog';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-inventory-ad-sell-order',
@@ -73,7 +74,9 @@ export class InventoryAdSellOrderComponent implements OnInit{
     });
   }
 
-  onSubmit(formValue: any): void {
+  onSubmit(formValue: any,productForm: NgForm): void {
     this.reduceQuantity(formValue.product_name, formValue.product_brand, formValue.product_quantity);
+  
+    productForm.resetForm();
   }
 }
