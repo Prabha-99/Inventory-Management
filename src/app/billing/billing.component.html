@@ -127,9 +127,9 @@
                     <th scope="col">#</th>
                       <th scope="col"style="text-align:center;">Material</th>
                       <th scope="col"style="text-align:center;">Quantity</th>
-                      <th scope="col"style="text-align:center;">Unit Price</th>
-                      <th scope="col"style="text-align:center;">Discount</th>
-                      <th scope="col"style="text-align:center;">Amount</th>
+                      <th scope="col"style="text-align:center;">Unit Price(Rs.)</th>
+                      <th scope="col"style="text-align:center;">Discount(%)</th>
+                      <th scope="col"style="text-align:center;">Amount(Rs.)</th>
                       <th scope="col"></th>
 
                   </tr>
@@ -139,9 +139,16 @@
 
                     <td style="text-align:right;">{{row.id}}</td>
 
-                    <td ><select class="form-control" name="name{{i}}"style="width:300px; height:34px;">
+                     <td >
+                        <!-- <select class="form-control" name="name{{i}}"style="width:300px; height:34px;">
                         <option *ngFor="let pname of product_name">{{ pname }}</option>
-                     </select></td>
+                     </select> -->
+                     <input type="text" list="listname" class="form-control"  name="name{{i}}" style="width:300px; height:34px;">
+                     <datalist id="listname">
+                     <option *ngFor="let pname of product_name" [value]="pname">{{ pname }}</option>
+                     </datalist>
+
+                    </td> 
 
                     <td><input type="number" [(ngModel)]="row.qty" name="qty{{i}}" style="width:110px; height:34px;text-align:center;"class="form-control"></td>
 
