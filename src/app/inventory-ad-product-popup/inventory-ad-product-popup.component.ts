@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InventoryAdProductPopupService } from './inventory-ad-product-popup.service';
+import { InventoryAdAddproductComponent } from '../inventory-ad-addproduct/inventory-ad-addproduct.component';
 
 @Component({
   selector: 'app-inventory-ad-product-popup',
@@ -35,8 +36,10 @@ export class InventoryAdProductPopupComponent implements OnInit{
     this.inventoryAdProductPopupService.addProduct(this.product).subscribe(
       (response) => {
         console.log('Product added successfully');
+        alert("Product Added Successfully!");
         // Reset the form
         this.resetForm();
+        location.reload();
       },
       (error) => {
         console.error('Failed to add product:', error);

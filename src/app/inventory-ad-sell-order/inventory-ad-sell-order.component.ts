@@ -41,12 +41,11 @@ export class InventoryAdSellOrderComponent implements OnInit{
       this.filteredProductBrands = productBrands;
     });
   }
-
   
   filterGins() {
     this.fillGins = this.gins.filter(gin => {
       // Filter gin based on category_id
-      return gin.category_id === 'edge band';
+      return gin.category_id === 'cat_staron';
     });
   }
 

@@ -30,9 +30,9 @@ import { v4 as uuidv4 } from 'uuid';
 export class BillingComponent implements OnInit{
   constructor(private productService: ProductService , dialog: MatDialog) { }
 
-  // Billingsend() {
-  //   window.open('/billingsend', '_self',);
-  // }
+  Billingsend() {
+    window.open('/billingsend', '_self',);
+  }
 
   Billingview() {
     window.open('/billingview', '_self');
@@ -101,6 +101,7 @@ export class BillingComponent implements OnInit{
   return total;
   }
 
+  //uuid generator
   generateUuid(): string {
     const uuid = uuidv4().substr(0, 6);
     return uuid;
@@ -177,7 +178,7 @@ export class BillingComponent implements OnInit{
 //////////////////////save bill details
 
 formData = {
-  qu_no:'QN-'+ this.generateUuid(),
+  qu_no:'QN-'+this.generateUuid(),
   st_date: '',
   end_date: '',
   cu_name: '',

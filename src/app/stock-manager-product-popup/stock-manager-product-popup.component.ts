@@ -42,8 +42,10 @@ export class StockManagerProductPopupComponent implements OnInit{
     this.stockManagerProductPopupService.addProduct(this.product).subscribe(
       (response) => {
         console.log('Product added successfully');
+        alert("Product Added Successfully!");
         // Reset the form
         this.resetForm();
+        location.reload();
       },
       (error) => {
         console.error('Failed to add product:', error);

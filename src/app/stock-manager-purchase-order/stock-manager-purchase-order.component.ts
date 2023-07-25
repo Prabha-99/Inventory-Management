@@ -42,7 +42,7 @@ export class StockManagerPurchaseOrderComponent implements OnInit{
   filterGrns() {
     this.fillGrns = this.grns.filter(grn => {
       // Filter grn based on category_id
-      return grn.category_id === 'staron';
+      return grn.category_id === 'cat_melamine' || grn.category_id === 'cat_edge';
     });
   }
 
