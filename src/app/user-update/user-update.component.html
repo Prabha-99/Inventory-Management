@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration</title> 
+  <title>Update User</title> 
 </head>
 <body>
     <app-navbar></app-navbar>
@@ -22,7 +22,11 @@
                   <h1 align="center">Update All Users</h1>
                 
                   <!-- Add your search input and table with user details here -->
-                
+                  <div style=" padding:5px;" class = "d-flex justify-content-around">
+                    <input style=" padding-left:5px;" type="text" [(ngModel)]="searchValue" placeholder="Search by name" (input)="searchUsers()" />
+                    <button type="button" class="btn btn-danger margin-right:10px " (click)="clearSearch()">Clear</button>
+                    </div>
+                    <br>
                   <!-- Table to display user details -->
                   <table class="table table-bordered">
                     <thead>
