@@ -39,6 +39,8 @@ export class DesigerViewFilesComponent implements OnInit{
       .subscribe(files => this.files = files);
   }
 
+  
+
   downloadFile(id: number, filename: string) {
 
     const httpOptions = {
