@@ -22,18 +22,5 @@ export class DesignerService {
     return this.http.post<void>(`${this.API_URL}/reduce`, payload);
   }
 
-//showroom file download
 
-//   downloadFile(id: number, fileName: string): void {
-//     this.http.get('http://localhost:8080/api/designer/download/' + id, {
-//       responseType: 'arraybuffer',
-//       headers: new HttpHeaders().append('Content-Type', 'application/json')
-//     }).subscribe((response: ArrayBuffer) => {
-//       const blob = new Blob([response], { type: 'application/octet-stream' });
-//       const downloadLink = document.createElement('a');
-//       downloadLink.href = window.URL.createObjectURL(blob);
-//       downloadLink.download = fileName;
-//       downloadLink.click();
-//     });
-// }
 }
