@@ -103,7 +103,7 @@ import { DesignerSideBarComponent } from './designer-side-bar/designer-side-bar.
 import { DesigerViewFilesComponent } from './desiger-view-files/desiger-view-files.component';
 import { DesignerDeQuantityComponent } from './designer-de-quantity/designer-de-quantity.component';
 import { DesignerBillSendComponent } from './designer-bill-send/designer-bill-send.component';
-import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.component';
+
 
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
@@ -213,7 +213,7 @@ import { DatePipe } from '@angular/common';
       DesigerViewFilesComponent,
       DesignerDeQuantityComponent,
       DesignerBillSendComponent,
-      DesignerSendGINComponent,
+
 
       UnauthorizedComponent,
         ShowroomDashComponent,

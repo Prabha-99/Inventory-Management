@@ -61,7 +61,7 @@ import { DesignerDashComponent } from './designer-dash/designer-dash.component';
 import { DesignerSideBarComponent } from './designer-side-bar/designer-side-bar.component';
 import { DesignerDeQuantityComponent } from './designer-de-quantity/designer-de-quantity.component';
 import { DesignerBillSendComponent } from './designer-bill-send/designer-bill-send.component';
-import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.component';
+
 import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
 import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
 import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
@@ -168,7 +168,7 @@ const routes: Routes = [
   {path: "designer-side-bar",component:DesignerSideBarComponent},
   {path: "designer-de-quantity",component:DesignerDeQuantityComponent},
   {path: "designer-bill-send",component:DesignerBillSendComponent},
-  {path: "designer-send-gin",component:DesignerSendGINComponent},
+
 
 
   {path:"get-user",component:GetUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
