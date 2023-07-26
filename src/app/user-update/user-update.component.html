@@ -8,7 +8,7 @@
   <title>Registration</title> 
 </head>
 <body>
-    <app-system-admin-nav></app-system-admin-nav>
+    <app-navbar></app-navbar>
 
     <div class="container">
         <div class="row">
@@ -83,8 +83,16 @@
                             </div>
                             <div class="form-group">
                               <label for="role">User Role :</label>
-                              <input type="text" [(ngModel)]="userUpdate.role" name="role" id="role" class="form-control"
+                              <select type="text" [(ngModel)]="userUpdate.role" name="role" id="role" class="form-control"
                                 placeholder="User Role">
+                                <option>ADMIN</option>
+                                <option>INVENTORY_ADMIN</option>
+                                <option>STOCK_MANAGER</option>
+                                <option>PURCHASE_COORDINATOR</option>
+                                <option>STOCK_KEEPER</option>
+                                <option>DESIGNER</option>
+                                <option>SHOWROOM_MANAGER</option>
+                                </select>
                             </div>
                             <br>
                             <div class="modal-footer">

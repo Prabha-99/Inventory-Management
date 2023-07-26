@@ -110,6 +110,11 @@ import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.
 import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
 import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-file.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ShowroomProfileComponent } from './showroom-profile/showroom-profile.component';
+import { DesignerProfileComponent } from './designer-profile/designer-profile.component';
+import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
+import { StockReportsComponent } from './stock-reports/stock-reports.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -213,21 +218,13 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
         ShowroomBillViewComponent,
         ShowroomSendFileComponent,
         UserProfileComponent,
-
         ShowroomProfileComponent,
-
-
         DesignerProfileComponent,
-
         InventoryBackupComponent,
         StockReportsComponent,
 
-
-
-
-
-
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
