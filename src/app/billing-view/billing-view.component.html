@@ -59,7 +59,7 @@
                   <i *ngIf="isSending" class="fa fa-spinner fa-spin"></i>
                 </button>
               </label></td>
-            <td ><label name="name"><button (click)="onDelete(bill.bill_id)" *ngIf="shouldShowDeleteButton()" class="btn btn-outline-danger btn-sm">Delete</button></label></td>
+            <td ><button (click)="onDelete(bill.bill_id)" *ngIf="shouldShowDeleteButton()" class="btn btn-outline-danger btn-sm">Delete</button></td>
           </tr>
         </tbody>
       </table>
