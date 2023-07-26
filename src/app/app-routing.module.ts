@@ -77,6 +77,10 @@ import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
+import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordinator-forecating-chart/purchase-coordinator-forecating-chart.component';
+import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
+import { StockManagerForecastingDashComponent } from './stock-manager-forecasting-dash/stock-manager-forecasting-dash.component';
+import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
 
 
 
@@ -207,6 +211,10 @@ const routes: Routes = [
   {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
 
+  {path: "purchase-coordinator-forecasting-chart",component:PurchaseCoordinatorForecatingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path: "stock-manager-forecasting-chart",component:StockManagerForecatingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path: "stock-manager-forecasting-dash",component:StockManagerForecastingDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path: "purchase-coordinator-forecasting-dash",component:PurchaseCoordinatorForecastingDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }}
 
 
 
