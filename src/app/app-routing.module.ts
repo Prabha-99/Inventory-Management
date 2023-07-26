@@ -76,6 +76,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
+import { DesignerCreateGinComponent } from './designer-create-gin/designer-create-gin.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -200,6 +201,12 @@ const routes: Routes = [
   {path: "showroom-profile",component:ShowroomProfileComponent},
   {path: "designer-profile",component:DesignerProfileComponent},
   {path: "designer-profile",component:DesignerProfileComponent},
+
+
+  {path: "designer-create-gin",component:DesignerCreateGinComponent},
+
+
+
 
   {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
