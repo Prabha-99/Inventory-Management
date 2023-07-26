@@ -117,6 +117,10 @@ import { DesignerProfileComponent } from './designer-profile/designer-profile.co
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
 import { DatePipe } from '@angular/common';
+import { StockManagerForecastingDashComponent } from './stock-manager-forecasting-dash/stock-manager-forecasting-dash.component';
+import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
+import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
+import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordinator-forecating-chart/purchase-coordinator-forecating-chart.component';
 
 
 
@@ -228,6 +232,10 @@ import { DatePipe } from '@angular/common';
 
         InventoryBackupComponent,
         StockReportsComponent,
+        StockManagerForecastingDashComponent,
+        PurchaseCoordinatorForecastingDashComponent,
+        StockManagerForecatingChartComponent,
+        PurchaseCoordinatorForecatingChartComponent,
 
 
 
