@@ -24,16 +24,16 @@ export class DesignerService {
 
 //showroom file download
 
-  downloadFile(id: number, fileName: string): void {
-    this.http.get('http://localhost:8080/api/designer/download/' + id, {
-      responseType: 'arraybuffer',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    }).subscribe((response: ArrayBuffer) => {
-      const blob = new Blob([response], { type: 'application/octet-stream' });
-      const downloadLink = document.createElement('a');
-      downloadLink.href = window.URL.createObjectURL(blob);
-      downloadLink.download = fileName;
-      downloadLink.click();
-    });
-}
+//   downloadFile(id: number, fileName: string): void {
+//     this.http.get('http://localhost:8080/api/designer/download/' + id, {
+//       responseType: 'arraybuffer',
+//       headers: new HttpHeaders().append('Content-Type', 'application/json')
+//     }).subscribe((response: ArrayBuffer) => {
+//       const blob = new Blob([response], { type: 'application/octet-stream' });
+//       const downloadLink = document.createElement('a');
+//       downloadLink.href = window.URL.createObjectURL(blob);
+//       downloadLink.download = fileName;
+//       downloadLink.click();
+//     });
+// }
 }
