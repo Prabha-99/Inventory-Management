@@ -3,6 +3,16 @@ import { InventoryAdSellOrderService } from './inventory-ad-sell-order.service';
 import { MatDialog } from '@angular/material/dialog';
 import { NgForm } from '@angular/forms';
 
+interface Product {
+
+  product_id:any;
+  category_id:string;
+  product_brand:string;
+  product_name:string;
+  product_price:any;
+  product_quantity:any;
+}
+
 @Component({
   selector: 'app-inventory-ad-sell-order',
   templateUrl: './inventory-ad-sell-order.component.html',
@@ -20,6 +30,7 @@ export class InventoryAdSellOrderComponent implements OnInit{
   selectedProductBrand: string = '';
   filteredProductNames: string[] = [];
   filteredProductBrands: string[] = [];
+  products: Product[]=[];
 
  
 
@@ -66,12 +77,19 @@ export class InventoryAdSellOrderComponent implements OnInit{
   }
 
   reduceQuantity(product_name: string, product_brand: string, product_quantity: number): void {
+    const selectedProduct = this.products.find((product) => product.product_name === product_name && product.product_brand === product_brand);
+  if (selectedProduct?.product_quantity >= product_quantity) {
     this.productService.reduceProductQuantity(product_name, product_brand, product_quantity).subscribe(() => {
       alert('Product quantity updated successfully');
     }, error => {
       alert('Error updating product quantity');
       console.error(error);
     });
+  }
+  else {
+    alert('Insufficient product quantity!');
+    
+  }
   }
 
   onSubmit(formValue: any,productForm: NgForm): void {
