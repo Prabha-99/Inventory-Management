@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 
@@ -6,7 +7,7 @@ import axios from 'axios';
 })
 export class StockManagerForecatingChartService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   
   getData = async (category, status) => {
     
@@ -22,5 +23,9 @@ export class StockManagerForecatingChartService {
     );
     
     return response;
+  }
+
+  getCategory() {
+    return this.http.get<any[]>('http://localhost:8080/api/v1/category/getAllCategory'); //get categories
   }
 }
