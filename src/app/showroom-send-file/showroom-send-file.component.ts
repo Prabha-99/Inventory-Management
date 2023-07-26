@@ -48,18 +48,15 @@ maxFileSizeMB: number = 20;
 
 
     //submit data
-
-    this.showroomService.submitData(formData)
-    .subscribe((response) =>{
-      this.name = "";
-      this.file = null;
-      alert('File sent successfully!');
-      this.refreshPage();
-
-
+    this.showroomService.submitData(formData).subscribe
+    (() =>{
+      alert('An error occurred while sending the file.');
     },
-      (error:HttpErrorResponse) => {
-        alert('An error occurred while sending the file.');
+      () => {
+        this.name = "";
+        this.file = null;
+        alert('File sent successfully!');
+        this.refreshPage();
 
   });
  }
@@ -69,6 +66,7 @@ maxFileSizeMB: number = 20;
 }
 
 }
+
 
 
 
