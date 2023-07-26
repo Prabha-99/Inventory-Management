@@ -42,6 +42,8 @@ export class UserUpdateComponent implements OnInit {
       role: this.userUpdate.role
     };
 
+    if (this.validateForm()) {
+
     this.userService.updateUser(id, updatedUser).subscribe(
       (updatedUserEntity) => {
         alert('Update successful');
@@ -61,6 +63,7 @@ export class UserUpdateComponent implements OnInit {
         // You can display an error message to the user if desired
       }
     );
+    }
   }
 
 
@@ -99,4 +102,18 @@ export class UserUpdateComponent implements OnInit {
     this.searchValue = '';
     this.filteredUsers = this.users;
   }
+  validateForm(): boolean {
+    // Perform front-end validation
+    if (
+      this.userUpdate.firstname.trim() === '' ||
+      this.userUpdate.lastname.trim() === '' ||
+      this.userUpdate.role.trim() === ''
+    ) {
+      // Show an error message or perform any other desired actions
+      alert('All fields are required');
+      return false;
+    }
+      return true; // Form is valid
+  }
+ 
 }
