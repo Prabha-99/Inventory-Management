@@ -119,6 +119,8 @@ import { StockManagerForecastingDashComponent } from './stock-manager-forecastin
 import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
 import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
 import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordinator-forecating-chart/purchase-coordinator-forecating-chart.component';
+import { StockKeeperGinComponent } from './stock-keeper-gin/stock-keeper-gin.component';
+import { StockKeeperGrnComponent } from './stock-keeper-grn/stock-keeper-grn.component';
 
 
 
@@ -230,6 +232,8 @@ import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordina
         PurchaseCoordinatorForecastingDashComponent,
         StockManagerForecatingChartComponent,
         PurchaseCoordinatorForecatingChartComponent,
+        StockKeeperGinComponent,
+        StockKeeperGrnComponent,
 
   ],
   
