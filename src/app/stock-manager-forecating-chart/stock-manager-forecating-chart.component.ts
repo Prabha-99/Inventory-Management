@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StockManagerForecatingChartService } from './stock-manager-forecating-chart.service';
 import { Chart, registerables } from 'chart.js';
 import { isThisSecond } from 'date-fns';
@@ -9,11 +9,20 @@ Chart.register(...registerables);
   templateUrl: './stock-manager-forecating-chart.component.html',
   styleUrls: ['./stock-manager-forecating-chart.component.css']
 })
-export class StockManagerForecatingChartComponent {
+export class StockManagerForecatingChartComponent implements OnInit{
 
+  categories: any[] = [];
   selectedCategory = '';
   selectedStatus = '';
   selectedChartType = 'line';
+  product: any = {
+
+    category_id: '',
+    product_name: '',
+    product_brand: '',
+    product_quantity: null,
+    product_price: null
+  };
   
   myChart: Chart<"line" | "bar" | "pie", number[] | undefined, string> | undefined;
 
@@ -27,6 +36,10 @@ export class StockManagerForecatingChartComponent {
 
   async ngOnInit(): Promise<void> {
     await this.drawChart();
+
+    this.stockmanagerforecastingchartservice.getCategory().subscribe(category => {
+      this.categories = category;
+  });
   }
 
   async drawChart() {
@@ -91,4 +104,8 @@ export class StockManagerForecatingChartComponent {
   onSelectedChartType(value:string): void {
 		this. selectedChartType = value;
 	}
+
+  filterCategories(category: any): boolean {
+    return category.category_id === 'cat_edge' || category.category_id === 'cat_melamine';
+  }
 }
