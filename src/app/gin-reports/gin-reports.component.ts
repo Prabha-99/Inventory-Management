@@ -63,57 +63,6 @@ export class GINReportsComponent implements OnInit{
     this.files = this.files; // Reset files to the original list
   }
 
-
-  
-
-  // downloadFile(report_id: number, report_name: string): void {
-  //   this.ginService.downloadFile(report_id).subscribe(
-  //     (response) => {
-  //       // Create a temporary link and trigger the file download
-  //       const blob = new Blob([response], { type: 'application/pdf' });
-  //       const url = window.URL.createObjectURL(blob);
-  //       const link = document.createElement('a');
-  //       link.href = url;
-  //       link.download = report_name;
-  //       link.click();
-  //       link.remove();
-  //     },
-  //     (error) => {
-  //       if (error.status === 401) {
-  //         this.error = 'Error downloading file..!!!';
-  //       } else {
-  //         this.error = 'Error downloading file..!!!';
-  //       }
-  //     }
-  //   );
-  // }
-  
-
-
-  // download() {
-  //   const filePath = '/api/files/135'; // Replace with the appropriate file path or ID
-  //   this.ginService.downloadFile(filePath)
-  //     .subscribe(response => {
-  //       const blob = new Blob([response], { type: 'application/pdf' });
-  //       const url = window.URL.createObjectURL(blob);
-  //       const link = document.createElement('a');
-  //       link.href = url;
-  //       link.download = 'file.pdf'; // Set the desired file name
-  //       link.click();
-  //     });
-  // }
-
-  openPdf(report_name: string): void {             //New
-    this.ginService.getPdf(report_name).subscribe(response => {
-      const blob = new Blob([response], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      window.open(url, '_blank');
-    });
-  }
-
-
-
-
   downloadFile(report_id: number, report_name: string) {
 
     const httpOptions = {

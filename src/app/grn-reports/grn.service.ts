@@ -15,7 +15,4 @@ export class GRNService {
     return this.http.get(this.baseUrl);
   }
 
-  downloadFile(report_id: number): Observable<Blob> {
-    return this.http.get(`${this.baseUrl}/${report_id}/download`, { responseType: 'blob' });
-  }
 }

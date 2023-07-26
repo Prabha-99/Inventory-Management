@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { StockService } from './stock.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class StockReportsComponent implements OnInit{
   fileUrl!: string;
   filename!:string;
 
-  constructor(private stockService: StockService ) { }
+  constructor(private http: HttpClient,private stockService: StockService ) { }
 
 
   ngOnInit(): void {
@@ -63,51 +64,33 @@ export class StockReportsComponent implements OnInit{
   }
 
 
-  
+  downloadFile(report_id: number, report_name: string) {
 
-  // downloadFile(report_id: number, report_name: string): void {
-  //   this.ginService.downloadFile(report_id).subscribe(
-  //     (response) => {
-  //       // Create a temporary link and trigger the file download
-  //       const blob = new Blob([response], { type: 'application/pdf' });
-  //       const url = window.URL.createObjectURL(blob);
-  //       const link = document.createElement('a');
-  //       link.href = url;
-  //       link.download = report_name;
-  //       link.click();
-  //       link.remove();
-  //     },
-  //     (error) => {
-  //       if (error.status === 401) {
-  //         this.error = 'Error downloading file..!!!';
-  //       } else {
-  //         this.error = 'Error downloading file..!!!';
-  //       }
-  //     }
-  //   );
-  // }
-  
+    const httpOptions = {
+      responseType: 'blob' as 'json',
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
 
+    // Send a GET request to the backend endpoint
+    this.http.get('http://localhost:8080/api/reports/download?id=' + report_id, httpOptions)
+    .subscribe((response: any) => {
 
-  // download() {
-  //   const filePath = '/api/files/135'; // Replace with the appropriate file path or ID
-  //   this.ginService.downloadFile(filePath)
-  //     .subscribe(response => {
-  //       const blob = new Blob([response], { type: 'application/pdf' });
-  //       const url = window.URL.createObjectURL(blob);
-  //       const link = document.createElement('a');
-  //       link.href = url;
-  //       link.download = 'file.pdf'; // Set the desired file name
-  //       link.click();
-  //     });
-  // }
+        // Create a blob from the response data
+        const blob = new Blob([response], { type: 'application/octet-stream' });
 
-  openPdf(report_name: string): void {             //New
-    this.stockService.getPdf(report_name).subscribe(response => {
-      const blob = new Blob([response], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      window.open(url, '_blank');
-    });
+        // Create a temporary URL for the blob
+        const url = URL.createObjectURL(blob);
+
+        // Trigger the file download
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = report_name;
+        link.click();
+      }, error => {
+        console.error('Error occurred while downloading the file:', error);
+      });
   }
 
 }

@@ -17,15 +17,4 @@ export class StockService {
     return this.http.get(this.baseUrl);
   }
 
-  downloadFile(id: number): Observable<Blob> {
-    return this.http.get(`${this.downUrl}/${id}/download`, { responseType: 'blob' });
-  }
-
-  // downloadFile(filePath: string) {
-  //   return this.http.get(filePath, { responseType: 'blob' });
-  // }
-
-  getPdf(filename: string): Observable<any> {
-    return this.http.get(`${this.downUrl}/${filename}`, { responseType: 'arraybuffer' });
-  }
 }
