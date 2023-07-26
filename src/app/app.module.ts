@@ -119,6 +119,7 @@ import { StockManagerForecastingDashComponent } from './stock-manager-forecastin
 import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
 import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
 import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordinator-forecating-chart/purchase-coordinator-forecating-chart.component';
+import { SystemAdminProfileComponent } from './system-admin-profile/system-admin-profile.component';
 
 
 
@@ -230,6 +231,7 @@ import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordina
         PurchaseCoordinatorForecastingDashComponent,
         StockManagerForecatingChartComponent,
         PurchaseCoordinatorForecatingChartComponent,
+        SystemAdminProfileComponent,
 
   ],
   
