@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InventoryAdEditService } from './inventory-ad-edit.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-inventory-ad-edit',
@@ -18,11 +19,43 @@ export class InventoryAdEditComponent implements OnInit {
     product_price: null
   };
 
-  constructor(private inventoryAdEditService: InventoryAdEditService) {}
+  constructor(
+    private route: ActivatedRoute,
+    //private router: Router,  
+    private inventoryAdEditService: InventoryAdEditService
+  ) {}
+
   ngOnInit(): void {
     this.inventoryAdEditService.getCategory().subscribe(category => {
       this.categories = category;
   });
+
+  const idParam = this.route.snapshot.paramMap.get('product_id');
+  if (idParam) {
+    const product_id = +idParam;
+    this.getProduct(product_id);
+  }
+  }
+
+  getProduct(product_id: number): void {
+    this.inventoryAdEditService.getProduct(product_id).subscribe(product => {
+      this.product = product;
+    });
+  }
+
+
+  updateProduct(): void {
+    if (this.validateForm()) {
+      this.inventoryAdEditService.updateProduct(this.product.product_id, this.product).subscribe(
+        () => {
+          console.log('Product details updated successfully');
+        },
+        error => {
+          // Error
+          console.error('Error updating product:', error);
+        }
+      );
+    }
   }
 
   onCategoryChange() {
@@ -34,5 +67,11 @@ export class InventoryAdEditComponent implements OnInit {
       this.product.product_quantity = null; // Clear the value in case it was entered previously
     }
   }
+
+  validateForm(): boolean{
+    return !!this.product.category_id && !!this.product.product_name && !!this.product.product_brand && !!this.product.product_price
+    && !!this.product.product_quantity;
+  }
+    
 
 }

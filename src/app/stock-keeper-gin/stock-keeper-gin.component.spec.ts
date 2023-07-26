@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateOneUserComponent } from './update-one-user.component';
+import { StockKeeperGinComponent } from './stock-keeper-gin.component';
 
-describe('UpdateOneUserComponent', () => {
-  let component: UpdateOneUserComponent;
-  let fixture: ComponentFixture<UpdateOneUserComponent>;
+describe('StockKeeperGinComponent', () => {
+  let component: StockKeeperGinComponent;
+  let fixture: ComponentFixture<StockKeeperGinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UpdateOneUserComponent ]
+      declarations: [ StockKeeperGinComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UpdateOneUserComponent);
+    fixture = TestBed.createComponent(StockKeeperGinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

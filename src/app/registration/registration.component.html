@@ -7,7 +7,7 @@
   <title>Registration</title> 
 </head>
 <body>
-    <app-system-admin-nav></app-system-admin-nav>
+    <app-navbar></app-navbar>
 
     <div class="container">
         <div class="row">
@@ -41,7 +41,7 @@
                                 <div class="form-group">
                                     <label for="sel1">Role (select one):</label>
                                     <select class="form-control" id="sel1" name ="role" [(ngModel)] = "regData.role">
-                                    <!-- <option>ADMIN</option> -->
+                                    <option>ADMIN</option>
                                     <option>INVENTORY_ADMIN</option>
                                     <option>STOCK_MANAGER</option>
                                     <option>PURCHASE_COORDINATOR</option>
