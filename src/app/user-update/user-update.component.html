@@ -1,17 +1,14 @@
-<div>
-    
-  </div>
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Details</title> 
+  <title>Registration</title> 
 </head>
 <body>
-    <app-system-admin-nav></app-system-admin-nav>
+    <app-navbar></app-navbar>
 
     <div class="container">
         <div class="row">
@@ -20,55 +17,104 @@
             </div>
             <div class="col-10">
                 <br><br><br><br><br><br><br><br>
-                <div class="d-flex justify-content-center">
-                    <div>
-                      <div class="d-flex justify-content-center">
-                        <h1>Update All Users</h1>
-                      </div>
-                      
-
-                      <div style=" padding:5px;" class = "d-flex justify-content-around">
-                        <input type="text" [(ngModel)]="searchQuery" (input)="searchUsers()" placeholder="Search users">
-                        <button type="button" class="btn btn-primary margin-right:10px " (click)="clearSearch()">Clear</button>
-                      </div>
-  
-                      
-                    
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Role</th>
-                            <th scope="col">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr scope="row" *ngFor="let user of filteredUsers">
-                            <td>{{ user.id }}</td>
-                            <td>{{ user.firstname }}</td>
-                            <td>{{ user.lastname }}</td>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.role }}</td>
-                            <td>
-                              <button (click)="openUpdateForm(user)" class="btn btn-primary ">Update</button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-                      
-                </div>
-
+                <div class="container">
+                  
+                  <h1 align="center">Update All Users</h1>
                 
-                                    
+                  <!-- Add your search input and table with user details here -->
+                
+                  <!-- Table to display user details -->
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr scope="row" *ngFor="let user of filteredUsers">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.firstname }}</td>
+                        <td>{{ user.lastname }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.role }}</td>
+                        <td>
+                          <button type="button" class="btn btn-primary" (click)="openUpdateForm(user)">Update</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+                  <!-- Modal for Update Form -->
+                  <div *ngIf="showModal" class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title">Update User Details</h1>
+                          <button type="button" class="close" data-dismiss="modal" (click)="closeUpdateForm()">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form >
+                            <div class="form-group">
+                              <label for="id">User Id :</label>
+                              <input type="text"  [(ngModel)]="userUpdate.id" name="id" id="id" class="form-control"
+                                placeholder="User Id" disabled>
+                            </div>
+                            <div class="form-group">
+                              <label for="firstname">User First Name :</label>
+                              <input type="text" [(ngModel)]="userUpdate.firstname" name="firstname" id="firstname"
+                                class="form-control" placeholder="User First Name">
+                            </div>
+                            <div class="form-group">
+                              <label for="lastname">User Last Name :</label>
+                              <input type="text" [(ngModel)]="userUpdate.lastname" name="lastname" id="lastname" class="form-control"
+                                placeholder="User Last Name">
+                            </div>
+                            <div class="form-group">
+                              <label for="email">User Email :</label>
+                              <input type="text"  [(ngModel)]="userUpdate.email" name="email" id="email" class="form-control"
+                                placeholder="User Email" disabled>
+                            </div>
+                            <div class="form-group">
+                              <label for="role">User Role :</label>
+                              <select type="text" [(ngModel)]="userUpdate.role" name="role" id="role" class="form-control"
+                                placeholder="User Role">
+                                <option>ADMIN</option>
+                                <option>INVENTORY_ADMIN</option>
+                                <option>STOCK_MANAGER</option>
+                                <option>PURCHASE_COORDINATOR</option>
+                                <option>STOCK_KEEPER</option>
+                                <option>DESIGNER</option>
+                                <option>SHOWROOM_MANAGER</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="modal-footer">
+                              <button type="submit" (click)="updateUser()"class="btn btn-primary" id="submit">Update</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeUpdateForm()">Close</button>
+                              
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <!-- Success Message -->
+                  <div *ngIf="successMessage" class="alert alert-success">
+                    {{ successMessage }}
+                  </div>
+                </div>
+                
             </div>
         </div>
     </div>
 </body>
 </html>
-
-
   

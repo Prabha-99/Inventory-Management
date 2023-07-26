@@ -33,7 +33,6 @@ import { StockKeeperSidebarComponent } from './stock-keeper-sidebar/stock-keeper
 import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
-import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
 import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
 import { StockKeeperGRNService } from './stock-keeper-order-reports-grn/stock-keeper-grn.service';
 // import { StockKeeperOrderReportsComponentComponent } from './stock-keeper-order-reports-component/stock-keeper-order-reports-component.component';
@@ -77,10 +76,14 @@ import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
+
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
 import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordinator-forecating-chart/purchase-coordinator-forecating-chart.component';
 import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
 import { StockManagerForecastingDashComponent } from './stock-manager-forecasting-dash/stock-manager-forecasting-dash.component';
 import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
+
 
 
 
@@ -156,8 +159,6 @@ const routes: Routes = [
 
 
   {path:"get-user",component:GetUserComponent},
-
-  {path:"update-user/:id",component:UpdateOneUserComponent},
   {path:"user-update",component:UserUpdateComponent},
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent},
   {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent},
@@ -177,7 +178,7 @@ const routes: Routes = [
 
   {path:"get-user",component:GetUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
 
-  {path:"update-user/:id",component:UpdateOneUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  // {path:"update-user/:id",component:UpdateOneUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"user-update",component:UserUpdateComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-sell-order",component:InventoryAdSellOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"inventory-ad-purchase-order",component:InventoryAdPurchaseOrderComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
@@ -193,23 +194,15 @@ const routes: Routes = [
   {path: "showroom-bill-view",component:ShowroomBillViewComponent},
   {path: "showroom-send-file",component:ShowroomSendFileComponent},
 
-
   {path: "showroom-profile",component:ShowroomProfileComponent},
-
-
   {path: "designer-profile",component:DesignerProfileComponent},
-
   {path: "showroom-profile",component:ShowroomProfileComponent},
-
-
   {path: "designer-profile",component:DesignerProfileComponent},
-
-
   {path: "designer-profile",component:DesignerProfileComponent},
-
 
   {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path: "user-profile",component:UserProfileComponent},
 
   {path: "purchase-coordinator-forecasting-chart",component:PurchaseCoordinatorForecatingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
   {path: "stock-manager-forecasting-chart",component:StockManagerForecatingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},

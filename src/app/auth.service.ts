@@ -13,6 +13,8 @@ import jwt_decode from 'jwt-decode';
 export class AuthService {
   private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
   private apiUrl2 = 'http://localhost:8080/api/auth/CurrentUser';
+  private apiUrl3 = 'http://localhost:8080/api/auth/UserProfile';
+  private apiUrl4 = 'http://localhost:8080/api/auth/UpdateProfile';
 
   constructor(private http: HttpClient) { }
 
@@ -44,6 +46,11 @@ export class AuthService {
     return this.http.get<string>(`${this.apiUrl2}`,{ headers }); //Using stored token 
   }
 
+  getUserProfile(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get<any>(`${this.apiUrl3}`, { headers });
+  }
+
 
   getUserRole(): Observable<string> {
     const token = localStorage.getItem('token') || ''; // Providing a default value of an empty string if token is null
@@ -52,6 +59,10 @@ export class AuthService {
     return of(role);
   }
   
-
+  updateUserProfile(updatedUser: any): Observable<any> {
+    const headers = this.getHeaders();
+    const id = updatedUser.id; // Assuming your updatedUser object contains the 'id' field
+    return this.http.put<any>(`${this.apiUrl4}`, updatedUser, { headers });
+  }
 
 }

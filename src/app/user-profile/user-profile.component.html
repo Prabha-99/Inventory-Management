@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <app-system-admin-side></app-system-admin-side>
+    </div>
+    <div class="col-10">
+      <br><br><br><br><br><br><br><br>
+
+      <div class="d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2>User Profile</h2>
+          <div class="mb-3">
+            <label>Id:</label>
+            <input class="form-control short-input" [(ngModel)]="userUpdate.id" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>First Name:</label>
+            <input class="form-control short-input" [(ngModel)]="userUpdate.firstname" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>Last Name:</label>
+            <input class="form-control short-input" [(ngModel)]="userUpdate.lastname" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>Email:</label>
+            <input class="form-control short-input" [(ngModel)]="userUpdate.email" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>Password:</label>
+            <input class="form-control short-input" [(ngModel)]="userUpdate.password" [disabled]="!editing" />
+          </div>
+          <div class="mb-3">
+            <label>Role:</label>
+            <select class="form-control" [(ngModel)]="userUpdate.role" [disabled]="!editing">
+              <option>INVENTORY_ADMIN</option>
+              <option>ADMIN</option>
+              <option>STOCK_MANAGER</option>
+              <option>PURCHASE_COORDINATOR</option>
+              <option>STOCK_KEEPER</option>
+              <option>DESIGNER</option>
+              <option>SHOWROOM_MANAGER</option>
+            </select>
+          </div>
+
+          <div style="padding: 10px;" class="d-flex justify-content-around">
+            <button *ngIf="editing" class="btn btn-primary margin-right:10px" (click)="updateUser()">Update</button>
+            <button *ngIf="editing" class="btn btn-primary margin-right:10px" (click)="cancelUpdate()">Cancel</button>
+            <button *ngIf="!editing" class="btn btn-primary margin-right:10px" (click)="editProfile()">Edit Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

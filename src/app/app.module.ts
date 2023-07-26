@@ -71,7 +71,6 @@ import { GINReportsComponent } from './gin-reports/gin-reports.component';
 import { GRNReportsComponent } from './grn-reports/grn-reports.component';
 import { StockManagerEditComponent } from './stock-manager-edit/stock-manager-edit.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
-import { UpdateOneUserComponent } from './update-one-user/update-one-user.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
 
 import { StockKeeperOrderReportsComponent } from './stock-keeper-order-reports/stock-keeper-order-reports.component';
@@ -110,10 +109,9 @@ import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
 import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
 import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
 import { ShowroomSendFileComponent } from './showroom-send-file/showroom-send-file.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ShowroomProfileComponent } from './showroom-profile/showroom-profile.component';
-
 import { DesignerProfileComponent } from './designer-profile/designer-profile.component';
-
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
 import { DatePipe } from '@angular/common';
@@ -178,7 +176,6 @@ import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordina
     GINReportsComponent,
     GRNReportsComponent,
     DeleteUserComponent,
-    UpdateOneUserComponent,
     StockManagerEditComponent,
     DeleteUserComponent,
       StockKeeperOrderReportsComponent,
@@ -224,12 +221,9 @@ import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordina
         ShowroomSideBarComponent,
         ShowroomBillViewComponent,
         ShowroomSendFileComponent,
-
+        UserProfileComponent,
         ShowroomProfileComponent,
-
-
         DesignerProfileComponent,
-
         InventoryBackupComponent,
         StockReportsComponent,
         StockManagerForecastingDashComponent,
@@ -237,12 +231,8 @@ import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordina
         StockManagerForecatingChartComponent,
         PurchaseCoordinatorForecatingChartComponent,
 
-
-
-
-
-
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
