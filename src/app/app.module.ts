@@ -117,6 +117,7 @@ import { DesignerProfileComponent } from './designer-profile/designer-profile.co
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
 import { DatePipe } from '@angular/common';
+import { DesignerCreateGinComponent } from './designer-create-gin/designer-create-gin.component';
 
 
 
@@ -228,6 +229,7 @@ import { DatePipe } from '@angular/common';
 
         InventoryBackupComponent,
         StockReportsComponent,
+        DesignerCreateGinComponent,
 
 
 
