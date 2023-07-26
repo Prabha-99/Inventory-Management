@@ -102,7 +102,7 @@ import { DesignerSideBarComponent } from './designer-side-bar/designer-side-bar.
 import { DesigerViewFilesComponent } from './desiger-view-files/desiger-view-files.component';
 import { DesignerDeQuantityComponent } from './designer-de-quantity/designer-de-quantity.component';
 import { DesignerBillSendComponent } from './designer-bill-send/designer-bill-send.component';
-import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.component';
+
 
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
@@ -115,6 +115,10 @@ import { DesignerProfileComponent } from './designer-profile/designer-profile.co
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
 import { DatePipe } from '@angular/common';
+import { StockManagerForecastingDashComponent } from './stock-manager-forecasting-dash/stock-manager-forecasting-dash.component';
+import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
+import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
+import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordinator-forecating-chart/purchase-coordinator-forecating-chart.component';
 
 
 
@@ -210,7 +214,7 @@ import { DatePipe } from '@angular/common';
       DesigerViewFilesComponent,
       DesignerDeQuantityComponent,
       DesignerBillSendComponent,
-      DesignerSendGINComponent,
+
 
       UnauthorizedComponent,
         ShowroomDashComponent,
@@ -222,6 +226,10 @@ import { DatePipe } from '@angular/common';
         DesignerProfileComponent,
         InventoryBackupComponent,
         StockReportsComponent,
+        StockManagerForecastingDashComponent,
+        PurchaseCoordinatorForecastingDashComponent,
+        StockManagerForecatingChartComponent,
+        PurchaseCoordinatorForecatingChartComponent,
 
   ],
   

@@ -7,14 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class ShowroomService {
 
+
+
   baseURL = 'http://localhost:8080/api/showroom/add';
 
   constructor(private http: HttpClient) { }
 
   submitData(formData: FormData): Observable<any> {
 
-    console.log(formData);
-
     return this.http.post(this.baseURL, formData);
+
   }
 }

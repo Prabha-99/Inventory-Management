@@ -29,7 +29,7 @@ customerName: string = '';
       alert('Please select a file and customer name');
       return;
     }
-    try{
+
     //create formData object
     let formData = new FormData();
     formData.append("filename",this.filename)
@@ -38,18 +38,19 @@ customerName: string = '';
 
     //submit data in API
     this.http.post("http://localhost:8080/api/designer/billSend",formData)
-    .subscribe((response) =>{
-      console.log(response);
+    .subscribe(() =>{
+      alert('An error occurred while sending the file.');
+    },
 
-      //this.filename = "";
-      //this.file = null;
+    () => {
+      this.filename = "";
+      this.file = null;
       alert('File sent successfully!');
       this.refreshPage();
-
   });
-  }catch(error){
-      console.error("Error uploading bill:", error);
-  }
+
+
+
 }
 refreshPage() {
   window.location.reload();

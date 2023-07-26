@@ -1,13 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GenerateGINService } from './generate-gin.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-generate-gin',
   templateUrl: './generate-gin.component.html',
   styleUrls: ['./generate-gin.component.css']
 })
-export class GenerateGINComponent {
+export class GenerateGINComponent implements OnInit{
+
+  products: any[] = [];
+  filteredProducts: any[] = [];
+  searchValue: string = '';
   gin:any ={
     address:'',
     contact_nu:'',
@@ -24,7 +29,26 @@ export class GenerateGINComponent {
 tele_error='';
 tele_error_fix='';
 
-constructor(private generateGINService: GenerateGINService) {}
+constructor(private _dialog: MatDialog, private generateGINService: GenerateGINService) {}
+  ngOnInit(): void {
+    this.generateGINService.getProducts().subscribe(product => {
+      this.products = product;
+      this.filteredProducts = product;
+  });
+  }
+
+  searchProducts(): void {
+    this.filteredProducts = this.products.filter(product => {
+      const searchDet = `${product.product_name} ${product.category_id}`;
+      return searchDet.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+  }
+
+  clearSearch(): void {
+    this.searchValue = '';
+    this.filteredProducts = this.products;
+  }
+
 
 submit() {
     if (!this.isValidFormData())  {

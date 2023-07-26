@@ -11,32 +11,60 @@
       <div class="row">
       <div class="col-2">
         <app-stock-keeper-sidebar></app-stock-keeper-sidebar><!--Admin Sidebar calling-->
+        <app-designer-side-bar></app-designer-side-bar><!--disigner sidebar calling-->
       </div>
       <div class="col-10 mt-5">
                 <div>
-                  
+
+                  <br><br><br>
+                  <div class="form-outline">
+                    <input type="search" id="form1" class="form-control" placeholder="Filter" [(ngModel)]="searchValue" (input)="searchProducts()" aria-label="Search" />
+                  </div>
+                  <br>
+                  <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th class="th-sm" scope="col">Product Id</th>
+                        <th class="th-sm" scope="col">Category Name</th>
+                        <th class="th-sm" scope="col">Product Brand</th>
+                        <th class="th-sm" scope="col">Product Name</th>
+                        <th class="th-sm" scope="col">Product Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr scope="row" *ngFor="let product of filteredProducts">
+                        <td>{{ product.product_id }}</td>
+                        <td>{{ product.category_id }}</td>
+                        <td>{{ product.product_brand }}</td>
+                        <td>{{ product.product_name }}</td>
+                        <td>{{ product.product_quantity }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+
                   <div class="card-body px-4 py-5 px-md-5">
                       <div class="d-flex justify-content-center">
                       <div class="col-lg-10 mt-5">
                           <h2 class="d-flex justify-content-center">New Good Issue Note</h2>
-                          
+
                           <form>
                               <div class="row">
                                 <div class="form-outline mb-4">
                                   <label class="form-label" >Customer Name</label>
                                   <input type="text" name="customer_name"  class="form-control"[(ngModel)]="gin.customer_name" required/>
-                                  
+
                                   </div>
                                   <!-- <div class="col-md-6 mb-6"> -->
                                     <div class="form-outline mb-4">
                                       <label class="form-label" >Address</label>
                                       <input type="text"name="address" class="form-control"[(ngModel)]="gin.address" required/>
-                                      
+
                                     </div>
                                   <!-- </div> -->
-                                  
+
                               </div>
-                          
+
                           <!-- User Name -->
                           <div class="form-outline mb-4" >
                           <label class="form-label" >Contact Number</label>
@@ -45,10 +73,10 @@
                           <div *ngIf="tele_error_fix" class="error-message-ok">{{ tele_error_fix }}</div>
                           </div>
 
-                          
+
                           <div class="row">
                             <div class="col-md-6 mb-6">
-                             <div class="form-outline mb-4">  
+                             <div class="form-outline mb-4">
                             <div class="form-outline mb-4">
                                 <label class="form-label" >Date
                                 <input type="date" class="form-control"name="date"[(ngModel)]="gin.date" required/>
@@ -57,14 +85,14 @@
                             </div>
                             </div>
 
-                             
+
                               <div class="col-md-6 mb-6">
                                <div class="form-outline mb-4">
-                              
+
                                 <!-- <label class="form-label" >Category Id</label>
                                 <input type="number" [(ngModel)]="gin.invoice_no" name="invoice_no" style="width:130px; height:32px;text-align:center;"class="form-control"> -->
 
-                                <label class="form-label" >Category Id</label>
+                                <label class="form-label" >Category</label>
                                 <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="gin.category_id"  required>
                                   <option selected value="Accessories" disabled [ngValue]="null"> </option>
                                   <option value="cat_accessories">Accessories</option>
@@ -78,56 +106,56 @@
                           </div>
                                 <div class="row">
                                   <div class="col-md-6 mb-4">
-                                    <div class="form-outline mb-4"> 
+                                    <div class="form-outline mb-4">
                                 <label class="form-label" >Invoiced Quantity</label>
                                 <input type="text" name="invoiced_quantity"  class="form-control"[(ngModel)]="gin.invoiced_quantity" required/>
                                 </div>
                               </div>
                               <div class="col-md-6 mb-4">
-                                <div class="form-outline mb-4"> 
+                                <div class="form-outline mb-4">
                                 <label class="form-label" >Issued Quantity</label>
                                 <input type="text" name="issued_quantity"  class="form-control"[(ngModel)]="gin.issued_quantity" required/>
                                 </div>
                               </div>
                               </div>
-                             
-                          
-                             
+
+
+
 
                             <!-- <div class="form-outline mb-4">
                               <label class="form-label" >Quantity</label>
                               <input type="number" [(ngModel)]="gin.quantity" name="quantity" style="width:130px; height:32px;text-align:center;"class="form-control">
-                              
+
                           </div> -->
 
                           <!-- <div class="form-outline mb-4">
                             <label class="form-label" >Issue Quantity</label>
                             <input type="text" name="invoiced_quantity"  class="form-control"[(ngModel)]="gin.invoiced_quantity" required/>
-                            
+
                         </div> -->
 
                         <div class="form-outline mb-4">
                           <label class="form-label" >Item Description</label>
                           <textarea id="item"  rows="3" cols="30" [(ngModel)]="gin.item_description" name="item_description" class="form-control" >
                           </textarea>
-                          
+
                       </div>
 
                       <div class="form-outline mb-4">
                         <label class="form-label" >Remarks</label>
                         <textarea id="area"  rows="3" cols="30" [(ngModel)]="gin.remarks" name="remarks" class="form-control" >
                         </textarea>
-                        
+
                     </div>
 
-                         
+
                       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                      
+
                               <button class="btn btn-primary btn btn-dark" type="submit"  (click)="submit()">Generate</button>
                               <button class="btn btn-primary btn btn-dark" type="button" (click)="reset()" >Cancel</button>
 
-                            </div> 
-          
+                            </div>
+
                       </form>
                     </div>
                     </div>
@@ -138,12 +166,12 @@
   </div>
 </body>
   </html>
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+

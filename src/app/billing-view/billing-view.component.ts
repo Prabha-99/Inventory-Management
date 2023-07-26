@@ -39,6 +39,11 @@ export class BillingViewComponent implements OnInit{
     this.loadPdfList();
 
     this.userRole = this.route.snapshot.data['userRole'];
+
+    const savedChecked = localStorage.getItem('isChecked');
+  if (savedChecked) {
+    this.isChecked = JSON.parse(savedChecked);
+  }
   }
 
   openPdf(filename: string): void {
@@ -102,16 +107,26 @@ export class BillingViewComponent implements OnInit{
     );
   }
 
+  isChecked: { [key: number]: boolean } = {};
 
+  onCheckboxChange() {
+    localStorage.setItem('isChecked', JSON.stringify(this.isChecked));
+  }
+
+  //bill send
+  isSending: boolean = false;
   onSend(bill_id: number) {
     if (confirm("Are you sure you want to Send this bill?")) {
+      this.isSending = true;
 
       this.billService.sendBillPdfByEmail(bill_id).subscribe(() => {
         this.bills = this.bills.filter(bill => bill.id !== bill_id);
         alert("Bill Send Successfully!"); 
+        this.isSending = false;
 
       }, () => {
-        alert("Email Is Not Available !!"); 
+        alert("Bill Send Fail!"); 
+        this.isSending = false;
       });
     }
 

@@ -60,7 +60,7 @@ import { DesignerDashComponent } from './designer-dash/designer-dash.component';
 import { DesignerSideBarComponent } from './designer-side-bar/designer-side-bar.component';
 import { DesignerDeQuantityComponent } from './designer-de-quantity/designer-de-quantity.component';
 import { DesignerBillSendComponent } from './designer-bill-send/designer-bill-send.component';
-import { DesignerSendGINComponent } from './designer-send-gin/designer-send-gin.component';
+
 import { ShowroomDashComponent } from './showroom-dash/showroom-dash.component';
 import { ShowroomSideBarComponent } from './showroom-side-bar/showroom-side-bar.component';
 import { ShowroomBillViewComponent } from './showroom-bill-view/showroom-bill-view.component';
@@ -76,7 +76,14 @@ import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
+
 import { UserProfileComponent } from './user-profile/user-profile.component';
+
+import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordinator-forecating-chart/purchase-coordinator-forecating-chart.component';
+import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
+import { StockManagerForecastingDashComponent } from './stock-manager-forecasting-dash/stock-manager-forecasting-dash.component';
+import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
+
 
 
 
@@ -166,7 +173,7 @@ const routes: Routes = [
   {path: "designer-side-bar",component:DesignerSideBarComponent},
   {path: "designer-de-quantity",component:DesignerDeQuantityComponent},
   {path: "designer-bill-send",component:DesignerBillSendComponent},
-  {path: "designer-send-gin",component:DesignerSendGINComponent},
+
 
 
   {path:"get-user",component:GetUserComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
@@ -187,27 +194,22 @@ const routes: Routes = [
   {path: "showroom-bill-view",component:ShowroomBillViewComponent},
   {path: "showroom-send-file",component:ShowroomSendFileComponent},
 
-
-
   {path: "showroom-profile",component:ShowroomProfileComponent},
-
-
   {path: "designer-profile",component:DesignerProfileComponent},
-
   {path: "showroom-profile",component:ShowroomProfileComponent},
-
-
   {path: "designer-profile",component:DesignerProfileComponent},
-
-
   {path: "designer-profile",component:DesignerProfileComponent},
-
 
   {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "user-profile",component:UserProfileComponent},
 
-  
+  {path: "purchase-coordinator-forecasting-chart",component:PurchaseCoordinatorForecatingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+  {path: "stock-manager-forecasting-chart",component:StockManagerForecatingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path: "stock-manager-forecasting-dash",component:StockManagerForecastingDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
+  {path: "purchase-coordinator-forecasting-dash",component:PurchaseCoordinatorForecastingDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }}
+
+
 
 
 ];
