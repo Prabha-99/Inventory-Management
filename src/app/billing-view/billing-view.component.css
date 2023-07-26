@@ -4,7 +4,7 @@ body{
 
 .table td {
     font-family:Arial, sans-serif;
-    font-size:13px;
+    font-size:12.5px;
     padding:10px 5px;
     overflow:hidden;
     word-break:normal;
@@ -29,3 +29,13 @@ body{
      font-family:Arial, sans-serif;
      text-align: center;
 }
+
+
+  
+
+  #myCheckbox:checked + label button {
+    background-color: yellow;
+  }
+  #sendcell{
+    padding-inline-start: 20px;
+  }
