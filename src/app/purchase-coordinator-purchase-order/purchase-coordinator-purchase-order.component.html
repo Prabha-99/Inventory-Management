@@ -30,7 +30,7 @@
                     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                       <thead>
                         <tr>
-                          <th class="th-sm" scope="col">Category Id</th>
+                          <th class="th-sm" scope="col">Category</th>
                           <th class="th-sm" scope="col">Supplier Name</th>
                           <th class="th-sm" scope="col">Address</th>
                           <th class="th-sm" scope="col">Contact Number</th>
@@ -39,7 +39,6 @@
                           <th class="th-sm" scope="col">Received Quantity</th>
                           <th class="th-sm" scope="col">Item Description</th>
                           <th class="th-sm" scope="col">Remarks</th>
-                          <th class="th-sm" scope="col">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -53,15 +52,12 @@
                           <td>{{ grn.received_quantity }}</td>
                           <td>{{ grn.item_description }}</td>
                           <td>{{ grn.remarks }}</td>
-                          <td>
-                            <button type="button" class="btn btn-outline-warning">View</button>
-                          </td>
                         </tr>
                       </tbody>
                     </table>
-                    <br><br><br><br>
+                    <br><br><br>
                     
-                      <h2 class="d-flex justify-content-center">Purchased Order</h2>
+                      <h2 class="d-flex justify-content-center">Increase Quantity</h2>
                       
                       <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value,productForm)">
                         

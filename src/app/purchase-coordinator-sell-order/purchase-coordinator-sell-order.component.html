@@ -28,7 +28,7 @@
                       <thead>
                         <tr>
                           <th class="th-sm" scope="col">Invoice No</th>
-                          <th class="th-sm" scope="col">Category Id</th>
+                          <th class="th-sm" scope="col">Category</th>
                           <th class="th-sm" scope="col">Date</th>
                           <th class="th-sm" scope="col">Customer Name</th>
                           <th class="th-sm" scope="col">Address</th>
@@ -37,7 +37,6 @@
                           <th class="th-sm" scope="col">Invoiced Quantity</th>
                           <th class="th-sm" scope="col">Issued Quantity</th>
                           <th class="th-sm" scope="col">Remarks</th>
-                          <th class="th-sm" scope="col">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -52,15 +51,12 @@
                           <td>{{ gin.invoiced_quantity }}</td>
                           <td>{{ gin.issued_quantity }}</td>
                           <td>{{ gin.remarks }}</td>
-                          <td>
-                            <button type="button" class="btn btn-outline-warning">Select</button>
-                          </td>
                         </tr>
                       </tbody>
                     </table>
-                    <br><br><br><br>
+                    <br><br><br>
 
-                      <h2 class="d-flex justify-content-center">Sell Product</h2>
+                      <h2 class="d-flex justify-content-center">Deduct Quantity</h2>
                       
                       <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value,productForm)">
                         
