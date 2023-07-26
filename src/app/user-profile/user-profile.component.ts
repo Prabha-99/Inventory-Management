@@ -10,6 +10,7 @@ export class UserProfileComponent implements OnInit {
   user: any;
   editing: boolean = false;
   originalUser: any;
+  a
   userUpdate: any = {
     id: 0,
     firstname: '',
