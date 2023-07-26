@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {GetUserService} from '../get-user.service';
+import { GetUserService } from '../get-user.service';
 
 @Component({
   selector: 'app-delete-user',
   templateUrl: './delete-user.component.html',
   styleUrls: ['./delete-user.component.css']
 })
-export class DeleteUserComponent implements OnInit{
+export class DeleteUserComponent implements OnInit {
   users: any[] = [];
   filteredUsers: any[] = [];
   searchValue: string = '';
-  dialog: any;
-  router: any;
 
   constructor(private userService: GetUserService) { }
 
@@ -22,6 +20,7 @@ export class DeleteUserComponent implements OnInit{
   getUsers(): void {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
+      this.filteredUsers = users; // Initialize filteredUsers with all users
     });
   }
 
@@ -32,16 +31,24 @@ export class DeleteUserComponent implements OnInit{
         // Show a success message
         alert('User deleted successfully');
 
-        // Refresh the user list
+        // Refresh the user list and apply filtering again
         this.getUsers();
+        this.searchUsers();
       });
     }
   }
+
   searchUsers(): void {
-    this.filteredUsers = this.users.filter(user => {
-      const fullName = `${user.firstname} ${user.lastname}`;
-      return fullName.toLowerCase().includes(this.searchValue.toLowerCase());
-    });
+    if (this.searchValue.trim() === '') {
+      this.filteredUsers = this.users;
+    } else {
+      this.filteredUsers = this.users.filter(user =>
+        user.firstname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        user.lastname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        user.email.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        user.role.toLowerCase().includes(this.searchValue.toLowerCase())
+      );
+    }
   }
 
   clearSearch(): void {

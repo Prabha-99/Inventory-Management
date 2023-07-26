@@ -9,7 +9,7 @@ import { GetUserService } from '../get-user.service';
 export class UserUpdateComponent implements OnInit {
   users: any[] = [];
   filteredUsers: any[] = [];
-  searchQuery: string = '';
+  searchValue: string = '';
   showModal: boolean = false;
   userUpdate: any = {
     id: 0,
@@ -81,20 +81,20 @@ export class UserUpdateComponent implements OnInit {
  
 
   searchUsers(): void {
-    if (this.searchQuery.trim() === '') {
+    if (this.searchValue.trim() === '') {
       this.filteredUsers = this.users;
     } else {
       this.filteredUsers = this.users.filter(user =>
-        user.firstname.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        user.lastname.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        user.email.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        user.role.toLowerCase().includes(this.searchQuery.toLowerCase())
+        user.firstname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        user.lastname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        user.email.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        user.role.toLowerCase().includes(this.searchValue.toLowerCase())
       );
     }
   }
 
   clearSearch(): void {
-    this.searchQuery = '';
+    this.searchValue = '';
     this.filteredUsers = this.users;
   }
 }
