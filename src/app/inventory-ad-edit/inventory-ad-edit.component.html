@@ -1,53 +1,64 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Edit Product</mat-card-title>
-  </mat-card-header>
 
-  <form #productForm="ngForm" (submit)="updateProduct()">
-    <mat-card-content>
-      <p>
-        <select class="form-select" name="category_id" aria-label="category" [(ngModel)]="product.category_id"
-          (ngModelChange)="onCategoryChange()" required>
-          <option selected value="" disabled [ngValue]="null">Select Category</option>
-          <option *ngFor="let category of categories" [value]="category.category_id">{{category.category_name}}</option>
-        </select>
-        <br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Products Form</title> 
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+ 
+              <br><br><br><br><br>
+              <h2>Update Products</h2>
 
-        <!-- Product Name -->
-        <mat-form-field appearance="outline">
-          <mat-label>Product Name</mat-label>
-          <input matInput name="product_name" placeholder="Product Name" [(ngModel)]="product.product_name" required>
-        </mat-form-field>
+              <form (submit)="updateProduct()">
+      
+                <div class="mb-3">
+                  <label for="catogary_id" class="form-label">Category Name</label>
+                  <select class="form-control" type="text" id="category_id" [(ngModel)]="product.category_id" name="category_id" required >
+                    <option>cat_staron</option>
+                    <option>cat_edge</option>
+                    <option>cat_melamaine</option>
+                    <option>cat_accessories</option>
+                    <option>cat_appliances</option>
+                    </select>
+                  </div>
+                  <br>
 
-        <!-- Product Brand -->
-        <mat-form-field appearance="outline">
-          <mat-label>Product Brand</mat-label>
-          <input matInput name="product_brand" placeholder="Product Brand" [(ngModel)]="product.product_brand" required>
-        </mat-form-field>
-      </p>
+                <div class="mb-3">
+                <label for="product_name" class="form-label">Product Name</label>
+                <input class="form-control short-input" type="text" id="product_name" [(ngModel)]="product.product_name" name="product_name" required />
+                </div>
+                <br />
 
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Product Quantity</mat-label>
-          <input matInput name="product_quantity" type="number" placeholder="Product Quantity" [(ngModel)]="product.product_quantity" [disabled]="!isQuantityEnabled"
-            required>
-        </mat-form-field>
+                <div class="mb-3">
+                <label for="product_brand" class="form-label">Product Brand</label>
+                <input class="form-control short-input" type="text" id="product_brand" [(ngModel)]="product.product_brand" name="product_brand" required />
+                </div>
+                <br />
 
-        <!-- Product Price -->
-        <mat-form-field appearance="outline">
-          <mat-label>Product Price</mat-label>
-          <input matInput name="product_price" type="number" placeholder="Product Price" [(ngModel)]="product.product_price" required>
-        </mat-form-field>
-      </p>
-    </mat-card-content>
+                <div class="mb-3">
+                <label for="product_quantity" class="form-label">Quantity</label>
+                <input class="form-control short-input" type="number" id="product_quantity" [(ngModel)]="product.product_quantity" name="product_quantity" required />
+                </div>
+                <br />
 
-    <mat-card-actions>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button type="submit" class="btn btn-primary margin-right:10px ">Update</button>
-        <!--<input class="btn btn-primary" type="Edit" value="Edit">-->
-        <input class="btn btn-primary" type="reset" value="Reset">
-        <button type="button" class="btn btn-danger">Cancel</button>
-      </div>
-    </mat-card-actions>
-  </form>
-</mat-card>
+                <div class="mb-3">
+                  <label for="product_price" class="form-label">Price</label>
+                  <input class="form-control short-input" type="number" id="product_price" [(ngModel)]="product.product_price" name="product_price" required />
+                  </div>
+
+                <div style=" padding-bottom:15px;"  class = "d-flex justify-content-around">
+                  <button type="submit" class="btn btn-primary margin-right:10px ">Update</button>
+                  <button type="button" class="btn btn-primary" routerLink="src\app\inventory-ad-addproduct">Cancel</button>
+              </div>
+
+              </form>
+                
+            </div>
+        </div>
+</body>
+</html>

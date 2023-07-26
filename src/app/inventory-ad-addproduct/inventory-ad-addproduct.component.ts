@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { InventoryAdAddproductService } from './inventory-ad-addproduct.service';
 import { InventoryAdProductPopupComponent } from '../inventory-ad-product-popup/inventory-ad-product-popup.component';
 import { DeleteProductComponent } from '../delete-product/delete-product.component';
 import { InventoryAdEditComponent } from '../inventory-ad-edit/inventory-ad-edit.component';
+import { Router } from '@angular/router';
 
 
 
@@ -18,7 +19,7 @@ export class InventoryAdAddproductComponent implements OnInit{
   filteredProducts: any[] = [];
   searchValue: string = '';
 
-  constructor(private _dialog: MatDialog,  private productService: InventoryAdAddproductService){}
+  constructor(private _dialog: MatDialog,  private productService: InventoryAdAddproductService, private router: Router){}
   ngOnInit(): void {
     this.productService.getProducts().subscribe(product => {
       this.products = product;
@@ -56,14 +57,11 @@ export class InventoryAdAddproductComponent implements OnInit{
   
   }
 
-  openEditProductForm(author: any, operation: String) {
-    var dialogRef = null as any;
-    if (operation === 'edit') {
-      dialogRef = this._dialog.open(InventoryAdEditComponent);
-    }
-    
-  
+  openEditProductForm(product: any) {
+      this._dialog.open(InventoryAdEditComponent,product.product_id);
   }
+
+
 
   onDelete(product_id: number) {
     if (confirm("Are you sure you want to delete this Product?")) {

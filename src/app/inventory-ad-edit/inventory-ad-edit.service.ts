@@ -7,21 +7,23 @@ import { Observable } from 'rxjs';
 })
 export class InventoryAdEditService {
 
-  private getUrl = 'http://localhost:8080/api/product';
+  private apiUrl = 'http://localhost:8080/api/product';
+  // private getcat = 'http://localhost:8080/api/v1/category/getAllCategory';
 
   constructor(private http: HttpClient) { }
 
-   getCategory() {
-    return this.http.get<any[]>('http://localhost:8080/api/v1/category/getAllCategory'); //get categories
-  }
+  // getCategory(): Observable<any[]> {
+  //   return this.http.get<any[]>(`${this.getcat}`);
+  // }
 
-  getProduct(product_id: number): Observable<any> {
-    const url = `${this.getUrl}/${product_id}`;
+  getProducts(product_id: number): Observable<any> {
+    const url = `${this.apiUrl}/${product_id}`;
     return this.http.get<any>(url);
   }
 
-  updateProduct(product_id: number, product: any): Observable<any> {
-    const url = `${this.getUrl}/${product_id}`;
+  updateProducts(product_id: number, product: any): Observable<any> {
+    const url = `${this.apiUrl}/${product_id}`;
     return this.http.put<any>(url, product);
   }
+
 }

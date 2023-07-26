@@ -46,10 +46,10 @@
                       <td>{{ product.product_price }}</td>
                       <td>{{ product.product_quantity }}</td>
                       <td>
-                        <a class="edit" data-toggle="modal" (click)="openEditProductForm(null,'edit')" style="cursor: pointer;">
+                        <a class="edit" data-toggle="modal" (click)="openEditProductForm(product)" style="cursor: pointer;">
                           <i class="material-icons" data-toggle="tooltip" title="Edit" style="cursor: pointer;">&#xE254;</i>
                         </a>
-                        <a class="delete" data-toggle="modal" (click)="onDelete(product.product_id)" style="cursor: pointer;">
+                        <a class="delete" data-toggle="modal" (click)="onDelete(product)" style="cursor: pointer;">
                           <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
                         </a>
                       </td>
