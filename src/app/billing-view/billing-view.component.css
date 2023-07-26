@@ -36,6 +36,3 @@ body{
   #myCheckbox:checked + label button {
     background-color: yellow;
   }
-  #sendcell{
-    padding-inline-start: 20px;
-  }
