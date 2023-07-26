@@ -56,16 +56,6 @@ submit() {
       return;
     }
     
-    if (!this.isValidPhoneNumber(this.gin.contact_nu)) {
-      this.tele_error='Invalid Telephone Number!';
-      alert("Invalid Phone Number");
-      this.tele_error_fix='';
-      return;
-    }else{
-      this.tele_error='';
-      this.tele_error_fix='';
-    }
-  
 
   this.generateGINService.submit(this.gin).subscribe(
     (response) => {
@@ -86,13 +76,6 @@ isValidFormData(): boolean {
   return !!this.gin.address && !!this.gin.contact_nu && !!this.gin.customer_name && !!this.gin. date && !!this.gin.category_id
   && !!this.gin.invoiced_quantity && !!this.gin.issued_quantity ;
 }
-
-isValidPhoneNumber(contact_nu) {
-  const regexPattern = /^0\d{9}$/;
-  return regexPattern.test(contact_nu);
-}
-
-
 
 
 Cancel(): void {
