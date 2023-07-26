@@ -10,7 +10,6 @@ export class UserProfileComponent implements OnInit {
   user: any;
   editing: boolean = false;
   originalUser: any;
-  a
   userUpdate: any = {
     id: 0,
     firstname: '',
@@ -49,9 +48,21 @@ export class UserProfileComponent implements OnInit {
   }
 
   updateUser(): void {
-    this.authService.updateUserProfile(this.userUpdate).subscribe(
+    const updatedUser = {
+      id: this.userUpdate.id,
+      firstname: this.userUpdate.firstname,
+      lastname: this.userUpdate.lastname,
+      email: this.userUpdate.email,
+      password: this.userUpdate.password,
+      role: this.userUpdate.role
+    };
+
+    if (this.validateForm()) {
+
+    this.authService.updateUserProfile(updatedUser).subscribe(
       (response: any) => {
-        console.log('User profile updated successfully:', response);
+        alert('User profile updated successfully');
+        // console.log('User profile updated successfully:', response);
         this.editing = false;
         this.user = { ...this.userUpdate };
         this.originalUser = { ...this.userUpdate };
@@ -60,5 +71,49 @@ export class UserProfileComponent implements OnInit {
         console.log('Error updating user profile:', error);
       }
     );
+    }
+  }
+
+  validateForm(): boolean {
+    // Perform front-end validation
+    if (
+      this.userUpdate.firstname.trim() === '' ||
+      this.userUpdate.lastname.trim() === '' ||
+      this.userUpdate.email.trim() === '' ||
+      this.userUpdate.password.trim() === '' ||
+      this.userUpdate.role.trim() === ''
+    ) {
+      // Show an error message or perform any other desired actions
+      alert('All fields are required');
+      return false;
+    }
+    
+
+
+    if (!this.validateEmail(this.userUpdate.email)) {
+      // Show an error message or perform any other desired actions
+      alert('Invalid email');
+      return false;
+    }
+
+    if (!this.validatePassword(this.userUpdate.password)) {
+      // Show an error message or perform any other desired actions
+      alert('Invalid password. It should contain at least one lowercase letter, one uppercase letter, one special character, one number, and be at least 8 characters long.  Example - @Example8');
+      return false;
+    }
+
+    // Additional validation rules can be added here if needed
+
+    return true; // Form is valid
+  }
+  validateEmail(email: string): boolean {
+    // Email validation logic
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  }
+  validatePassword(password: string): boolean {
+    // Password validation logic
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
   }
 }

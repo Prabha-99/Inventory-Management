@@ -10,7 +10,7 @@
 
       <div class="d-flex justify-content-center">
         <div class="col-lg-8">
-          <h2>User Profile</h2>
+          <h1 align="center">User Profile</h1>
           <div class="mb-3">
             <label>Id:</label>
             <input class="form-control short-input" [(ngModel)]="userUpdate.id" [disabled]="!editing" />
@@ -29,19 +29,11 @@
           </div>
           <div class="mb-3">
             <label>Password:</label>
-            <input class="form-control short-input" [(ngModel)]="userUpdate.password" [disabled]="!editing" />
+            <input type="password" class="form-control short-input" [(ngModel)]="userUpdate.password" [disabled]="!editing" />
           </div>
           <div class="mb-3">
             <label>Role:</label>
-            <select class="form-control" [(ngModel)]="userUpdate.role" [disabled]="!editing">
-              <option>INVENTORY_ADMIN</option>
-              <option>ADMIN</option>
-              <option>STOCK_MANAGER</option>
-              <option>PURCHASE_COORDINATOR</option>
-              <option>STOCK_KEEPER</option>
-              <option>DESIGNER</option>
-              <option>SHOWROOM_MANAGER</option>
-            </select>
+            <input class="form-control" [(ngModel)]="userUpdate.role" [disabled]="!editing" disabled>
           </div>
 
           <div style="padding: 10px;" class="d-flex justify-content-around">
