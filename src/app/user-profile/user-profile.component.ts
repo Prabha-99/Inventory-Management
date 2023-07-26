@@ -10,7 +10,6 @@ export class UserProfileComponent implements OnInit {
   user: any;
   editing: boolean = false;
   originalUser: any;
-  a
   userUpdate: any = {
     id: 0,
     firstname: '',
@@ -49,9 +48,19 @@ export class UserProfileComponent implements OnInit {
   }
 
   updateUser(): void {
-    this.authService.updateUserProfile(this.userUpdate).subscribe(
+    const updatedUser = {
+      id: this.userUpdate.id,
+      firstname: this.userUpdate.firstname,
+      lastname: this.userUpdate.lastname,
+      email: this.userUpdate.email,
+      password: this.userUpdate.password,
+      role: this.userUpdate.role
+    };
+
+    this.authService.updateUserProfile(updatedUser).subscribe(
       (response: any) => {
-        console.log('User profile updated successfully:', response);
+        alert('User profile updated successfully');
+        // console.log('User profile updated successfully:', response);
         this.editing = false;
         this.user = { ...this.userUpdate };
         this.originalUser = { ...this.userUpdate };
