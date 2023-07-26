@@ -32,15 +32,15 @@ submit() {
     return;
   }
   
-  if (!this.isValidPhoneNumber(this.grn.contact_nu)) {
-    this.tele_error='Invalid Telephone Number!';
-    alert("Invalid Phone Number");
-    this.tele_error_fix='';
-    return;
-  }else{
-    this.tele_error='';
-    this.tele_error_fix='';
-  }
+  // if (!this.isValidPhoneNumber(this.grn.contact_nu)) {
+  //   this.tele_error='Invalid Telephone Number!';
+  //   alert("Invalid Phone Number");
+  //   this.tele_error_fix='';
+  //   return;
+  // }else{
+  //   this.tele_error='';
+  //   this.tele_error_fix='';
+  // }
 
   this.generateGRNService.submit(this.grn).subscribe(
     (response) => {
@@ -62,10 +62,10 @@ isValidFormData(): boolean {
   && !!this.grn.ordered_quantity && !!this.grn.received_quantity ;
 }
 
-isValidPhoneNumber(contact_nu) {
-  const regexPattern = /^0\d{9}$/;
-  return regexPattern.test(contact_nu);
-}
+// isValidPhoneNumber(contact_nu) {
+//   const regexPattern = /^0\d{9}$/;
+//   return regexPattern.test(contact_nu);
+// }
 
 
 Cancel(): void {

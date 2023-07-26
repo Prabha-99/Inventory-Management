@@ -13,17 +13,10 @@ export class StockReportsComponent implements OnInit{
 
   files!: any[];
   originalFiles!: any[]; // Store the original files before filtering
-  reports: any[] = [];
-  filteredReports: any[] = [];
   searchValue: Date | null | undefined;
-  dialog: any;
-  router: any;
   error='';
 
-  filepath!: string;          //New
-  fileContent!: ArrayBuffer;
-  fileUrl!: string;
-  filename!:string;
+
 
   constructor(private http: HttpClient,private stockService: StockService ) { }
 
@@ -56,11 +49,6 @@ export class StockReportsComponent implements OnInit{
     } else {
       this.files = this.originalFiles; // Reset files to the original list
     }
-  }
-
-  resetFilter() {
-    this.searchValue = null; // Clear the selected date
-    this.files = this.files; // Reset files to the original list
   }
 
 

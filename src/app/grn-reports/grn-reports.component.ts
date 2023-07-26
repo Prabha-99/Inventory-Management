@@ -12,11 +12,7 @@ export class GRNReportsComponent implements OnInit{
 
   files!: any[];
   originalFiles!: any[]; // Store the original files before filtering
-  reports: any[] = [];
-  filteredReports: any[] = [];
   searchValue: Date | null | undefined;
-  dialog: any;
-  router: any;
   error='';
 
   constructor(private http: HttpClient,private grnService: GRNService) { }
@@ -49,13 +45,6 @@ export class GRNReportsComponent implements OnInit{
       this.files = this.originalFiles; // Reset files to the original list
     }
   }
-
-  resetFilter() {
-    this.searchValue = null; // Clear the selected date
-    this.files = this.files; // Reset files to the original list
-  }
-
-
 
   
   downloadFile(report_id: number, report_name: string) {
