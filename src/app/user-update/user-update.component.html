@@ -73,12 +73,12 @@
                             <div class="form-group">
                               <label for="firstname">User First Name :</label>
                               <input type="text" [(ngModel)]="userUpdate.firstname" name="firstname" id="firstname"
-                                class="form-control" placeholder="User First Name">
+                                class="form-control" placeholder="User First Name" required>
                             </div>
                             <div class="form-group">
                               <label for="lastname">User Last Name :</label>
                               <input type="text" [(ngModel)]="userUpdate.lastname" name="lastname" id="lastname" class="form-control"
-                                placeholder="User Last Name">
+                                placeholder="User Last Name" required>
                             </div>
                             <div class="form-group">
                               <label for="email">User Email :</label>
@@ -88,7 +88,7 @@
                             <div class="form-group">
                               <label for="role">User Role :</label>
                               <select type="text" [(ngModel)]="userUpdate.role" name="role" id="role" class="form-control"
-                                placeholder="User Role">
+                                placeholder="User Role" required>
                                 <option>ADMIN</option>
                                 <option>INVENTORY_ADMIN</option>
                                 <option>STOCK_MANAGER</option>

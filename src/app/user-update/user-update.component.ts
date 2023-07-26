@@ -44,7 +44,9 @@ export class UserUpdateComponent implements OnInit {
 
     this.userService.updateUser(id, updatedUser).subscribe(
       (updatedUserEntity) => {
-        this.successMessage = 'User updated successfully!';
+        alert('Update successful');
+        this.closeUpdateForm();
+        // this.successMessage = 'User updated successfully!';
         this.userUpdate = updatedUserEntity;
         // If the backend returns the updatedUser object, you can use it to update the user list in the frontend
         // this.users = this.users.map(user => user.id === updatedUserEntity.id ? updatedUserEntity : user);
