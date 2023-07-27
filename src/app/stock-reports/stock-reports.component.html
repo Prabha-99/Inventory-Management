@@ -38,10 +38,7 @@
                 <td>{{ file.report_name }}</td>
                 <td>{{ file.date }}</td>
                 <td>
-                    <!-- <button type="button" class="btn btn-outline-warning" (click)="downloadFile(file.report_id, file.fileName)">Download</button> -->
-                    <button type="button" class="btn btn-outline-warning" (click)="openPdf(file.report_name)">Download</button> 
-                    <!-- <button (click)="download()">Download File</button> -->
-
+                    <button type="button" class="btn btn-outline-warning" (click)="downloadFile(file.report_id, file.report_name)">Download</button>
                 </td>
                 </tr>
             </tbody>

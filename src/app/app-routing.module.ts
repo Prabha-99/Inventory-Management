@@ -76,6 +76,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { RouteResolverService } from './route-resolver.service';
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
+import { DesignerCreateGinComponent } from './designer-create-gin/designer-create-gin.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -83,7 +84,11 @@ import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordina
 import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
 import { StockManagerForecastingDashComponent } from './stock-manager-forecasting-dash/stock-manager-forecasting-dash.component';
 import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
+
 import { SystemAdminProfileComponent } from './system-admin-profile/system-admin-profile.component';
+
+import { StockKeeperGinComponent } from './stock-keeper-gin/stock-keeper-gin.component';
+
 
 
 
@@ -201,6 +206,12 @@ const routes: Routes = [
   {path: "designer-profile",component:DesignerProfileComponent},
   {path: "designer-profile",component:DesignerProfileComponent},
 
+
+  {path: "designer-create-gin",component:DesignerCreateGinComponent},
+
+
+
+
   {path: "stock-reports", component:StockReportsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER','INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "inventory-backup",component:InventoryBackupComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['INVENTORY_ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path: "user-profile",component:UserProfileComponent},
@@ -209,7 +220,11 @@ const routes: Routes = [
   {path: "stock-manager-forecasting-chart",component:StockManagerForecatingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path: "stock-manager-forecasting-dash",component:StockManagerForecastingDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path: "purchase-coordinator-forecasting-dash",component:PurchaseCoordinatorForecastingDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
-  {path: "system-admin-profile",component:SystemAdminProfileComponent}
+
+  {path: "system-admin-profile",component:SystemAdminProfileComponent},
+
+  {path: "stock-keeper-gin",component:StockKeeperGinComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }}
+
 
 
 

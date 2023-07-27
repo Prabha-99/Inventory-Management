@@ -115,11 +115,20 @@ import { DesignerProfileComponent } from './designer-profile/designer-profile.co
 import { InventoryBackupComponent } from './inventory-backup/inventory-backup.component';
 import { StockReportsComponent } from './stock-reports/stock-reports.component';
 import { DatePipe } from '@angular/common';
+
+import { DesignerCreateGinComponent } from './designer-create-gin/designer-create-gin.component';
+
 import { StockManagerForecastingDashComponent } from './stock-manager-forecasting-dash/stock-manager-forecasting-dash.component';
 import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
 import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
 import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordinator-forecating-chart/purchase-coordinator-forecating-chart.component';
+
 import { SystemAdminProfileComponent } from './system-admin-profile/system-admin-profile.component';
+
+import { StockKeeperGinComponent } from './stock-keeper-gin/stock-keeper-gin.component';
+import { StockKeeperGrnComponent } from './stock-keeper-grn/stock-keeper-grn.component';
+
+
 
 
 
@@ -227,11 +236,25 @@ import { SystemAdminProfileComponent } from './system-admin-profile/system-admin
         DesignerProfileComponent,
         InventoryBackupComponent,
         StockReportsComponent,
+
+        DesignerCreateGinComponent,
+
+
+
+
+
+
         StockManagerForecastingDashComponent,
         PurchaseCoordinatorForecastingDashComponent,
         StockManagerForecatingChartComponent,
         PurchaseCoordinatorForecatingChartComponent,
+
         SystemAdminProfileComponent,
+
+        StockKeeperGinComponent,
+        StockKeeperGrnComponent,
+
+
 
   ],
   
