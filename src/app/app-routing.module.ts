@@ -84,7 +84,11 @@ import { PurchaseCoordinatorForecatingChartComponent } from './purchase-coordina
 import { StockManagerForecatingChartComponent } from './stock-manager-forecating-chart/stock-manager-forecating-chart.component';
 import { StockManagerForecastingDashComponent } from './stock-manager-forecasting-dash/stock-manager-forecasting-dash.component';
 import { PurchaseCoordinatorForecastingDashComponent } from './purchase-coordinator-forecasting-dash/purchase-coordinator-forecasting-dash.component';
+
+import { SystemAdminProfileComponent } from './system-admin-profile/system-admin-profile.component';
+
 import { StockKeeperGinComponent } from './stock-keeper-gin/stock-keeper-gin.component';
+
 
 
 
@@ -216,7 +220,11 @@ const routes: Routes = [
   {path: "stock-manager-forecasting-chart",component:StockManagerForecatingChartComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path: "stock-manager-forecasting-dash",component:StockManagerForecastingDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_MANAGER'] },resolve: { userRole: RouteResolverService }},
   {path: "purchase-coordinator-forecasting-dash",component:PurchaseCoordinatorForecastingDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['PURCHASE_COORDINATOR'] },resolve: { userRole: RouteResolverService }},
+
+  {path: "system-admin-profile",component:SystemAdminProfileComponent},
+
   {path: "stock-keeper-gin",component:StockKeeperGinComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STOCK_KEEPER'] },resolve: { userRole: RouteResolverService }}
+
 
 
 
