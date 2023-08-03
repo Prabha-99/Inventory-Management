@@ -52,7 +52,7 @@ Follow these steps to install the project on your local machine:
 1. Clone the repository
 
    ```shell
-   git clone https://github.com/username/repository.git
+   git clone https://github.com/
 
 
 
