@@ -1,4 +1,4 @@
-# Web Based Inventory Management System for Monara Creations Private Limited.
+# Web Based Inventory Management System for Monara Creations Private Limited
 
 ![Project Logo](/src/assets/PM.jpeg)
 
