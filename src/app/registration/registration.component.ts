@@ -9,9 +9,8 @@ import { ro } from 'date-fns/locale';
 })
 export class RegistrationComponent {
   regData = {
-
-  firstname: '',
-  lastname: '',
+  firstName: '',
+  lastName: '',
   email: '',
   password: '',
   role : '',
@@ -43,8 +42,8 @@ export class RegistrationComponent {
   }
   clear(): void {
     this.regData = {
-      firstname: '',
-      lastname: '',
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
       role: ''
@@ -53,8 +52,8 @@ export class RegistrationComponent {
   validateForm(): boolean {
     // Perform front-end validation
     if (
-      this.regData.firstname.trim() === '' ||
-      this.regData.lastname.trim() === '' ||
+      this.regData.firstName.trim() === '' ||
+      this.regData.lastName.trim() === '' ||
       this.regData.email.trim() === '' ||
       this.regData.password.trim() === '' ||
       this.regData.role.trim() === ''
